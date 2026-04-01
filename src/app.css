@@ -66,6 +66,23 @@
 	}
 }
 
+/* Equalizer bars animation */
+@keyframes eq-bar {
+	0%, 100% { height: 4px; }
+	50% { height: 14px; }
+}
+
+.eq-bar {
+	width: 3px;
+	border-radius: 9999px;
+	background-color: var(--color-accent);
+	transition: height 0.2s ease;
+}
+
+.eq-bar.is-playing {
+	animation: eq-bar 0.8s ease-in-out infinite;
+}
+
 html {
 	color-scheme: dark;
 }
@@ -92,7 +109,6 @@ body {
 	background: #444;
 }
 
-/* Smooth page transitions */
 main {
 	view-transition-name: main-content;
 }

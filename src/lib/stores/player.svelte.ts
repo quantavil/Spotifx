@@ -1,5 +1,7 @@
 // src/lib/stores/player.svelte.ts
 import type { Track } from '$lib/types';
+import { toast } from '$lib/stores/toast.svelte';
+import { updateMediaMetadata, updatePlaybackState } from '$lib/stores/mediaSession';
 
 function fisherYates<T>(arr: T[]): T[] {
 	const a = [...arr];
@@ -11,8 +13,6 @@ function fisherYates<T>(arr: T[]): T[] {
 }
 
 export type RepeatMode = 'off' | 'all' | 'one';
-
-// ── localStorage helpers (SSR-safe) ──
 
 function loadPref<T>(key: string, fallback: T, valid?: T[]): T {
 	if (typeof window === 'undefined') return fallback;
@@ -39,15 +39,14 @@ function savePref(key: string, value: string | number | boolean): void {
 	if (typeof window === 'undefined') return;
 	try {
 		localStorage.setItem(key, String(value));
-	} catch {
-		/* quota exceeded or blocked — ignore */
-	}
+	} catch { /* quota — ignore */ }
 }
 
 class PlayerState {
 	queue = $state<Track[]>([]);
 	currentIndex = $state(0);
 	isPlaying = $state(false);
+	buffering = $state(false);
 	shuffled = $state(loadPref('spotifx-shuffle', false));
 	repeat = $state<RepeatMode>(loadPref<RepeatMode>('spotifx-repeat', 'off', ['off', 'all', 'one']));
 	currentTime = $state(0);
@@ -55,6 +54,8 @@ class PlayerState {
 	volume = $state(loadPref('spotifx-volume', 80));
 	visible = $state(false);
 	queueOpen = $state(false);
+	fullScreenOpen = $state(false);
+	shortcutsOpen = $state(false);
 
 	currentTrack = $derived.by(() => this.queue[this.currentIndex] ?? null);
 	progress = $derived.by(() =>
@@ -107,6 +108,48 @@ class PlayerState {
 		this._loadCurrent();
 	}
 
+	playNext(track: Track): boolean {
+		if (!track.ytMusicId) return false;
+
+		// If nothing playing, start immediately
+		if (this.queue.length === 0 || !this.visible) {
+			this.queue = [track];
+			this.currentIndex = 0;
+			this._loadCurrent();
+			return true;
+		}
+
+		// Remove duplicate if already in queue (but not current)
+		const existing = this.queue.findIndex((t) => t.ytMusicId === track.ytMusicId);
+		if (existing !== -1) {
+			if (existing === this.currentIndex) return false; // already playing
+			this.queue.splice(existing, 1);
+			if (existing < this.currentIndex) this.currentIndex--;
+		}
+
+		// Insert after current
+		this.queue.splice(this.currentIndex + 1, 0, track);
+		return true;
+	}
+
+	addToQueue(track: Track): boolean {
+		if (!track.ytMusicId) return false;
+
+		// If nothing playing, start immediately
+		if (this.queue.length === 0 || !this.visible) {
+			this.queue = [track];
+			this.currentIndex = 0;
+			this._loadCurrent();
+			return true;
+		}
+
+		// Skip if already in queue
+		if (this.queue.some((t) => t.ytMusicId === track.ytMusicId)) return false;
+
+		this.queue.push(track);
+		return true;
+	}
+
 	togglePlay() {
 		if (this.isPlaying) {
 			this.isPlaying = false;
@@ -115,6 +158,7 @@ class PlayerState {
 			this.isPlaying = true;
 			this._onResume?.();
 		}
+		updatePlaybackState(this.isPlaying);
 	}
 
 	next() {
@@ -131,6 +175,7 @@ class PlayerState {
 			this.currentIndex = 0;
 		} else {
 			this.isPlaying = false;
+			updatePlaybackState(false);
 			return;
 		}
 
@@ -160,7 +205,11 @@ class PlayerState {
 	toggleShuffle() {
 		this.shuffled = !this.shuffled;
 		savePref('spotifx-shuffle', this.shuffled);
-		if (!this.currentTrack) return;
+
+		if (!this.currentTrack) {
+			toast.show(this.shuffled ? 'Shuffle on' : 'Shuffle off');
+			return;
+		}
 
 		const current = this.currentTrack;
 		if (this.shuffled) {
@@ -173,6 +222,8 @@ class PlayerState {
 			this.currentIndex = sorted.findIndex((t) => t.ytMusicId === current.ytMusicId);
 			if (this.currentIndex === -1) this.currentIndex = 0;
 		}
+
+		toast.show(this.shuffled ? 'Shuffle on' : 'Shuffle off');
 	}
 
 	cycleRepeat() {
@@ -180,6 +231,8 @@ class PlayerState {
 		const idx = modes.indexOf(this.repeat);
 		this.repeat = modes[(idx + 1) % modes.length];
 		savePref('spotifx-repeat', this.repeat);
+		const labels = { off: 'Repeat off', all: 'Repeat all', one: 'Repeat one' };
+		toast.show(labels[this.repeat]);
 	}
 
 	seek(fraction: number) {
@@ -199,14 +252,25 @@ class PlayerState {
 		this._onPause?.();
 		this.visible = false;
 		this.queueOpen = false;
+		this.fullScreenOpen = false;
 		this.queue = [];
 		this.currentIndex = 0;
 		this.currentTime = 0;
 		this.duration = 0;
+		updatePlaybackState(false);
 	}
 
 	toggleQueue() {
 		this.queueOpen = !this.queueOpen;
+	}
+
+	toggleFullScreen() {
+		this.fullScreenOpen = !this.fullScreenOpen;
+		if (this.fullScreenOpen) this.queueOpen = false;
+	}
+
+	toggleShortcuts() {
+		this.shortcutsOpen = !this.shortcutsOpen;
 	}
 
 	isCurrentTrack(track: Track): boolean {
@@ -214,8 +278,6 @@ class PlayerState {
 			!!track.ytMusicId && !!this.currentTrack && this.currentTrack.ytMusicId === track.ytMusicId
 		);
 	}
-
-	// ── Queue manipulation ──
 
 	jumpTo(queueIndex: number) {
 		if (queueIndex < 0 || queueIndex >= this.queue.length) return;
@@ -225,10 +287,9 @@ class PlayerState {
 
 	removeFromQueue(queueIndex: number) {
 		if (queueIndex < 0 || queueIndex >= this.queue.length) return;
-		if (queueIndex === this.currentIndex) return; // can't remove currently playing
+		if (queueIndex === this.currentIndex) return;
 
 		this.queue.splice(queueIndex, 1);
-		// adjust currentIndex if we removed something before it
 		if (queueIndex < this.currentIndex) {
 			this.currentIndex--;
 		}
@@ -242,7 +303,6 @@ class PlayerState {
 		const [item] = this.queue.splice(fromIndex, 1);
 		this.queue.splice(toIndex, 0, item);
 
-		// adjust currentIndex to follow the currently-playing track
 		if (this.currentIndex === fromIndex) {
 			this.currentIndex = toIndex;
 		} else if (fromIndex < this.currentIndex && toIndex >= this.currentIndex) {
@@ -253,13 +313,16 @@ class PlayerState {
 	}
 
 	_loadCurrent() {
-		const track = this.currentTrack;
+		const track = this.queue[this.currentIndex];
 		if (!track) return;
 		this.visible = true;
 		this.isPlaying = true;
+		this.buffering = true;
 		this.currentTime = 0;
 		this.duration = 0;
 		this._onPlay?.(track.ytMusicId);
+		updateMediaMetadata(track);
+		updatePlaybackState(true);
 	}
 }
 

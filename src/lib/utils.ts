@@ -42,3 +42,14 @@ export function formatTime(s: number): string {
 export function getYTThumbUrl(id: string, size: 'default' | 'mqdefault' | 'hqdefault' = 'mqdefault'): string {
 	return `https://i.ytimg.com/vi/${id}/${size}.jpg`;
 }
+
+/** Generate a consistent hue (0-359) from artist+title for dynamic gradients */
+export function trackToHue(artist: string, title: string): number {
+	const str = `${artist}${title}`.toLowerCase();
+	let hash = 0;
+	for (let i = 0; i < str.length; i++) {
+		hash = str.charCodeAt(i) + ((hash << 5) - hash);
+		hash |= 0;
+	}
+	return ((hash % 360) + 360) % 360;
+}

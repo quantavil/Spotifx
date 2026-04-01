@@ -1,7 +1,14 @@
 <!-- src/lib/components/MusicPlayer.svelte -->
 <script lang="ts">
 	import { player } from '$lib/stores/player.svelte';
-	import { formatCompact, formatTime, getYTThumbUrl } from '$lib/utils';
+	import { favorites } from '$lib/stores/favorites.svelte';
+	import { toast } from '$lib/stores/toast.svelte';
+	import {
+		setupMediaHandlers,
+		updatePlaybackState,
+		updatePositionState
+	} from '$lib/stores/mediaSession';
+	import { formatCompact, formatTime, getYTThumbUrl, trackToHue } from '$lib/utils';
 	import { onMount, onDestroy } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import { scrollText } from '$lib/actions';
@@ -15,8 +22,14 @@
 	let seeking = $state(false);
 	let consecutiveErrors = 0;
 	let progressBarEl: HTMLDivElement | undefined = $state();
+	let positionTick = 0;
 
-	// ── Queue drag state ──
+	// Seek tooltip
+	let hoverTime = $state('');
+	let hoverX = $state(0);
+	let hovering = $state(false);
+
+	// Queue drag state
 	let dragIndex: number | null = $state(null);
 	let dragOverIndex: number | null = $state(null);
 
@@ -24,6 +37,18 @@
 		player.currentTrack?.ytMusicId
 			? getYTThumbUrl(player.currentTrack.ytMusicId)
 			: ''
+	);
+
+	const dynamicHue = $derived(
+		player.currentTrack
+			? trackToHue(player.currentTrack.artist, player.currentTrack.title)
+			: 140
+	);
+
+	const isFav = $derived(
+		player.currentTrack?.spotifyId
+			? favorites.has(player.currentTrack.spotifyId)
+			: false
 	);
 
 	// ── YouTube IFrame API ──
@@ -81,12 +106,19 @@
 		switch (event.data) {
 			case YT.PlayerState.PLAYING:
 				player.isPlaying = true;
+				player.buffering = false;
 				consecutiveErrors = 0;
+				updatePlaybackState(true);
 				startProgressPolling();
 				break;
 			case YT.PlayerState.PAUSED:
 				player.isPlaying = false;
+				player.buffering = false;
+				updatePlaybackState(false);
 				stopProgressPolling();
+				break;
+			case YT.PlayerState.BUFFERING:
+				player.buffering = true;
 				break;
 			case YT.PlayerState.ENDED:
 				stopProgressPolling();
@@ -99,6 +131,8 @@
 		consecutiveErrors++;
 		if (consecutiveErrors > 5) {
 			player.isPlaying = false;
+			player.buffering = false;
+			toast.show('Playback error — too many failures');
 			return;
 		}
 		player.next();
@@ -106,11 +140,16 @@
 
 	function startProgressPolling() {
 		stopProgressPolling();
+		positionTick = 0;
 		progressInterval = setInterval(() => {
 			if (!ytPlayer || !playerReady || seeking) return;
 			try {
 				player.currentTime = ytPlayer.getCurrentTime() || 0;
 				player.duration = ytPlayer.getDuration() || 0;
+				positionTick++;
+				if (positionTick % 8 === 0) {
+					updatePositionState(player.currentTime, player.duration);
+				}
 			} catch {
 				/* player destroyed */
 			}
@@ -124,7 +163,7 @@
 		}
 	}
 
-	// ── Seek bar pointer events ──
+	// ── Seek bar ──
 
 	function seekFromPointer(e: PointerEvent) {
 		if (!progressBarEl) return;
@@ -150,7 +189,16 @@
 		if (player.duration > 0) player._onSeek?.(player.currentTime);
 	}
 
-	// ── Queue drag-to-reorder (pointer-event based) ──
+	function onBarHover(e: MouseEvent) {
+		if (!progressBarEl || player.duration <= 0) return;
+		const rect = progressBarEl.getBoundingClientRect();
+		const frac = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+		hoverX = e.clientX - rect.left;
+		hoverTime = formatTime(frac * player.duration);
+		hovering = true;
+	}
+
+	// ── Queue drag-to-reorder ──
 
 	function onDragStart(idx: number) {
 		dragIndex = idx;
@@ -162,7 +210,6 @@
 
 	function onDragEnd() {
 		if (dragIndex !== null && dragOverIndex !== null && dragIndex !== dragOverIndex) {
-			// Convert from "upcoming" relative indices to absolute queue indices
 			const absFrom = player.currentIndex + 1 + dragIndex;
 			const absTo = player.currentIndex + 1 + dragOverIndex;
 			player.reorder(absFrom, absTo);
@@ -174,13 +221,77 @@
 	// ── Keyboard ──
 
 	function handleKeydown(e: KeyboardEvent) {
-		if (!player.visible) return;
 		const tag = (e.target as HTMLElement)?.tagName;
-		if (['INPUT', 'TEXTAREA', 'SELECT', 'BUTTON', 'A'].includes(tag)) return;
-		if (e.code === 'Space') {
-			e.preventDefault();
-			player.togglePlay();
+		if (['INPUT', 'TEXTAREA', 'SELECT'].includes(tag)) {
+			if (e.key === 'Escape') (e.target as HTMLElement)?.blur();
+			return;
 		}
+
+		if (e.key === '?') {
+			e.preventDefault();
+			player.toggleShortcuts();
+			return;
+		}
+
+		if (!player.visible) return;
+
+		switch (e.code) {
+			case 'Space':
+				e.preventDefault();
+				player.togglePlay();
+				break;
+			case 'ArrowRight':
+				e.preventDefault();
+				if (player.duration > 0) {
+					const t = Math.min(player.currentTime + 10, player.duration);
+					player.currentTime = t;
+					player._onSeek?.(t);
+				}
+				break;
+			case 'ArrowLeft':
+				e.preventDefault();
+				if (player.duration > 0) {
+					const t = Math.max(player.currentTime - 10, 0);
+					player.currentTime = t;
+					player._onSeek?.(t);
+				}
+				break;
+			case 'ArrowUp':
+				e.preventDefault();
+				player.setVolume(Math.min(player.volume + 5, 100));
+				break;
+			case 'ArrowDown':
+				e.preventDefault();
+				player.setVolume(Math.max(player.volume - 5, 0));
+				break;
+			case 'KeyM':
+				player.setVolume(player.volume > 0 ? 0 : 80);
+				break;
+			case 'KeyS':
+				player.toggleShuffle();
+				break;
+			case 'KeyR':
+				player.cycleRepeat();
+				break;
+			case 'KeyQ':
+				player.toggleQueue();
+				break;
+			case 'KeyN':
+				player.next();
+				break;
+			case 'KeyP':
+				player.prev();
+				break;
+			case 'KeyF':
+				if (player.currentTrack) player.toggleFullScreen();
+				break;
+		}
+	}
+
+	function toggleFav() {
+		if (!player.currentTrack?.spotifyId) return;
+		const added = favorites.toggle(player.currentTrack.spotifyId);
+		toast.show(added ? 'Added to favorites' : 'Removed from favorites');
 	}
 
 	// ── Lifecycle ──
@@ -211,6 +322,17 @@
 			try { ytPlayer?.setVolume(vol); } catch { /* noop */ }
 		};
 
+		setupMediaHandlers({
+			play: () => player.togglePlay(),
+			pause: () => player.togglePlay(),
+			prev: () => player.prev(),
+			next: () => player.next(),
+			seekTo: (time) => {
+				player.currentTime = time;
+				player._onSeek?.(time);
+			}
+		});
+
 		if (player.currentTrack && player.isPlaying) {
 			player._onPlay(player.currentTrack.ytMusicId);
 		}
@@ -238,7 +360,6 @@
 	<div id="yt-hidden-player"></div>
 </div>
 
-<!-- Player bar -->
 {#if player.visible}
 	<div
 		class="fixed bottom-0 left-0 right-0 z-50"
@@ -254,9 +375,7 @@
 				<div class="flex items-center justify-between px-4 py-3 border-b border-white/5 flex-shrink-0">
 					<div>
 						<h3 class="text-sm font-semibold text-white">Queue</h3>
-						<p class="text-[11px] text-gray-500">
-							{player.upcomingTracks.length} upcoming
-						</p>
+						<p class="text-[11px] text-gray-500">{player.upcomingTracks.length} upcoming</p>
 					</div>
 					<button
 						onclick={() => player.toggleQueue()}
@@ -267,9 +386,9 @@
 					</button>
 				</div>
 
-				<!-- Now playing -->
+				<!-- Now playing (no stats — just title/artist) -->
 				{#if player.currentTrack}
-					<div class="px-4 py-2 bg-accent/10 border-b border-white/5 flex-shrink-0">
+					<div class="px-4 py-2.5 bg-accent/10 border-b border-white/5 flex-shrink-0">
 						<p class="text-[10px] font-semibold uppercase tracking-wider text-accent/80 mb-1">Now Playing</p>
 						<div class="flex items-center gap-3">
 							{#if player.currentTrack.ytMusicId}
@@ -284,9 +403,6 @@
 									<span class="text-sm font-medium text-white">{player.currentTrack.title}</span>
 								</div>
 								<p class="text-xs text-gray-400 truncate">{player.currentTrack.artist}</p>
-								<p class="text-[10px] text-gray-500 font-mono tabular-nums mt-0.5">
-									{formatCompact(player.currentTrack.streams)} streams · Peak #{player.currentTrack.peak} · {player.currentTrack.weeks} days
-								</p>
 							</div>
 						</div>
 					</div>
@@ -295,9 +411,7 @@
 				<!-- Upcoming tracks -->
 				<div class="overflow-y-auto flex-1 scrollbar-none">
 					{#if player.upcomingTracks.length === 0}
-						<div class="px-4 py-8 text-center text-gray-600 text-sm">
-							No upcoming tracks
-						</div>
+						<div class="px-4 py-8 text-center text-gray-600 text-sm">No upcoming tracks</div>
 					{:else}
 						{#each player.upcomingTracks as track, i (track.ytMusicId + '-' + i)}
 							<div
@@ -309,31 +423,22 @@
 								ondragover={(e) => { e.preventDefault(); onDragOver(i); }}
 								ondragend={onDragEnd}
 							>
-								<!-- Drag handle -->
 								<span
 									class="text-gray-700 group-hover:text-gray-500 cursor-grab active:cursor-grabbing flex-shrink-0"
 									aria-hidden="true"
 								>
 									<Icon name="drag-handle" />
 								</span>
-
-								<!-- Track number -->
 								<span class="text-xs text-gray-600 font-mono tabular-nums w-5 text-right flex-shrink-0">
 									{i + 1}
 								</span>
-
-								<!-- Track info (click to jump) -->
 								<button
 									onclick={() => player.jumpTo(player.currentIndex + 1 + i)}
 									class="flex-1 min-w-0 text-left cursor-pointer hover:text-white transition-colors"
 								>
-									<p class="text-sm text-gray-300 truncate group-hover:text-white">
-										{track.title}
-									</p>
+									<p class="text-sm text-gray-300 truncate group-hover:text-white">{track.title}</p>
 									<p class="text-xs text-gray-600 truncate">{track.artist}</p>
 								</button>
-
-								<!-- Remove -->
 								<button
 									onclick={() => player.removeFromQueue(player.currentIndex + 1 + i)}
 									class="text-gray-700 hover:text-red-400 transition-colors cursor-pointer p-1 opacity-0 group-hover:opacity-100 flex-shrink-0"
@@ -350,7 +455,10 @@
 		{/if}
 
 		<!-- Main player bar -->
-		<div class="bg-surface-alt/95 backdrop-blur-lg border-t border-white/10">
+		<div
+			class="border-t border-white/10 backdrop-blur-lg transition-colors duration-500"
+			style="background: linear-gradient(90deg, hsla({dynamicHue}, 30%, 10%, 0.95) 0%, rgba(24,24,24,0.95) 50%);"
+		>
 			<!-- Progress bar -->
 			<div
 				bind:this={progressBarEl}
@@ -365,6 +473,8 @@
 				onpointermove={onPointerMove}
 				onpointerup={onPointerUp}
 				onlostpointercapture={() => (seeking = false)}
+				onmousemove={onBarHover}
+				onmouseleave={() => (hovering = false)}
 			>
 				<div
 					class="h-full bg-accent transition-[width]"
@@ -376,45 +486,65 @@
 						   opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity pointer-events-none"
 					style="left:calc({player.progress}% - 6px)"
 				></div>
+
+				{#if hovering && player.duration > 0 && !seeking}
+					<div
+						class="absolute -top-8 bg-black/90 text-white text-[10px] px-2 py-1 rounded pointer-events-none whitespace-nowrap font-mono"
+						style="left:{hoverX}px;transform:translateX(-50%)"
+					>
+						{hoverTime}
+					</div>
+				{/if}
 			</div>
 
-			<!-- Controls -->
-			<div class="flex items-center gap-1 sm:gap-3 px-2 sm:px-3 py-2 max-w-6xl mx-auto">
-				<!-- Track info -->
-				<div class="flex items-center gap-2 sm:gap-3 flex-1 min-w-0 max-w-[40%] sm:max-w-none">
-					{#if thumbUrl}
-						<img
-							src={thumbUrl}
-							alt=""
-							class="w-9 h-9 sm:w-10 sm:h-10 rounded object-cover flex-shrink-0 bg-white/5"
-							loading="lazy"
-						/>
-					{:else}
-						<div class="w-9 h-9 sm:w-10 sm:h-10 rounded bg-white/5 flex-shrink-0"></div>
-					{/if}
-					<div class="min-w-0">
-						<div class="scroll-text is-active" use:scrollText>
-							<span class="text-xs sm:text-sm font-medium text-white">
-								{player.currentTrack?.title ?? ''}
-							</span>
-						</div>
-						<p class="text-[11px] sm:text-xs text-gray-400 truncate">
-							{player.currentTrack?.artist ?? ''}
-						</p>
-						{#if player.currentTrack}
-							<p class="text-[10px] text-gray-500 font-mono tabular-nums truncate">
-								{formatCompact(player.currentTrack.streams)} · Pk {player.currentTrack.peak} · {player.currentTrack.weeks}d
-							</p>
-						{/if}
-					</div>
-				</div>
+			<!-- Controls row -->
+			<div class="flex items-center px-2 sm:px-3 py-1.5 sm:py-2 max-w-6xl mx-auto gap-2 sm:gap-3">
 
-				<!-- Playback controls -->
-				<div class="flex items-center justify-center gap-0.5 sm:gap-1 flex-1 sm:flex-none">
-					<!-- Shuffle -->
+				<!-- ① Track info — click opens fullscreen -->
+				<button
+					onclick={() => player.toggleFullScreen()}
+					class="flex items-center gap-2 sm:gap-3 min-w-0 max-w-[50%] sm:max-w-[35%] text-left cursor-pointer group/info"
+				>
+					{#key player.currentTrack?.ytMusicId}
+						<div class="animate-fade-in flex items-center gap-2 sm:gap-3 min-w-0" style="animation-duration:0.25s">
+							<!-- Thumbnail with expand hint -->
+							<div class="relative flex-shrink-0">
+								{#if thumbUrl}
+									<img
+										src={thumbUrl}
+										alt=""
+										class="w-10 h-10 sm:w-11 sm:h-11 rounded object-cover bg-white/5"
+										loading="lazy"
+									/>
+								{:else}
+									<div class="w-10 h-10 sm:w-11 sm:h-11 rounded bg-white/5"></div>
+								{/if}
+								<div class="absolute inset-0 rounded bg-black/0 group-hover/info:bg-black/40 transition-colors flex items-center justify-center">
+									<Icon name="fullscreen" class="w-4 h-4 text-white opacity-0 group-hover/info:opacity-100 transition-opacity" />
+								</div>
+							</div>
+
+							<!-- Title & artist only — no stats -->
+							<div class="min-w-0">
+								<div class="scroll-text is-active" use:scrollText>
+									<span class="text-xs sm:text-sm font-medium text-white group-hover/info:text-accent transition-colors">
+										{player.currentTrack?.title ?? ''}
+									</span>
+								</div>
+								<p class="text-[11px] sm:text-xs text-gray-400 truncate">
+									{player.currentTrack?.artist ?? ''}
+								</p>
+							</div>
+						</div>
+					{/key}
+				</button>
+
+				<!-- ② Playback controls — shuffle/repeat hidden on mobile -->
+				<div class="flex items-center justify-center gap-0.5 sm:gap-1 flex-1">
+					<!-- Shuffle (desktop only) -->
 					<button
 						onclick={() => player.toggleShuffle()}
-						class="p-1.5 sm:p-2 rounded-full transition-colors cursor-pointer
+						class="hidden sm:block p-2 rounded-full transition-colors cursor-pointer
 							   {player.shuffled ? 'text-accent' : 'text-gray-400 hover:text-white'}"
 						title="Shuffle"
 						aria-label="Toggle shuffle"
@@ -422,7 +552,6 @@
 						<Icon name="shuffle" />
 					</button>
 
-					<!-- Prev -->
 					<button
 						onclick={() => player.prev()}
 						class="p-1.5 sm:p-2 text-gray-300 hover:text-white transition-colors cursor-pointer"
@@ -432,17 +561,23 @@
 						<Icon name="skip-back" />
 					</button>
 
-					<!-- Play / Pause -->
+					<!-- Play / Pause / Buffering -->
 					<button
 						onclick={() => player.togglePlay()}
 						class="p-2 bg-white rounded-full text-black hover:scale-105 active:scale-95 transition-transform cursor-pointer"
 						title={player.isPlaying ? 'Pause' : 'Play'}
 						aria-label={player.isPlaying ? 'Pause' : 'Play'}
 					>
-						<Icon name={player.isPlaying ? 'pause' : 'play'} class="w-5 h-5" />
+						{#if player.buffering}
+							<svg class="w-5 h-5 animate-spin" viewBox="0 0 24 24" fill="none">
+								<circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" opacity="0.25"/>
+								<path d="M12 2a10 10 0 019.95 9" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+							</svg>
+						{:else}
+							<Icon name={player.isPlaying ? 'pause' : 'play'} class="w-5 h-5" />
+						{/if}
 					</button>
 
-					<!-- Next -->
 					<button
 						onclick={() => player.next()}
 						class="p-1.5 sm:p-2 text-gray-300 hover:text-white transition-colors cursor-pointer"
@@ -452,10 +587,10 @@
 						<Icon name="skip-forward" />
 					</button>
 
-					<!-- Repeat -->
+					<!-- Repeat (desktop only) -->
 					<button
 						onclick={() => player.cycleRepeat()}
-						class="p-1.5 sm:p-2 rounded-full transition-colors cursor-pointer relative
+						class="hidden sm:block p-2 rounded-full transition-colors cursor-pointer relative
 							   {player.repeat !== 'off' ? 'text-accent' : 'text-gray-400 hover:text-white'}"
 						title="Repeat: {player.repeat}"
 						aria-label="Cycle repeat mode"
@@ -464,25 +599,44 @@
 					</button>
 				</div>
 
-				<!-- Time + Queue + Volume (desktop) -->
-				<div class="hidden sm:flex items-center gap-3 flex-1 justify-end">
+				<!-- ③ Desktop right zone: time, fav, fullscreen, queue, volume, close -->
+				<div class="hidden sm:flex items-center gap-2.5 flex-shrink-0">
 					<span class="text-[11px] text-gray-500 font-mono tabular-nums whitespace-nowrap">
 						{formatTime(player.currentTime)} / {formatTime(player.duration)}
 					</span>
 
-					<!-- Queue toggle -->
+					{#if player.currentTrack?.spotifyId}
+						<button
+							onclick={toggleFav}
+							class="p-1.5 transition-colors cursor-pointer
+								   {isFav ? 'text-red-400' : 'text-gray-400 hover:text-white'}"
+							title={isFav ? 'Remove from favorites' : 'Add to favorites'}
+							aria-label={isFav ? 'Remove from favorites' : 'Add to favorites'}
+						>
+							<Icon name={isFav ? 'heart-filled' : 'heart'} class="w-4 h-4" />
+						</button>
+					{/if}
+
+					<button
+						onclick={() => player.toggleFullScreen()}
+						class="p-1.5 text-gray-400 hover:text-white transition-colors cursor-pointer"
+						title="Expand player (F)"
+						aria-label="Fullscreen player"
+					>
+						<Icon name="fullscreen" />
+					</button>
+
 					<button
 						onclick={() => player.toggleQueue()}
 						class="p-1.5 transition-colors cursor-pointer
 							   {player.queueOpen ? 'text-accent' : 'text-gray-400 hover:text-white'}"
-						title="Queue"
+						title="Queue (Q)"
 						aria-label="Toggle queue"
 					>
 						<Icon name="queue" />
 					</button>
 
-					<!-- Volume -->
-					<div class="flex items-center gap-1.5">
+					<div class="flex items-center gap-1.5 pl-1 border-l border-white/5">
 						<button
 							onclick={() => player.setVolume(player.volume > 0 ? 0 : 80)}
 							class="text-gray-400 hover:text-white transition-colors cursor-pointer"
@@ -500,14 +654,34 @@
 							aria-label="Volume"
 						/>
 					</div>
+
+					<button
+						onclick={() => player.close()}
+						class="p-1.5 text-gray-500 hover:text-white transition-colors cursor-pointer"
+						title="Close player"
+						aria-label="Close player"
+					>
+						<Icon name="close" />
+					</button>
 				</div>
 
-				<!-- Mobile: queue toggle + close -->
-				<div class="flex sm:hidden items-center justify-end gap-0.5 flex-1">
+				<!-- ④ Mobile right zone: fav, queue, close (compact) -->
+				<div class="flex sm:hidden items-center gap-0.5 flex-shrink-0">
+					{#if player.currentTrack?.spotifyId}
+						<button
+							onclick={toggleFav}
+							class="p-1.5 transition-colors cursor-pointer
+								   {isFav ? 'text-red-400' : 'text-gray-500'}"
+							aria-label={isFav ? 'Remove from favorites' : 'Add to favorites'}
+						>
+							<Icon name={isFav ? 'heart-filled' : 'heart'} class="w-4 h-4" />
+						</button>
+					{/if}
+
 					<button
 						onclick={() => player.toggleQueue()}
 						class="p-1.5 transition-colors cursor-pointer
-							   {player.queueOpen ? 'text-accent' : 'text-gray-400 hover:text-white'}"
+							   {player.queueOpen ? 'text-accent' : 'text-gray-500'}"
 						aria-label="Toggle queue"
 					>
 						<Icon name="queue" />
@@ -515,22 +689,12 @@
 
 					<button
 						onclick={() => player.close()}
-						class="p-1.5 text-gray-500 hover:text-white transition-colors cursor-pointer"
+						class="p-1.5 text-gray-600 hover:text-white transition-colors cursor-pointer"
 						aria-label="Close player"
 					>
 						<Icon name="close" />
 					</button>
 				</div>
-
-				<!-- Desktop close -->
-				<button
-					onclick={() => player.close()}
-					class="hidden sm:block p-1.5 text-gray-500 hover:text-white transition-colors cursor-pointer"
-					title="Close player"
-					aria-label="Close player"
-				>
-					<Icon name="close" />
-				</button>
 			</div>
 		</div>
 	</div>

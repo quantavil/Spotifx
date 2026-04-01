@@ -3,10 +3,13 @@
 	import type { Track } from '$lib/types';
 	import { formatCompact, highlightText } from '$lib/utils';
 	import { player } from '$lib/stores/player.svelte';
+	import { favorites } from '$lib/stores/favorites.svelte';
 	import { scrollText } from '$lib/actions';
 	import RankBadge from './RankBadge.svelte';
 	import ListenLinks from './ListenLinks.svelte';
 	import TrackArt from './TrackArt.svelte';
+	import TrackMenu from './TrackMenu.svelte';
+	import Icon from './Icon.svelte';
 
 	let { tracks, searchQuery }: { tracks: Track[]; searchQuery: string } = $props();
 
@@ -112,20 +115,36 @@
 							Days{sortIndicator('weeks')}
 						</button>
 					</th>
-					<th class="py-3 px-1.5 sm:px-2 w-12 sm:w-14">
-						<span class="sr-only">Links</span>
+					<th class="py-3 px-1.5 sm:px-2 w-14 sm:w-20">
+						<span class="sr-only">Actions</span>
 					</th>
 				</tr>
 			</thead>
 			<tbody>
 				{#each processed as track (track.spotifyId || `r${track.rank}-${track.title}`)}
 					{@const isActive = player.isCurrentTrack(track) && player.isPlaying}
+					{@const isCurrentTrack = player.isCurrentTrack(track)}
+					{@const trackFav = track.spotifyId ? favorites.has(track.spotifyId) : false}
 					<tr
-						class="border-b border-white/5 hover:bg-surface-hover transition-colors even:bg-white/[0.015]
+						class="group border-b border-white/5 hover:bg-surface-hover transition-colors even:bg-white/[0.015]
 							{isActive ? '!bg-accent/10 border-accent/20' : ''}"
 					>
-						<td class="px-2 sm:px-3 py-2.5 text-gray-500 font-mono text-xs tabular-nums align-middle">
-							{track.rank}
+						<!-- Rank / Equalizer -->
+						<td class="px-2 sm:px-3 py-2.5 align-middle">
+							{#if isCurrentTrack}
+								<div class="flex items-end gap-[2px] h-4 justify-center">
+									{#each [0, 1, 2] as bar}
+										<div
+											class="eq-bar {isActive ? 'is-playing' : ''}"
+											style={isActive
+												? `animation-delay:${bar * 0.2}s`
+												: `height:${bar === 1 ? '8px' : '4px'}`}
+										></div>
+									{/each}
+								</div>
+							{:else}
+								<span class="text-gray-500 font-mono text-xs tabular-nums">{track.rank}</span>
+							{/if}
 						</td>
 
 						<td class="px-0.5 sm:px-1 py-2.5 align-middle text-center">
@@ -141,16 +160,21 @@
 									class="flex-1 min-w-0 text-left group/title
 										{track.ytMusicId ? 'cursor-pointer' : ''}"
 								>
-									<div
-										class="scroll-text {isActive ? 'is-active' : ''}"
-										use:scrollText
-									>
-										<span class="text-sm font-medium text-white transition-colors
-											{track.ytMusicId ? 'group-hover/title:text-accent' : ''}">
-											{#each highlightText(track.title, query) as part}
-												{#if part.match}<mark class="bg-accent/25 text-white rounded-sm px-0.5">{part.text}</mark>{:else}{part.text}{/if}
-											{/each}
-										</span>
+									<div class="flex items-center gap-1.5">
+										<div
+											class="scroll-text flex-1 min-w-0 {isActive ? 'is-active' : ''}"
+											use:scrollText
+										>
+											<span class="text-sm font-medium text-white transition-colors
+												{track.ytMusicId ? 'group-hover/title:text-accent' : ''}">
+												{#each highlightText(track.title, query) as part}
+													{#if part.match}<mark class="bg-accent/25 text-white rounded-sm px-0.5">{part.text}</mark>{:else}{part.text}{/if}
+												{/each}
+											</span>
+										</div>
+										{#if trackFav}
+											<Icon name="heart-filled" class="w-3 h-3 text-red-400 flex-shrink-0" />
+										{/if}
 									</div>
 									<p class="text-xs text-gray-400 truncate mt-0.5">
 										{#each highlightText(track.artist, query) as part}
@@ -174,12 +198,15 @@
 						</td>
 
 						<td class="px-1.5 sm:px-2 py-2.5 align-middle">
-							<ListenLinks
-								spotifyId={track.spotifyId}
-								ytMusicId={track.ytMusicId}
-								title={track.title}
-								artist={track.artist}
-							/>
+							<div class="flex items-center gap-1">
+								<ListenLinks
+									spotifyId={track.spotifyId}
+									ytMusicId={track.ytMusicId}
+									title={track.title}
+									artist={track.artist}
+								/>
+								<TrackMenu {track} />
+							</div>
 						</td>
 					</tr>
 				{:else}

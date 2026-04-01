@@ -17,7 +17,12 @@
 		| 'check'
 		| 'link'
 		| 'music'
-		| 'search';
+		| 'search'
+		| 'heart'
+		| 'heart-filled'
+		| 'chevron-down'
+		| 'more-vertical'
+		| 'fullscreen';
 
 	let { name, class: cls = 'w-4 h-4' }: { name: IconName; class?: string } = $props();
 
@@ -57,11 +62,25 @@
 		music: {
 			d: 'M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z'
 		},
-		search: { d: '', stroke: true }
+		search: { d: '', stroke: true },
+		heart: {
+			d: 'M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z',
+			stroke: true
+		},
+		'heart-filled': {
+			d: 'M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z'
+		},
+		'chevron-down': { d: 'M6 9l6 6 6-6', stroke: true },
+		'more-vertical': {
+			d: 'M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z'
+		},
+		fullscreen: {
+			d: 'M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z'
+		}
 	};
 
 	const icon = $derived(paths[name]);
-	const isStroke = $derived(icon.stroke ?? false);
+	const isStroke = $derived(icon?.stroke ?? false);
 	const isSearch = $derived(name === 'search');
 </script>
 

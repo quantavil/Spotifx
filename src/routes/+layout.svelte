@@ -3,6 +3,9 @@
 	import '../app.css';
 	import CountrySelector from '$lib/components/CountrySelector.svelte';
 	import MusicPlayer from '$lib/components/MusicPlayer.svelte';
+	import NowPlayingFull from '$lib/components/NowPlayingFull.svelte';
+	import ShortcutsModal from '$lib/components/ShortcutsModal.svelte';
+	import Toast from '$lib/components/Toast.svelte';
 	import { player } from '$lib/stores/player.svelte';
 	import { page } from '$app/state';
 
@@ -26,6 +29,18 @@
 						<span class="text-[11px] text-gray-500 -mt-0.5 block">Weekly streaming charts</span>
 					</div>
 				</a>
+
+				<!-- Keyboard shortcuts hint -->
+				<button
+					onclick={() => player.toggleShortcuts()}
+					class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md
+						   bg-white/5 border border-white/10 text-[11px] text-gray-500
+						   hover:text-gray-300 hover:border-white/20 transition-colors cursor-pointer"
+					title="Keyboard shortcuts"
+				>
+					<kbd class="font-mono">?</kbd>
+					<span>Shortcuts</span>
+				</button>
 			</div>
 			<CountrySelector active={page.params?.country ?? 'global'} />
 		</div>
@@ -50,3 +65,6 @@
 </div>
 
 <MusicPlayer />
+<NowPlayingFull />
+<ShortcutsModal />
+<Toast />
