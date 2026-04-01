@@ -5,6 +5,7 @@
 	import { toast } from '$lib/stores/toast.svelte';
 	import { trackMenu } from '$lib/stores/trackMenu.svelte';
 	import type { Track } from '$lib/types';
+	import { portal } from '$lib/actions';
 	import Icon from './Icon.svelte';
 
 	let { track }: { track: Track } = $props();
@@ -12,8 +13,8 @@
 	let btnEl: HTMLButtonElement | undefined = $state();
 	let menuStyle = $state('');
 
-	// Unique ID per track for the shared store
-	const menuId = $derived(track.spotifyId || `${track.rank}-${track.title}`);
+	// Unique ID per component instance for the shared store
+	const menuId = typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2);
 	const open = $derived(trackMenu.isOpen(menuId));
 	const isFav = $derived(track.spotifyId ? favorites.has(track.spotifyId) : false);
 	const hasYtm = $derived(!!track.ytMusicId);
@@ -105,8 +106,7 @@
 	<button
 		bind:this={btnEl}
 		onclick={toggle}
-		class="p-1 rounded text-gray-600 hover:text-white transition-colors cursor-pointer
-			   opacity-60 sm:opacity-0 group-hover:opacity-100"
+		class="p-1 -mr-1 rounded text-gray-400 hover:text-white transition-colors cursor-pointer opacity-80 hover:opacity-100"
 		aria-label="Track options for {track.title}"
 		aria-expanded={open}
 	>
@@ -118,6 +118,7 @@
 		<!-- svelte-ignore a11y_no_static_element_interactions -->
 		<div
 			data-track-menu
+			use:portal
 			class="fixed z-[60] bg-surface-alt border border-white/10 rounded-lg shadow-2xl py-1 min-w-[180px]"
 			style={menuStyle}
 			onclick={(e) => e.stopPropagation()}
@@ -163,6 +164,17 @@
 					Open in Spotify
 				</a>
 			{/if}
+
+			<a
+				href={track.ytMusicId ? `https://music.youtube.com/watch?v=${track.ytMusicId}` : `https://music.youtube.com/search?q=${encodeURIComponent(`${track.artist} ${track.title}`)}`}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="w-full text-left px-4 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-surface-hover transition-colors flex items-center gap-3"
+				onclick={() => close()}
+			>
+				<Icon name="link" class="w-4 h-4 text-gray-500" />
+				Open in YT Music
+			</a>
 		</div>
 	{/if}
 </div>

@@ -6,8 +6,8 @@
 	import { favorites } from '$lib/stores/favorites.svelte';
 	import { toast } from '$lib/stores/toast.svelte';
 	import { scrollText } from '$lib/actions';
-	import ListenLinks from './ListenLinks.svelte';
 	import RankBadge from './RankBadge.svelte';
+	import TrackMenu from './TrackMenu.svelte';
 	import PlayButton from './PlayButton.svelte';
 	import Icon from './Icon.svelte';
 
@@ -97,12 +97,7 @@
 					</button>
 				{/if}
 				<PlayButton {track} allTracks={tracks} />
-				<ListenLinks
-					spotifyId={track.spotifyId}
-					ytMusicId={track.ytMusicId}
-					title={track.title}
-					artist={track.artist}
-				/>
+				<TrackMenu {track} />
 			</div>
 		</div>
 	</div>

@@ -50,6 +50,25 @@
 		player.fullScreenOpen = false;
 		player.queueOpen = true;
 	}
+
+	$effect(() => {
+		if (!player.fullScreenOpen) return;
+
+		history.pushState({ playerOpen: true }, '');
+
+		const onPopState = () => {
+			player.fullScreenOpen = false;
+		};
+
+		window.addEventListener('popstate', onPopState);
+
+		return () => {
+			window.removeEventListener('popstate', onPopState);
+			if (history.state && history.state.playerOpen) {
+				history.back();
+			}
+		};
+	});
 </script>
 
 {#if player.fullScreenOpen && track}

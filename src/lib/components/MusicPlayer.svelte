@@ -336,9 +336,25 @@
 		if (player.currentTrack && player.isPlaying) {
 			player._onPlay(player.currentTrack.ytMusicId);
 		}
+
+		// Keep-alive workaround: If the browser pauses the iframe when minimized, try to force it back to play
+		document.addEventListener('visibilitychange', handleVisibilityChange);
 	});
 
+	function handleVisibilityChange() {
+		// If the page is hidden but our internal state says we should be playing...
+		if (document.hidden && player.isPlaying && ytPlayer && playerReady) {
+			setTimeout(() => {
+				const YT = (window as any).YT;
+				if (ytPlayer.getPlayerState && ytPlayer.getPlayerState() !== YT?.PlayerState?.PLAYING) {
+					try { ytPlayer.playVideo(); } catch { /* noop */ }
+				}
+			}, 150); // Small delay to let the browser's auto-pause trigger first, then override
+		}
+	}
+
 	onDestroy(() => {
+		document.removeEventListener('visibilitychange', handleVisibilityChange);
 		stopProgressPolling();
 		player._onPlay = null;
 		player._onPause = null;

@@ -6,7 +6,6 @@
 	import { favorites } from '$lib/stores/favorites.svelte';
 	import { scrollText } from '$lib/actions';
 	import RankBadge from './RankBadge.svelte';
-	import ListenLinks from './ListenLinks.svelte';
 	import TrackArt from './TrackArt.svelte';
 	import TrackMenu from './TrackMenu.svelte';
 	import Icon from './Icon.svelte';
@@ -66,7 +65,7 @@
 </script>
 
 <div
-	class="bg-surface-alt rounded-lg border border-white/10 overflow-hidden animate-fade-in"
+	class="bg-surface-alt rounded-lg border border-white/10 overflow-hidden animate-fade-in -mx-2 sm:mx-0"
 	style="animation-delay:160ms"
 >
 	<div class="px-4 py-2.5 border-b border-white/5 flex items-center justify-between">
@@ -198,13 +197,7 @@
 						</td>
 
 						<td class="px-1.5 sm:px-2 py-2.5 align-middle">
-							<div class="flex items-center gap-1">
-								<ListenLinks
-									spotifyId={track.spotifyId}
-									ytMusicId={track.ytMusicId}
-									title={track.title}
-									artist={track.artist}
-								/>
+							<div class="flex items-center justify-end gap-1">
 								<TrackMenu {track} />
 							</div>
 						</td>

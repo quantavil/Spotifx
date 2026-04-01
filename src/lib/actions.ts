@@ -49,3 +49,32 @@ export function scrollText(node: HTMLElement) {
 		} 
 	};
 }
+
+export function portal(node: HTMLElement, target: HTMLElement | string = 'body') {
+	let targetNode: HTMLElement | null;
+	
+	function updateTarget(newTarget: HTMLElement | string) {
+		if (typeof newTarget === 'string') {
+			targetNode = document.querySelector(newTarget);
+		} else {
+			targetNode = newTarget;
+		}
+
+		if (targetNode) {
+			targetNode.appendChild(node);
+		}
+	}
+
+	updateTarget(target);
+
+	return {
+		update(newTarget: HTMLElement | string) {
+			updateTarget(newTarget);
+		},
+		destroy() {
+			if (node.parentNode) {
+				node.parentNode.removeChild(node);
+			}
+		}
+	};
+}

@@ -133,4 +133,5 @@ A hobby music charts dashboard displaying weekly Spotify streaming data for mult
 - **Toast notifications:** Singleton `ToastState` with `show(msg, duration)`. Auto-dismisses. Used for shuffle/repeat toggles, queue actions, and favorite changes. Mounted once in layout as `<Toast />`.
 - **Dynamic gradient:** `trackToHue(artist, title)` generates deterministic hue from string hash. Applied as `hsla()` gradient on player bar background and full-screen backdrop. Avoids CORS issues with thumbnail color extraction.
 - **TrackMenu click-outside:** Uses `$effect` to add/remove window click listener only when menu is open. `requestAnimationFrame` delay prevents the opening click from immediately closing the menu.
+- **TrackMenu positioning:** Uses `portal` action to break out of CSS transform stacking contexts and mounts to `document.body` for accurate viewport-fixed positioning. Also includes "Open in YT Music" direct link.
 - **localStorage keys (new):** `spotifx-favorites` — JSON array of spotifyId strings.
