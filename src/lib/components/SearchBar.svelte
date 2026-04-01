@@ -1,5 +1,7 @@
 <!-- src/lib/components/SearchBar.svelte -->
 <script lang="ts">
+	import Icon from './Icon.svelte';
+
 	let { value = $bindable('') }: { value: string } = $props();
 	let inputEl: HTMLInputElement | undefined = $state();
 
@@ -22,16 +24,7 @@
 <svelte:window onkeydown={handleGlobalKey} />
 
 <div class="relative mb-4">
-	<svg
-		class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none"
-		fill="none"
-		stroke="currentColor"
-		viewBox="0 0 24 24"
-		aria-hidden="true"
-	>
-		<circle cx="11" cy="11" r="8" stroke-width="2" />
-		<path d="m21 21-4.35-4.35" stroke-width="2" stroke-linecap="round" />
-	</svg>
+	<Icon name="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" />
 	<input
 		bind:this={inputEl}
 		bind:value
@@ -48,9 +41,7 @@
 			class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white transition-colors cursor-pointer"
 			aria-label="Clear search"
 		>
-			<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-				<path d="M18 6 6 18M6 6l12 12" stroke-width="2" stroke-linecap="round" />
-			</svg>
+			<Icon name="close" />
 		</button>
 	{:else}
 		<kbd

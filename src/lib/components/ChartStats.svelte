@@ -2,6 +2,7 @@
 <script lang="ts">
 	import type { Track } from '$lib/types';
 	import { formatCompact } from '$lib/utils';
+	import StatCard from './StatCard.svelte';
 
 	let { tracks }: { tracks: Track[] } = $props();
 
@@ -24,29 +25,21 @@
 </script>
 
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6 animate-fade-in" style="animation-delay:80ms">
-	<div class="bg-surface-alt rounded-lg border border-white/10 p-4">
-		<p class="text-[11px] text-gray-500 uppercase tracking-wider font-medium mb-1">
-			Total Streams
-		</p>
+	<StatCard label="Total Streams">
 		<p class="text-lg font-bold text-white tabular-nums font-mono">
 			{formatCompact(stats.totalStreams)}
 		</p>
-	</div>
+	</StatCard>
 
-	<div class="bg-surface-alt rounded-lg border border-white/10 p-4">
-		<p class="text-[11px] text-gray-500 uppercase tracking-wider font-medium mb-1">Tracks</p>
+	<StatCard label="Tracks">
 		<p class="text-lg font-bold text-white tabular-nums font-mono">{tracks.length}</p>
-	</div>
+	</StatCard>
 
-	<div class="bg-surface-alt rounded-lg border border-white/10 p-4">
-		<p class="text-[11px] text-gray-500 uppercase tracking-wider font-medium mb-1">New Entries</p>
+	<StatCard label="New Entries">
 		<p class="text-lg font-bold text-rank-new tabular-nums font-mono">{stats.newEntries}</p>
-	</div>
+	</StatCard>
 
-	<div class="bg-surface-alt rounded-lg border border-white/10 p-4">
-		<p class="text-[11px] text-gray-500 uppercase tracking-wider font-medium mb-1">
-			Biggest Mover
-		</p>
+	<StatCard label="Biggest Mover">
 		{#if stats.biggestMover}
 			<p class="text-sm font-bold text-rank-up truncate" title={stats.biggestMover.title}>
 				▲{stats.biggestMove}
@@ -55,5 +48,5 @@
 		{:else}
 			<p class="text-sm text-gray-600">—</p>
 		{/if}
-	</div>
+	</StatCard>
 </div>

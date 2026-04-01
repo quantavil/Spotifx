@@ -27,7 +27,7 @@
 		return sortAsc ? ' ↑' : ' ↓';
 	}
 
-	function parseChange(c: string) {
+	function changeToSortWeight(c: string) {
 		c = c.trim();
 		if (c === 'NEW') return 10000;
 		if (c === 'RE') return 9999;
@@ -48,8 +48,8 @@
 
 		const dir = sortAsc ? 1 : -1;
 		return [...list].sort((a, b) => {
-			const av = sortKey === 'change' ? parseChange(a.change) : (a[sortKey] as number);
-			const bv = sortKey === 'change' ? parseChange(b.change) : (b[sortKey] as number);
+			const av = sortKey === 'change' ? changeToSortWeight(a.change) : (a[sortKey] as number);
+			const bv = sortKey === 'change' ? changeToSortWeight(b.change) : (b[sortKey] as number);
 			return dir * (av - bv);
 		});
 	});
