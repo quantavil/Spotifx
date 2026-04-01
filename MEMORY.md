@@ -116,3 +116,6 @@ A hobby music charts dashboard displaying weekly Spotify streaming data for mult
 - **Data Robustness:** `loadPref` includes `isNaN` guards for numeric values and optional validation for enums (e.g., `repeat` mode) to prevent corruption from tampered `localStorage`.
 - **Firefox Drag Fix:** Queue reordering requires `e.dataTransfer.setData('text/plain', '')` in `ondragstart` or Firefox silently aborts the drag operation.
 - **Queue reorder:** Uses pointer events (not HTML drag-and-drop) for consistent mobile/desktop behavior. Reorder swaps items in the $state array and adjusts currentIndex if affected.
+- **Mobile responsive table:** `Streams` column is `hidden sm:table-cell` to prevent horizontal overflow on <640px. `Peak`/`Days` are `hidden md:table-cell`. `#` and `Listen` columns use `px-2 sm:px-4` responsive padding. `Listen` header is `w-auto sm:w-28`.
+- **Mobile player bar:** Uses 3-zone flex layout: track info (`max-w-[35%] sm:max-w-none`), controls (`flex-1 justify-center`), actions (`flex-1 justify-end`). Progress bar is `h-2 sm:h-1.5` for touch. Seek thumb is always visible on mobile (`opacity-100 sm:opacity-0 sm:group-hover:opacity-100`).
+- **HeroTrack mobile:** Keep streams+icons in compact `flex` row on mobile (not flex-col) — vertical stacking pushes 82.3M out of mobile viewport.

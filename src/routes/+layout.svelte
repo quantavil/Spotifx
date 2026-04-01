@@ -31,7 +31,7 @@
 		</div>
 	</header>
 
-	<main class="flex-1 max-w-6xl mx-auto px-4 py-6 w-full {player.visible ? 'pb-20' : ''}">
+	<main class="flex-1 max-w-6xl mx-auto px-4 py-6 w-full {player.visible ? 'pb-24 sm:pb-20' : ''}">
 		{@render children()}
 	</main>
 

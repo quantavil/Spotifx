@@ -353,7 +353,7 @@
 			<!-- Progress bar -->
 			<div
 				bind:this={progressBarEl}
-				class="h-1.5 bg-white/10 cursor-pointer group relative touch-none"
+				class="h-2 sm:h-1.5 bg-white/10 cursor-pointer group relative touch-none"
 				role="slider"
 				tabindex={0}
 				aria-label="Seek"
@@ -372,37 +372,37 @@
 				></div>
 				<div
 					class="absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-lg
-						   opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+						   opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity pointer-events-none"
 					style="left:calc({player.progress}% - 6px)"
 				></div>
 			</div>
 
 			<!-- Controls -->
-			<div class="flex items-center gap-2 sm:gap-3 px-3 py-2 max-w-6xl mx-auto">
+			<div class="flex items-center gap-1 sm:gap-3 px-2 sm:px-3 py-2 max-w-6xl mx-auto">
 				<!-- Track info -->
-				<div class="flex items-center gap-3 flex-1 min-w-0">
+				<div class="flex items-center gap-2 sm:gap-3 flex-1 min-w-0 max-w-[35%] sm:max-w-none">
 					{#if thumbUrl}
 						<img
 							src={thumbUrl}
 							alt=""
-							class="w-10 h-10 rounded object-cover flex-shrink-0 bg-white/5"
+							class="w-9 h-9 sm:w-10 sm:h-10 rounded object-cover flex-shrink-0 bg-white/5"
 							loading="lazy"
 						/>
 					{:else}
-						<div class="w-10 h-10 rounded bg-white/5 flex-shrink-0"></div>
+						<div class="w-9 h-9 sm:w-10 sm:h-10 rounded bg-white/5 flex-shrink-0"></div>
 					{/if}
 					<div class="min-w-0">
-						<p class="text-sm font-medium text-white truncate">
+						<p class="text-xs sm:text-sm font-medium text-white truncate">
 							{player.currentTrack?.title ?? ''}
 						</p>
-						<p class="text-xs text-gray-400 truncate">
+						<p class="text-[11px] sm:text-xs text-gray-400 truncate">
 							{player.currentTrack?.artist ?? ''}
 						</p>
 					</div>
 				</div>
 
 				<!-- Playback controls -->
-				<div class="flex items-center gap-0.5 sm:gap-1">
+				<div class="flex items-center justify-center gap-0.5 sm:gap-1 flex-1 sm:flex-none">
 					<!-- Shuffle -->
 					<button
 						onclick={() => player.toggleShuffle()}
@@ -495,7 +495,7 @@
 				</div>
 
 				<!-- Mobile: queue toggle + close -->
-				<div class="flex sm:hidden items-center gap-1">
+				<div class="flex sm:hidden items-center justify-end gap-0.5 flex-1">
 					<button
 						onclick={() => player.toggleQueue()}
 						class="p-1.5 transition-colors cursor-pointer

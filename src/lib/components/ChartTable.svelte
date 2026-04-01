@@ -84,7 +84,7 @@
 		<table class="w-full text-sm">
 			<thead>
 				<tr class="border-b border-white/10 text-gray-400 text-[11px] uppercase tracking-wider">
-					<th class="text-left px-4 py-3 w-12">
+					<th class="text-left px-2 sm:px-4 py-3 w-10 sm:w-12">
 						<button
 							onclick={() => toggleSort('rank')}
 							class="hover:text-white transition-colors cursor-pointer"
@@ -101,7 +101,7 @@
 						</button>
 					</th>
 					<th class="text-left px-2 py-3">Title · Artist</th>
-					<th class="text-right px-2 py-3">
+					<th class="text-right px-2 py-3 hidden sm:table-cell">
 						<button
 							onclick={() => toggleSort('streams')}
 							class="inline-block hover:text-white transition-colors cursor-pointer"
@@ -125,7 +125,7 @@
 							Days{sortIndicator('weeks')}
 						</button>
 					</th>
-					<th class="px-4 py-3 w-28 text-right">Listen</th>
+					<th class="px-2 sm:px-4 py-3 w-auto sm:w-28 text-right">Listen</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -136,7 +136,7 @@
 							? '!bg-accent/10 border-accent/20'
 							: ''}"
 					>
-						<td class="px-4 py-3 text-gray-500 font-mono text-xs tabular-nums">
+						<td class="px-2 sm:px-4 py-3 text-gray-500 font-mono text-xs tabular-nums">
 							{track.rank}
 						</td>
 
@@ -168,7 +168,7 @@
 							</div>
 						</td>
 
-						<td class="px-2 py-3 text-right font-mono text-xs tabular-nums text-gray-300">
+						<td class="px-2 py-3 text-right font-mono text-xs tabular-nums text-gray-300 hidden sm:table-cell">
 							{formatCompact(track.streams)}
 						</td>
 
@@ -184,8 +184,8 @@
 							{track.weeks}
 						</td>
 
-						<td class="px-4 py-3">
-							<div class="flex items-center justify-end gap-2">
+						<td class="px-2 sm:px-4 py-3">
+							<div class="flex items-center justify-end gap-1.5 sm:gap-2">
 								<PlayButton {track} allTracks={tracks} />
 								<ListenLinks
 									spotifyId={track.spotifyId}
