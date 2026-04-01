@@ -18,6 +18,13 @@ Spotifx is a static SvelteKit site that provides an interactive dashboard to vie
 - **Runtime & Scripts:** Bun
 - **Hosting:** Cloudflare Pages
 
+## Player Architecture
+Spotifx features a custom, gapless Music Player built on top of the YouTube IFrame API:
+- **Streaming Quality:** YouTube's API does not support native "audio-only" streaming. To save bandwidth, we constrain the player to `1x1` pixels, which signals YouTube's Adaptive Bitrate (ABR) algorithm to stream the lowest available video quality (typically 144p). The audio quality remains standard (usually ~128kbps AAC/Opus).
+- **Hidden Video Location:** The actual YouTube iframe is mounted completely off-screen (`left: -9999px`, `top: -9999px`) inside a `fixed`, `pointer-events-none` container in `MusicPlayer.svelte`. The UI you interact with is 100% custom Svelte/Tailwind.
+- **Handling Ads:** spotifx passes `modestbranding: 1` and `rel: 0`, and ignores annotations (`iv_load_policy: 3`). However, as per YouTube's embedded policies, ads may still occasionally play depending on the copyright holder of the track.
+- **Error Recovery:** Tracks that restrict external embedding (YouTube Error 101/150) are automatically skipped. If the player hits 5 consecutive errors, it pauses safely to prevent infinite skip loops.
+
 ## Getting Started
 
 ### Prerequisites
@@ -41,6 +48,18 @@ Spotifx is a static SvelteKit site that provides an interactive dashboard to vie
    ```bash
    bun run dev
    ```
+
+## Deployment 
+Spotifx is built as a static site using `@sveltejs/adapter-static`. It must be deployed to **Cloudflare Pages** (not Workers) as it requires no server-side rendering.
+
+1. In your Cloudflare Dashboard, go to **Workers & Pages** -> **Create application** -> **Pages** -> **Connect to Git**
+2. Select your repository. 
+3. Configure the build settings:
+   - **Framework preset:** SvelteKit
+   - **Build command:** `bun run build`
+   - **Build output directory:** `build`
+4. Set the `BUN_VERSION` environment variable to ensure Cloudflare uses Bun. 
+5. Deploy. Cloudflare Pages will automatically serve the static files from the `build` directory.
 
 ## Project Structure
 - `scripts/scrape.ts` - The data scraping pipeline.

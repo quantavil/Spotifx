@@ -2,8 +2,10 @@
 <script lang="ts">
 	import type { Track } from '$lib/types';
 	import { formatCompact, highlightText } from '$lib/utils';
+	import { player } from '$lib/stores/player.svelte';
 	import RankBadge from './RankBadge.svelte';
 	import ListenLinks from './ListenLinks.svelte';
+	import PlayButton from './PlayButton.svelte';
 
 	let { tracks, searchQuery }: { tracks: Track[]; searchQuery: string } = $props();
 
@@ -123,13 +125,16 @@
 							Days{sortIndicator('weeks')}
 						</button>
 					</th>
-					<th class="px-4 py-3 w-20 text-right">Listen</th>
+					<th class="px-4 py-3 w-28 text-right">Listen</th>
 				</tr>
 			</thead>
 			<tbody>
 				{#each processed as track (track.spotifyId || `r${track.rank}-${track.title}`)}
 					<tr
-						class="border-b border-white/5 hover:bg-surface-hover transition-colors even:bg-white/[0.015]"
+						class="border-b border-white/5 hover:bg-surface-hover transition-colors even:bg-white/[0.015]
+							{player.isCurrentTrack(track) && player.isPlaying
+							? '!bg-accent/10 border-accent/20'
+							: ''}"
 					>
 						<td class="px-4 py-3 text-gray-500 font-mono text-xs tabular-nums">
 							{track.rank}
@@ -179,13 +184,16 @@
 							{track.weeks}
 						</td>
 
-						<td class="px-4 py-3 text-right">
-							<ListenLinks
-								spotifyId={track.spotifyId}
-								ytMusicId={track.ytMusicId}
-								title={track.title}
-								artist={track.artist}
-							/>
+						<td class="px-4 py-3">
+							<div class="flex items-center justify-end gap-2">
+								<PlayButton {track} allTracks={tracks} />
+								<ListenLinks
+									spotifyId={track.spotifyId}
+									ytMusicId={track.ytMusicId}
+									title={track.title}
+									artist={track.artist}
+								/>
+							</div>
 						</td>
 					</tr>
 				{:else}

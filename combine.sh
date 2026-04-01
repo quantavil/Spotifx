@@ -46,9 +46,9 @@ echo "Found $count files. Starting aggregation into $OUTPUT_FILE..."
 # Iterate through non-ignored files
 # Uses -z and null delimiters to handle special characters or spaces in paths
 git ls-files -co --exclude-standard -z | while IFS= read -r -d '' file; do
-    # Skip the output file, lock files, and this script to avoid including redundant or harmful content
+    # Skip the output file, lock files, images, license, and this script to avoid including redundant or harmful content
     if [ "$file" == "$OUTPUT_FILE" ] || \
-       [[ "$file" == *.lock || "$file" == *-lock* || "$(basename "$file")" == "combine.sh" ]]; then
+       [[ "$file" == *.lock || "$file" == *-lock* || "$file" == *.png || "$(basename "$file")" == LICENSE* || "$(basename "$file")" == "combine.sh" ]]; then
         continue
     fi
     

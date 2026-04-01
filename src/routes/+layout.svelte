@@ -2,6 +2,8 @@
 <script lang="ts">
 	import '../app.css';
 	import CountrySelector from '$lib/components/CountrySelector.svelte';
+	import MusicPlayer from '$lib/components/MusicPlayer.svelte';
+	import { player } from '$lib/stores/player.svelte';
 	import { page } from '$app/state';
 
 	let { children } = $props();
@@ -29,11 +31,11 @@
 		</div>
 	</header>
 
-	<main class="flex-1 max-w-6xl mx-auto px-4 py-6 w-full">
+	<main class="flex-1 max-w-6xl mx-auto px-4 py-6 w-full {player.visible ? 'pb-20' : ''}">
 		{@render children()}
 	</main>
 
-	<footer class="border-t border-white/10 py-6 text-center text-xs text-gray-600">
+	<footer class="border-t border-white/10 py-6 text-center text-xs text-gray-600 {player.visible ? 'mb-16' : ''}">
 		<p>
 			Data from
 			<a
@@ -46,3 +48,5 @@
 		</p>
 	</footer>
 </div>
+
+<MusicPlayer />

@@ -1,7 +1,8 @@
+# MEMORY.md
 # Project: Spotifx
 
 ## Overview
-A hobby music charts dashboard displaying weekly Spotify streaming data for multiple countries (Global, US, GB, IN, etc.). Data is scraped from kworb.net, stored as static JSON, and deployed as a static SvelteKit site to Cloudflare Pages.
+A hobby music charts dashboard displaying weekly Spotify streaming data for multiple countries (Global, US, GB, IN, etc.). Data is scraped from kworb.net, stored as static JSON, and deployed as a static SvelteKit site to Cloudflare Pages. Includes an embedded YouTube Music player for in-app listening.
 
 ## Structure
 .
@@ -23,10 +24,12 @@ A hobby music charts dashboard displaying weekly Spotify streaming data for mult
 │   ├── lib/
 │   │   ├── components/
 │   │   │   ├── ChartStats.svelte    # Quick charts meta stats
-│   │   │   ├── ChartTable.svelte
+│   │   │   ├── ChartTable.svelte    # Sortable chart table with inline PlayButton
 │   │   │   ├── CountrySelector.svelte
-│   │   │   ├── HeroTrack.svelte     # Top track gradient display
-│   │   │   ├── ListenLinks.svelte
+│   │   │   ├── HeroTrack.svelte     # Top track gradient display with PlayButton
+│   │   │   ├── ListenLinks.svelte   # Spotify + YTM outbound links
+│   │   │   ├── MusicPlayer.svelte   # Fixed bottom player bar + hidden YT iframe + queue panel
+│   │   │   ├── PlayButton.svelte    # Inline per-track play/pause trigger
 │   │   │   ├── RankBadge.svelte
 │   │   │   └── SearchBar.svelte     # Search with debouncing
 │   │   ├── config/
@@ -36,16 +39,18 @@ A hobby music charts dashboard displaying weekly Spotify streaming data for mult
 │   │   │   ├── global.json
 │   │   │   ├── in.json
 │   │   │   └── us.json
+│   │   ├── stores/
+│   │   │   └── player.svelte.ts     # Reactive player state (queue, shuffle, repeat, progress, localStorage)
 │   │   ├── types.ts                 # Track + ChartData interfaces
 │   │   └── utils.ts                 # Shared utilities (formatters, highlights)
 │   └── routes/
 │       ├── +error.svelte
-│       ├── +layout.svelte           # Header (CountrySelector) + footer
+│       ├── +layout.svelte           # Header + CountrySelector + MusicPlayer mount + footer
 │       ├── +layout.ts               # prerender: true
 │       ├── +page.svelte             # Redirect stub
 │       ├── +page.ts                 # Redirects to /chart/global
 │       └── chart/[country]/
-│           ├── +page.svelte         # Dashboard showing HeroTrack, ChartStats, and ChartTable
+│           ├── +page.svelte         # Dashboard: HeroTrack, ChartStats, Play All/Shuffle, ChartTable
 │           └── +page.ts             # Loads JSON from $lib/data/{country}.json
 ├── static/
 │   ├── _redirects
@@ -65,13 +70,49 @@ A hobby music charts dashboard displaying weekly Spotify streaming data for mult
 ## Dependencies & Setup
 - Bun runtime required.
 - GitHub Actions for daily scraping and deployment.
+- No extra npm deps for player — YouTube IFrame API loaded via <script> tag on demand.
 
 ## Critical Information
 - Data source is kworb.net.
-- Outbound links only; no native player or Spotify API auth.
+- Player uses YouTube IFrame API (lazy-loaded ~200KB on first play interaction).
+- ytMusicId per track is resolved during scraping via ytmusic-api and cached across countries.
+
+## Player Architecture
+
+### Components
+- **`player.svelte.ts`** — Singleton Svelte 5 runes class (`PlayerState`). Manages queue, currentIndex, shuffle (Fisher-Yates), repeat (off/all/one), progress, volume. Exposes callback slots (`_onPlay`, `_onPause`, `_onResume`, `_onSeek`, `_onVolume`) that MusicPlayer wires to the YouTube API on mount. Persists volume, shuffle, and repeat to localStorage and hydrates on construction.
+- **`MusicPlayer.svelte`** — Mounted once in `+layout.svelte`. Contains a hidden 1×1 YT iframe (positioned off-screen) and a fixed bottom bar with: drag-to-seek progress bar, thumbnail, transport controls, volume slider, queue panel toggle. Handles YouTube API lifecycle (lazy load, create, ready, state change, error). Auto-advances on track end. Consecutive-error guard (max 5) prevents infinite skip loops. Space key toggles play/pause when no input is focused.
+- **`PlayButton.svelte`** — Renders only when track has `ytMusicId`. Shows play icon normally, pause icon when that track is the active playing track. Calls `player.playTrack(track, allTracks)` to set queue context.
+- **Queue Panel** — Toggled from MusicPlayer, slides up from the player bar. Shows upcoming tracks with: click-to-jump, drag-to-reorder (pointer-event based), remove-from-queue. Current track is highlighted.
+
+### YouTube IFrame Workarounds
+| Limitation | Workaround |
+|---|---|
+| Audio-only | Iframe hidden off-screen (1×1 at left:-9999px), full custom UI |
+| Seamless playback | `onStateChange(ENDED)` → auto `loadVideoById` next track |
+| Shuffle | Fisher-Yates on queue array, current track pinned at index 0 |
+| Autoplay | First play is user-gesture; subsequent `loadVideoById` auto-plays in same session |
+| Styleable UI | Custom bottom bar with Tailwind, completely replaces YT controls |
+| Track coverage | Tracks without `ytMusicId` hidden (no play button), error 101/150 auto-skip |
+| Mobile | Pointer events for touch seek, compact controls, volume hidden on small screens |
+
+### Known Limitations
+- iOS pauses audio when tab backgrounds (browser limitation, no workaround without native app).
+- YouTube ads still play on some videos.
+- Tracks with embedding restrictions (YT error 101/150) auto-skip.
+- Background/lock-screen playback unreliable on mobile browsers.
+
+### localStorage Keys
+- `spotifx-volume` — number 0–100
+- `spotifx-shuffle` — `"true"` | `"false"`
+- `spotifx-repeat` — `"off"` | `"all"` | `"one"`
 
 ## Insights
 - **Triple redundant redirect bug:** Previous versions had redirect logic spanning `+page.svelte` (client-side), `+page.ts` (SSR), and `_redirects` (build-time). Cleaned up by stripping out the onMount hook and leaving just server/static redirects.
 - **Kworb schema mapping:** The `weeks` data point represents "Days" the track has been on chart. The label was updated from "Wks" to "Days" to avoid user confusion.
 - **Animation and rendering considerations:** Using Svelte's `animate:flip` paired with transition states on tables causes jank. Raw CSS transitions over component states are preferred for stable performance. Relative time formatting (`timeAgo`) caused hydration issues, so absolute time rendering has been adopted.
 - **Mobile responsiveness and format alignment:** Removed `flex-col` stacking in mobile `HeroTrack.svelte` and replaced it with a `flex-row` setup grouping the Rank Badge and Track info to maximize vertical efficiency. Also standardized on `formatCompact()` for all generic stream displays across `HeroTrack` and `ChartTable` for visual consistency.
+- **Player SSR safety:** PlayerState class uses $state/$derived runes and guards browser interactions. Uses `typeof window === 'undefined'` for SSR guards to avoid issues in Node 22+ (which exposes `localStorage` experimentally).
+- **Data Robustness:** `loadPref` includes `isNaN` guards for numeric values and optional validation for enums (e.g., `repeat` mode) to prevent corruption from tampered `localStorage`.
+- **Firefox Drag Fix:** Queue reordering requires `e.dataTransfer.setData('text/plain', '')` in `ondragstart` or Firefox silently aborts the drag operation.
+- **Queue reorder:** Uses pointer events (not HTML drag-and-drop) for consistent mobile/desktop behavior. Reorder swaps items in the $state array and adjusts currentIndex if affected.

@@ -4,8 +4,9 @@
 	import { formatCompact } from '$lib/utils';
 	import ListenLinks from './ListenLinks.svelte';
 	import RankBadge from './RankBadge.svelte';
+	import PlayButton from './PlayButton.svelte';
 
-	let { track }: { track: Track } = $props();
+	let { track, tracks }: { track: Track; tracks: Track[] } = $props();
 </script>
 
 <div
@@ -49,12 +50,15 @@
 				</p>
 				<p class="text-[11px] text-gray-500">streams this week</p>
 			</div>
-			<ListenLinks
-				spotifyId={track.spotifyId}
-				ytMusicId={track.ytMusicId}
-				title={track.title}
-				artist={track.artist}
-			/>
+			<div class="flex items-center gap-2">
+				<PlayButton {track} allTracks={tracks} />
+				<ListenLinks
+					spotifyId={track.spotifyId}
+					ytMusicId={track.ytMusicId}
+					title={track.title}
+					artist={track.artist}
+				/>
+			</div>
 		</div>
 	</div>
 </div>

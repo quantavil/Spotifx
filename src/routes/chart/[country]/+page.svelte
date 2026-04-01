@@ -1,6 +1,7 @@
 <!-- src/routes/chart/[country]/+page.svelte -->
 <script lang="ts">
 	import type { PageData } from './$types';
+	import { player } from '$lib/stores/player.svelte';
 	import ChartTable from '$lib/components/ChartTable.svelte';
 	import SearchBar from '$lib/components/SearchBar.svelte';
 	import HeroTrack from '$lib/components/HeroTrack.svelte';
@@ -11,6 +12,7 @@
 	let copied = $state(false);
 
 	const heroTrack = $derived(data.chart.tracks[0] ?? null);
+	const playableCount = $derived(data.chart.tracks.filter((t) => t.ytMusicId).length);
 
 	const formattedDate = $derived(
 		new Date(data.chart.lastUpdated).toLocaleDateString('en-US', {
@@ -84,12 +86,42 @@
 
 	<!-- Hero #1 track -->
 	{#if heroTrack}
-		<HeroTrack track={heroTrack} />
+		<HeroTrack track={heroTrack} tracks={data.chart.tracks} />
 	{/if}
 
 	<!-- Stats grid -->
 	{#if data.chart.tracks.length > 0}
 		<ChartStats tracks={data.chart.tracks} />
+	{/if}
+
+	<!-- Play All / Shuffle -->
+	{#if playableCount > 0}
+		<div class="flex items-center gap-3 mb-4 animate-fade-in" style="animation-delay:120ms">
+			<button
+				onclick={() => player.playAll(data.chart.tracks)}
+				class="flex items-center gap-2 px-4 py-2 rounded-lg bg-accent text-black text-sm font-semibold
+					   hover:opacity-90 active:scale-95 transition-all cursor-pointer"
+			>
+				<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+					<path d="M8 5v14l11-7z" />
+				</svg>
+				Play All
+			</button>
+			<button
+				onclick={() => player.playAll(data.chart.tracks, true)}
+				class="flex items-center gap-2 px-4 py-2 rounded-lg bg-surface-alt border border-white/10
+					   text-gray-300 text-sm hover:text-white hover:border-white/20
+					   active:scale-95 transition-all cursor-pointer"
+			>
+				<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+					<path
+						d="M10.59 9.17L5.41 4 4 5.41l5.17 5.17 1.42-1.41zM14.5 4l2.04 2.04L4 18.59 5.41 20 17.96 7.46 20 9.5V4h-5.5zm.33 9.41l-1.41 1.41 3.13 3.13L14.5 20H20v-5.5l-2.04 2.04-3.13-3.13z"
+					/>
+				</svg>
+				Shuffle
+			</button>
+			<span class="text-xs text-gray-600">{playableCount} playable</span>
+		</div>
 	{/if}
 
 	<!-- Search + Table -->

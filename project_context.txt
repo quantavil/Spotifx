@@ -1,0 +1,1688 @@
+================================================================================
+FILE PATH: .github/workflows/scrape.yml
+================================================================================
+name: Scrape Charts
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run scraper
+        run: bun run scrape
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet src/lib/data/ && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit & push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/lib/data/
+          git commit -m "chore: update chart data $(date -u +%Y-%m-%d)"
+          git push
+
+
+================================================================================
+FILE PATH: .gitignore
+================================================================================
+node_modules
+.svelte-kit
+build
+.env
+.DS_Store
+
+
+================================================================================
+FILE PATH: MEMORY.md
+================================================================================
+# Project: Spotifx
+
+## Overview
+A hobby music charts dashboard displaying weekly Spotify streaming data for multiple countries (Global, US, GB, IN, etc.). Data is scraped from kworb.net, stored as static JSON, and deployed as a static SvelteKit site to Cloudflare Pages.
+
+## Structure
+.
+├── .gitignore
+├── LICENSE
+├── MEMORY.md
+├── README.md
+├── bun.lock
+├── combine.sh
+├── package.json
+├── plan.txt               # Current UI/UX plan and audit
+├── scripts/
+│   ├── scrape.ts          # Bun scraping script (run with: bun run scrape)
+│   └── tsconfig.json      # Bun-targeted config for scripts/ only
+├── src/
+│   ├── app.css            # TailwindCSS v4 @theme tokens + dark theme
+│   ├── app.d.ts
+│   ├── app.html
+│   ├── lib/
+│   │   ├── components/
+│   │   │   ├── ChartStats.svelte    # Quick charts meta stats
+│   │   │   ├── ChartTable.svelte
+│   │   │   ├── CountrySelector.svelte
+│   │   │   ├── HeroTrack.svelte     # Top track gradient display
+│   │   │   ├── ListenLinks.svelte
+│   │   │   ├── RankBadge.svelte
+│   │   │   └── SearchBar.svelte     # Search with debouncing
+│   │   ├── config/
+│   │   │   └── countries.ts         # Country code/name/slug definitions
+│   │   ├── data/                    # Scraped JSON (global/us/gb/in)
+│   │   │   ├── gb.json
+│   │   │   ├── global.json
+│   │   │   ├── in.json
+│   │   │   └── us.json
+│   │   ├── types.ts                 # Track + ChartData interfaces
+│   │   └── utils.ts                 # Shared utilities (formatters, highlights)
+│   └── routes/
+│       ├── +error.svelte
+│       ├── +layout.svelte           # Header (CountrySelector) + footer
+│       ├── +layout.ts               # prerender: true
+│       ├── +page.svelte             # Redirect stub
+│       ├── +page.ts                 # Redirects to /chart/global
+│       └── chart/[country]/
+│           ├── +page.svelte         # Dashboard showing HeroTrack, ChartStats, and ChartTable
+│           └── +page.ts             # Loads JSON from $lib/data/{country}.json
+├── static/
+│   ├── _redirects
+│   └── favicon.svg
+├── svelte.config.js
+├── test-kworb.js
+├── tsconfig.json          # SvelteKit root config — excludes scripts/
+└── vite.config.ts
+
+## Conventions
+- SvelteKit 2 with Svelte 5 (Runes syntax).
+- TailwindCSS v4 — no tailwind.config.js, uses CSS-based @theme in app.css.
+- Bun for runtime and package management.
+- Static adapter for deployment.
+- `bun run scrape` — runs scripts/scrape.ts via Bun directly.
+
+## Dependencies & Setup
+- Bun runtime required.
+- GitHub Actions for daily scraping and deployment.
+
+## Critical Information
+- Data source is kworb.net.
+- Outbound links only; no native player or Spotify API auth.
+
+## Insights
+- **Triple redundant redirect bug:** Previous versions had redirect logic spanning `+page.svelte` (client-side), `+page.ts` (SSR), and `_redirects` (build-time). Cleaned up by stripping out the onMount hook and leaving just server/static redirects.
+- **Kworb schema mapping:** The `weeks` data point represents "Days" the track has been on chart. The label was updated from "Wks" to "Days" to avoid user confusion.
+- **Animation and rendering considerations:** Using Svelte's `animate:flip` paired with transition states on tables causes jank. Raw CSS transitions over component states are preferred for stable performance. Relative time formatting (`timeAgo`) caused hydration issues, so absolute time rendering has been adopted.
+- **Mobile responsiveness and format alignment:** Removed `flex-col` stacking in mobile `HeroTrack.svelte` and replaced it with a `flex-row` setup grouping the Rank Badge and Track info to maximize vertical efficiency. Also standardized on `formatCompact()` for all generic stream displays across `HeroTrack` and `ChartTable` for visual consistency.
+
+
+
+================================================================================
+FILE PATH: README.md
+================================================================================
+# Spotifx
+
+A hobby music charts dashboard displaying weekly Spotify streaming data across multiple regions (Global, US, GB, IN, etc.). 
+
+## Overview
+Spotifx is a static SvelteKit site that provides an interactive dashboard to view Spotify charts. The data is scraped from [kworb.net](https://kworb.net/), processed into static JSON files via a Bun script, and deployed to Cloudflare Pages.
+
+## Features
+- **Global & Regional Charts:** View top streamed tracks for various countries.
+- **Fast & Static:** Fully pre-rendered static site using SvelteKit 2 and Svelte 5.
+- **Deep Integrations & UX:** Includes highlight tracking, dynamic stats bar (total streams, entries, biggest movers), search debouncing, keyboard shortcuts, and a responsive Hero track display with compact stream formatting.
+- **Modern Styling:** Built with TailwindCSS v4 natively using `@theme`.
+- **Automated Scraping:** Daily data updates via GitHub Actions.
+
+## Tech Stack
+- **Framework:** SvelteKit (Svelte 5 Runes)
+- **Styling:** TailwindCSS v4
+- **Runtime & Scripts:** Bun
+- **Hosting:** Cloudflare Pages
+
+## Getting Started
+
+### Prerequisites
+- [Bun](https://bun.sh/) is required to run the scripts and install dependencies.
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd Spotifx
+   ```
+2. Install dependencies:
+   ```bash
+   bun install
+   ```
+3. Scrape the latest data (populates `src/lib/data/`):
+   ```bash
+   bun run scrape
+   ```
+4. Start the development server:
+   ```bash
+   bun run dev
+   ```
+
+## Project Structure
+- `scripts/scrape.ts` - The data scraping pipeline.
+- `src/lib/data/` - Locally stored static JSON chart data.
+- `src/routes/` - SvelteKit frontend implementation.
+- `src/lib/components/` - Svelte components (ChartTable, CountrySelector, etc.).
+
+## License
+Refer to the [LICENSE](./LICENSE) file for details.
+
+
+
+================================================================================
+FILE PATH: scripts/scrape.ts
+================================================================================
+// scripts/scrape.ts
+import { parse, type HTMLElement } from 'node-html-parser';
+import { writeFileSync, mkdirSync } from 'fs';
+import { join } from 'path';
+import { countries } from '../src/lib/config/countries';
+
+// ── YTMusic Setup (handle CJS/ESM mismatch) ──
+
+let YTMusic: any;
+try {
+	const mod = await import('ytmusic-api');
+	YTMusic = (mod as any).default?.default || (mod as any).default || mod;
+} catch {
+	YTMusic = null;
+}
+
+// ── Types ──
+
+interface Track {
+	rank: number;
+	change: string;
+	title: string;
+	artist: string;
+	spotifyId: string;
+	ytMusicId: string;
+	streams: number;
+	peak: number;
+	weeks: number;
+}
+
+// ── Helpers ──
+
+const randomDelay = (min: number, max: number) =>
+	new Promise((r) => setTimeout(r, Math.floor(Math.random() * (max - min + 1)) + min));
+
+async function withRetry<T>(op: () => Promise<T>, retries = 3, baseDelay = 1000): Promise<T> {
+	for (let i = 0; i < retries; i++) {
+		try {
+			return await op();
+		} catch (err) {
+			if (i === retries - 1) throw err;
+			console.log(`      ⚠ Retry ${i + 1}/${retries} failed, waiting...`);
+			await new Promise((r) => setTimeout(r, baseDelay * Math.pow(2, i)));
+		}
+	}
+	throw new Error('Unreachable');
+}
+
+const BASE_URL = 'https://kworb.net/spotify/country';
+const DATA_DIR = join(import.meta.dir, '..', 'src', 'lib', 'data');
+
+/** Cache YTMusic lookups across countries to avoid duplicate searches */
+const ytCache = new Map<string, string>();
+
+function ytCacheKey(artist: string, title: string): string {
+	return `${artist.toLowerCase().trim()}|||${title.toLowerCase().trim()}`;
+}
+
+async function searchYTMusicId(
+	ytmusic: any,
+	artist: string,
+	title: string
+): Promise<string> {
+	if (!ytmusic) return '';
+
+	const key = ytCacheKey(artist, title);
+	if (ytCache.has(key)) return ytCache.get(key)!;
+
+	try {
+		const query = `${artist} ${title}`;
+		const results = (await withRetry(() => ytmusic.searchSongs(query), 3, 500)) as any[];
+
+		// Handle different response shapes across versions
+		const first = results?.[0];
+		const videoId = first?.videoId || first?.id || '';
+
+		ytCache.set(key, videoId);
+
+		if (!videoId) {
+			console.log(`      ⚠ No YTM result for: ${query}`);
+		}
+
+		return videoId;
+	} catch (err) {
+		console.log(`      ⚠ YTM search failed entirely for "${artist} - ${title}":`, (err as Error).message);
+		ytCache.set(key, '');
+		return '';
+	}
+}
+
+function findColIndex(headers: string[], ...candidates: string[]): number {
+	for (const c of candidates) {
+		const idx = headers.findIndex((h) => h.toLowerCase().includes(c.toLowerCase()));
+		if (idx !== -1) return idx;
+	}
+	return -1;
+}
+
+function findExactColIndex(headers: string[], exact: string): number {
+	return headers.findIndex((h) => h.toLowerCase().trim() === exact.toLowerCase());
+}
+
+function parseChange(raw: string): string {
+	const trimmed = raw.trim();
+	if (!trimmed || trimmed === '0' || trimmed === '--' || trimmed === '—') return '0';
+	if (trimmed.toUpperCase() === 'NEW') return 'NEW';
+	if (trimmed.toUpperCase() === 'RE') return 'RE';
+	const num = parseInt(trimmed);
+	if (isNaN(num)) return trimmed;
+	return num > 0 ? `+${num}` : `${num}`;
+}
+
+function parseNumber(raw: string): number {
+	return parseInt(raw.replace(/,/g, '').trim()) || 0;
+}
+
+function extractWeekDate(root: HTMLElement): string {
+	const sources = [
+		root.querySelector('title')?.text || '',
+		root.querySelector('h1')?.text || '',
+		root.querySelector('h2')?.text || '',
+		root.querySelector('h3')?.text || ''
+	];
+	for (const s of sources) {
+		const m = s.match(/(\d{4}-\d{2}-\d{2})/);
+		if (m) return m[1];
+		const m2 = s.match(/(\w{3,9})\s+(\d{1,2}),?\s+(\d{4})/);
+		if (m2) {
+			const d = new Date(`${m2[1]} ${m2[2]}, ${m2[3]}`);
+			if (!isNaN(d.getTime())) return d.toISOString().split('T')[0];
+		}
+	}
+	return new Date().toISOString().split('T')[0];
+}
+
+// ── Init YTMusic ──
+
+async function initYTMusic(): Promise<any | null> {
+	if (!YTMusic) {
+		console.warn('⚠️  ytmusic-api not available (import failed)\n');
+		return null;
+	}
+
+	try {
+		console.log('🎵 Initializing YouTube Music API…');
+		console.log('   Constructor type:', typeof YTMusic, YTMusic?.name || '(anonymous)');
+
+		const yt = new YTMusic();
+		await yt.initialize();
+
+		// Verify it actually works with a test search
+		const test = await yt.searchSongs('test');
+		if (!Array.isArray(test)) {
+			console.warn('⚠️  YTMusic searchSongs returned non-array — skipping\n');
+			return null;
+		}
+
+		console.log(`✅ YouTube Music API ready (test search returned ${test.length} results)\n`);
+		return yt;
+	} catch (err) {
+		console.warn('⚠️  YouTube Music API init failed — scraping without YTM links');
+		console.warn('   Error:', (err as Error).message, '\n');
+		return null;
+	}
+}
+
+// ── Scrape one country ──
+
+async function scrapeCountry(
+	country: { code: string; name: string; slug: string },
+	ytmusic: any | null
+): Promise<void> {
+	const url = `${BASE_URL}/${country.slug}.html`;
+	console.log(`⏳ ${country.name} → ${url}`);
+
+	const res = await withRetry(
+		() =>
+			fetch(url, {
+				headers: { 'User-Agent': 'Mozilla/5.0 (compatible; MusicChartsDash/1.0)' }
+			}).then((r) => {
+				if (!r.ok) throw new Error(`HTTP ${r.status}`);
+				return r;
+			}),
+		3,
+		2000
+	);
+
+	const html = await res.text();
+	const root = parse(html);
+	const table = root.querySelector('table');
+	if (!table) throw new Error('No table found');
+
+	const allRows = table.querySelectorAll('tr');
+	const headerCells = allRows[0]?.querySelectorAll('th, td') || [];
+	const headers = headerCells.map((c) => c.text.trim());
+
+	const streamsExact = findExactColIndex(headers, 'streams');
+
+	const COL = {
+		pos: findColIndex(headers, 'pos', '#'),
+		change: findColIndex(headers, 'p+', '+/-', 'change'),
+		track: findColIndex(headers, 'artist', 'title', 'track'),
+		days: findColIndex(headers, 'days', 'wks', 'weeks'),
+		peak: findColIndex(headers, 'pk', 'peak'),
+		streams: streamsExact !== -1 ? streamsExact : findColIndex(headers, 'streams')
+	};
+
+	if (COL.pos === -1) COL.pos = 0;
+	if (COL.change === -1) COL.change = 1;
+	if (COL.track === -1) COL.track = 2;
+	if (COL.days === -1) COL.days = 3;
+	if (COL.peak === -1) COL.peak = 4;
+	if (COL.streams === -1) COL.streams = 6;
+
+	const weekDate = extractWeekDate(root);
+	const tracks: Track[] = [];
+
+	for (let i = 1; i < allRows.length && tracks.length < 200; i++) {
+		const cells = allRows[i].querySelectorAll('td');
+		if (cells.length < 5) continue;
+
+		const rank = parseInt(cells[COL.pos]?.text.trim());
+		if (isNaN(rank)) continue;
+
+		const change = parseChange(cells[COL.change]?.text || '');
+
+		const trackCell = cells[COL.track];
+
+		let spotifyId = '';
+		let artist = '';
+		let title = '';
+
+		if (trackCell) {
+			const trackText = trackCell.text.trim();
+			const sepIdx = trackText.indexOf(' - ');
+			if (sepIdx !== -1) {
+				artist = trackText.substring(0, sepIdx).trim();
+				title = trackText.substring(sepIdx + 3).trim();
+			} else {
+				artist = '';
+				title = trackText;
+			}
+
+			const trackLinks = trackCell.querySelectorAll('a');
+			for (const a of trackLinks) {
+				const href = a.getAttribute('href') || '';
+				const m = href.match(/\/track\/(.+?)\.html/);
+				if (m) {
+					spotifyId = m[1];
+					break;
+				}
+			}
+		}
+
+		const streams = parseNumber(cells[COL.streams]?.text || '0');
+		const peak = parseNumber(cells[COL.peak]?.text || '0');
+		const weeks = parseNumber(cells[COL.days]?.text || '0');
+
+		tracks.push({ rank, change, title, artist, spotifyId, ytMusicId: '', streams, peak, weeks });
+	}
+
+	// ── Enrich with YouTube Music IDs ──
+	if (ytmusic) {
+		console.log(`   🎵 Resolving YTMusic IDs for ${tracks.length} tracks…`);
+		let resolved = 0;
+		let cached = 0;
+		for (let i = 0; i < tracks.length; i++) {
+			const track = tracks[i];
+			if (!track.artist || !track.title) continue;
+
+			const key = ytCacheKey(track.artist, track.title);
+			const wasCached = ytCache.has(key);
+
+			track.ytMusicId = await searchYTMusicId(ytmusic, track.artist, track.title);
+
+			if (track.ytMusicId) resolved++;
+			if (wasCached) cached++;
+
+			// Progress every 25 tracks
+			if ((i + 1) % 25 === 0) {
+				console.log(`      Progress: ${i + 1}/${tracks.length} (${resolved} resolved, ${cached} from cache)`);
+			}
+
+			// Rate limit only for non-cached lookups
+			if (!wasCached) {
+				await randomDelay(300, 800);
+			}
+		}
+		console.log(`   ✅ YTMusic: ${resolved}/${tracks.length} resolved (${cached} cached, ${ytCache.size} total unique)`);
+	} else {
+		console.log('   ⏭ Skipping YTMusic enrichment (API unavailable)');
+	}
+
+	const data = {
+		country: country.code,
+		countryName: country.name,
+		weekDate,
+		lastUpdated: new Date().toISOString(),
+		tracks
+	};
+
+	const outPath = join(DATA_DIR, `${country.code}.json`);
+	writeFileSync(outPath, JSON.stringify(data, null, 2));
+	console.log(`   ✅ ${tracks.length} tracks → ${outPath}\n`);
+}
+
+// ── Main ──
+
+async function main() {
+	mkdirSync(DATA_DIR, { recursive: true });
+
+	const ytmusic = await initYTMusic();
+
+	for (const country of countries) {
+		try {
+			await scrapeCountry(country, ytmusic);
+		} catch (err) {
+			console.error(`   ❌ Failed to scrape ${country.code} after retries:`, (err as Error).message);
+		}
+		await randomDelay(1500, 3000);
+	}
+
+	console.log(`\n🎉 Done! (${ytCache.size} unique YTMusic lookups cached)`);
+}
+
+main();
+
+
+================================================================================
+FILE PATH: scripts/test-ytmusic.ts
+================================================================================
+// scripts/test-ytmusic.ts
+// Run: bun run scripts/test-ytmusic.ts
+
+import YTMusicModule from 'ytmusic-api';
+
+// Handle CJS/ESM default export mismatch
+const YTMusic = (YTMusicModule as any).default || YTMusicModule;
+
+console.log('Import type:', typeof YTMusic);
+console.log('Constructor name:', YTMusic?.name || 'unknown');
+
+try {
+	const yt = new YTMusic();
+	console.log('✅ Constructor works');
+
+	await yt.initialize();
+	console.log('✅ Initialized');
+
+	const results = await yt.searchSongs('Kendrick Lamar Not Like Us');
+	console.log(`✅ Search returned ${results.length} results`);
+
+	if (results[0]) {
+		console.log('   First result:', {
+			videoId: results[0].videoId,
+			name: results[0].name,
+			artist: results[0].artist?.name || results[0].artists?.[0]?.name || 'unknown'
+		});
+	} else {
+		console.log('⚠️  No results returned');
+	}
+} catch (err) {
+	console.error('❌ Failed:', err);
+}
+
+
+================================================================================
+FILE PATH: src/app.css
+================================================================================
+/* src/app.css */
+@import 'tailwindcss';
+
+@theme {
+	--color-surface: #121212;
+	--color-surface-alt: #181818;
+	--color-surface-hover: #282828;
+	--color-accent: #1db954;
+	--color-accent-red: #ff0000;
+	--color-rank-up: #1db954;
+	--color-rank-down: #e74c3c;
+	--color-rank-new: #f1c40f;
+}
+
+@utility scrollbar-none {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+@utility animate-fade-in {
+	animation: fade-in 0.4s ease-out both;
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+		transform: translateY(6px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+html {
+	color-scheme: dark;
+}
+
+body {
+	background-color: var(--color-surface);
+	color: #e5e5e5;
+	font-family:
+		-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+::-webkit-scrollbar-track {
+	background: var(--color-surface);
+}
+::-webkit-scrollbar-thumb {
+	background: #333;
+	border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #444;
+}
+
+/* Smooth page transitions */
+main {
+	view-transition-name: main-content;
+}
+
+
+================================================================================
+FILE PATH: src/app.d.ts
+================================================================================
+// See https://kit.svelte.dev/docs/types#app
+// for information about these interfaces
+declare global {
+	namespace App {
+		// interface Error {}
+		// interface Locals {}
+		// interface PageData {}
+		// interface PageState {}
+		// interface Platform {}
+	}
+}
+
+export {};
+
+
+
+================================================================================
+FILE PATH: src/app.html
+================================================================================
+<!-- src/app.html -->
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.svg" />
+		<link rel="apple-touch-icon" href="%sveltekit.assets%/apple-touch-icon.png" />
+		<link rel="manifest" href="%sveltekit.assets%/manifest.json" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#1db954" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="apple-mobile-web-app-title" content="Spotifx" />
+		<meta name="description" content="Weekly Spotify streaming charts for multiple countries" />
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>
+
+
+================================================================================
+FILE PATH: src/lib/components/ChartStats.svelte
+================================================================================
+<!-- src/lib/components/ChartStats.svelte -->
+<script lang="ts">
+	import type { Track } from '$lib/types';
+	import { formatCompact } from '$lib/utils';
+
+	let { tracks }: { tracks: Track[] } = $props();
+
+	const stats = $derived.by(() => {
+		const totalStreams = tracks.reduce((sum, t) => sum + t.streams, 0);
+		const newEntries = tracks.filter((t) => t.change === 'NEW' || t.change === 'RE').length;
+
+		let biggestMover: Track | null = null;
+		let biggestMove = 0;
+		for (const t of tracks) {
+			const num = parseInt(t.change);
+			if (!isNaN(num) && num > biggestMove) {
+				biggestMove = num;
+				biggestMover = t;
+			}
+		}
+
+		return { totalStreams, newEntries, biggestMover, biggestMove };
+	});
+</script>
+
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6 animate-fade-in" style="animation-delay:80ms">
+	<div class="bg-surface-alt rounded-lg border border-white/10 p-4">
+		<p class="text-[11px] text-gray-500 uppercase tracking-wider font-medium mb-1">
+			Total Streams
+		</p>
+		<p class="text-lg font-bold text-white tabular-nums font-mono">
+			{formatCompact(stats.totalStreams)}
+		</p>
+	</div>
+
+	<div class="bg-surface-alt rounded-lg border border-white/10 p-4">
+		<p class="text-[11px] text-gray-500 uppercase tracking-wider font-medium mb-1">Tracks</p>
+		<p class="text-lg font-bold text-white tabular-nums font-mono">{tracks.length}</p>
+	</div>
+
+	<div class="bg-surface-alt rounded-lg border border-white/10 p-4">
+		<p class="text-[11px] text-gray-500 uppercase tracking-wider font-medium mb-1">New Entries</p>
+		<p class="text-lg font-bold text-rank-new tabular-nums font-mono">{stats.newEntries}</p>
+	</div>
+
+	<div class="bg-surface-alt rounded-lg border border-white/10 p-4">
+		<p class="text-[11px] text-gray-500 uppercase tracking-wider font-medium mb-1">
+			Biggest Mover
+		</p>
+		{#if stats.biggestMover}
+			<p class="text-sm font-bold text-rank-up truncate" title={stats.biggestMover.title}>
+				▲{stats.biggestMove}
+				<span class="font-normal text-gray-300">{stats.biggestMover.title}</span>
+			</p>
+		{:else}
+			<p class="text-sm text-gray-600">—</p>
+		{/if}
+	</div>
+</div>
+
+
+================================================================================
+FILE PATH: src/lib/components/ChartTable.svelte
+================================================================================
+<!-- src/lib/components/ChartTable.svelte -->
+<script lang="ts">
+	import type { Track } from '$lib/types';
+	import { formatCompact, highlightText } from '$lib/utils';
+	import RankBadge from './RankBadge.svelte';
+	import ListenLinks from './ListenLinks.svelte';
+
+	let { tracks, searchQuery }: { tracks: Track[]; searchQuery: string } = $props();
+
+	type SortKey = 'rank' | 'change' | 'streams' | 'peak' | 'weeks';
+	let sortKey: SortKey = $state('rank');
+	let sortAsc = $state(true);
+
+	function toggleSort(key: SortKey) {
+		if (sortKey === key) {
+			sortAsc = !sortAsc;
+		} else {
+			sortKey = key;
+			sortAsc = key === 'rank' || key === 'peak';
+		}
+	}
+
+	function sortIndicator(key: SortKey): string {
+		if (sortKey !== key) return '';
+		return sortAsc ? ' ↑' : ' ↓';
+	}
+
+	function parseChange(c: string) {
+		c = c.trim();
+		if (c === 'NEW') return 10000;
+		if (c === 'RE') return 9999;
+		if (c === '0' || c === '' || c === '--') return 0;
+		const num = parseInt(c);
+		return isNaN(num) ? 0 : num;
+	}
+
+	const processed = $derived.by(() => {
+		const q = searchQuery.toLowerCase().trim();
+		let list = tracks;
+
+		if (q) {
+			list = list.filter(
+				(t) => t.title.toLowerCase().includes(q) || t.artist.toLowerCase().includes(q)
+			);
+		}
+
+		const dir = sortAsc ? 1 : -1;
+		return [...list].sort((a, b) => {
+			const av = sortKey === 'change' ? parseChange(a.change) : (a[sortKey] as number);
+			const bv = sortKey === 'change' ? parseChange(b.change) : (b[sortKey] as number);
+			return dir * (av - bv);
+		});
+	});
+
+	const query = $derived(searchQuery.trim());
+</script>
+
+<div
+	class="bg-surface-alt rounded-lg border border-white/10 overflow-hidden animate-fade-in"
+	style="animation-delay:160ms"
+>
+	<div class="px-4 py-2.5 border-b border-white/5 flex items-center justify-between">
+		<span class="text-xs text-gray-500">
+			{processed.length}
+			{processed.length !== tracks.length ? `of ${tracks.length}` : ''}
+			tracks
+		</span>
+		{#if sortKey !== 'rank' || !sortAsc}
+			<button
+				onclick={() => {
+					sortKey = 'rank';
+					sortAsc = true;
+				}}
+				class="text-[11px] text-gray-600 hover:text-gray-300 transition-colors cursor-pointer"
+			>
+				Reset sort
+			</button>
+		{/if}
+	</div>
+
+	<div class="overflow-x-auto">
+		<table class="w-full text-sm">
+			<thead>
+				<tr class="border-b border-white/10 text-gray-400 text-[11px] uppercase tracking-wider">
+					<th class="text-left px-4 py-3 w-12">
+						<button
+							onclick={() => toggleSort('rank')}
+							class="hover:text-white transition-colors cursor-pointer"
+						>
+							#{sortIndicator('rank')}
+						</button>
+					</th>
+					<th class="text-left px-2 py-3 w-12">
+						<button
+							onclick={() => toggleSort('change')}
+							class="hover:text-white transition-colors cursor-pointer"
+						>
+							Δ{sortIndicator('change')}
+						</button>
+					</th>
+					<th class="text-left px-2 py-3">Title · Artist</th>
+					<th class="text-right px-2 py-3">
+						<button
+							onclick={() => toggleSort('streams')}
+							class="inline-block hover:text-white transition-colors cursor-pointer"
+						>
+							Streams{sortIndicator('streams')}
+						</button>
+					</th>
+					<th class="text-right px-2 py-3 hidden md:table-cell">
+						<button
+							onclick={() => toggleSort('peak')}
+							class="inline-block hover:text-white transition-colors cursor-pointer"
+						>
+							Peak{sortIndicator('peak')}
+						</button>
+					</th>
+					<th class="text-right px-2 py-3 hidden md:table-cell">
+						<button
+							onclick={() => toggleSort('weeks')}
+							class="inline-block hover:text-white transition-colors cursor-pointer"
+						>
+							Days{sortIndicator('weeks')}
+						</button>
+					</th>
+					<th class="px-4 py-3 w-20 text-right">Listen</th>
+				</tr>
+			</thead>
+			<tbody>
+				{#each processed as track (track.spotifyId || `r${track.rank}-${track.title}`)}
+					<tr
+						class="border-b border-white/5 hover:bg-surface-hover transition-colors even:bg-white/[0.015]"
+					>
+						<td class="px-4 py-3 text-gray-500 font-mono text-xs tabular-nums">
+							{track.rank}
+						</td>
+
+						<td class="px-2 py-3">
+							<RankBadge change={track.change} />
+						</td>
+
+						<td class="px-2 py-3 max-w-xs">
+							<div class="truncate">
+								<span class="font-medium text-white">
+									{#each highlightText(track.title, query) as part}
+										{#if part.match}
+											<mark class="bg-accent/25 text-white rounded-sm px-0.5"
+												>{part.text}</mark
+											>
+										{:else}{part.text}{/if}
+									{/each}
+								</span>
+								<span class="text-gray-600 mx-1">·</span>
+								<span class="text-xs text-gray-400">
+									{#each highlightText(track.artist, query) as part}
+										{#if part.match}
+											<mark class="bg-accent/25 text-white rounded-sm px-0.5"
+												>{part.text}</mark
+											>
+										{:else}{part.text}{/if}
+									{/each}
+								</span>
+							</div>
+						</td>
+
+						<td class="px-2 py-3 text-right font-mono text-xs tabular-nums text-gray-300">
+							{formatCompact(track.streams)}
+						</td>
+
+						<td
+							class="px-2 py-3 text-right font-mono text-xs tabular-nums text-gray-500 hidden md:table-cell"
+						>
+							{track.peak}
+						</td>
+
+						<td
+							class="px-2 py-3 text-right font-mono text-xs tabular-nums text-gray-500 hidden md:table-cell"
+						>
+							{track.weeks}
+						</td>
+
+						<td class="px-4 py-3 text-right">
+							<ListenLinks
+								spotifyId={track.spotifyId}
+								ytMusicId={track.ytMusicId}
+								title={track.title}
+								artist={track.artist}
+							/>
+						</td>
+					</tr>
+				{:else}
+					<tr>
+						<td colspan="7" class="px-4 py-16 text-center">
+							<div class="text-gray-600">
+								{#if searchQuery}
+									<p class="text-lg mb-1">No matches</p>
+									<p class="text-sm">Try a different search term</p>
+								{:else}
+									<p class="text-lg mb-1">No chart data</p>
+									<p class="text-sm">Check back later</p>
+								{/if}
+							</div>
+						</td>
+					</tr>
+				{/each}
+			</tbody>
+		</table>
+	</div>
+</div>
+
+
+================================================================================
+FILE PATH: src/lib/components/CountrySelector.svelte
+================================================================================
+<!-- src/lib/components/CountrySelector.svelte -->
+<script lang="ts">
+	import { countries } from '$lib/config/countries';
+
+	let { active }: { active: string } = $props();
+	let navEl: HTMLElement | undefined = $state();
+
+	$effect(() => {
+		if (navEl && active) {
+			const activeEl = navEl.querySelector<HTMLElement>('[aria-current="page"]');
+			activeEl?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+		}
+	});
+</script>
+
+<nav
+	bind:this={navEl}
+	class="flex gap-2 overflow-x-auto pb-1 scrollbar-none"
+	aria-label="Country selector"
+>
+	{#each countries as country}
+		<a
+			href="/chart/{country.code}"
+			class="px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-all
+				{active === country.code
+				? 'bg-accent text-black shadow-sm shadow-accent/20'
+				: 'bg-surface-alt text-gray-400 hover:bg-surface-hover hover:text-white'}"
+			aria-current={active === country.code ? 'page' : undefined}
+		>
+			{country.name}
+		</a>
+	{/each}
+</nav>
+
+
+================================================================================
+FILE PATH: src/lib/components/HeroTrack.svelte
+================================================================================
+<!-- src/lib/components/HeroTrack.svelte -->
+<script lang="ts">
+	import type { Track } from '$lib/types';
+	import { formatCompact } from '$lib/utils';
+	import ListenLinks from './ListenLinks.svelte';
+	import RankBadge from './RankBadge.svelte';
+
+	let { track }: { track: Track } = $props();
+</script>
+
+<div
+	class="relative overflow-hidden rounded-xl bg-gradient-to-br from-accent/15 via-surface-alt to-surface-alt border border-accent/20 p-5 sm:p-6 mb-6 animate-fade-in"
+>
+	<!-- Watermark -->
+	<div
+		class="absolute -top-4 -right-2 text-[8rem] font-black text-white/[0.03] leading-none select-none pointer-events-none"
+		aria-hidden="true"
+	>
+		#1
+	</div>
+
+	<div class="relative flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 sm:gap-4">
+		<div class="flex items-center gap-4 flex-1 min-w-0">
+			<!-- Rank badge -->
+			<div
+				class="flex-shrink-0 w-14 h-14 rounded-lg bg-accent/20 border border-accent/30 flex items-center justify-center"
+			>
+				<span class="text-accent font-black text-xl">#1</span>
+			</div>
+
+			<!-- Track info -->
+			<div class="flex-1 min-w-0">
+				<div class="flex items-center gap-2 mb-1">
+					<span class="text-[10px] font-semibold uppercase tracking-widest text-accent/80"
+						>Top Track</span
+					>
+					<RankBadge change={track.change} />
+				</div>
+				<h2 class="text-xl sm:text-2xl font-bold text-white truncate">{track.title}</h2>
+				<p class="text-sm text-gray-400 truncate">{track.artist}</p>
+			</div>
+		</div>
+
+		<!-- Streams + links -->
+		<div class="flex sm:flex-col items-center sm:items-end gap-3 sm:gap-2">
+			<div class="text-left sm:text-right">
+				<p class="text-2xl font-bold text-white tabular-nums font-mono">
+					{formatCompact(track.streams)}
+				</p>
+				<p class="text-[11px] text-gray-500">streams this week</p>
+			</div>
+			<ListenLinks
+				spotifyId={track.spotifyId}
+				ytMusicId={track.ytMusicId}
+				title={track.title}
+				artist={track.artist}
+			/>
+		</div>
+	</div>
+</div>
+
+
+================================================================================
+FILE PATH: src/lib/components/ListenLinks.svelte
+================================================================================
+<!-- src/lib/components/ListenLinks.svelte -->
+<script lang="ts">
+	let {
+		spotifyId,
+		ytMusicId = '',
+		title,
+		artist
+	}: { spotifyId: string; ytMusicId?: string; title: string; artist: string } = $props();
+
+	const spotifyUrl = $derived(spotifyId ? `https://open.spotify.com/track/${spotifyId}` : '');
+
+	const hasDirectYtm = $derived(!!ytMusicId);
+
+	const ytmUrl = $derived(
+		ytMusicId
+			? `https://music.youtube.com/watch?v=${ytMusicId}`
+			: `https://music.youtube.com/search?q=${encodeURIComponent(`${artist} ${title}`)}`
+	);
+
+	const ytmLabel = $derived(
+		hasDirectYtm ? `Play on YouTube Music: ${title}` : `Search YouTube Music: ${title}`
+	);
+</script>
+
+<div class="flex items-center gap-2">
+	{#if spotifyUrl}
+		<a
+			href={spotifyUrl}
+			target="_blank"
+			rel="noopener noreferrer"
+			class="text-accent/70 hover:text-accent transition-colors"
+			title="Open in Spotify"
+			aria-label="Listen on Spotify: {title}"
+		>
+			<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+				<path
+					d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521
+					17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779
+					-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6
+					11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239
+					-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6
+					-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24
+					8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381
+					4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599
+					-1.559.3z"
+				/>
+			</svg>
+		</a>
+	{/if}
+	<a
+		href={ytmUrl}
+		target="_blank"
+		rel="noopener noreferrer"
+		class="transition-colors {hasDirectYtm
+			? 'text-accent-red/80 hover:text-accent-red'
+			: 'text-accent-red/40 hover:text-accent-red/70'}"
+		title={hasDirectYtm ? 'Play on YouTube Music' : 'Search on YouTube Music'}
+		aria-label={ytmLabel}
+	>
+		<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+			<path
+				d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376
+				12-12S18.624 0 12 0zm0 21.6c-5.292 0-9.6-4.308-9.6-9.6S6.708
+				2.4 12 2.4s9.6 4.308 9.6 9.6-4.308 9.6-9.6 9.6zM9.6
+				16.8 16.8 12 9.6 7.2v9.6z"
+			/>
+		</svg>
+	</a>
+</div>
+
+
+================================================================================
+FILE PATH: src/lib/components/RankBadge.svelte
+================================================================================
+<script lang="ts">
+	let { change }: { change: string } = $props();
+
+	const info = $derived.by(() => {
+		const c = change.trim();
+		if (c === 'NEW') return { text: 'NEW', cls: 'text-rank-new font-bold' };
+		if (c === 'RE') return { text: 'RE', cls: 'text-rank-new font-bold' };
+		if (c === '0' || c === '' || c === '--') return { text: '—', cls: 'text-gray-600' };
+
+		const num = parseInt(c);
+		if (isNaN(num)) return { text: c, cls: 'text-gray-500' };
+		if (num > 0) return { text: `▲${num}`, cls: 'text-rank-up' };
+		return { text: `▼${Math.abs(num)}`, cls: 'text-rank-down' };
+	});
+</script>
+
+<span class="text-xs font-mono whitespace-nowrap {info.cls}">
+	{info.text}
+</span>
+
+
+================================================================================
+FILE PATH: src/lib/components/SearchBar.svelte
+================================================================================
+<!-- src/lib/components/SearchBar.svelte -->
+<script lang="ts">
+	let { value = $bindable('') }: { value: string } = $props();
+	let inputEl: HTMLInputElement | undefined = $state();
+
+	function handleGlobalKey(e: KeyboardEvent) {
+		const tag = (e.target as HTMLElement)?.tagName;
+		if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') {
+			if (e.key === 'Escape') {
+				value = '';
+				inputEl?.blur();
+			}
+			return;
+		}
+		if (e.key === '/' || (e.key === 'k' && (e.metaKey || e.ctrlKey))) {
+			e.preventDefault();
+			inputEl?.focus();
+		}
+	}
+</script>
+
+<svelte:window onkeydown={handleGlobalKey} />
+
+<div class="relative mb-4">
+	<svg
+		class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none"
+		fill="none"
+		stroke="currentColor"
+		viewBox="0 0 24 24"
+		aria-hidden="true"
+	>
+		<circle cx="11" cy="11" r="8" stroke-width="2" />
+		<path d="m21 21-4.35-4.35" stroke-width="2" stroke-linecap="round" />
+	</svg>
+	<input
+		bind:this={inputEl}
+		bind:value
+		type="text"
+		placeholder="Search tracks or artists…"
+		class="w-full pl-10 pr-16 py-2.5 rounded-lg bg-surface-alt border border-white/10
+			   text-white placeholder-gray-500 text-sm
+			   focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/30
+			   transition-colors"
+	/>
+	{#if value}
+		<button
+			onclick={() => (value = '')}
+			class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white transition-colors cursor-pointer"
+			aria-label="Clear search"
+		>
+			<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<path d="M18 6 6 18M6 6l12 12" stroke-width="2" stroke-linecap="round" />
+			</svg>
+		</button>
+	{:else}
+		<kbd
+			class="absolute right-3 top-1/2 -translate-y-1/2 hidden sm:inline-flex items-center px-1.5 py-0.5
+				   rounded border border-white/10 bg-white/5 text-[10px] text-gray-500 font-mono pointer-events-none"
+		>
+			/
+		</kbd>
+	{/if}
+</div>
+
+
+================================================================================
+FILE PATH: src/lib/config/countries.ts
+================================================================================
+export interface CountryConfig {
+	code: string;
+	name: string;
+	slug: string;
+}
+
+export const countries: CountryConfig[] = [
+	{ code: 'global', name: 'Global', slug: 'global_weekly' },
+	{ code: 'us', name: 'United States', slug: 'us_weekly' },
+	{ code: 'gb', name: 'United Kingdom', slug: 'gb_weekly' },
+	{ code: 'in', name: 'India', slug: 'in_weekly' }
+];
+
+export const countryMap = new Map(countries.map((c) => [c.code, c]));
+
+
+================================================================================
+FILE PATH: src/lib/types.ts
+================================================================================
+// src/lib/types.ts
+export interface Track {
+	rank: number;
+	change: string;
+	title: string;
+	artist: string;
+	spotifyId: string;
+	ytMusicId: string;
+	streams: number;
+	peak: number;
+	weeks: number;
+}
+
+export interface ChartData {
+	country: string;
+	countryName: string;
+	weekDate: string;
+	lastUpdated: string;
+	tracks: Track[];
+}
+
+
+================================================================================
+FILE PATH: src/lib/utils.ts
+================================================================================
+// src/lib/utils.ts
+export function formatNumber(n: number): string {
+	return n.toLocaleString('en-US');
+}
+
+export function formatCompact(n: number): string {
+	if (n >= 1_000_000_000) return `${(n / 1_000_000_000).toFixed(1)}B`;
+	if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`;
+	if (n >= 1_000) return `${(n / 1_000).toFixed(0)}K`;
+	return n.toLocaleString('en-US');
+}
+
+export interface TextPart {
+	text: string;
+	match: boolean;
+}
+
+export function highlightText(text: string, query: string): TextPart[] {
+	if (!query.trim()) return [{ text, match: false }];
+	const lower = text.toLowerCase();
+	const qLower = query.toLowerCase().trim();
+	const parts: TextPart[] = [];
+	let lastIdx = 0;
+	let idx = lower.indexOf(qLower);
+	while (idx !== -1) {
+		if (idx > lastIdx) parts.push({ text: text.slice(lastIdx, idx), match: false });
+		parts.push({ text: text.slice(idx, idx + qLower.length), match: true });
+		lastIdx = idx + qLower.length;
+		idx = lower.indexOf(qLower, lastIdx);
+	}
+	if (lastIdx < text.length) parts.push({ text: text.slice(lastIdx), match: false });
+	if (parts.length === 0) parts.push({ text, match: false });
+	return parts;
+}
+
+
+================================================================================
+FILE PATH: src/routes/+error.svelte
+================================================================================
+<!-- src/routes/+error.svelte -->
+<script lang="ts">
+	import { page } from '$app/state';
+</script>
+
+<svelte:head>
+	<title>{page.status} · Spotifx</title>
+</svelte:head>
+
+<div class="flex flex-col items-center justify-center py-24 text-center animate-fade-in">
+	<p class="text-7xl font-black text-gray-800 mb-2 font-mono">{page.status}</p>
+	<p class="text-lg text-gray-400 mb-8">{page.error?.message ?? 'Page not found'}</p>
+	<a
+		href="/chart/global"
+		class="px-5 py-2.5 rounded-full bg-accent text-black text-sm font-semibold hover:opacity-90 transition-opacity"
+	>
+		Back to Charts
+	</a>
+</div>
+
+
+================================================================================
+FILE PATH: src/routes/+layout.svelte
+================================================================================
+<!-- src/routes/+layout.svelte -->
+<script lang="ts">
+	import '../app.css';
+	import CountrySelector from '$lib/components/CountrySelector.svelte';
+	import { page } from '$app/state';
+
+	let { children } = $props();
+</script>
+
+<div class="min-h-screen flex flex-col">
+	<header class="sticky top-0 z-10 bg-surface/95 backdrop-blur-sm border-b border-white/10">
+		<div class="max-w-6xl mx-auto px-4 py-3">
+			<div class="flex items-center justify-between mb-3">
+				<a
+					href="/chart/global"
+					class="flex items-center gap-2.5 hover:opacity-80 transition-opacity"
+				>
+					<svg viewBox="0 0 32 32" class="w-7 h-7 flex-shrink-0" aria-hidden="true">
+						<rect width="32" height="32" rx="6" fill="#1DB954" />
+						<path d="M8 22V14h4v8H8zm6-10v10h4V12h-4zm6-4v14h4V8h-4z" fill="white" />
+					</svg>
+					<div class="leading-tight">
+						<span class="text-lg font-bold text-white block">Spotifx</span>
+						<span class="text-[11px] text-gray-500 -mt-0.5 block">Weekly streaming charts</span>
+					</div>
+				</a>
+			</div>
+			<CountrySelector active={page.params?.country ?? 'global'} />
+		</div>
+	</header>
+
+	<main class="flex-1 max-w-6xl mx-auto px-4 py-6 w-full">
+		{@render children()}
+	</main>
+
+	<footer class="border-t border-white/10 py-6 text-center text-xs text-gray-600">
+		<p>
+			Data from
+			<a
+				href="https://kworb.net"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="underline hover:text-gray-400 transition-colors">kworb.net</a
+			>
+			· Streaming data © Spotify · Not affiliated with Spotify AB
+		</p>
+	</footer>
+</div>
+
+
+================================================================================
+FILE PATH: src/routes/+layout.ts
+================================================================================
+export const prerender = true;
+
+
+================================================================================
+FILE PATH: src/routes/+page.svelte
+================================================================================
+<!-- src/routes/+page.svelte -->
+<!-- Redirect handled by +page.ts — this file intentionally empty -->
+
+
+================================================================================
+FILE PATH: src/routes/+page.ts
+================================================================================
+// src/routes/+page.ts
+import { redirect } from '@sveltejs/kit';
+import type { PageLoad } from './$types';
+
+export const load: PageLoad = () => {
+	redirect(302, '/chart/global');
+};
+
+
+================================================================================
+FILE PATH: src/routes/chart/[country]/+page.svelte
+================================================================================
+<!-- src/routes/chart/[country]/+page.svelte -->
+<script lang="ts">
+	import type { PageData } from './$types';
+	import ChartTable from '$lib/components/ChartTable.svelte';
+	import SearchBar from '$lib/components/SearchBar.svelte';
+	import HeroTrack from '$lib/components/HeroTrack.svelte';
+	import ChartStats from '$lib/components/ChartStats.svelte';
+
+	let { data }: { data: PageData } = $props();
+	let searchQuery = $state('');
+	let copied = $state(false);
+
+	const heroTrack = $derived(data.chart.tracks[0] ?? null);
+
+	const formattedDate = $derived(
+		new Date(data.chart.lastUpdated).toLocaleDateString('en-US', {
+			month: 'short',
+			day: 'numeric',
+			year: 'numeric'
+		})
+	);
+
+	async function copyLink() {
+		try {
+			await navigator.clipboard.writeText(window.location.href);
+			copied = true;
+			setTimeout(() => (copied = false), 2000);
+		} catch {
+			/* clipboard API blocked — ignore */
+		}
+	}
+</script>
+
+<svelte:head>
+	<title>{data.chart.countryName} Weekly Chart · Spotifx</title>
+	<meta
+		name="description"
+		content="Top {data.chart.tracks.length} Spotify tracks in {data.chart.countryName} for the week of {data.chart.weekDate}"
+	/>
+	<meta property="og:title" content="{data.chart.countryName} Weekly Chart · Spotifx" />
+	<meta
+		property="og:description"
+		content="Top {data.chart.tracks.length} Spotify tracks in {data.chart.countryName}"
+	/>
+	<meta property="og:type" content="website" />
+</svelte:head>
+
+<div>
+	<!-- Header row -->
+	<div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-6">
+		<div>
+			<h1 class="text-2xl font-bold text-white mb-1">
+				{data.chart.countryName}
+				<span class="text-gray-500 font-normal">Weekly Chart</span>
+			</h1>
+			<p class="text-sm text-gray-500">
+				Week of {data.chart.weekDate} · Updated {formattedDate}
+			</p>
+		</div>
+		<button
+			onclick={copyLink}
+			class="self-start sm:self-auto flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium
+				   bg-surface-alt border border-white/10 text-gray-400 hover:text-white hover:border-white/20
+				   transition-colors cursor-pointer"
+		>
+			{#if copied}
+				<svg class="w-3.5 h-3.5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path d="M5 13l4 4L19 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+				Copied!
+			{:else}
+				<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path
+						d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					/>
+				</svg>
+				Share
+			{/if}
+		</button>
+	</div>
+
+	<!-- Hero #1 track -->
+	{#if heroTrack}
+		<HeroTrack track={heroTrack} />
+	{/if}
+
+	<!-- Stats grid -->
+	{#if data.chart.tracks.length > 0}
+		<ChartStats tracks={data.chart.tracks} />
+	{/if}
+
+	<!-- Search + Table -->
+	<SearchBar bind:value={searchQuery} />
+	<ChartTable tracks={data.chart.tracks} {searchQuery} />
+</div>
+
+
+================================================================================
+FILE PATH: src/routes/chart/[country]/+page.ts
+================================================================================
+import type { PageLoad } from './$types';
+import { error } from '@sveltejs/kit';
+import { countries } from '$lib/config/countries';
+import type { ChartData } from '$lib/types';
+
+export function entries() {
+	return countries.map((c) => ({ country: c.code }));
+}
+
+export const load: PageLoad = async ({ params }) => {
+	const valid = countries.some((c) => c.code === params.country);
+	if (!valid) error(404, 'Country not found');
+
+	try {
+		const mod = await import(`../../../lib/data/${params.country}.json`);
+		return { chart: mod.default as ChartData };
+	} catch {
+		error(404, 'Chart data not available');
+	}
+};
+
+
+================================================================================
+FILE PATH: src/service-worker.ts
+================================================================================
+// src/service-worker.ts
+/// <reference types="@sveltejs/kit" />
+/// <reference no-default-lib="true"/>
+/// <reference lib="esnext" />
+/// <reference lib="webworker" />
+
+const sw = self as unknown as ServiceWorkerGlobalScope;
+
+import { build, files, prerendered, version } from '$service-worker';
+
+const CACHE = `spotifx-${version}`;
+const STATIC_ASSETS = new Set([...build, ...files]);
+const ALL_ASSETS = [...build, ...files, ...prerendered];
+
+// Install: pre-cache everything
+sw.addEventListener('install', (event) => {
+	event.waitUntil(
+		caches
+			.open(CACHE)
+			.then((cache) => cache.addAll(ALL_ASSETS))
+			.then(() => sw.skipWaiting())
+	);
+});
+
+// Activate: purge old caches
+sw.addEventListener('activate', (event) => {
+	event.waitUntil(
+		caches
+			.keys()
+			.then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
+			.then(() => sw.clients.claim())
+	);
+});
+
+// Fetch: cache-first for hashed static assets, network-first for pages
+sw.addEventListener('fetch', (event) => {
+	if (event.request.method !== 'GET') return;
+
+	const url = new URL(event.request.url);
+	if (url.origin !== location.origin) return;
+
+	event.respondWith(
+		STATIC_ASSETS.has(url.pathname) ? cacheFirst(event.request) : networkFirst(event.request)
+	);
+});
+
+async function cacheFirst(request: Request): Promise<Response> {
+	const cached = await caches.match(request);
+	return cached || fetch(request);
+}
+
+async function networkFirst(request: Request): Promise<Response> {
+	try {
+		const response = await fetch(request);
+		if (response.ok) {
+			const cache = await caches.open(CACHE);
+			cache.put(request, response.clone());
+		}
+		return response;
+	} catch {
+		const cached = await caches.match(request);
+		return (
+			cached ||
+			new Response(
+				'<!DOCTYPE html><html><body style="background:#121212;color:#e5e5e5;font-family:system-ui;display:grid;place-items:center;min-height:100vh;margin:0"><div style="text-align:center"><h1>Offline</h1><p>Check your connection and try again.</p></div></body></html>',
+				{ status: 503, headers: { 'Content-Type': 'text/html' } }
+			)
+		);
+	}
+}
+
+
+================================================================================
+FILE PATH: static/_redirects
+================================================================================
+/ /chart/global 302
+
+
+================================================================================
+FILE PATH: static/favicon.svg
+================================================================================
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#1DB954"/>
+  <path d="M8 22V14h4v8H8zm6-10v10h4V12h-4zm6-4v14h4V8h-4z" fill="white"/>
+</svg>
+
+
+================================================================================
+FILE PATH: svelte.config.js
+================================================================================
+// svelte.config.js
+import adapter from '@sveltejs/adapter-static';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+	preprocess: vitePreprocess(),
+	kit: {
+		adapter: adapter({
+			pages: 'build',
+			assets: 'build',
+			fallback: undefined,
+			precompress: false,
+			strict: true
+		}),
+		serviceWorker: {
+			register: true
+		}
+	}
+};
+
+export default config;
+
+
+================================================================================
+FILE PATH: test-kworb.js
+================================================================================
+fetch('https://kworb.net/spotify/country/in_weekly.html')
+  .then(res => res.text())
+  .then(html => {
+    const lines = html.split('\n');
+    for(let line of lines) {
+      if(line.includes('<td class="text"><a href=')) {
+        console.log(line);
+        break; // just need one matching line
+      }
+    }
+  });
+
+
+
+================================================================================
+FILE PATH: vite.config.ts
+================================================================================
+import { sveltekit } from '@sveltejs/kit/vite';
+import tailwindcss from '@tailwindcss/vite';
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+	plugins: [tailwindcss(), sveltekit()]
+});
+
+
