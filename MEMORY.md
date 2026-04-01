@@ -107,6 +107,9 @@ A hobby music charts dashboard displaying weekly Spotify streaming data for mult
 - `spotifx-shuffle` — `"true"` | `"false"`
 - `spotifx-repeat` — `"off"` | `"all"` | `"one"`
 
+## Blunders
+- **SSR `document is not defined` error**: Svelte's `onDestroy` hook runs during server-side rendering (SSR) immediately after the component tree is generated. Calling browser APIs like `document.removeEventListener` blindly in `onDestroy` will crash the SvelteKit static build (`npm run build`). Fix: Always wrap browser globals in a `typeof document !== 'undefined'` check within lifecycle hooks that run on the server.
+
 ## Insights
 - **Triple redundant redirect bug:** Previous versions had redirect logic spanning `+page.svelte` (client-side), `+page.ts` (SSR), and `_redirects` (build-time). Cleaned up by stripping out the onMount hook and leaving just server/static redirects.
 - **Kworb schema mapping:** The `weeks` data point represents "Days" the track has been on chart. The label was updated from "Wks" to "Days" to avoid user confusion.

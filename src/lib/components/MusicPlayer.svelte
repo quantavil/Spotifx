@@ -354,7 +354,9 @@
 	}
 
 	onDestroy(() => {
-		document.removeEventListener('visibilitychange', handleVisibilityChange);
+		if (typeof document !== 'undefined') {
+			document.removeEventListener('visibilitychange', handleVisibilityChange);
+		}
 		stopProgressPolling();
 		player._onPlay = null;
 		player._onPause = null;
