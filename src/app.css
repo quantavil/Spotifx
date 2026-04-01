@@ -35,6 +35,37 @@
 	}
 }
 
+/* Scroll-text marquee */
+.scroll-text {
+	display: flex;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.scroll-text > span {
+	flex-shrink: 0;
+	display: inline-block;
+	white-space: nowrap;
+}
+
+.scroll-text.is-overflowing > span {
+	padding-right: 2rem;
+}
+
+.scroll-text.is-overflowing:hover > span,
+.scroll-text.is-overflowing.is-active > span {
+	animation: scroll-text var(--scroll-duration, 4s) linear infinite;
+}
+
+@keyframes scroll-text {
+	0%, 5% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
 html {
 	color-scheme: dark;
 }

@@ -1,8 +1,10 @@
 <!-- src/lib/components/MusicPlayer.svelte -->
 <script lang="ts">
 	import { player } from '$lib/stores/player.svelte';
+	import { formatCompact } from '$lib/utils';
 	import { onMount, onDestroy } from 'svelte';
 	import { fly } from 'svelte/transition';
+	import { scrollText } from '$lib/actions';
 	import Icon from './Icon.svelte';
 
 	let ytPlayer: any = null;
@@ -284,8 +286,13 @@
 								/>
 							{/if}
 							<div class="min-w-0">
-								<p class="text-sm font-medium text-white truncate">{player.currentTrack.title}</p>
+								<div class="scroll-text is-active" use:scrollText>
+									<span class="text-sm font-medium text-white">{player.currentTrack.title}</span>
+								</div>
 								<p class="text-xs text-gray-400 truncate">{player.currentTrack.artist}</p>
+								<p class="text-[10px] text-gray-500 font-mono tabular-nums mt-0.5">
+									{formatCompact(player.currentTrack.streams)} streams · Peak #{player.currentTrack.peak} · {player.currentTrack.weeks} days
+								</p>
 							</div>
 						</div>
 					</div>
@@ -380,7 +387,7 @@
 			<!-- Controls -->
 			<div class="flex items-center gap-1 sm:gap-3 px-2 sm:px-3 py-2 max-w-6xl mx-auto">
 				<!-- Track info -->
-				<div class="flex items-center gap-2 sm:gap-3 flex-1 min-w-0 max-w-[35%] sm:max-w-none">
+				<div class="flex items-center gap-2 sm:gap-3 flex-1 min-w-0 max-w-[40%] sm:max-w-none">
 					{#if thumbUrl}
 						<img
 							src={thumbUrl}
@@ -392,12 +399,19 @@
 						<div class="w-9 h-9 sm:w-10 sm:h-10 rounded bg-white/5 flex-shrink-0"></div>
 					{/if}
 					<div class="min-w-0">
-						<p class="text-xs sm:text-sm font-medium text-white truncate">
-							{player.currentTrack?.title ?? ''}
-						</p>
+						<div class="scroll-text is-active" use:scrollText>
+							<span class="text-xs sm:text-sm font-medium text-white">
+								{player.currentTrack?.title ?? ''}
+							</span>
+						</div>
 						<p class="text-[11px] sm:text-xs text-gray-400 truncate">
 							{player.currentTrack?.artist ?? ''}
 						</p>
+						{#if player.currentTrack}
+							<p class="text-[10px] text-gray-500 font-mono tabular-nums truncate">
+								{formatCompact(player.currentTrack.streams)} · Pk {player.currentTrack.peak} · {player.currentTrack.weeks}d
+							</p>
+						{/if}
 					</div>
 				</div>
 

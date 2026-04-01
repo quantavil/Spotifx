@@ -16,6 +16,7 @@
 		| 'drag-handle'
 		| 'check'
 		| 'link'
+		| 'music'
 		| 'search';
 
 	let { name, class: cls = 'w-4 h-4' }: { name: IconName; class?: string } = $props();
@@ -52,6 +53,9 @@
 		link: {
 			d: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1',
 			stroke: true
+		},
+		music: {
+			d: 'M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z'
 		},
 		search: { d: '', stroke: true }
 	};

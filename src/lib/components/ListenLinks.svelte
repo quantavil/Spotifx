@@ -22,7 +22,7 @@
 	);
 </script>
 
-<div class="flex items-center gap-2">
+<div class="flex flex-col items-center gap-1.5 sm:gap-2">
 	{#if spotifyUrl}
 		<a
 			href={spotifyUrl}
@@ -32,7 +32,7 @@
 			title="Open in Spotify"
 			aria-label="Listen on Spotify: {title}"
 		>
-			<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+			<svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" viewBox="0 0 24 24" fill="currentColor">
 				<path
 					d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521
 					17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779
@@ -57,7 +57,7 @@
 		title={hasDirectYtm ? 'Play on YouTube Music' : 'Search on YouTube Music'}
 		aria-label={ytmLabel}
 	>
-		<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+		<svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" viewBox="0 0 24 24" fill="currentColor">
 			<path
 				d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376
 				12-12S18.624 0 12 0zm0 21.6c-5.292 0-9.6-4.308-9.6-9.6S6.708

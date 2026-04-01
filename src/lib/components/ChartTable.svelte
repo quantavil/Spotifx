@@ -3,9 +3,10 @@
 	import type { Track } from '$lib/types';
 	import { formatCompact, highlightText } from '$lib/utils';
 	import { player } from '$lib/stores/player.svelte';
+	import { scrollText } from '$lib/actions';
 	import RankBadge from './RankBadge.svelte';
 	import ListenLinks from './ListenLinks.svelte';
-	import PlayButton from './PlayButton.svelte';
+	import TrackArt from './TrackArt.svelte';
 
 	let { tracks, searchQuery }: { tracks: Track[]; searchQuery: string } = $props();
 
@@ -39,13 +40,11 @@
 	const processed = $derived.by(() => {
 		const q = searchQuery.toLowerCase().trim();
 		let list = tracks;
-
 		if (q) {
 			list = list.filter(
 				(t) => t.title.toLowerCase().includes(q) || t.artist.toLowerCase().includes(q)
 			);
 		}
-
 		const dir = sortAsc ? 1 : -1;
 		return [...list].sort((a, b) => {
 			const av = sortKey === 'change' ? changeToSortWeight(a.change) : (a[sortKey] as number);
@@ -55,6 +54,12 @@
 	});
 
 	const query = $derived(searchQuery.trim());
+
+	function playTrack(e: Event, track: Track) {
+		if (!track.ytMusicId) return;
+		e.stopPropagation();
+		player.isCurrentTrack(track) ? player.togglePlay() : player.playTrack(track, tracks);
+	}
 </script>
 
 <div
@@ -69,10 +74,7 @@
 		</span>
 		{#if sortKey !== 'rank' || !sortAsc}
 			<button
-				onclick={() => {
-					sortKey = 'rank';
-					sortAsc = true;
-				}}
+				onclick={() => { sortKey = 'rank'; sortAsc = true; }}
 				class="text-[11px] text-gray-600 hover:text-gray-300 transition-colors cursor-pointer"
 			>
 				Reset sort
@@ -81,119 +83,103 @@
 	</div>
 
 	<div class="overflow-x-auto">
-		<table class="w-full text-sm">
+		<table class="w-full text-sm table-fixed">
 			<thead>
 				<tr class="border-b border-white/10 text-gray-400 text-[11px] uppercase tracking-wider">
-					<th class="text-left px-2 sm:px-4 py-3 w-10 sm:w-12">
-						<button
-							onclick={() => toggleSort('rank')}
-							class="hover:text-white transition-colors cursor-pointer"
-						>
+					<th class="text-left px-2 sm:px-3 py-3 w-9 sm:w-12">
+						<button onclick={() => toggleSort('rank')} class="hover:text-white transition-colors cursor-pointer">
 							#{sortIndicator('rank')}
 						</button>
 					</th>
-					<th class="text-left px-2 py-3 w-12">
-						<button
-							onclick={() => toggleSort('change')}
-							class="hover:text-white transition-colors cursor-pointer"
-						>
+					<th class="text-center px-0.5 sm:px-1 py-3 w-6 sm:w-10">
+						<button onclick={() => toggleSort('change')} class="hover:text-white transition-colors cursor-pointer">
 							Δ{sortIndicator('change')}
 						</button>
 					</th>
-					<th class="text-left px-2 py-3">Title · Artist</th>
-					<th class="text-right px-2 py-3 hidden sm:table-cell">
-						<button
-							onclick={() => toggleSort('streams')}
-							class="inline-block hover:text-white transition-colors cursor-pointer"
-						>
+					<th class="text-left px-2 py-3">Track</th>
+					<th class="text-center px-1 sm:px-2 py-3 w-14 sm:w-20">
+						<button onclick={() => toggleSort('streams')} class="inline-block hover:text-white transition-colors cursor-pointer">
 							Streams{sortIndicator('streams')}
 						</button>
 					</th>
-					<th class="text-right px-2 py-3 hidden md:table-cell">
-						<button
-							onclick={() => toggleSort('peak')}
-							class="inline-block hover:text-white transition-colors cursor-pointer"
-						>
+					<th class="text-center px-1 sm:px-2 py-3 w-10 sm:w-16 hidden md:table-cell">
+						<button onclick={() => toggleSort('peak')} class="inline-block hover:text-white transition-colors cursor-pointer">
 							Peak{sortIndicator('peak')}
 						</button>
 					</th>
-					<th class="text-right px-2 py-3 hidden md:table-cell">
-						<button
-							onclick={() => toggleSort('weeks')}
-							class="inline-block hover:text-white transition-colors cursor-pointer"
-						>
+					<th class="text-center px-1 sm:px-2 py-3 w-10 sm:w-16 hidden md:table-cell">
+						<button onclick={() => toggleSort('weeks')} class="inline-block hover:text-white transition-colors cursor-pointer">
 							Days{sortIndicator('weeks')}
 						</button>
 					</th>
-					<th class="px-2 sm:px-4 py-3 w-auto sm:w-28 text-right">Listen</th>
+					<th class="py-3 px-1.5 sm:px-2 w-12 sm:w-14">
+						<span class="sr-only">Links</span>
+					</th>
 				</tr>
 			</thead>
 			<tbody>
 				{#each processed as track (track.spotifyId || `r${track.rank}-${track.title}`)}
+					{@const isActive = player.isCurrentTrack(track) && player.isPlaying}
 					<tr
 						class="border-b border-white/5 hover:bg-surface-hover transition-colors even:bg-white/[0.015]
-							{player.isCurrentTrack(track) && player.isPlaying
-							? '!bg-accent/10 border-accent/20'
-							: ''}"
+							{isActive ? '!bg-accent/10 border-accent/20' : ''}"
 					>
-						<td class="px-2 sm:px-4 py-3 text-gray-500 font-mono text-xs tabular-nums">
+						<td class="px-2 sm:px-3 py-2.5 text-gray-500 font-mono text-xs tabular-nums align-middle">
 							{track.rank}
 						</td>
 
-						<td class="px-2 py-3">
+						<td class="px-0.5 sm:px-1 py-2.5 align-middle text-center">
 							<RankBadge change={track.change} />
 						</td>
 
-						<td class="px-2 py-3 max-w-xs">
-							<div class="truncate">
-								<span class="font-medium text-white">
-									{#each highlightText(track.title, query) as part}
-										{#if part.match}
-											<mark class="bg-accent/25 text-white rounded-sm px-0.5"
-												>{part.text}</mark
-											>
-										{:else}{part.text}{/if}
-									{/each}
-								</span>
-								<span class="text-gray-600 mx-1">·</span>
-								<span class="text-xs text-gray-400">
-									{#each highlightText(track.artist, query) as part}
-										{#if part.match}
-											<mark class="bg-accent/25 text-white rounded-sm px-0.5"
-												>{part.text}</mark
-											>
-										{:else}{part.text}{/if}
-									{/each}
-								</span>
+						<td class="px-2 py-2.5 overflow-hidden">
+							<div class="flex items-center gap-2.5">
+								<TrackArt {track} allTracks={tracks} />
+
+								<button
+									onclick={(e) => playTrack(e, track)}
+									class="flex-1 min-w-0 text-left group/title
+										{track.ytMusicId ? 'cursor-pointer' : ''}"
+								>
+									<div
+										class="scroll-text {isActive ? 'is-active' : ''}"
+										use:scrollText
+									>
+										<span class="text-sm font-medium text-white transition-colors
+											{track.ytMusicId ? 'group-hover/title:text-accent' : ''}">
+											{#each highlightText(track.title, query) as part}
+												{#if part.match}<mark class="bg-accent/25 text-white rounded-sm px-0.5">{part.text}</mark>{:else}{part.text}{/if}
+											{/each}
+										</span>
+									</div>
+									<p class="text-xs text-gray-400 truncate mt-0.5">
+										{#each highlightText(track.artist, query) as part}
+											{#if part.match}<mark class="bg-accent/25 text-white rounded-sm px-0.5">{part.text}</mark>{:else}{part.text}{/if}
+										{/each}
+									</p>
+								</button>
 							</div>
 						</td>
 
-						<td class="px-2 py-3 text-right font-mono text-xs tabular-nums text-gray-300 hidden sm:table-cell">
+						<td class="px-1 sm:px-2 py-2.5 text-center font-mono text-xs tabular-nums text-gray-300 align-middle">
 							{formatCompact(track.streams)}
 						</td>
 
-						<td
-							class="px-2 py-3 text-right font-mono text-xs tabular-nums text-gray-500 hidden md:table-cell"
-						>
+						<td class="px-1 sm:px-2 py-2.5 text-center font-mono text-xs tabular-nums text-gray-500 hidden md:table-cell align-middle">
 							{track.peak}
 						</td>
 
-						<td
-							class="px-2 py-3 text-right font-mono text-xs tabular-nums text-gray-500 hidden md:table-cell"
-						>
+						<td class="px-1 sm:px-2 py-2.5 text-center font-mono text-xs tabular-nums text-gray-500 hidden md:table-cell align-middle">
 							{track.weeks}
 						</td>
 
-						<td class="px-2 sm:px-4 py-3">
-							<div class="flex items-center justify-end gap-1.5 sm:gap-2">
-								<PlayButton {track} allTracks={tracks} />
-								<ListenLinks
-									spotifyId={track.spotifyId}
-									ytMusicId={track.ytMusicId}
-									title={track.title}
-									artist={track.artist}
-								/>
-							</div>
+						<td class="px-1.5 sm:px-2 py-2.5 align-middle">
+							<ListenLinks
+								spotifyId={track.spotifyId}
+								ytMusicId={track.ytMusicId}
+								title={track.title}
+								artist={track.artist}
+							/>
 						</td>
 					</tr>
 				{:else}
