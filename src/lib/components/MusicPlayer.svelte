@@ -1,7 +1,7 @@
 <!-- src/lib/components/MusicPlayer.svelte -->
 <script lang="ts">
 	import { player } from '$lib/stores/player.svelte';
-	import { formatCompact } from '$lib/utils';
+	import { formatCompact, formatTime, getYTThumbUrl } from '$lib/utils';
 	import { onMount, onDestroy } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import { scrollText } from '$lib/actions';
@@ -20,15 +20,9 @@
 	let dragIndex: number | null = $state(null);
 	let dragOverIndex: number | null = $state(null);
 
-	function formatTime(s: number): string {
-		const m = Math.floor(s / 60);
-		const sec = Math.floor(s % 60);
-		return `${m}:${sec.toString().padStart(2, '0')}`;
-	}
-
 	const thumbUrl = $derived(
 		player.currentTrack?.ytMusicId
-			? `https://i.ytimg.com/vi/${player.currentTrack.ytMusicId}/mqdefault.jpg`
+			? getYTThumbUrl(player.currentTrack.ytMusicId)
 			: ''
 	);
 
@@ -280,7 +274,7 @@
 						<div class="flex items-center gap-3">
 							{#if player.currentTrack.ytMusicId}
 								<img
-									src="https://i.ytimg.com/vi/{player.currentTrack.ytMusicId}/default.jpg"
+									src={getYTThumbUrl(player.currentTrack.ytMusicId, 'default')}
 									alt=""
 									class="w-8 h-8 rounded object-cover flex-shrink-0 bg-white/5"
 								/>

@@ -32,3 +32,13 @@ export function highlightText(text: string, query: string): TextPart[] {
 	if (parts.length === 0) parts.push({ text, match: false });
 	return parts;
 }
+
+export function formatTime(s: number): string {
+	const m = Math.floor(s / 60);
+	const sec = Math.floor(s % 60);
+	return `${m}:${sec.toString().padStart(2, '0')}`;
+}
+
+export function getYTThumbUrl(id: string, size: 'default' | 'mqdefault' | 'hqdefault' = 'mqdefault'): string {
+	return `https://i.ytimg.com/vi/${id}/${size}.jpg`;
+}

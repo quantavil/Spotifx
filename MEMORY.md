@@ -120,3 +120,4 @@ A hobby music charts dashboard displaying weekly Spotify streaming data for mult
 - **Mobile player bar:** Uses 3-zone flex layout: track info (`max-w-[40%] sm:max-w-none`), controls (`flex-1 justify-center`), actions (`flex-1 justify-end`). Progress bar is `h-2 sm:h-1.5` for touch. Seek thumb is always visible on mobile (`opacity-100 sm:opacity-0 sm:group-hover:opacity-100`).
 - **HeroTrack mobile:** Keep streams+icons in compact `flex` row on mobile (not flex-col) — vertical stacking pushes 82.3M out of mobile viewport.
 - **Player Stats:** Updated `MusicPlayer.svelte` to display streams, peak rank, and chart days in both the main bar and queue panel. Adjusted `max-w` to 40% to accommodate the new metadata.
+- **Utility Centralization:** Extracted `formatTime` and `getYTThumbUrl` to `src/lib/utils.ts` to prevent redundant, inconsistent logic across `MusicPlayer.svelte` and `HeroTrack.svelte`.

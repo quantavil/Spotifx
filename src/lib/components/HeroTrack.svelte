@@ -1,7 +1,7 @@
 <!-- src/lib/components/HeroTrack.svelte -->
 <script lang="ts">
 	import type { Track } from '$lib/types';
-	import { formatCompact } from '$lib/utils';
+	import { formatCompact, getYTThumbUrl } from '$lib/utils';
 	import { player } from '$lib/stores/player.svelte';
 	import { scrollText } from '$lib/actions';
 	import ListenLinks from './ListenLinks.svelte';
@@ -11,7 +11,7 @@
 	let { track, tracks }: { track: Track; tracks: Track[] } = $props();
 
 	const heroThumb = $derived(
-		track.ytMusicId ? `https://i.ytimg.com/vi/${track.ytMusicId}/mqdefault.jpg` : ''
+		track.ytMusicId ? getYTThumbUrl(track.ytMusicId) : ''
 	);
 	const isActive = $derived(player.isCurrentTrack(track) && player.isPlaying);
 
