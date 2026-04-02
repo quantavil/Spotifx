@@ -40,9 +40,12 @@ A hobby music charts dashboard displaying weekly Spotify streaming data for mult
 │   │   │   ├── in.json
 │   │   │   └── us.json
 │   │   ├── stores/
-│   │   │   └── player.svelte.ts     # Reactive player state (queue, shuffle, repeat, progress, localStorage)
+│   │   │   ├── player.svelte.ts     # Reactive player state (queue, shuffle, repeat, progress, localStorage)
+│   │   │   ├── mediaSession.ts      # Media Session API wrapper (metadata, position, handlers)
+│   │   │   ├── toast.svelte.ts      # Toast notification store
+│   │   │   └── favorites.svelte.ts  # Favorites (spotifyId set, localStorage)
 │   │   ├── types.ts                 # Track + ChartData interfaces
-│   │   └── utils.ts                 # Shared utilities (formatters, highlights)
+│   │   └── utils.ts                 # Shared utilities (formatters, highlights, trackToHue)
 │   └── routes/
 │       ├── +error.svelte
 │       ├── +layout.svelte           # Header + CountrySelector + MusicPlayer mount + footer
@@ -79,11 +82,29 @@ A hobby music charts dashboard displaying weekly Spotify streaming data for mult
 
 ## Player Architecture
 
+### Data Model
+- **`QueueEntry`** — extends `Track` with `_qid: number` (auto-incrementing unique ID per queue insertion). Ensures stable Svelte `{#each}` keys even with duplicate tracks. Created via `toEntry(track)` / `toEntries(tracks)` helper functions in the store.
+
 ### Components
-- **`player.svelte.ts`** — Singleton Svelte 5 runes class (`PlayerState`). Manages queue, currentIndex, shuffle (Fisher-Yates), repeat (off/all/one), progress, volume. Exposes callback slots (`_onPlay`, `_onPause`, `_onResume`, `_onSeek`, `_onVolume`) that MusicPlayer wires to the YouTube API on mount. Persists volume, shuffle, and repeat to localStorage and hydrates on construction.
-- **`MusicPlayer.svelte`** — Mounted once in `+layout.svelte`. Contains a hidden 1×1 YT iframe (positioned off-screen) and a fixed bottom bar with: drag-to-seek progress bar, thumbnail, transport controls, volume slider, queue panel toggle. Handles YouTube API lifecycle (lazy load, create, ready, state change, error). Auto-advances on track end. Consecutive-error guard (max 5) prevents infinite skip loops. Space key toggles play/pause when no input is focused.
+- **`player.svelte.ts`** — Singleton Svelte 5 runes class (`PlayerState`). Manages queue of `QueueEntry[]`, currentIndex, shuffle (Fisher-Yates), repeat (off/all/one), progress, volume. Exposes:
+  - Callback slots (`_onPlay`, `_onPause`, `_onResume`, `_onSeek`, `_onVolume`) wired by MusicPlayer on mount.
+  - Explicit `play()` and `pause()` methods (not just `togglePlay()`) for correct MediaSession integration.
+  - `seek(fraction)` guards against `duration <= 0`.
+  - Persists volume, shuffle, and repeat to localStorage and hydrates on construction.
+
+- **`MusicPlayer.svelte`** — Mounted once in `+layout.svelte`. Contains a hidden 1×1 YT iframe (positioned off-screen) and a fixed bottom bar with: drag-to-seek progress bar, thumbnail, transport controls, volume slider, queue panel toggle. Handles YouTube API lifecycle (lazy load, create, ready, state change, error). Auto-advances on track end. Key implementation details:
+  - **`wantedPlaying`** flag — tracks user intent separately from `player.isPlaying`. Used to guard `pendingVideoId` loading on `onPlayerReady`, visibility change recovery, and error-state cleanup.
+  - **`apiLoading`** flag + `querySelector` check — prevents duplicate YT API script injection.
+  - **Consecutive-error guard** (max 5) with reset on every new `_onPlay` call.
+  - **Error code handling** — reads `event.data` from YT errors, shows contextual toast for codes 100 (not found), 101/150 (embedding blocked).
+  - **Drag-to-reorder** uses `ondrop` for actual reorder, `ondragend` only resets visual state (prevents accidental reorder on drag cancel/Escape).
+  - **Seek safety** — `seekFromPointer` returns early when `duration <= 0`; `setPointerCapture` wrapped in try/catch.
+  - **Teardown safety** — `onDestroy` nulls `ytPlayer` reference and `playerReady` flag before calling `destroy()` on saved ref; `onPlayerError`/`onPlayerStateChange` return early when `!playerReady`.
+  - **Visibility change** — resumes playback when page becomes **visible** (not hidden), only if `wantedPlaying` is true.
+
 - **`PlayButton.svelte`** — Renders only when track has `ytMusicId`. Shows play icon normally, pause icon when that track is the active playing track. Calls `player.playTrack(track, allTracks)` to set queue context.
-- **Queue Panel** — Toggled from MusicPlayer, slides up from the player bar. Shows upcoming tracks with: click-to-jump, drag-to-reorder (pointer-event based), remove-from-queue. Current track is highlighted.
+
+- **Queue Panel** — Toggled from MusicPlayer, slides up from the player bar. Shows upcoming tracks with: click-to-jump, drag-to-reorder (drop-based), remove-from-queue. Uses `track._qid` as stable `{#each}` key. Current track is highlighted.
 
 ### YouTube IFrame Workarounds
 | Limitation | Workaround |
@@ -93,48 +114,27 @@ A hobby music charts dashboard displaying weekly Spotify streaming data for mult
 | Shuffle | Fisher-Yates on queue array, current track pinned at index 0 |
 | Autoplay | First play is user-gesture; subsequent `loadVideoById` auto-plays in same session |
 | Styleable UI | Custom bottom bar with Tailwind, completely replaces YT controls |
-| Track coverage | Tracks without `ytMusicId` hidden (no play button), error 101/150 auto-skip |
-| Mobile | Pointer events for touch seek, compact controls, volume hidden on small screens |
+| Track coverage | Tracks without `ytMusicId` hidden (no play button), error 101/150 auto-skip with toast |
+| Mobile | Pointer events for touch seek, compact controls, volume hidden on small screens, `playsinline: 1` |
+| Tab backgrounding | `visibilitychange` listener resumes on page visible if `wantedPlaying`; cannot override browser/OS suspension |
+| Stale pending video | `onPlayerReady` guards `pendingVideoId` with `wantedPlaying` check |
+| Duplicate scripts | `apiLoading` flag + DOM querySelector prevents double YT API injection |
+
+### MediaSession Integration
+- **`mediaSession.ts`** — wraps `navigator.mediaSession` with `hasAPI()` guard.
+- **Handlers**: `play` → `player.play()`, `pause` → `player.pause()` (explicit, not toggle). `seekto` updates both `currentTime` and calls `_onSeek`.
+- **Position state** updated every ~2s (every 8th polling tick at 250ms interval).
+- Cleanup: not explicitly needed since MusicPlayer mounts once in root layout and lives for app lifetime.
 
 ### Known Limitations
 - iOS pauses audio when tab backgrounds (browser limitation, no workaround without native app).
 - YouTube ads still play on some videos.
-- Tracks with embedding restrictions (YT error 101/150) auto-skip.
-- Background/lock-screen playback unreliable on mobile browsers.
+- Tracks with embedding restrictions (YT error 101/150) auto-skip with user-facing toast.
+- Background/lock-screen playback unreliable on mobile browsers — `wantedPlaying` + visibility recovery is best-effort.
+- YouTube iframe is not equivalent to a native `<audio>` element; browsers may throttle/suspend hidden cross-origin iframes.
 
 ### localStorage Keys
 - `spotifx-volume` — number 0–100
 - `spotifx-shuffle` — `"true"` | `"false"`
 - `spotifx-repeat` — `"off"` | `"all"` | `"one"`
-
-## Blunders
-- **SSR `document is not defined` error**: Svelte's `onDestroy` hook runs during server-side rendering (SSR) immediately after the component tree is generated. Calling browser APIs like `document.removeEventListener` blindly in `onDestroy` will crash the SvelteKit static build (`npm run build`). Fix: Always wrap browser globals in a `typeof document !== 'undefined'` check within lifecycle hooks that run on the server.
-
-## Insights
-- **Triple redundant redirect bug:** Previous versions had redirect logic spanning `+page.svelte` (client-side), `+page.ts` (SSR), and `_redirects` (build-time). Cleaned up by stripping out the onMount hook and leaving just server/static redirects.
-- **Kworb schema mapping:** The `weeks` data point represents "Days" the track has been on chart. The label was updated from "Wks" to "Days" to avoid user confusion.
-- **Animation and rendering considerations:** Using Svelte's `animate:flip` paired with transition states on tables causes jank. Raw CSS transitions over component states are preferred for stable performance. Relative time formatting (`timeAgo`) caused hydration issues, so absolute time rendering has been adopted.
-- **Mobile responsiveness and format alignment:** Removed `flex-col` stacking in mobile `HeroTrack.svelte` and replaced it with a `flex-row` setup grouping the Rank Badge and Track info to maximize vertical efficiency. Also standardized on `formatCompact()` for all generic stream displays across `HeroTrack` and `ChartTable` for visual consistency.
-- **Player SSR safety:** PlayerState class uses $state/$derived runes and guards browser interactions. Uses `typeof window === 'undefined'` for SSR guards to avoid issues in Node 22+ (which exposes `localStorage` experimentally).
-- **Data Robustness:** `loadPref` includes `isNaN` guards for numeric values and optional validation for enums (e.g., `repeat` mode) to prevent corruption from tampered `localStorage`.
-- **Firefox Drag Fix:** Queue reordering requires `e.dataTransfer.setData('text/plain', '')` in `ondragstart` or Firefox silently aborts the drag operation.
-- **Queue reorder:** Uses pointer events (not HTML drag-and-drop) for consistent mobile/desktop behavior. Reorder swaps items in the $state array and adjusts currentIndex if affected.
-- **Mobile responsive table:** `Streams` column is `hidden sm:table-cell` to prevent horizontal overflow on <640px. `Peak`/`Days` are `hidden md:table-cell`. `#` and `Listen` columns use `px-2 sm:px-4` responsive padding. `Listen` header is `w-auto sm:w-28`.
-- **Mobile player bar:** Uses 3-zone flex layout: track info (`max-w-[40%] sm:max-w-none`), controls (`flex-1 justify-center`), actions (`flex-1 justify-end`). Progress bar is `h-2 sm:h-1.5` for touch. Seek thumb is always visible on mobile (`opacity-100 sm:opacity-0 sm:group-hover:opacity-100`).
-- **HeroTrack mobile:** Keep streams+icons in compact `flex` row on mobile (not flex-col) — vertical stacking pushes 82.3M out of mobile viewport.
-- **Player Stats:** Updated `MusicPlayer.svelte` to display streams, peak rank, and chart days in both the main bar and queue panel. Adjusted `max-w` to 40% to accommodate the new metadata.
-- **Utility Centralization:** Extracted `formatTime` and `getYTThumbUrl` to `src/lib/utils.ts` to prevent redundant, inconsistent logic across `MusicPlayer.svelte` and `HeroTrack.svelte`.
-- **Media Session API:** Integrated `navigator.mediaSession` for lock-screen controls, media keys, and system media notifications. Metadata updates on track load; playback state syncs on play/pause; position state throttled to every ~2s to avoid excessive calls. Handlers set up once in MusicPlayer's `onMount`.
-- **Buffering state:** `player.buffering` flag set via YT `BUFFERING` state change. Play/pause button shows animated spinner during buffering. Resets to false on `PLAYING` or `PAUSED`.
-- **Play Next / Add to Queue:** `playNext(track)` inserts after current track (removes duplicates first). `addToQueue(track)` appends to end. Both start playback immediately if queue is empty. Exposed via TrackMenu context menu (three-dot button per row).
-- **Keyboard shortcuts:** Extended beyond Space — arrows for seek/volume, M mute, N/P next/prev, S shuffle, R repeat, Q queue, F fullscreen, ? help modal. All blocked when input/textarea/select focused. ShortcutsModal mounted in layout.
-- **Full-screen Now Playing:** `NowPlayingFull.svelte` — overlay with large artwork, track stats, seek bar, full transport controls, favorite toggle. Opens via F key, clicking track info in player bar, or chevron-down icon on mobile. Dynamic HSL gradient background from `trackToHue()`.
-- **Seek bar tooltip:** Hover over progress bar shows time position tooltip above cursor. Uses `onmousemove`/`onmouseleave` on the bar element with calculated offset.
-- **Equalizer animation:** Active track in ChartTable shows 3 animated bars (CSS `@keyframes eq-bar`) instead of rank number. Bars pause at static heights when track is paused.
-- **Favorites system:** `favorites.svelte.ts` — localStorage-backed `Record<string, boolean>` keyed by `spotifyId`. Toggle via TrackMenu, HeroTrack button, player bar heart, or NowPlayingFull. Small filled heart icon shown next to favorited track titles in ChartTable.
-- **Smooth track transitions:** `{#key track.ytMusicId}` blocks around track info in MusicPlayer and NowPlayingFull trigger `animate-fade-in` on track change for smooth visual transitions.
-- **Toast notifications:** Singleton `ToastState` with `show(msg, duration)`. Auto-dismisses. Used for shuffle/repeat toggles, queue actions, and favorite changes. Mounted once in layout as `<Toast />`.
-- **Dynamic gradient:** `trackToHue(artist, title)` generates deterministic hue from string hash. Applied as `hsla()` gradient on player bar background and full-screen backdrop. Avoids CORS issues with thumbnail color extraction.
-- **TrackMenu click-outside:** Uses `$effect` to add/remove window click listener only when menu is open. `requestAnimationFrame` delay prevents the opening click from immediately closing the menu.
-- **TrackMenu positioning:** Uses `portal` action to break out of CSS transform stacking contexts and mounts to `document.body` for accurate viewport-fixed positioning. Also includes "Open in YT Music" direct link.
-- **localStorage keys (new):** `spotifx-favorites` — JSON array of spotifyId strings.
+- `spotifx-favorites` — JSON array of Spotify track IDs

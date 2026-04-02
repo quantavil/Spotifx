@@ -8,7 +8,7 @@
 		updatePlaybackState,
 		updatePositionState
 	} from '$lib/stores/mediaSession';
-	import { formatCompact, formatTime, getYTThumbUrl, trackToHue } from '$lib/utils';
+	import { formatTime, getYTThumbUrl, trackToHue } from '$lib/utils';
 	import { onMount, onDestroy } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import { scrollText } from '$lib/actions';
@@ -17,19 +17,19 @@
 	let ytPlayer: any = null;
 	let progressInterval: ReturnType<typeof setInterval> | null = null;
 	let apiLoaded = false;
+	let apiLoading = false;
 	let pendingVideoId: string | null = null;
 	let playerReady = false;
+	let wantedPlaying = false;
 	let seeking = $state(false);
 	let consecutiveErrors = 0;
 	let progressBarEl: HTMLDivElement | undefined = $state();
 	let positionTick = 0;
 
-	// Seek tooltip
 	let hoverTime = $state('');
 	let hoverX = $state(0);
 	let hovering = $state(false);
 
-	// Queue drag state
 	let dragIndex: number | null = $state(null);
 	let dragOverIndex: number | null = $state(null);
 
@@ -54,16 +54,24 @@
 	// ── YouTube IFrame API ──
 
 	function loadYTApi() {
-		if (apiLoaded || typeof window === 'undefined') return;
+		if (apiLoaded || apiLoading || typeof window === 'undefined') return;
+
 		if ((window as any).YT?.Player) {
 			apiLoaded = true;
 			createPlayer();
 			return;
 		}
-		const tag = document.createElement('script');
-		tag.src = 'https://www.youtube.com/iframe_api';
-		document.head.appendChild(tag);
+
+		apiLoading = true;
+
+		if (!document.querySelector('script[src="https://www.youtube.com/iframe_api"]')) {
+			const tag = document.createElement('script');
+			tag.src = 'https://www.youtube.com/iframe_api';
+			document.head.appendChild(tag);
+		}
+
 		(window as any).onYouTubeIframeAPIReady = () => {
+			apiLoading = false;
 			apiLoaded = true;
 			createPlayer();
 		};
@@ -82,6 +90,7 @@
 				modestbranding: 1,
 				rel: 0,
 				iv_load_policy: 3,
+				playsinline: 1,
 				origin: window.location.origin
 			},
 			events: {
@@ -95,13 +104,15 @@
 	function onPlayerReady() {
 		playerReady = true;
 		ytPlayer.setVolume(player.volume);
-		if (pendingVideoId) {
+
+		if (pendingVideoId && wantedPlaying) {
 			ytPlayer.loadVideoById(pendingVideoId);
-			pendingVideoId = null;
 		}
+		pendingVideoId = null;
 	}
 
 	function onPlayerStateChange(event: any) {
+		if (!playerReady) return;
 		const YT = (window as any).YT;
 		switch (event.data) {
 			case YT.PlayerState.PLAYING:
@@ -127,14 +138,26 @@
 		}
 	}
 
-	function onPlayerError() {
+	function onPlayerError(event: any) {
+		if (!playerReady) return;
+
+		const code = event?.data;
 		consecutiveErrors++;
+
+		if (code === 101 || code === 150) {
+			toast.show("This track can't be played in an embedded player");
+		} else if (code === 100) {
+			toast.show('Track not found');
+		}
+
 		if (consecutiveErrors > 5) {
 			player.isPlaying = false;
 			player.buffering = false;
+			wantedPlaying = false;
 			toast.show('Playback error — too many failures');
 			return;
 		}
+
 		player.next();
 	}
 
@@ -166,7 +189,7 @@
 	// ── Seek bar ──
 
 	function seekFromPointer(e: PointerEvent) {
-		if (!progressBarEl) return;
+		if (!progressBarEl || player.duration <= 0) return;
 		const rect = progressBarEl.getBoundingClientRect();
 		const frac = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
 		player.currentTime = frac * player.duration;
@@ -174,7 +197,11 @@
 
 	function onPointerDown(e: PointerEvent) {
 		seeking = true;
-		progressBarEl?.setPointerCapture(e.pointerId);
+		try {
+			progressBarEl?.setPointerCapture(e.pointerId);
+		} catch {
+			/* disconnected element or invalid pointer */
+		}
 		seekFromPointer(e);
 	}
 
@@ -208,12 +235,17 @@
 		dragOverIndex = idx;
 	}
 
-	function onDragEnd() {
-		if (dragIndex !== null && dragOverIndex !== null && dragIndex !== dragOverIndex) {
+	function onDrop(idx: number) {
+		if (dragIndex !== null && dragIndex !== idx) {
 			const absFrom = player.currentIndex + 1 + dragIndex;
-			const absTo = player.currentIndex + 1 + dragOverIndex;
+			const absTo = player.currentIndex + 1 + idx;
 			player.reorder(absFrom, absTo);
 		}
+		dragIndex = null;
+		dragOverIndex = null;
+	}
+
+	function onDragEnd() {
 		dragIndex = null;
 		dragOverIndex = null;
 	}
@@ -294,10 +326,28 @@
 		toast.show(added ? 'Added to favorites' : 'Removed from favorites');
 	}
 
+	// ── Visibility change ──
+
+	function handleVisibilityChange() {
+		if (!document.hidden && wantedPlaying && ytPlayer && playerReady) {
+			try {
+				const YT = (window as any).YT;
+				if (ytPlayer.getPlayerState?.() !== YT?.PlayerState?.PLAYING) {
+					ytPlayer.playVideo();
+				}
+			} catch {
+				/* player may be destroyed */
+			}
+		}
+	}
+
 	// ── Lifecycle ──
 
 	onMount(() => {
 		player._onPlay = (videoId: string) => {
+			wantedPlaying = true;
+			consecutiveErrors = 0;
+
 			if (!apiLoaded) {
 				pendingVideoId = videoId;
 				loadYTApi();
@@ -309,22 +359,44 @@
 			}
 			ytPlayer.loadVideoById(videoId);
 		};
+
 		player._onPause = () => {
-			try { ytPlayer?.pauseVideo(); } catch { /* noop */ }
+			wantedPlaying = false;
+			try {
+				ytPlayer?.pauseVideo();
+			} catch {
+				/* noop */
+			}
 		};
+
 		player._onResume = () => {
-			try { ytPlayer?.playVideo(); } catch { /* noop */ }
+			wantedPlaying = true;
+			try {
+				ytPlayer?.playVideo();
+			} catch {
+				/* noop */
+			}
 		};
+
 		player._onSeek = (time: number) => {
-			try { ytPlayer?.seekTo(time, true); } catch { /* noop */ }
+			try {
+				ytPlayer?.seekTo(time, true);
+			} catch {
+				/* noop */
+			}
 		};
+
 		player._onVolume = (vol: number) => {
-			try { ytPlayer?.setVolume(vol); } catch { /* noop */ }
+			try {
+				ytPlayer?.setVolume(vol);
+			} catch {
+				/* noop */
+			}
 		};
 
 		setupMediaHandlers({
-			play: () => player.togglePlay(),
-			pause: () => player.togglePlay(),
+			play: () => player.play(),
+			pause: () => player.pause(),
 			prev: () => player.prev(),
 			next: () => player.next(),
 			seekTo: (time) => {
@@ -337,39 +409,37 @@
 			player._onPlay(player.currentTrack.ytMusicId);
 		}
 
-		// Keep-alive workaround: If the browser pauses the iframe when minimized, try to force it back to play
 		document.addEventListener('visibilitychange', handleVisibilityChange);
 	});
-
-	function handleVisibilityChange() {
-		// If the page is hidden but our internal state says we should be playing...
-		if (document.hidden && player.isPlaying && ytPlayer && playerReady) {
-			setTimeout(() => {
-				const YT = (window as any).YT;
-				if (ytPlayer.getPlayerState && ytPlayer.getPlayerState() !== YT?.PlayerState?.PLAYING) {
-					try { ytPlayer.playVideo(); } catch { /* noop */ }
-				}
-			}, 150); // Small delay to let the browser's auto-pause trigger first, then override
-		}
-	}
 
 	onDestroy(() => {
 		if (typeof document !== 'undefined') {
 			document.removeEventListener('visibilitychange', handleVisibilityChange);
 		}
+
 		stopProgressPolling();
+
+		playerReady = false;
+		wantedPlaying = false;
+
 		player._onPlay = null;
 		player._onPause = null;
 		player._onResume = null;
 		player._onSeek = null;
 		player._onVolume = null;
-		try { ytPlayer?.destroy(); } catch { /* noop */ }
+
+		const ref = ytPlayer;
+		ytPlayer = null;
+		try {
+			ref?.destroy();
+		} catch {
+			/* noop */
+		}
 	});
 </script>
 
 <svelte:window onkeydown={handleKeydown} />
 
-<!-- Hidden YT player -->
 <div
 	class="fixed pointer-events-none"
 	style="left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden;"
@@ -383,7 +453,6 @@
 		class="fixed bottom-0 left-0 right-0 z-50"
 		transition:fly={{ y: 80, duration: 250 }}
 	>
-		<!-- Queue panel -->
 		{#if player.queueOpen}
 			<div
 				class="bg-surface/95 backdrop-blur-lg border-t border-x border-white/10 rounded-t-xl
@@ -404,7 +473,6 @@
 					</button>
 				</div>
 
-				<!-- Now playing (no stats — just title/artist) -->
 				{#if player.currentTrack}
 					<div class="px-4 py-2.5 bg-accent/10 border-b border-white/5 flex-shrink-0">
 						<p class="text-[10px] font-semibold uppercase tracking-wider text-accent/80 mb-1">Now Playing</p>
@@ -426,19 +494,19 @@
 					</div>
 				{/if}
 
-				<!-- Upcoming tracks -->
 				<div class="overflow-y-auto flex-1 scrollbar-none">
 					{#if player.upcomingTracks.length === 0}
 						<div class="px-4 py-8 text-center text-gray-600 text-sm">No upcoming tracks</div>
 					{:else}
-						{#each player.upcomingTracks as track, i (track.ytMusicId + '-' + i)}
+						{#each player.upcomingTracks as track (track._qid)}
 							<div
 								class="flex items-center gap-2 px-4 py-2 hover:bg-surface-hover transition-colors group
-									{dragOverIndex === i && dragIndex !== null ? 'border-t-2 border-accent' : 'border-t border-transparent'}"
+									{dragOverIndex === player.upcomingTracks.indexOf(track) && dragIndex !== null ? 'border-t-2 border-accent' : 'border-t border-transparent'}"
 								role="listitem"
 								draggable="true"
-								ondragstart={(e) => { e.dataTransfer?.setData('text/plain', ''); onDragStart(i); }}
-								ondragover={(e) => { e.preventDefault(); onDragOver(i); }}
+								ondragstart={(e) => { e.dataTransfer?.setData('text/plain', ''); onDragStart(player.upcomingTracks.indexOf(track)); }}
+								ondragover={(e) => { e.preventDefault(); onDragOver(player.upcomingTracks.indexOf(track)); }}
+								ondrop={(e) => { e.preventDefault(); onDrop(player.upcomingTracks.indexOf(track)); }}
 								ondragend={onDragEnd}
 							>
 								<span
@@ -448,17 +516,17 @@
 									<Icon name="drag-handle" />
 								</span>
 								<span class="text-xs text-gray-600 font-mono tabular-nums w-5 text-right flex-shrink-0">
-									{i + 1}
+									{player.upcomingTracks.indexOf(track) + 1}
 								</span>
 								<button
-									onclick={() => player.jumpTo(player.currentIndex + 1 + i)}
+									onclick={() => player.jumpTo(player.currentIndex + 1 + player.upcomingTracks.indexOf(track))}
 									class="flex-1 min-w-0 text-left cursor-pointer hover:text-white transition-colors"
 								>
 									<p class="text-sm text-gray-300 truncate group-hover:text-white">{track.title}</p>
 									<p class="text-xs text-gray-600 truncate">{track.artist}</p>
 								</button>
 								<button
-									onclick={() => player.removeFromQueue(player.currentIndex + 1 + i)}
+									onclick={() => player.removeFromQueue(player.currentIndex + 1 + player.upcomingTracks.indexOf(track))}
 									class="text-gray-700 hover:text-red-400 transition-colors cursor-pointer p-1 opacity-0 group-hover:opacity-100 flex-shrink-0"
 									title="Remove from queue"
 									aria-label="Remove {track.title} from queue"
@@ -472,12 +540,10 @@
 			</div>
 		{/if}
 
-		<!-- Main player bar -->
 		<div
 			class="border-t border-white/10 backdrop-blur-lg transition-colors duration-500"
 			style="background: linear-gradient(90deg, hsla({dynamicHue}, 30%, 10%, 0.95) 0%, rgba(24,24,24,0.95) 50%);"
 		>
-			<!-- Progress bar -->
 			<div
 				bind:this={progressBarEl}
 				class="h-2 sm:h-1.5 bg-white/10 cursor-pointer group relative touch-none"
@@ -515,17 +581,13 @@
 				{/if}
 			</div>
 
-			<!-- Controls row -->
 			<div class="flex items-center px-2 sm:px-3 py-1.5 sm:py-2 max-w-6xl mx-auto gap-2 sm:gap-3">
-
-				<!-- ① Track info — click opens fullscreen -->
 				<button
 					onclick={() => player.toggleFullScreen()}
 					class="flex items-center gap-2 sm:gap-3 min-w-0 max-w-[50%] sm:max-w-[35%] text-left cursor-pointer group/info"
 				>
 					{#key player.currentTrack?.ytMusicId}
 						<div class="animate-fade-in flex items-center gap-2 sm:gap-3 min-w-0" style="animation-duration:0.25s">
-							<!-- Thumbnail with expand hint -->
 							<div class="relative flex-shrink-0">
 								{#if thumbUrl}
 									<img
@@ -542,7 +604,6 @@
 								</div>
 							</div>
 
-							<!-- Title & artist only — no stats -->
 							<div class="min-w-0">
 								<div class="scroll-text is-active" use:scrollText>
 									<span class="text-xs sm:text-sm font-medium text-white group-hover/info:text-accent transition-colors">
@@ -557,9 +618,7 @@
 					{/key}
 				</button>
 
-				<!-- ② Playback controls — shuffle/repeat hidden on mobile -->
 				<div class="flex items-center justify-center gap-0.5 sm:gap-1 flex-1">
-					<!-- Shuffle (desktop only) -->
 					<button
 						onclick={() => player.toggleShuffle()}
 						class="hidden sm:block p-2 rounded-full transition-colors cursor-pointer
@@ -579,7 +638,6 @@
 						<Icon name="skip-back" />
 					</button>
 
-					<!-- Play / Pause / Buffering -->
 					<button
 						onclick={() => player.togglePlay()}
 						class="p-2 bg-white rounded-full text-black hover:scale-105 active:scale-95 transition-transform cursor-pointer"
@@ -605,7 +663,6 @@
 						<Icon name="skip-forward" />
 					</button>
 
-					<!-- Repeat (desktop only) -->
 					<button
 						onclick={() => player.cycleRepeat()}
 						class="hidden sm:block p-2 rounded-full transition-colors cursor-pointer relative
@@ -617,7 +674,6 @@
 					</button>
 				</div>
 
-				<!-- ③ Desktop right zone: time, fav, fullscreen, queue, volume, close -->
 				<div class="hidden sm:flex items-center gap-2.5 flex-shrink-0">
 					<span class="text-[11px] text-gray-500 font-mono tabular-nums whitespace-nowrap">
 						{formatTime(player.currentTime)} / {formatTime(player.duration)}
@@ -683,7 +739,6 @@
 					</button>
 				</div>
 
-				<!-- ④ Mobile right zone: fav, queue, close (compact) -->
 				<div class="flex sm:hidden items-center gap-0.5 flex-shrink-0">
 					{#if player.currentTrack?.spotifyId}
 						<button
