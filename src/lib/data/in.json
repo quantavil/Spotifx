@@ -1,8 +1,8 @@
 {
   "country": "in",
   "countryName": "India",
-  "weekDate": "2026-04-01",
-  "lastUpdated": "2026-04-01T05:56:01.009Z",
+  "weekDate": "2026-04-02",
+  "lastUpdated": "2026-04-02T07:13:46.169Z",
   "tracks": [
     {
       "rank": 1,
@@ -153,7 +153,7 @@
       "title": "Shararat (w/ Madhubanti Bagchi, Jasmine Sandlas)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "0R7grQWU1dRxiOQGIqZm0Z",
-      "ytMusicId": "XtPK901WkQ0",
+      "ytMusicId": "uXlkjqPmZ4A",
       "streams": 4569003,
       "peak": 7,
       "weeks": 16
@@ -340,7 +340,7 @@
       "title": "Tum Ho Toh (From \"Saiyaara\") (w/ Hansika Pareek, Raj Shekhar)",
       "artist": "Vishal Mishra",
       "spotifyId": "6G8vN5EUtcDxOXOXadF6kp",
-      "ytMusicId": "N7jDUBRVQVA",
+      "ytMusicId": "",
       "streams": 3243027,
       "peak": 3,
       "weeks": 36
@@ -472,7 +472,7 @@
       "title": "Main Aur Tu (w/ Jasmine Sandlas, Reble)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "5icrEfubHCXlHEue9YUT3q",
-      "ytMusicId": "vj0ks4KUJww",
+      "ytMusicId": "BuQgRwVJglY",
       "streams": 2809209,
       "peak": 43,
       "weeks": 1
@@ -703,7 +703,7 @@
       "title": "Raabta (w/ Arijit Singh)",
       "artist": "Pritam",
       "spotifyId": "6FjbAnaPRPwiP3sciEYctO",
-      "ytMusicId": "aVPwXQgY2QI",
+      "ytMusicId": "piUHBTXsoiY",
       "streams": 2167534,
       "peak": 33,
       "weeks": 175
@@ -1121,7 +1121,7 @@
       "title": "Sajde (w/ Huzaif Nazar)",
       "artist": "Faheem Abdullah",
       "spotifyId": "4BGfzLrK6lgvKDjKSU7wrN",
-      "ytMusicId": "k8bXbFBItgI",
+      "ytMusicId": "f419vqAt8PU",
       "streams": 1788983,
       "peak": 13,
       "weeks": 43
@@ -1869,7 +1869,7 @@
       "title": "Admirin' You (w/ Ikky, Preston Pablo)",
       "artist": "Karan Aujla",
       "spotifyId": "6ygiy70ujkNOYXM1tQuMNe",
-      "ytMusicId": "3eDgV3KFCdI",
+      "ytMusicId": "a1P55Z1Jugg",
       "streams": 1471835,
       "peak": 24,
       "weeks": 136
