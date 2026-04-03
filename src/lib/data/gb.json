@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-04-02",
-  "lastUpdated": "2026-04-02T07:10:59.948Z",
+  "weekDate": "2026-04-03",
+  "lastUpdated": "2026-04-03T07:06:44.957Z",
   "tracks": [
     {
       "rank": 1,
@@ -109,7 +109,7 @@
       "title": "WHERE IS MY HUSBAND!",
       "artist": "RAYE",
       "spotifyId": "55lijDD6OAjLFFUHU9tcDm",
-      "ytMusicId": "94mq0YBsn8U",
+      "ytMusicId": "1UKRWMT_pF4",
       "streams": 2069767,
       "peak": 2,
       "weeks": 27
@@ -284,8 +284,8 @@
       "change": "NEW",
       "title": "Click Clack Symphony. (w/ Hans Zimmer)",
       "artist": "RAYE",
-      "spotifyId": "5PspYmmQ8nKESNTcBY2LlX",
-      "ytMusicId": "WAN6oZeCV1M",
+      "spotifyId": "0XOynYFi9hQfIXKnTct9A7",
+      "ytMusicId": "zzhYb-gZlCg",
       "streams": 1395762,
       "peak": 26,
       "weeks": 1
@@ -758,7 +758,7 @@
       "title": "Boys Don't Cry",
       "artist": "The Cure",
       "spotifyId": "1QFh8OH1e78dGd3VyJZCAC",
-      "ytMusicId": "YSAqXEcgoZ4",
+      "ytMusicId": "JAHZVS4tb1I",
       "streams": 836911,
       "peak": 34,
       "weeks": 16
@@ -1220,7 +1220,7 @@
       "title": "Unwritten",
       "artist": "Natasha Bedingfield",
       "spotifyId": "3U5JVgI2x4rDyHGObzJfNf",
-      "ytMusicId": "dxB6Gqg26Kw",
+      "ytMusicId": "iKejQrGq04w",
       "streams": 711280,
       "peak": 11,
       "weeks": 100
@@ -2034,7 +2034,7 @@
       "title": "Nightingale Lane.",
       "artist": "RAYE",
       "spotifyId": "7j7J2M3ZsKOsrhBueDjhqF",
-      "ytMusicId": "vh7U4zaXpQ4",
+      "ytMusicId": "8R9z3AS5SLg",
       "streams": 589462,
       "peak": 50,
       "weeks": 4

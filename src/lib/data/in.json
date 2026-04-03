@@ -1,8 +1,8 @@
 {
   "country": "in",
   "countryName": "India",
-  "weekDate": "2026-04-02",
-  "lastUpdated": "2026-04-02T07:13:46.169Z",
+  "weekDate": "2026-04-03",
+  "lastUpdated": "2026-04-03T07:09:34.739Z",
   "tracks": [
     {
       "rank": 1,
@@ -43,7 +43,7 @@
       "title": "Dhurandhar The Revenge - Aari Aari (w/ Bombay Rockers, Irshad Kamil, Khan Saab, Reble, Token, Jasmine Sandlas, Sudhir Yaduvanshi)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "157BtwkY54FQ3Xl8DsTso1",
-      "ytMusicId": "BuQgRwVJglY",
+      "ytMusicId": "f0i95p5l67Y",
       "streams": 7589314,
       "peak": 4,
       "weeks": 1
@@ -142,7 +142,7 @@
       "title": "Jaan Se Guzarte Hain (w/ Khan Saab)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "4aWTPC6cuebk9zSpW1PY1Y",
-      "ytMusicId": "iICM37_na2U",
+      "ytMusicId": "rVYB_5gwSes",
       "streams": 4730684,
       "peak": 13,
       "weeks": 1
@@ -153,7 +153,7 @@
       "title": "Shararat (w/ Madhubanti Bagchi, Jasmine Sandlas)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "0R7grQWU1dRxiOQGIqZm0Z",
-      "ytMusicId": "uXlkjqPmZ4A",
+      "ytMusicId": "-6-cqvwpYUM",
       "streams": 4569003,
       "peak": 7,
       "weeks": 16
@@ -1121,7 +1121,7 @@
       "title": "Sajde (w/ Huzaif Nazar)",
       "artist": "Faheem Abdullah",
       "spotifyId": "4BGfzLrK6lgvKDjKSU7wrN",
-      "ytMusicId": "f419vqAt8PU",
+      "ytMusicId": "k8bXbFBItgI",
       "streams": 1788983,
       "peak": 13,
       "weeks": 43
