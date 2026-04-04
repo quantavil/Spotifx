@@ -1,11 +1,11 @@
 <!-- src/routes/+layout.svelte -->
 <script lang="ts">
 	import '../app.css';
-	import CountrySelector from '$lib/components/CountrySelector.svelte';
-	import MusicPlayer from '$lib/components/MusicPlayer.svelte';
-	import NowPlayingFull from '$lib/components/NowPlayingFull.svelte';
-	import ShortcutsModal from '$lib/components/ShortcutsModal.svelte';
-	import Toast from '$lib/components/Toast.svelte';
+	import CountrySelector from '$lib/components/charts/CountrySelector.svelte';
+	import MusicPlayer from '$lib/components/player/MusicPlayer.svelte';
+	import NowPlayingFull from '$lib/components/player/NowPlayingFull.svelte';
+	import ShortcutsModal from '$lib/components/ui/ShortcutsModal.svelte';
+	import Toast from '$lib/components/ui/Toast.svelte';
 	import { player } from '$lib/stores/player.svelte';
 	import { page } from '$app/state';
 

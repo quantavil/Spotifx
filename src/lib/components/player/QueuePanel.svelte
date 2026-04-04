@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { player } from '$lib/stores/player.svelte';
 	import { fly } from 'svelte/transition';
-	import Icon from './Icon.svelte';
+	import Icon from '../ui/Icon.svelte';
 	import { getYTThumbUrl, trackToHue } from '$lib/utils';
 	import { scrollText } from '$lib/actions';
 

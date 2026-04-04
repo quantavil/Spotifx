@@ -5,10 +5,10 @@
 	import { player } from '$lib/stores/player.svelte';
 	import { favorites } from '$lib/stores/favorites.svelte';
 	import { scrollText } from '$lib/actions';
-	import RankBadge from './RankBadge.svelte';
-	import TrackArt from './TrackArt.svelte';
-	import TrackMenu from './TrackMenu.svelte';
-	import Icon from './Icon.svelte';
+	import RankBadge from '../track/RankBadge.svelte';
+	import TrackArt from '../track/TrackArt.svelte';
+	import TrackMenu from '../track/TrackMenu.svelte';
+	import Icon from '../ui/Icon.svelte';
 
 	let { tracks, searchQuery }: { tracks: Track[]; searchQuery: string } = $props();
 

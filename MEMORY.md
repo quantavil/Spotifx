@@ -23,15 +23,26 @@ A hobby music charts dashboard displaying weekly Spotify streaming data for mult
 │   ├── app.html
 │   ├── lib/
 │   │   ├── components/
-│   │   │   ├── ChartStats.svelte    # Quick charts meta stats
-│   │   │   ├── ChartTable.svelte    # Sortable chart table with inline PlayButton
-│   │   │   ├── CountrySelector.svelte
-│   │   │   ├── HeroTrack.svelte     # Top track gradient display with PlayButton
-│   │   │   ├── ListenLinks.svelte   # Spotify + YTM outbound links
-│   │   │   ├── MusicPlayer.svelte   # Fixed bottom player bar + hidden YT iframe + queue panel
-│   │   │   ├── PlayButton.svelte    # Inline per-track play/pause trigger
-│   │   │   ├── RankBadge.svelte
-│   │   │   └── SearchBar.svelte     # Search with debouncing
+│   │   │   ├── charts/
+│   │   │   │   ├── ChartStats.svelte    # Quick charts meta stats
+│   │   │   │   ├── ChartTable.svelte    # Sortable chart table with inline PlayButton
+│   │   │   │   ├── CountrySelector.svelte
+│   │   │   │   └── StatCard.svelte
+│   │   │   ├── player/
+│   │   │   │   ├── MusicPlayer.svelte   # Fixed bottom player bar + hidden YT iframe + queue panel
+│   │   │   │   ├── NowPlayingFull.svelte
+│   │   │   │   └── QueuePanel.svelte
+│   │   │   ├── track/
+│   │   │   │   ├── HeroTrack.svelte     # Top track gradient display with PlayButton
+│   │   │   │   ├── PlayButton.svelte    # Inline per-track play/pause trigger
+│   │   │   │   ├── RankBadge.svelte
+│   │   │   │   ├── TrackArt.svelte
+│   │   │   │   └── TrackMenu.svelte
+│   │   │   └── ui/
+│   │   │       ├── Icon.svelte
+│   │   │       ├── SearchBar.svelte     # Search with debouncing
+│   │   │       ├── ShortcutsModal.svelte
+│   │   │       └── Toast.svelte
 │   │   ├── config/
 │   │   │   └── countries.ts         # Country code/name/slug definitions
 │   │   ├── data/                    # Scraped JSON (global/us/gb/in)

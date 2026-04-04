@@ -2,11 +2,11 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import { player } from '$lib/stores/player.svelte';
-	import ChartTable from '$lib/components/ChartTable.svelte';
-	import SearchBar from '$lib/components/SearchBar.svelte';
-	import HeroTrack from '$lib/components/HeroTrack.svelte';
-	import ChartStats from '$lib/components/ChartStats.svelte';
-	import Icon from '$lib/components/Icon.svelte';
+	import ChartTable from '$lib/components/charts/ChartTable.svelte';
+	import SearchBar from '$lib/components/ui/SearchBar.svelte';
+	import HeroTrack from '$lib/components/track/HeroTrack.svelte';
+	import ChartStats from '$lib/components/charts/ChartStats.svelte';
+	import Icon from '$lib/components/ui/Icon.svelte';
 
 	let { data }: { data: PageData } = $props();
 	let searchQuery = $state('');

@@ -2,7 +2,7 @@
 <script lang="ts">
 	import { player } from '$lib/stores/player.svelte';
 	import type { Track } from '$lib/types';
-	import Icon from './Icon.svelte';
+	import Icon from '../ui/Icon.svelte';
 
 	let { track, allTracks, size = 'sm' }: {
 		track: Track;

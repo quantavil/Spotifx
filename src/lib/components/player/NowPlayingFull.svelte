@@ -6,7 +6,7 @@
 	import { formatTime, formatCompact, getYTThumbUrl, trackToHue } from '$lib/utils';
 	import { fly } from 'svelte/transition';
 	import { scrollText } from '$lib/actions';
-	import Icon from './Icon.svelte';
+	import Icon from '../ui/Icon.svelte';
 
 	const track = $derived(player.currentTrack);
 	const hue = $derived(track ? trackToHue(track.artist, track.title) : 140);

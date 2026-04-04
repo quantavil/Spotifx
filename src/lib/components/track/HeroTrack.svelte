@@ -9,7 +9,7 @@
 	import RankBadge from './RankBadge.svelte';
 	import TrackMenu from './TrackMenu.svelte';
 	import PlayButton from './PlayButton.svelte';
-	import Icon from './Icon.svelte';
+	import Icon from '../ui/Icon.svelte';
 
 	let { track, tracks }: { track: Track; tracks: Track[] } = $props();
 

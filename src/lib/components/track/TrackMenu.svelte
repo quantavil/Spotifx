@@ -6,7 +6,7 @@
 	import { trackMenu } from '$lib/stores/trackMenu.svelte';
 	import type { Track } from '$lib/types';
 	import { portal } from '$lib/actions';
-	import Icon from './Icon.svelte';
+	import Icon from '../ui/Icon.svelte';
 
 	let { track }: { track: Track } = $props();
 
