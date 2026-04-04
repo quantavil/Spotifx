@@ -128,16 +128,41 @@
 							{formatCompact(track.streams)} streams · Peak #{track.peak} · {track.weeks} days
 						</p>
 					</div>
-					{#if track.spotifyId}
-						<button
-							onclick={toggleFav}
-							class="p-2 transition-colors cursor-pointer flex-shrink-0
-								   {isFav ? 'text-red-400' : 'text-gray-500 hover:text-white'}"
-							aria-label={isFav ? 'Remove from favorites' : 'Add to favorites'}
-						>
-							<Icon name={isFav ? 'heart-filled' : 'heart'} class="w-6 h-6" />
-						</button>
-					{/if}
+					<div class="flex items-center sm:gap-1">
+						{#if track.ytMusicId}
+							<a
+								href={`https://music.youtube.com/watch?v=${track.ytMusicId}`}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="p-2 transition-colors cursor-pointer flex-shrink-0 text-gray-500 hover:text-white"
+								title="Open in YouTube Music"
+								aria-label="Open in YouTube Music"
+							>
+								<Icon name="youtube" class="w-6 h-6" />
+							</a>
+						{/if}
+						{#if track.spotifyId}
+							<a
+								href={`https://open.spotify.com/track/${track.spotifyId}`}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="p-2 transition-colors cursor-pointer flex-shrink-0 text-gray-500 hover:text-white"
+								title="Open in Spotify"
+								aria-label="Open in Spotify"
+							>
+								<Icon name="spotify" class="w-5 h-5" />
+							</a>
+							<button
+								onclick={toggleFav}
+								class="p-2 transition-colors cursor-pointer flex-shrink-0
+									   {isFav ? 'text-red-400' : 'text-gray-500 hover:text-white'}"
+								title={isFav ? 'Remove from favorites' : 'Add to favorites'}
+								aria-label={isFav ? 'Remove from favorites' : 'Add to favorites'}
+							>
+								<Icon name={isFav ? 'heart-filled' : 'heart'} class="w-6 h-6" />
+							</button>
+						{/if}
+					</div>
 				</div>
 			{/key}
 		</div>
@@ -178,15 +203,6 @@
 		<!-- Controls -->
 		<div class="flex items-center justify-center gap-4 sm:gap-6 px-6 pb-6 pt-2 flex-shrink-0">
 			<button
-				onclick={() => player.toggleShuffle()}
-				class="p-2 rounded-full transition-colors cursor-pointer
-					   {player.shuffled ? 'text-accent' : 'text-gray-400 hover:text-white'}"
-				aria-label="Toggle shuffle"
-			>
-				<Icon name="shuffle" class="w-5 h-5" />
-			</button>
-
-			<button
 				onclick={() => player.prev()}
 				class="p-2 text-gray-300 hover:text-white transition-colors cursor-pointer"
 				aria-label="Previous"
@@ -215,15 +231,6 @@
 				aria-label="Next"
 			>
 				<Icon name="skip-forward" class="w-7 h-7" />
-			</button>
-
-			<button
-				onclick={() => player.cycleRepeat()}
-				class="p-2 rounded-full transition-colors cursor-pointer
-					   {player.repeat !== 'off' ? 'text-accent' : 'text-gray-400 hover:text-white'}"
-				aria-label="Cycle repeat"
-			>
-				<Icon name={player.repeat === 'one' ? 'repeat-one' : 'repeat'} class="w-5 h-5" />
 			</button>
 		</div>
 	</div>

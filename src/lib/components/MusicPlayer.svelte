@@ -255,7 +255,15 @@
 	function handleKeydown(e: KeyboardEvent) {
 		const tag = (e.target as HTMLElement)?.tagName;
 		if (['INPUT', 'TEXTAREA', 'SELECT'].includes(tag)) {
-			if (e.key === 'Escape') (e.target as HTMLElement)?.blur();
+			if (e.key === 'Escape') {
+				(e.target as HTMLElement)?.blur();
+				if (player.fullScreenOpen) player.fullScreenOpen = false;
+			}
+			return;
+		}
+
+		if (e.key === 'Escape' && player.fullScreenOpen) {
+			player.fullScreenOpen = false;
 			return;
 		}
 
@@ -298,12 +306,6 @@
 				break;
 			case 'KeyM':
 				player.setVolume(player.volume > 0 ? 0 : 80);
-				break;
-			case 'KeyS':
-				player.toggleShuffle();
-				break;
-			case 'KeyR':
-				player.cycleRepeat();
 				break;
 			case 'KeyQ':
 				player.toggleQueue();
@@ -581,10 +583,19 @@
 				{/if}
 			</div>
 
-			<div class="flex items-center px-2 sm:px-3 py-1.5 sm:py-2 max-w-6xl mx-auto gap-2 sm:gap-3">
+			<!-- svelte-ignore a11y_click_events_have_key_events -->
+			<!-- svelte-ignore a11y_no_static_element_interactions -->
+			<div 
+				class="flex items-center px-2 sm:px-3 py-1.5 sm:py-2 max-w-6xl mx-auto gap-2 sm:gap-3 cursor-pointer"
+				onclick={(e) => {
+					const target = e.target;
+					if (target instanceof Element && !target.closest('button:not(.info-btn), input')) {
+						player.toggleFullScreen();
+					}
+				}}
+			>
 				<button
-					onclick={() => player.toggleFullScreen()}
-					class="flex items-center gap-2 sm:gap-3 min-w-0 max-w-[50%] sm:max-w-[35%] text-left cursor-pointer group/info"
+					class="info-btn flex items-center gap-2 sm:gap-3 min-w-0 max-w-[50%] sm:max-w-[35%] text-left cursor-pointer group/info"
 				>
 					{#key player.currentTrack?.ytMusicId}
 						<div class="animate-fade-in flex items-center gap-2 sm:gap-3 min-w-0" style="animation-duration:0.25s">
@@ -620,16 +631,6 @@
 
 				<div class="flex items-center justify-center gap-0.5 sm:gap-1 flex-1">
 					<button
-						onclick={() => player.toggleShuffle()}
-						class="hidden sm:block p-2 rounded-full transition-colors cursor-pointer
-							   {player.shuffled ? 'text-accent' : 'text-gray-400 hover:text-white'}"
-						title="Shuffle"
-						aria-label="Toggle shuffle"
-					>
-						<Icon name="shuffle" />
-					</button>
-
-					<button
 						onclick={() => player.prev()}
 						class="p-1.5 sm:p-2 text-gray-300 hover:text-white transition-colors cursor-pointer"
 						title="Previous"
@@ -661,16 +662,6 @@
 						aria-label="Next track"
 					>
 						<Icon name="skip-forward" />
-					</button>
-
-					<button
-						onclick={() => player.cycleRepeat()}
-						class="hidden sm:block p-2 rounded-full transition-colors cursor-pointer relative
-							   {player.repeat !== 'off' ? 'text-accent' : 'text-gray-400 hover:text-white'}"
-						title="Repeat: {player.repeat}"
-						aria-label="Cycle repeat mode"
-					>
-						<Icon name={player.repeat === 'one' ? 'repeat-one' : 'repeat'} />
 					</button>
 				</div>
 
