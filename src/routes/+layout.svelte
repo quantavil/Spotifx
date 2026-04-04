@@ -12,7 +12,7 @@
 	let { children } = $props();
 </script>
 
-<div class="min-h-screen flex flex-col">
+<div class="min-h-screen flex flex-col layout-main" class:queue-shift={player.visible && player.queueOpen}>
 	<header class="sticky top-0 z-10 bg-surface/95 backdrop-blur-sm border-b border-white/10">
 		<div class="max-w-6xl mx-auto px-4 py-3">
 			<div class="flex items-center justify-between mb-3">
@@ -68,3 +68,15 @@
 <NowPlayingFull />
 <ShortcutsModal />
 <Toast />
+
+<style>
+	.layout-main {
+		transition: margin-right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	@media (min-width: 640px) {
+		.queue-shift {
+			margin-right: 380px;
+		}
+	}
+</style>

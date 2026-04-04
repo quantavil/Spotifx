@@ -13,6 +13,7 @@
 	import { fly } from 'svelte/transition';
 	import { scrollText } from '$lib/actions';
 	import Icon from './Icon.svelte';
+	import QueuePanel from './QueuePanel.svelte';
 
 	let ytPlayer: any = null;
 	let progressInterval: ReturnType<typeof setInterval> | null = null;
@@ -29,9 +30,6 @@
 	let hoverTime = $state('');
 	let hoverX = $state(0);
 	let hovering = $state(false);
-
-	let dragIndex: number | null = $state(null);
-	let dragOverIndex: number | null = $state(null);
 
 	const thumbUrl = $derived(
 		player.currentTrack?.ytMusicId
@@ -225,31 +223,6 @@
 		hovering = true;
 	}
 
-	// ── Queue drag-to-reorder ──
-
-	function onDragStart(idx: number) {
-		dragIndex = idx;
-	}
-
-	function onDragOver(idx: number) {
-		dragOverIndex = idx;
-	}
-
-	function onDrop(idx: number) {
-		if (dragIndex !== null && dragIndex !== idx) {
-			const absFrom = player.currentIndex + 1 + dragIndex;
-			const absTo = player.currentIndex + 1 + idx;
-			player.reorder(absFrom, absTo);
-		}
-		dragIndex = null;
-		dragOverIndex = null;
-	}
-
-	function onDragEnd() {
-		dragIndex = null;
-		dragOverIndex = null;
-	}
-
 	// ── Keyboard ──
 
 	function handleKeydown(e: KeyboardEvent) {
@@ -258,13 +231,19 @@
 			if (e.key === 'Escape') {
 				(e.target as HTMLElement)?.blur();
 				if (player.fullScreenOpen) player.fullScreenOpen = false;
+				else if (player.queueOpen) player.queueOpen = false;
 			}
 			return;
 		}
 
-		if (e.key === 'Escape' && player.fullScreenOpen) {
-			player.fullScreenOpen = false;
-			return;
+		if (e.key === 'Escape') {
+			if (player.fullScreenOpen) {
+				player.fullScreenOpen = false;
+				return;
+			} else if (player.queueOpen) {
+				player.queueOpen = false;
+				return;
+			}
 		}
 
 		if (e.key === '?') {
@@ -315,6 +294,12 @@
 				break;
 			case 'KeyP':
 				player.prev();
+				break;
+			case 'KeyS':
+				player.toggleShuffle();
+				break;
+			case 'KeyR':
+				player.cycleRepeat();
 				break;
 			case 'KeyF':
 				if (player.currentTrack) player.toggleFullScreen();
@@ -451,104 +436,24 @@
 </div>
 
 {#if player.visible}
+	{#if player.queueOpen}
+		<QueuePanel />
+	{/if}
+
 	<div
-		class="fixed bottom-0 left-0 right-0 z-50"
+		class="fixed bottom-0 left-0 right-0 z-50 player-bar"
+		class:queue-open={player.queueOpen}
 		transition:fly={{ y: 80, duration: 250 }}
 	>
-		{#if player.queueOpen}
-			<div
-				class="bg-surface/95 backdrop-blur-lg border-t border-x border-white/10 rounded-t-xl
-					   max-w-6xl mx-auto max-h-[50vh] flex flex-col overflow-hidden"
-				transition:fly={{ y: 40, duration: 200 }}
-			>
-				<div class="flex items-center justify-between px-4 py-3 border-b border-white/5 flex-shrink-0">
-					<div>
-						<h3 class="text-sm font-semibold text-white">Queue</h3>
-						<p class="text-[11px] text-gray-500">{player.upcomingTracks.length} upcoming</p>
-					</div>
-					<button
-						onclick={() => player.toggleQueue()}
-						class="text-gray-500 hover:text-white transition-colors cursor-pointer p-1"
-						aria-label="Close queue"
-					>
-						<Icon name="close" />
-					</button>
-				</div>
-
-				{#if player.currentTrack}
-					<div class="px-4 py-2.5 bg-accent/10 border-b border-white/5 flex-shrink-0">
-						<p class="text-[10px] font-semibold uppercase tracking-wider text-accent/80 mb-1">Now Playing</p>
-						<div class="flex items-center gap-3">
-							{#if player.currentTrack.ytMusicId}
-								<img
-									src={getYTThumbUrl(player.currentTrack.ytMusicId, 'default')}
-									alt=""
-									class="w-8 h-8 rounded object-cover flex-shrink-0 bg-white/5"
-								/>
-							{/if}
-							<div class="min-w-0">
-								<div class="scroll-text is-active" use:scrollText>
-									<span class="text-sm font-medium text-white">{player.currentTrack.title}</span>
-								</div>
-								<p class="text-xs text-gray-400 truncate">{player.currentTrack.artist}</p>
-							</div>
-						</div>
-					</div>
-				{/if}
-
-				<div class="overflow-y-auto flex-1 scrollbar-none">
-					{#if player.upcomingTracks.length === 0}
-						<div class="px-4 py-8 text-center text-gray-600 text-sm">No upcoming tracks</div>
-					{:else}
-						{#each player.upcomingTracks as track (track._qid)}
-							<div
-								class="flex items-center gap-2 px-4 py-2 hover:bg-surface-hover transition-colors group
-									{dragOverIndex === player.upcomingTracks.indexOf(track) && dragIndex !== null ? 'border-t-2 border-accent' : 'border-t border-transparent'}"
-								role="listitem"
-								draggable="true"
-								ondragstart={(e) => { e.dataTransfer?.setData('text/plain', ''); onDragStart(player.upcomingTracks.indexOf(track)); }}
-								ondragover={(e) => { e.preventDefault(); onDragOver(player.upcomingTracks.indexOf(track)); }}
-								ondrop={(e) => { e.preventDefault(); onDrop(player.upcomingTracks.indexOf(track)); }}
-								ondragend={onDragEnd}
-							>
-								<span
-									class="text-gray-700 group-hover:text-gray-500 cursor-grab active:cursor-grabbing flex-shrink-0"
-									aria-hidden="true"
-								>
-									<Icon name="drag-handle" />
-								</span>
-								<span class="text-xs text-gray-600 font-mono tabular-nums w-5 text-right flex-shrink-0">
-									{player.upcomingTracks.indexOf(track) + 1}
-								</span>
-								<button
-									onclick={() => player.jumpTo(player.currentIndex + 1 + player.upcomingTracks.indexOf(track))}
-									class="flex-1 min-w-0 text-left cursor-pointer hover:text-white transition-colors"
-								>
-									<p class="text-sm text-gray-300 truncate group-hover:text-white">{track.title}</p>
-									<p class="text-xs text-gray-600 truncate">{track.artist}</p>
-								</button>
-								<button
-									onclick={() => player.removeFromQueue(player.currentIndex + 1 + player.upcomingTracks.indexOf(track))}
-									class="text-gray-700 hover:text-red-400 transition-colors cursor-pointer p-1 opacity-0 group-hover:opacity-100 flex-shrink-0"
-									title="Remove from queue"
-									aria-label="Remove {track.title} from queue"
-								>
-									<Icon name="close" class="w-3.5 h-3.5" />
-								</button>
-							</div>
-						{/each}
-					{/if}
-				</div>
-			</div>
-		{/if}
-
+		<!-- Player background -->
 		<div
-			class="border-t border-white/10 backdrop-blur-lg transition-colors duration-500"
-			style="background: linear-gradient(90deg, hsla({dynamicHue}, 30%, 10%, 0.95) 0%, rgba(24,24,24,0.95) 50%);"
+			class="border-t border-white/[0.06] backdrop-blur-2xl transition-colors duration-700"
+			style="background: linear-gradient(135deg, hsla({dynamicHue}, 40%, 8%, 0.97) 0%, rgba(18,18,18,0.97) 60%, hsla({dynamicHue}, 25%, 6%, 0.97) 100%);"
 		>
+			<!-- Progress bar -->
 			<div
 				bind:this={progressBarEl}
-				class="h-2 sm:h-1.5 bg-white/10 cursor-pointer group relative touch-none"
+				class="h-1 bg-white/[0.08] cursor-pointer group/bar relative touch-none hover:h-1.5 transition-all"
 				role="slider"
 				tabindex={0}
 				aria-label="Seek"
@@ -563,13 +468,13 @@
 				onmouseleave={() => (hovering = false)}
 			>
 				<div
-					class="h-full bg-accent transition-[width]"
+					class="h-full bg-accent transition-[width] rounded-r-full"
 					class:duration-100={!seeking}
 					style="width:{player.progress}%"
 				></div>
 				<div
 					class="absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-lg
-						   opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity pointer-events-none"
+						   opacity-100 sm:opacity-0 sm:group-hover/bar:opacity-100 transition-opacity pointer-events-none"
 					style="left:calc({player.progress}% - 6px)"
 				></div>
 
@@ -583,41 +488,45 @@
 				{/if}
 			</div>
 
+			<!-- Main controls: 3-column grid on desktop, flex on mobile -->
 			<!-- svelte-ignore a11y_click_events_have_key_events -->
 			<!-- svelte-ignore a11y_no_static_element_interactions -->
-			<div 
-				class="flex items-center px-2 sm:px-3 py-1.5 sm:py-2 max-w-6xl mx-auto gap-2 sm:gap-3 cursor-pointer"
+			<div
+				class="player-grid items-center px-3 sm:px-4 py-2 sm:py-2.5 gap-2 sm:gap-4 cursor-pointer"
 				onclick={(e) => {
 					const target = e.target;
-					if (target instanceof Element && !target.closest('button:not(.info-btn), input')) {
+					if (target instanceof Element && !target.closest('button:not(.info-btn), input, a')) {
 						player.toggleFullScreen();
 					}
 				}}
 			>
+				<!-- Left: Track info -->
 				<button
-					class="info-btn flex items-center gap-2 sm:gap-3 min-w-0 max-w-[50%] sm:max-w-[35%] text-left cursor-pointer group/info"
+					class="info-btn flex items-center gap-2.5 sm:gap-3 min-w-0 text-left cursor-pointer group/info"
 				>
 					{#key player.currentTrack?.ytMusicId}
-						<div class="animate-fade-in flex items-center gap-2 sm:gap-3 min-w-0" style="animation-duration:0.25s">
+						<div class="animate-fade-in flex items-center gap-2.5 sm:gap-3 min-w-0" style="animation-duration:0.25s">
 							<div class="relative flex-shrink-0">
 								{#if thumbUrl}
 									<img
 										src={thumbUrl}
 										alt=""
-										class="w-10 h-10 sm:w-11 sm:h-11 rounded object-cover bg-white/5"
+										class="w-11 h-11 sm:w-12 sm:h-12 rounded-md object-cover bg-white/5 shadow-md"
 										loading="lazy"
 									/>
 								{:else}
-									<div class="w-10 h-10 sm:w-11 sm:h-11 rounded bg-white/5"></div>
+									<div class="w-11 h-11 sm:w-12 sm:h-12 rounded-md bg-white/5 flex items-center justify-center">
+										<Icon name="music" class="w-5 h-5 text-gray-600" />
+									</div>
 								{/if}
-								<div class="absolute inset-0 rounded bg-black/0 group-hover/info:bg-black/40 transition-colors flex items-center justify-center">
+								<div class="absolute inset-0 rounded-md bg-black/0 group-hover/info:bg-black/40 transition-colors flex items-center justify-center">
 									<Icon name="fullscreen" class="w-4 h-4 text-white opacity-0 group-hover/info:opacity-100 transition-opacity" />
 								</div>
 							</div>
 
 							<div class="min-w-0">
 								<div class="scroll-text is-active" use:scrollText>
-									<span class="text-xs sm:text-sm font-medium text-white group-hover/info:text-accent transition-colors">
+									<span class="text-[13px] sm:text-sm font-semibold text-white group-hover/info:text-accent transition-colors">
 										{player.currentTrack?.title ?? ''}
 									</span>
 								</div>
@@ -629,137 +538,169 @@
 					{/key}
 				</button>
 
-				<div class="flex items-center justify-center gap-0.5 sm:gap-1 flex-1">
-					<button
-						onclick={() => player.prev()}
-						class="p-1.5 sm:p-2 text-gray-300 hover:text-white transition-colors cursor-pointer"
-						title="Previous"
-						aria-label="Previous track"
-					>
-						<Icon name="skip-back" />
-					</button>
-
-					<button
-						onclick={() => player.togglePlay()}
-						class="p-2 bg-white rounded-full text-black hover:scale-105 active:scale-95 transition-transform cursor-pointer"
-						title={player.isPlaying ? 'Pause' : 'Play'}
-						aria-label={player.isPlaying ? 'Pause' : 'Play'}
-					>
-						{#if player.buffering}
-							<svg class="w-5 h-5 animate-spin" viewBox="0 0 24 24" fill="none">
-								<circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" opacity="0.25"/>
-								<path d="M12 2a10 10 0 019.95 9" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-							</svg>
-						{:else}
-							<Icon name={player.isPlaying ? 'pause' : 'play'} class="w-5 h-5" />
-						{/if}
-					</button>
-
-					<button
-						onclick={() => player.next()}
-						class="p-1.5 sm:p-2 text-gray-300 hover:text-white transition-colors cursor-pointer"
-						title="Next"
-						aria-label="Next track"
-					>
-						<Icon name="skip-forward" />
-					</button>
-				</div>
-
-				<div class="hidden sm:flex items-center gap-2.5 flex-shrink-0">
-					<span class="text-[11px] text-gray-500 font-mono tabular-nums whitespace-nowrap">
-						{formatTime(player.currentTime)} / {formatTime(player.duration)}
-					</span>
-
-					{#if player.currentTrack?.spotifyId}
+				<!-- Center: Transport controls -->
+				<div class="flex items-center justify-center gap-1 sm:gap-1.5 flex-col sm:flex-row">
+					<div class="flex items-center justify-center gap-1 sm:gap-2">
 						<button
-							onclick={toggleFav}
-							class="p-1.5 transition-colors cursor-pointer
-								   {isFav ? 'text-red-400' : 'text-gray-400 hover:text-white'}"
-							title={isFav ? 'Remove from favorites' : 'Add to favorites'}
-							aria-label={isFav ? 'Remove from favorites' : 'Add to favorites'}
+							onclick={() => player.toggleShuffle()}
+							class="hidden sm:block p-1.5 transition-colors cursor-pointer
+								   {player.shuffled ? 'text-accent' : 'text-gray-500 hover:text-white'}"
+							title="Shuffle (S)"
+							aria-label="Toggle shuffle"
 						>
-							<Icon name={isFav ? 'heart-filled' : 'heart'} class="w-4 h-4" />
+							<Icon name="shuffle" class="w-4 h-4" />
 						</button>
-					{/if}
 
-					<button
-						onclick={() => player.toggleFullScreen()}
-						class="p-1.5 text-gray-400 hover:text-white transition-colors cursor-pointer"
-						title="Expand player (F)"
-						aria-label="Fullscreen player"
-					>
-						<Icon name="fullscreen" />
-					</button>
-
-					<button
-						onclick={() => player.toggleQueue()}
-						class="p-1.5 transition-colors cursor-pointer
-							   {player.queueOpen ? 'text-accent' : 'text-gray-400 hover:text-white'}"
-						title="Queue (Q)"
-						aria-label="Toggle queue"
-					>
-						<Icon name="queue" />
-					</button>
-
-					<div class="flex items-center gap-1.5 pl-1 border-l border-white/5">
 						<button
-							onclick={() => player.setVolume(player.volume > 0 ? 0 : 80)}
-							class="text-gray-400 hover:text-white transition-colors cursor-pointer"
-							aria-label={player.volume > 0 ? 'Mute' : 'Unmute'}
+							onclick={() => player.prev()}
+							class="p-1.5 sm:p-2 text-gray-300 hover:text-white transition-colors cursor-pointer"
+							title="Previous"
+							aria-label="Previous track"
 						>
-							<Icon name={player.volume === 0 ? 'volume-mute' : player.volume < 50 ? 'volume-low' : 'volume-high'} />
+							<Icon name="skip-back" class="w-5 h-5" />
 						</button>
-						<input
-							type="range"
-							min="0"
-							max="100"
-							value={player.volume}
-							oninput={(e) => player.setVolume(parseInt(e.currentTarget.value))}
-							class="w-20 h-1 accent-accent cursor-pointer"
-							aria-label="Volume"
-						/>
+
+						<button
+							onclick={() => player.togglePlay()}
+							class="p-2.5 bg-white rounded-full text-black hover:scale-105 active:scale-95 transition-transform cursor-pointer shadow-lg"
+							title={player.isPlaying ? 'Pause' : 'Play'}
+							aria-label={player.isPlaying ? 'Pause' : 'Play'}
+						>
+							{#if player.buffering}
+								<svg class="w-5 h-5 animate-spin" viewBox="0 0 24 24" fill="none">
+									<circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" opacity="0.25"/>
+									<path d="M12 2a10 10 0 019.95 9" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+								</svg>
+							{:else}
+								<Icon name={player.isPlaying ? 'pause' : 'play'} class="w-5 h-5" />
+							{/if}
+						</button>
+
+						<button
+							onclick={() => player.next()}
+							class="p-1.5 sm:p-2 text-gray-300 hover:text-white transition-colors cursor-pointer"
+							title="Next"
+							aria-label="Next track"
+						>
+							<Icon name="skip-forward" class="w-5 h-5" />
+						</button>
+
+						<button
+							onclick={() => player.cycleRepeat()}
+							class="hidden sm:block p-1.5 transition-colors cursor-pointer
+								   {player.repeat !== 'off' ? 'text-accent' : 'text-gray-500 hover:text-white'}"
+							title="Repeat (R)"
+							aria-label="Cycle repeat"
+						>
+							<Icon name={player.repeat === 'one' ? 'repeat-one' : 'repeat'} class="w-4 h-4" />
+						</button>
 					</div>
 
-					<button
-						onclick={() => player.close()}
-						class="p-1.5 text-gray-500 hover:text-white transition-colors cursor-pointer"
-						title="Close player"
-						aria-label="Close player"
-					>
-						<Icon name="close" />
-					</button>
+					<!-- Time display below controls on desktop -->
+					<div class="hidden sm:flex items-center gap-1.5 text-[11px] text-gray-500 font-mono tabular-nums">
+						<span>{formatTime(player.currentTime)}</span>
+						<span class="text-gray-600">/</span>
+						<span>{formatTime(player.duration)}</span>
+					</div>
 				</div>
 
-				<div class="flex sm:hidden items-center gap-0.5 flex-shrink-0">
-					{#if player.currentTrack?.spotifyId}
+				<!-- Right: Secondary controls -->
+				<div class="flex items-center justify-end gap-1 sm:gap-1.5">
+					<!-- Desktop controls -->
+					<div class="hidden sm:flex items-center gap-1">
+						{#if player.currentTrack?.spotifyId}
+							<button
+								onclick={toggleFav}
+								class="p-1.5 transition-colors cursor-pointer
+									   {isFav ? 'text-red-400' : 'text-gray-500 hover:text-white'}"
+								title={isFav ? 'Remove from favorites' : 'Add to favorites'}
+								aria-label={isFav ? 'Remove from favorites' : 'Add to favorites'}
+							>
+								<Icon name={isFav ? 'heart-filled' : 'heart'} class="w-4 h-4" />
+							</button>
+						{/if}
+
 						<button
-							onclick={toggleFav}
-							class="p-1.5 transition-colors cursor-pointer
-								   {isFav ? 'text-red-400' : 'text-gray-500'}"
-							aria-label={isFav ? 'Remove from favorites' : 'Add to favorites'}
+							onclick={() => player.toggleFullScreen()}
+							class="p-1.5 text-gray-500 hover:text-white transition-colors cursor-pointer"
+							title="Expand player (F)"
+							aria-label="Fullscreen player"
 						>
-							<Icon name={isFav ? 'heart-filled' : 'heart'} class="w-4 h-4" />
+							<Icon name="fullscreen" class="w-4 h-4" />
 						</button>
-					{/if}
 
-					<button
-						onclick={() => player.toggleQueue()}
-						class="p-1.5 transition-colors cursor-pointer
-							   {player.queueOpen ? 'text-accent' : 'text-gray-500'}"
-						aria-label="Toggle queue"
-					>
-						<Icon name="queue" />
-					</button>
+						<button
+							onclick={() => player.toggleQueue()}
+							class="p-1.5 transition-colors cursor-pointer
+								   {player.queueOpen ? 'text-accent' : 'text-gray-500 hover:text-white'}"
+							title="Queue (Q)"
+							aria-label="Toggle queue"
+						>
+							<Icon name="queue" class="w-4 h-4" />
+						</button>
 
-					<button
-						onclick={() => player.close()}
-						class="p-1.5 text-gray-600 hover:text-white transition-colors cursor-pointer"
-						aria-label="Close player"
-					>
-						<Icon name="close" />
-					</button>
+						<div class="flex items-center gap-1 pl-2 ml-1 border-l border-white/[0.06]">
+							<button
+								onclick={() => player.setVolume(player.volume > 0 ? 0 : 80)}
+								class="text-gray-500 hover:text-white transition-colors cursor-pointer p-1"
+								aria-label={player.volume > 0 ? 'Mute' : 'Unmute'}
+							>
+								<Icon name={player.volume === 0 ? 'volume-mute' : player.volume < 50 ? 'volume-low' : 'volume-high'} class="w-4 h-4" />
+							</button>
+							<input
+								type="range"
+								min="0"
+								max="100"
+								value={player.volume}
+								oninput={(e) => player.setVolume(parseInt(e.currentTarget.value))}
+								class="w-[88px] vol-slider"
+								style="--vol-pct: {player.volume}%"
+								aria-label="Volume"
+							/>
+						</div>
+					</div>
+
+					<!-- Mobile controls -->
+					<div class="flex sm:hidden items-center gap-0.5">
+						{#if player.currentTrack?.spotifyId}
+							<button
+								onclick={toggleFav}
+								class="p-1.5 transition-colors cursor-pointer
+									   {isFav ? 'text-red-400' : 'text-gray-600'}"
+								aria-label={isFav ? 'Remove from favorites' : 'Add to favorites'}
+							>
+								<Icon name={isFav ? 'heart-filled' : 'heart'} class="w-4 h-4" />
+							</button>
+						{/if}
+
+						<button
+							onclick={() => player.toggleQueue()}
+							class="p-1.5 transition-colors cursor-pointer
+								   {player.queueOpen ? 'text-accent' : 'text-gray-600 hover:text-white'}"
+							aria-label="Toggle queue"
+						>
+							<Icon name="queue" class="w-4 h-4" />
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 {/if}
+
+<style>
+	.player-grid {
+		display: grid;
+		grid-template-columns: 1fr auto 1fr;
+	}
+
+	.player-bar {
+		transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	@media (min-width: 640px) {
+		.player-bar.queue-open {
+			right: 380px;
+		}
+	}
+</style>

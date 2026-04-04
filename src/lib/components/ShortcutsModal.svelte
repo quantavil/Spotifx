@@ -13,8 +13,6 @@
 		{ key: 'M', action: 'Mute / Unmute' },
 		{ key: 'N', action: 'Next track' },
 		{ key: 'P', action: 'Previous track' },
-		{ key: 'S', action: 'Toggle shuffle' },
-		{ key: 'R', action: 'Cycle repeat' },
 		{ key: 'Q', action: 'Toggle queue' },
 		{ key: 'F', action: 'Fullscreen player' },
 		{ key: '/', action: 'Focus search' },
