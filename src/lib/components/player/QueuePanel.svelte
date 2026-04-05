@@ -51,7 +51,7 @@
 
 <div
 	class="z-40 flex flex-col overflow-hidden pb-[4.5rem] sm:pb-0
-		   w-full sm:w-full border-l border-white/[0.04] sm:shadow-none shadow-2xl
+		   w-full sm:w-full sm:shadow-none shadow-2xl
 		   { player.queueOpen ? 'fixed top-0 right-0 bottom-0 sm:static sm:h-full' : 'hidden sm:static sm:h-full sm:flex' }"
 	style="background: linear-gradient(180deg, hsla({hue}, 20%, 9%, 0.99) 0%, rgba(14,14,14,0.995) 25%);"
 >

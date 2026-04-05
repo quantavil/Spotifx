@@ -65,7 +65,7 @@
 </script>
 
 <div
-	class="bg-surface-alt rounded-lg border border-white/10 overflow-hidden animate-fade-in -mx-2 sm:mx-0"
+	class="overflow-hidden animate-fade-in"
 	style="animation-delay:160ms"
 >
 	<div class="px-4 py-2.5 border-b border-white/5 flex items-center justify-between">
@@ -87,7 +87,7 @@
 	<div class="overflow-x-auto">
 		<table class="w-full text-sm table-fixed">
 			<thead>
-				<tr class="border-b border-white/10 text-gray-400 text-[11px] uppercase tracking-wider">
+				<tr class="border-b border-white/[0.06] text-gray-500 text-[11px] uppercase tracking-wider">
 					<th class="text-left px-2 sm:px-3 py-3 w-9 sm:w-12">
 						<button onclick={() => toggleSort('rank')} class="hover:text-white transition-colors cursor-pointer">
 							#{sortIndicator('rank')}
@@ -125,7 +125,7 @@
 					{@const isCurrentTrack = player.isCurrentTrack(track)}
 					{@const trackFav = track.spotifyId ? favorites.has(track.spotifyId) : false}
 					<tr
-						class="group border-b border-white/5 hover:bg-surface-hover transition-colors even:bg-white/[0.015]
+						class="group border-b border-white/[0.04] hover:bg-white/[0.03] transition-colors
 							{isActive ? '!bg-accent/10 border-accent/20' : ''}"
 					>
 						<!-- Rank / Equalizer -->

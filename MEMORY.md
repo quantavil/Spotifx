@@ -18,16 +18,16 @@ A hobby music charts dashboard displaying weekly Spotify streaming data for mult
 │   ├── scrape.ts          # Bun scraping script (run with: bun run scrape)
 │   └── tsconfig.json      # Bun-targeted config for scripts/ only
 ├── src/
-│   ├── app.css            # TailwindCSS v4 @theme tokens + dark theme
+│   ├── app.css            # TailwindCSS v4 @theme tokens + dark theme (body bg #000 for gap-based panel separation)
 │   ├── app.d.ts
 │   ├── app.html
 │   ├── lib/
 │   │   ├── components/
 │   │   │   ├── charts/
-│   │   │   │   ├── ChartStats.svelte    # Quick charts meta stats
-│   │   │   │   ├── ChartTable.svelte    # Sortable chart table with inline PlayButton
+│   │   │   │   ├── ChartStats.svelte    # (unused — stats removed from page)
+│   │   │   │   ├── ChartTable.svelte    # Sortable chart table (borderless)
 │   │   │   │   ├── CountrySelector.svelte
-│   │   │   │   └── StatCard.svelte
+│   │   │   │   └── StatCard.svelte      # (unused — stats removed from page)
 │   │   │   ├── player/
 │   │   │   │   ├── MusicPlayer.svelte   # Fixed bottom player bar + hidden YT iframe + queue panel
 │   │   │   │   ├── NowPlayingFull.svelte
@@ -90,6 +90,14 @@ A hobby music charts dashboard displaying weekly Spotify streaming data for mult
 - Data source is kworb.net.
 - Player uses YouTube IFrame API (lazy-loaded ~200KB on first play interaction).
 - ytMusicId per track is resolved during scraping via ytmusic-api and cached across countries.
+
+## Layout Architecture (Proposal A — Immersive Gradient Flow)
+- **App shell**: 100vh CSS grid (`grid-template-rows: 1fr auto`) with `body bg: #000` as gap color.
+- **Left panel**: `rounded-xl bg-#121212`, scrolls internally (`overflow-y: auto`).
+- **Right panel**: Separate `rounded-xl bg-#121212` (queue). Panels separated by 6px gap—no borders.
+- **Player bar**: Grid child spanning full width (not fixed). No `right: 24rem` offset.
+- **Gradient bleed zone**: Top of chart page uses `hsla(hue, ...)` gradient that fades into panel bg. Hue derived from current playing track (or hero track if nothing playing) via `trackToHue()`.
+- **No bordered cards**: Hero, search, table all sit directly on panel surface. Borders eliminated site-wide.
 
 ## Player Architecture
 

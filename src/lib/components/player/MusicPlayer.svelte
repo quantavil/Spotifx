@@ -376,21 +376,21 @@
 
 {#if player.visible}
 	<div
-		class="fixed bottom-0 left-0 right-0 z-50 player-bar"
-		transition:fly={{ y: 80, duration: 250 }}
+		class="player-bar z-50"
+		transition:fly={{ y: 60, duration: 250 }}
 	>
-		<!-- Player background -->
 		<div
-			class="border-t border-white/[0.06] backdrop-blur-2xl transition-colors duration-700"
-			style="background: linear-gradient(135deg, hsla({dynamicHue}, 40%, 8%, 0.97) 0%, rgba(18,18,18,0.97) 60%, hsla({dynamicHue}, 25%, 6%, 0.97) 100%);"
+			class="backdrop-blur-2xl transition-colors duration-700"
+			style="background: linear-gradient(135deg, hsla({dynamicHue}, 40%, 8%, 0.98) 0%, rgba(18,18,18,0.98) 60%, hsla({dynamicHue}, 25%, 6%, 0.98) 100%);"
 		>
 			<PlayerProgressBar bind:seeking />
 
 			<!-- svelte-ignore a11y_no_static_element_interactions -->
 			<!-- svelte-ignore a11y_click_events_have_key_events -->
 			<div
-				class="player-grid items-center px-3 sm:px-4 py-2 sm:py-2.5 gap-2 sm:gap-4 cursor-pointer"
+				class="player-grid items-center px-3 sm:px-4 py-2 sm:py-2.5 gap-2 sm:gap-4 cursor-pointer sm:cursor-default"
 				onclick={(e) => {
+					if (window.innerWidth >= 640) return;
 					const target = e.target;
 					if (target instanceof Element && !target.closest('button:not(.info-btn), input, a')) {
 						player.toggleFullScreen();
@@ -411,13 +411,5 @@
 		grid-template-columns: 1fr auto 1fr;
 	}
 
-	.player-bar {
-		transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-	}
 
-	@media (min-width: 640px) {
-		.player-bar {
-			right: 24rem;
-		}
-	}
 </style>

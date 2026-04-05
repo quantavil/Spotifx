@@ -24,7 +24,7 @@
 			class="px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-all
 				{active === country.code
 				? 'bg-accent text-black shadow-sm shadow-accent/20'
-				: 'bg-surface-alt text-gray-400 hover:bg-surface-hover hover:text-white'}"
+				: 'bg-white/[0.07] text-gray-400 hover:bg-white/[0.12] hover:text-white'}"
 			aria-current={active === country.code ? 'page' : undefined}
 		>
 			{country.name}

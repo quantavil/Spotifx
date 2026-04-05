@@ -10,6 +10,7 @@
 	--color-rank-up: #1db954;
 	--color-rank-down: #e74c3c;
 	--color-rank-new: #f1c40f;
+	--color-shell: #000000;
 }
 
 @utility scrollbar-none {
@@ -88,10 +89,11 @@ html {
 }
 
 body {
-	background-color: var(--color-surface);
+	background-color: var(--color-shell);
 	color: #e5e5e5;
 	font-family:
 		-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+	overflow: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -109,9 +111,7 @@ body {
 	background: #444;
 }
 
-main {
-	view-transition-name: main-content;
-}
+
 
 /* ── Custom volume slider ── */
 input[type='range'].vol-slider {

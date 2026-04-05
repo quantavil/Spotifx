@@ -30,9 +30,9 @@
 		bind:value
 		type="text"
 		placeholder="Search tracks or artists…"
-		class="w-full pl-10 pr-16 py-2.5 rounded-lg bg-surface-alt border border-white/10
+		class="w-full pl-10 pr-16 py-2.5 rounded-full bg-white/[0.07]
 			   text-white placeholder-gray-500 text-sm
-			   focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/30
+			   focus:outline-none focus:bg-white/[0.12] focus:ring-1 focus:ring-white/20
 			   transition-colors"
 	/>
 	{#if value}
