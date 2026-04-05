@@ -41,17 +41,19 @@
 <!-- Backdrop overlay on mobile -->
 <!-- svelte-ignore a11y_click_events_have_key_events -->
 <!-- svelte-ignore a11y_no_static_element_interactions -->
+{#if player.queueOpen}
 <div
 	class="fixed inset-0 z-[39] bg-black/60 sm:hidden"
 	onclick={() => player.toggleQueue()}
 	transition:fly={{ duration: 150, opacity: 0 }}
 ></div>
+{/if}
 
 <div
-	class="fixed top-0 right-0 bottom-0 z-40 flex flex-col overflow-hidden pb-[72px] sm:pb-[80px]
-		   w-full sm:w-[380px] border-l border-white/[0.04] sm:shadow-none shadow-2xl"
+	class="z-40 flex flex-col overflow-hidden pb-[4.5rem] sm:pb-0
+		   w-full sm:w-full border-l border-white/[0.04] sm:shadow-none shadow-2xl
+		   { player.queueOpen ? 'fixed top-0 right-0 bottom-0 sm:static sm:h-full' : 'hidden sm:static sm:h-full sm:flex' }"
 	style="background: linear-gradient(180deg, hsla({hue}, 20%, 9%, 0.99) 0%, rgba(14,14,14,0.995) 25%);"
-	transition:fly={{ x: 400, duration: 250, opacity: 1 }}
 >
 	<!-- Header -->
 	<div class="flex items-center justify-between px-5 py-4 flex-shrink-0 border-b border-white/[0.05]">
@@ -80,7 +82,7 @@
 			</button>
 			<button
 				onclick={() => player.toggleQueue()}
-				class="text-gray-500 hover:text-white transition-colors cursor-pointer p-2 rounded-full hover:bg-white/5 ml-1"
+				class="text-gray-500 hover:text-white transition-colors cursor-pointer p-2 rounded-full hover:bg-white/5 ml-1 sm:hidden"
 				aria-label="Close queue"
 			>
 				<Icon name="close" class="w-4 h-4" />

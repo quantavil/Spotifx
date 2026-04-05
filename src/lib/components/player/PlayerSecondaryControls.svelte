@@ -40,15 +40,6 @@
 			<Icon name="fullscreen" class="w-4 h-4" />
 		</button>
 
-		<button
-			onclick={() => player.toggleQueue()}
-			class="p-1.5 transition-colors cursor-pointer {player.queueOpen ? 'text-accent' : 'text-gray-500 hover:text-white'}"
-			title="Queue (Q)"
-			aria-label="Toggle queue"
-		>
-			<Icon name="queue" class="w-4 h-4" />
-		</button>
-
 		<div class="flex items-center gap-1 pl-2 ml-1 border-l border-white/[0.06]">
 			<button
 				onclick={() => player.setVolume(player.volume > 0 ? 0 : 80)}

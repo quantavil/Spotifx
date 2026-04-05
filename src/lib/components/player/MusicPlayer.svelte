@@ -11,7 +11,6 @@
 	import { onMount, onDestroy } from 'svelte';
 	import { fly } from 'svelte/transition';
 
-	import QueuePanel from './QueuePanel.svelte';
 	import PlayerProgressBar from './PlayerProgressBar.svelte';
 	import PlayerTrackInfo from './PlayerTrackInfo.svelte';
 	import PlayerMainControls from './PlayerMainControls.svelte';
@@ -376,13 +375,8 @@
 </div>
 
 {#if player.visible}
-	{#if player.queueOpen}
-		<QueuePanel />
-	{/if}
-
 	<div
 		class="fixed bottom-0 left-0 right-0 z-50 player-bar"
-		class:queue-open={player.queueOpen}
 		transition:fly={{ y: 80, duration: 250 }}
 	>
 		<!-- Player background -->
@@ -422,8 +416,8 @@
 	}
 
 	@media (min-width: 640px) {
-		.player-bar.queue-open {
-			right: 380px;
+		.player-bar {
+			right: 24rem;
 		}
 	}
 </style>
