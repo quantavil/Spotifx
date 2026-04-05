@@ -11,11 +11,7 @@
 
 	function handleClick(e: Event) {
 		e.stopPropagation();
-		if (isActive) {
-			player.togglePlay();
-		} else {
-			player.playTrack(track, allTracks);
-		}
+		player.playOrToggle(track, allTracks);
 	}
 </script>
 

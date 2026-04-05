@@ -1,12 +1,12 @@
 <!-- src/lib/components/TrackMenu.svelte -->
 <script lang="ts">
 	import { player } from '$lib/stores/player.svelte';
-	import { favorites } from '$lib/stores/favorites.svelte';
 	import { toast } from '$lib/stores/toast.svelte';
 	import { trackMenu } from '$lib/stores/trackMenu.svelte';
 	import type { Track } from '$lib/types';
 	import { portal } from '$lib/actions';
 	import Icon from '../ui/Icon.svelte';
+	import FavoriteButton from '../ui/FavoriteButton.svelte';
 
 	let { track }: { track: Track } = $props();
 
@@ -16,7 +16,6 @@
 	// Unique ID per component instance for the shared store
 	const menuId = typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2);
 	const open = $derived(trackMenu.isOpen(menuId));
-	const isFav = $derived(track.spotifyId ? favorites.has(track.spotifyId) : false);
 	const hasYtm = $derived(!!track.ytMusicId);
 
 	function toggle(e: Event) {
@@ -57,14 +56,6 @@
 		e.stopPropagation();
 		const ok = player.addToQueue(track);
 		toast.show(ok ? 'Added to queue' : 'Already in queue');
-		close();
-	}
-
-	function handleFavorite(e: Event) {
-		e.stopPropagation();
-		if (!track.spotifyId) return;
-		const added = favorites.toggle(track.spotifyId);
-		toast.show(added ? 'Added to favorites' : 'Removed from favorites');
 		close();
 	}
 
@@ -142,14 +133,13 @@
 			{/if}
 
 			{#if track.spotifyId}
-				<button
-					onclick={handleFavorite}
-					class="w-full text-left px-4 py-2.5 text-sm hover:bg-surface-hover transition-colors cursor-pointer flex items-center gap-3
-						   {isFav ? 'text-red-400' : 'text-gray-300 hover:text-white'}"
-				>
-					<Icon name={isFav ? 'heart-filled' : 'heart'} class="w-4 h-4" />
-					{isFav ? 'Remove Favorite' : 'Add to Favorites'}
-				</button>
+				<FavoriteButton 
+					{track}
+					showText={true}
+					class="w-full text-left px-4 py-2.5 text-sm hover:bg-surface-hover transition-colors cursor-pointer flex items-center gap-3 text-gray-300 hover:text-white"
+					iconClass="w-4 h-4"
+					onToggled={() => close()}
+				/>
 			{/if}
 
 			{#if track.spotifyId}

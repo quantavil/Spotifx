@@ -39,10 +39,14 @@ A hobby music charts dashboard displaying weekly Spotify streaming data for mult
 │   │   │   │   ├── TrackArt.svelte
 │   │   │   │   └── TrackMenu.svelte
 │   │   │   └── ui/
+│   │   │       ├── Equalizer.svelte     # Animated CSS equalizer bars
+│   │   │       ├── FavoriteButton.svelte# Clickable heart for Spotify favorites
+│   │   │       ├── HighlightedText.svelte # Highlights text search matches
 │   │   │       ├── Icon.svelte
 │   │   │       ├── SearchBar.svelte     # Search with debouncing
 │   │   │       ├── ShortcutsModal.svelte
-│   │   │       └── Toast.svelte
+│   │   │       ├── Toast.svelte
+│   │   │       └── TrackThumbnail.svelte# Unified YouTube track image wrapper
 │   │   ├── config/
 │   │   │   └── countries.ts         # Country code/name/slug definitions
 │   │   ├── data/                    # Scraped JSON (global/us/gb/in)
@@ -107,6 +111,7 @@ A hobby music charts dashboard displaying weekly Spotify streaming data for mult
 ### Components
 - **`player.svelte.ts`** — Singleton Svelte 5 runes class (`PlayerState`). Manages queue of `QueueEntry[]`, currentIndex, shuffle (Fisher-Yates), repeat (off/all/one), progress, volume. Exposes:
   - Callback slots (`_onPlay`, `_onPause`, `_onResume`, `_onSeek`, `_onVolume`) wired by MusicPlayer on mount.
+  - Exposes `playOrToggle(track, allTracks)` helper to centralize play/pause behavior across the UI.
   - Explicit `play()` and `pause()` methods (not just `togglePlay()`) for correct MediaSession integration.
   - `seek(fraction)` guards against `duration <= 0`.
   - Persists volume, shuffle, and repeat to localStorage and hydrates on construction.
@@ -121,7 +126,7 @@ A hobby music charts dashboard displaying weekly Spotify streaming data for mult
   - **Teardown safety** — `onDestroy` nulls `ytPlayer` reference and `playerReady` flag before calling `destroy()` on saved ref; `onPlayerError`/`onPlayerStateChange` return early when `!playerReady`.
   - **Visibility change** — resumes playback when page becomes **visible** (not hidden), only if `wantedPlaying` is true.
 
-- **`PlayButton.svelte`** — Renders only when track has `ytMusicId`. Shows play icon normally, pause icon when that track is the active playing track. Calls `player.playTrack(track, allTracks)` to set queue context.
+- **`PlayButton.svelte`** — Renders only when track has `ytMusicId`. Shows play icon normally, pause icon when that track is the active playing track. Calls `player.playOrToggle(track, allTracks)` to set queue context or pause.
 
 - **Queue Panel** — Toggled from MusicPlayer, slides up from the player bar. Shows upcoming tracks with: click-to-jump, drag-to-reorder (drop-based), remove-from-queue. Uses `track._qid` as stable `{#each}` key. Current track is highlighted.
 

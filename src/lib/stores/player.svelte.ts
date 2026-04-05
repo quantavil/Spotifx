@@ -184,6 +184,14 @@ class PlayerState {
 		}
 	}
 
+	playOrToggle(track: Track, allTracks?: Track[]) {
+		if (this.isCurrentTrack(track)) {
+			this.togglePlay();
+		} else {
+			this.playTrack(track, allTracks ?? [track]);
+		}
+	}
+
 	next() {
 		if (this.queue.length === 0) return;
 

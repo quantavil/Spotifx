@@ -2,7 +2,9 @@
 	import { player } from '$lib/stores/player.svelte';
 	import { fly } from 'svelte/transition';
 	import Icon from '../ui/Icon.svelte';
-	import { getYTThumbUrl, trackToHue } from '$lib/utils';
+	import TrackThumbnail from '../ui/TrackThumbnail.svelte';
+	import Equalizer from '../ui/Equalizer.svelte';
+	import { trackToHue } from '$lib/utils';
 	import { scrollText } from '$lib/actions';
 
 	let dragIndex: number | null = $state(null);
@@ -96,25 +98,16 @@
 			style="background: hsla({hue}, 20%, 12%, 0.4);"
 		>
 			<p class="text-[10px] font-semibold uppercase tracking-widest text-accent/80 mb-2.5 flex items-center gap-2">
-				<span class="flex gap-[3px] items-end h-3.5">
-					<span class="eq-bar {player.isPlaying ? 'is-playing' : ''}" style="animation-delay: 0s; height: 4px;"></span>
-					<span class="eq-bar {player.isPlaying ? 'is-playing' : ''}" style="animation-delay: 0.2s; height: 8px;"></span>
-					<span class="eq-bar {player.isPlaying ? 'is-playing' : ''}" style="animation-delay: 0.4s; height: 4px;"></span>
-				</span>
+				<Equalizer isPlaying={player.isPlaying} />
 				Now Playing
 			</p>
 			<div class="flex items-center gap-3">
-				{#if player.currentTrack.ytMusicId}
-					<img
-						src={getYTThumbUrl(player.currentTrack.ytMusicId, 'default')}
-						alt=""
-						class="w-12 h-12 rounded-lg shadow-lg object-cover flex-shrink-0 bg-white/5"
-					/>
-				{:else}
-					<div class="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0">
-						<Icon name="music" class="w-5 h-5 text-gray-600" />
-					</div>
-				{/if}
+				<TrackThumbnail
+					track={player.currentTrack}
+					quality="default"
+					class="w-12 h-12 rounded-lg shadow-lg object-cover flex-shrink-0 bg-white/5"
+					iconClass="w-5 h-5 text-gray-600"
+				/>
 				<div class="min-w-0 flex-1">
 					<div class="scroll-text is-active" use:scrollText>
 						<span class="text-sm font-semibold text-white">{player.currentTrack.title}</span>
@@ -162,18 +155,12 @@
 					</div>
 
 					<!-- Thumbnail -->
-					{#if track.ytMusicId}
-						<img
-							src={getYTThumbUrl(track.ytMusicId, 'default')}
-							alt=""
-							class="w-9 h-9 rounded object-cover flex-shrink-0 bg-white/5"
-							loading="lazy"
-						/>
-					{:else}
-						<div class="w-9 h-9 rounded bg-white/5 flex items-center justify-center flex-shrink-0">
-							<Icon name="music" class="w-3.5 h-3.5 text-gray-600" />
-						</div>
-					{/if}
+					<TrackThumbnail
+						{track}
+						quality="default"
+						class="w-9 h-9 rounded object-cover flex-shrink-0 bg-white/5"
+						iconClass="w-3.5 h-3.5 text-gray-600"
+					/>
 
 					<!-- Track info -->
 					<button

@@ -9,6 +9,8 @@
 	import TrackArt from '../track/TrackArt.svelte';
 	import TrackMenu from '../track/TrackMenu.svelte';
 	import Icon from '../ui/Icon.svelte';
+	import HighlightedText from '../ui/HighlightedText.svelte';
+	import Equalizer from '../ui/Equalizer.svelte';
 
 	let { tracks, searchQuery }: { tracks: Track[]; searchQuery: string } = $props();
 
@@ -60,7 +62,7 @@
 	function playTrack(e: Event, track: Track) {
 		if (!track.ytMusicId) return;
 		e.stopPropagation();
-		player.isCurrentTrack(track) ? player.togglePlay() : player.playTrack(track, tracks);
+		player.playOrToggle(track, tracks);
 	}
 </script>
 
@@ -131,16 +133,7 @@
 						<!-- Rank / Equalizer -->
 						<td class="px-2 sm:px-3 py-2.5 align-middle">
 							{#if isCurrentTrack}
-								<div class="flex items-end gap-[2px] h-4 justify-center">
-									{#each [0, 1, 2] as bar}
-										<div
-											class="eq-bar {isActive ? 'is-playing' : ''}"
-											style={isActive
-												? `animation-delay:${bar * 0.2}s`
-												: `height:${bar === 1 ? '8px' : '4px'}`}
-										></div>
-									{/each}
-								</div>
+								<Equalizer isPlaying={isActive} class="flex items-end gap-[2px] h-4 justify-center" />
 							{:else}
 								<span class="text-gray-500 font-mono text-xs tabular-nums">{track.rank}</span>
 							{/if}
@@ -166,9 +159,7 @@
 										>
 											<span class="text-sm font-medium text-white transition-colors
 												{track.ytMusicId ? 'group-hover/title:text-accent' : ''}">
-												{#each highlightText(track.title, query) as part}
-													{#if part.match}<mark class="bg-accent/25 text-white rounded-sm px-0.5">{part.text}</mark>{:else}{part.text}{/if}
-												{/each}
+												<HighlightedText text={track.title} {query} />
 											</span>
 										</div>
 										{#if trackFav}
@@ -176,9 +167,7 @@
 										{/if}
 									</div>
 									<p class="text-xs text-gray-400 truncate mt-0.5">
-										{#each highlightText(track.artist, query) as part}
-											{#if part.match}<mark class="bg-accent/25 text-white rounded-sm px-0.5">{part.text}</mark>{:else}{part.text}{/if}
-										{/each}
+										<HighlightedText text={track.artist} {query} />
 									</p>
 								</button>
 							</div>

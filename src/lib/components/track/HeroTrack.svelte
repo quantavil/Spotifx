@@ -1,52 +1,34 @@
 <!-- src/lib/components/track/HeroTrack.svelte -->
 <script lang="ts">
 	import type { Track } from '$lib/types';
-	import { formatCompact, getYTThumbUrl } from '$lib/utils';
+	import { formatCompact } from '$lib/utils';
 	import { player } from '$lib/stores/player.svelte';
-	import { favorites } from '$lib/stores/favorites.svelte';
-	import { toast } from '$lib/stores/toast.svelte';
 	import { scrollText } from '$lib/actions';
 	import RankBadge from './RankBadge.svelte';
 	import TrackMenu from './TrackMenu.svelte';
 	import PlayButton from './PlayButton.svelte';
-	import Icon from '../ui/Icon.svelte';
+	import TrackThumbnail from '../ui/TrackThumbnail.svelte';
+	import FavoriteButton from '../ui/FavoriteButton.svelte';
 
 	let { track, tracks }: { track: Track; tracks: Track[] } = $props();
 
-	const heroThumb = $derived(
-		track.ytMusicId ? getYTThumbUrl(track.ytMusicId) : ''
-	);
 	const isActive = $derived(player.isCurrentTrack(track) && player.isPlaying);
-	const isFav = $derived(track.spotifyId ? favorites.has(track.spotifyId) : false);
 
 	function handleTitleClick() {
 		if (!track.ytMusicId) return;
-		player.isCurrentTrack(track) ? player.togglePlay() : player.playTrack(track, tracks);
-	}
-
-	function toggleFav() {
-		if (!track.spotifyId) return;
-		const added = favorites.toggle(track.spotifyId);
-		toast.show(added ? 'Added to favorites' : 'Removed from favorites');
+		player.playOrToggle(track, tracks);
 	}
 </script>
 
 <div class="mb-5 animate-fade-in" style="animation-delay:40ms">
 	<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
 		<div class="flex items-center gap-4 flex-1 min-w-0">
-			{#if heroThumb}
-				<img
-					src={heroThumb}
-					alt=""
-					class="flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-lg object-cover shadow-2xl shadow-black/50"
-				/>
-			{:else}
-				<div
-					class="flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-lg bg-white/10 flex items-center justify-center"
-				>
-					<span class="text-accent font-black text-2xl">#1</span>
-				</div>
-			{/if}
+			<TrackThumbnail 
+				{track} 
+				quality="default"
+				class="flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-lg object-cover shadow-2xl shadow-black/50"
+				iconClass="w-8 h-8 text-gray-600"
+			/>
 
 			<button
 				onclick={handleTitleClick}
@@ -56,9 +38,6 @@
 				<div class="flex items-center gap-2 mb-1">
 					<span class="text-[10px] font-semibold uppercase tracking-widest text-accent/80">Top Track</span>
 					<RankBadge change={track.change} />
-					{#if isFav}
-						<Icon name="heart-filled" class="w-3 h-3 text-red-400" />
-					{/if}
 				</div>
 				<div class="scroll-text {isActive ? 'is-active' : ''}" use:scrollText>
 					<span class="text-xl sm:text-2xl font-bold text-white transition-colors
@@ -76,17 +55,11 @@
 				<p class="text-[11px] text-gray-500">streams this week</p>
 			</div>
 			<div class="flex items-center gap-2">
-				{#if track.spotifyId}
-					<button
-						onclick={toggleFav}
-						class="w-8 h-8 flex items-center justify-center rounded-full transition-all cursor-pointer flex-shrink-0
-							   {isFav ? 'bg-red-400/20 text-red-400' : 'bg-white/10 text-white hover:bg-white/20'}"
-						title={isFav ? 'Remove from favorites' : 'Add to favorites'}
-						aria-label={isFav ? 'Remove from favorites' : 'Add to favorites'}
-					>
-						<Icon name={isFav ? 'heart-filled' : 'heart'} class="w-3.5 h-3.5" />
-					</button>
-				{/if}
+				<FavoriteButton 
+					{track} 
+					class="w-8 h-8 flex items-center justify-center rounded-full transition-all flex-shrink-0 bg-white/10 text-white hover:bg-white/20 hover:text-red-400"
+					iconClass="w-3.5 h-3.5"
+				/>
 				<PlayButton {track} allTracks={tracks} />
 				<TrackMenu {track} />
 			</div>

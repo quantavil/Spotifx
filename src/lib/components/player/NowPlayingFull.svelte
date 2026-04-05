@@ -1,23 +1,15 @@
 <!-- src/lib/components/NowPlayingFull.svelte -->
 <script lang="ts">
 	import { player } from '$lib/stores/player.svelte';
-	import { favorites } from '$lib/stores/favorites.svelte';
-	import { toast } from '$lib/stores/toast.svelte';
-	import { formatTime, formatCompact, getYTThumbUrl, trackToHue } from '$lib/utils';
+	import { formatTime, formatCompact, trackToHue } from '$lib/utils';
 	import { fly } from 'svelte/transition';
 	import { scrollText } from '$lib/actions';
 	import Icon from '../ui/Icon.svelte';
+	import TrackThumbnail from '../ui/TrackThumbnail.svelte';
+	import FavoriteButton from '../ui/FavoriteButton.svelte';
 
 	const track = $derived(player.currentTrack);
 	const hue = $derived(track ? trackToHue(track.artist, track.title) : 140);
-	const thumbUrl = $derived(track?.ytMusicId ? getYTThumbUrl(track.ytMusicId, 'hqdefault') : '');
-	const isFav = $derived(track?.spotifyId ? favorites.has(track.spotifyId) : false);
-
-	function toggleFav() {
-		if (!track?.spotifyId) return;
-		const added = favorites.toggle(track.spotifyId);
-		toast.show(added ? 'Added to favorites' : 'Removed from favorites');
-	}
 
 	function openQueue() {
 		player.fullScreenOpen = false;
@@ -74,21 +66,18 @@
 			{#key track.ytMusicId}
 				<div class="animate-fade-in w-full max-w-xs sm:max-w-sm md:max-w-md aspect-square relative">
 					<!-- Glow shadow behind artwork -->
-					{#if thumbUrl}
+					{#if track.ytMusicId}
 						<div
 							class="absolute inset-4 rounded-3xl blur-3xl opacity-30"
 							style="background: hsl({hue} 60% 30%);"
 						></div>
-						<img
-							src={thumbUrl}
-							alt=""
-							class="w-full h-full object-cover rounded-2xl shadow-2xl relative z-10"
-						/>
-					{:else}
-						<div class="w-full h-full rounded-2xl bg-white/5 flex items-center justify-center relative z-10">
-							<Icon name="music" class="w-16 h-16 text-gray-600" />
-						</div>
 					{/if}
+					<TrackThumbnail
+						track={track}
+						quality="hqdefault"
+						class="w-full h-full object-cover rounded-2xl shadow-2xl relative z-10 bg-white/5"
+						iconClass="w-16 h-16 text-gray-600"
+					/>
 				</div>
 			{/key}
 		</div>
@@ -130,15 +119,11 @@
 							>
 								<Icon name="spotify" class="w-5 h-5" />
 							</a>
-							<button
-								onclick={toggleFav}
-								class="p-2 transition-colors cursor-pointer rounded-full hover:bg-white/5
-									   {isFav ? 'text-red-400' : 'text-gray-500 hover:text-white'}"
-								title={isFav ? 'Remove from favorites' : 'Add to favorites'}
-								aria-label={isFav ? 'Remove from favorites' : 'Add to favorites'}
-							>
-								<Icon name={isFav ? 'heart-filled' : 'heart'} class="w-5 h-5" />
-							</button>
+							<FavoriteButton
+								{track}
+								class="p-2 transition-colors cursor-pointer rounded-full hover:bg-white/5 text-gray-500 hover:text-white"
+								iconClass="w-5 h-5"
+							/>
 						{/if}
 					</div>
 				</div>

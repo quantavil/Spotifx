@@ -1,5 +1,6 @@
 // src/lib/stores/mediaSession.ts
 import type { Track } from '$lib/types';
+import { getYTThumbUrl } from '$lib/utils';
 
 function hasAPI(): boolean {
 	return typeof navigator !== 'undefined' && 'mediaSession' in navigator;
@@ -13,9 +14,9 @@ export function updateMediaMetadata(track: Track): void {
 		album: 'Spotify Weekly Chart',
 		artwork: track.ytMusicId
 			? [
-					{ src: `https://i.ytimg.com/vi/${track.ytMusicId}/default.jpg`, sizes: '120x90', type: 'image/jpeg' },
-					{ src: `https://i.ytimg.com/vi/${track.ytMusicId}/mqdefault.jpg`, sizes: '320x180', type: 'image/jpeg' },
-					{ src: `https://i.ytimg.com/vi/${track.ytMusicId}/hqdefault.jpg`, sizes: '480x360', type: 'image/jpeg' }
+					{ src: getYTThumbUrl(track.ytMusicId, 'default'), sizes: '120x90', type: 'image/jpeg' },
+					{ src: getYTThumbUrl(track.ytMusicId, 'mqdefault'), sizes: '320x180', type: 'image/jpeg' },
+					{ src: getYTThumbUrl(track.ytMusicId, 'hqdefault'), sizes: '480x360', type: 'image/jpeg' }
 				]
 			: []
 	});

@@ -3,6 +3,7 @@
 	import { player } from '$lib/stores/player.svelte';
 	import type { Track } from '$lib/types';
 	import Icon from '../ui/Icon.svelte';
+	import TrackThumbnail from '../ui/TrackThumbnail.svelte';
 
 	let { track, allTracks, size = 'sm' }: {
 		track: Track;
@@ -12,9 +13,6 @@
 
 	const isActive = $derived(player.isCurrentTrack(track));
 	const isThisPlaying = $derived(isActive && player.isPlaying);
-	const thumbUrl = $derived(
-		track.ytMusicId ? `https://i.ytimg.com/vi/${track.ytMusicId}/default.jpg` : ''
-	);
 	const sizeClass = $derived(
 		size === 'lg' ? 'w-16 h-16' : size === 'md' ? 'w-12 h-12' : 'w-10 h-10'
 	);
@@ -25,11 +23,7 @@
 	function handleClick(e: Event) {
 		e.stopPropagation();
 		if (!track.ytMusicId) return;
-		if (isActive) {
-			player.togglePlay();
-		} else {
-			player.playTrack(track, allTracks);
-		}
+		player.playOrToggle(track, allTracks);
 	}
 </script>
 
@@ -40,7 +34,7 @@
 		title="{isThisPlaying ? 'Pause' : 'Play'} {track.title}"
 		aria-label="{isThisPlaying ? 'Pause' : 'Play'} {track.title}"
 	>
-		<img src={thumbUrl} alt="" class="w-full h-full object-cover bg-white/5" loading="lazy" />
+		<TrackThumbnail {track} quality="default" class="w-full h-full object-cover bg-white/5" />
 		<div
 			class="absolute inset-0 flex items-center justify-center bg-black/40 transition-opacity
 				{isActive ? 'opacity-100' : 'opacity-0 group-hover/art:opacity-100'}"
@@ -52,7 +46,5 @@
 		{/if}
 	</button>
 {:else}
-	<div class="flex-shrink-0 {sizeClass} rounded bg-white/5 flex items-center justify-center">
-		<Icon name="music" class="w-4 h-4 text-gray-600" />
-	</div>
+	<TrackThumbnail {track} class="{sizeClass} rounded flex-shrink-0" iconClass="w-4 h-4 text-gray-600" />
 {/if}
