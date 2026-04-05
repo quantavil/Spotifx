@@ -83,6 +83,11 @@
 	</div>
 </div>
 
+<!-- Mobile Queue Overlay -->
+<div class="sm:hidden">
+	<QueuePanel />
+</div>
+
 <MusicPlayer />
 <NowPlayingFull />
 <ShortcutsModal />
