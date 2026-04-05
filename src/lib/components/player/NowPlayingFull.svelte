@@ -46,7 +46,7 @@
 
 {#if player.fullScreenOpen && track}
 	<div
-		class="fixed inset-0 z-[55] flex flex-col overflow-hidden"
+		class="fixed inset-0 sm:bottom-0 sm:right-[24rem] z-[55] sm:z-40 flex flex-col overflow-hidden sm:pb-[5.5rem]"
 		style="background: linear-gradient(180deg, hsl({hue} 45% 14%) 0%, hsl({hue} 30% 5%) 50%, hsl({hue} 15% 3%) 100%);"
 		transition:fly={{ y: 600, duration: 300 }}
 	>
@@ -106,7 +106,7 @@
 							{formatCompact(track.streams)} streams · Peak #{track.peak} · {track.weeks} days
 						</p>
 					</div>
-					<div class="flex items-center gap-0.5 flex-shrink-0 pt-1">
+					<div class="flex items-center gap-0.5 flex-shrink-0 pt-1 sm:hidden">
 						{#if track.ytMusicId}
 							<a
 								href={`https://music.youtube.com/watch?v=${track.ytMusicId}`}
@@ -146,7 +146,7 @@
 		</div>
 
 		<!-- Seek bar -->
-		<div class="px-6 sm:px-8 mb-2 flex-shrink-0 max-w-lg mx-auto w-full">
+		<div class="px-6 sm:px-8 mb-2 flex-shrink-0 max-w-lg mx-auto w-full sm:hidden">
 			<input
 				type="range"
 				min="0"
@@ -168,7 +168,7 @@
 		</div>
 
 		<!-- Controls -->
-		<div class="flex items-center justify-center gap-5 sm:gap-7 px-6 pb-4 pt-1 flex-shrink-0">
+		<div class="flex items-center justify-center gap-5 sm:gap-7 px-6 pb-4 pt-1 flex-shrink-0 sm:hidden">
 			<button
 				onclick={() => player.toggleShuffle()}
 				class="p-2 transition-colors cursor-pointer
@@ -219,25 +219,5 @@
 			</button>
 		</div>
 
-		<!-- Volume (desktop) -->
-		<div class="hidden sm:flex items-center justify-center gap-2 px-8 pb-6 flex-shrink-0">
-			<button
-				onclick={() => player.setVolume(player.volume > 0 ? 0 : 80)}
-				class="text-gray-500 hover:text-white transition-colors cursor-pointer p-1"
-				aria-label={player.volume > 0 ? 'Mute' : 'Unmute'}
-			>
-				<Icon name={player.volume === 0 ? 'volume-mute' : player.volume < 50 ? 'volume-low' : 'volume-high'} class="w-4 h-4" />
-			</button>
-			<input
-				type="range"
-				min="0"
-				max="100"
-				value={player.volume}
-				oninput={(e) => player.setVolume(parseInt(e.currentTarget.value))}
-				class="w-28 vol-slider"
-				style="--vol-pct: {player.volume}%"
-				aria-label="Volume"
-			/>
-		</div>
 	</div>
 {/if}
