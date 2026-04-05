@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-04-04",
-  "lastUpdated": "2026-04-04T06:56:45.635Z",
+  "weekDate": "2026-04-05",
+  "lastUpdated": "2026-04-05T07:02:00.612Z",
   "tracks": [
     {
       "rank": 1,
@@ -164,7 +164,7 @@
       "title": "2.0",
       "artist": "BTS",
       "spotifyId": "3bmpXHVie1GTy37OkXJ7Vc",
-      "ytMusicId": "T24g72UlXok",
+      "ytMusicId": "YF4EN5YwjpA",
       "streams": 25410933,
       "peak": 9,
       "weeks": 2
@@ -208,7 +208,7 @@
       "title": "WHERE IS MY HUSBAND!",
       "artist": "RAYE",
       "spotifyId": "55lijDD6OAjLFFUHU9tcDm",
-      "ytMusicId": "1UKRWMT_pF4",
+      "ytMusicId": "94mq0YBsn8U",
       "streams": 23689398,
       "peak": 6,
       "weeks": 28
@@ -571,7 +571,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "FrsOnNxIrg8",
+      "ytMusicId": "cHeAyTkOyEA",
       "streams": 14649192,
       "peak": 1,
       "weeks": 309
@@ -670,7 +670,7 @@
       "title": "Dreams - 2004 Remaster",
       "artist": "Fleetwood Mac",
       "spotifyId": "0ofHAoxe9vBkTCp2UQIavz",
-      "ytMusicId": "5oWyMakvQew",
+      "ytMusicId": "",
       "streams": 13983360,
       "peak": 20,
       "weeks": 148

@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-04-04",
-  "lastUpdated": "2026-04-04T06:58:07.794Z",
+  "weekDate": "2026-04-05",
+  "lastUpdated": "2026-04-05T07:03:20.950Z",
   "tracks": [
     {
       "rank": 1,
@@ -142,7 +142,7 @@
       "title": "Dreams - 2004 Remaster",
       "artist": "Fleetwood Mac",
       "spotifyId": "0ofHAoxe9vBkTCp2UQIavz",
-      "ytMusicId": "5oWyMakvQew",
+      "ytMusicId": "",
       "streams": 5504170,
       "peak": 6,
       "weeks": 271
@@ -274,7 +274,7 @@
       "title": "WHERE IS MY HUSBAND!",
       "artist": "RAYE",
       "spotifyId": "55lijDD6OAjLFFUHU9tcDm",
-      "ytMusicId": "1UKRWMT_pF4",
+      "ytMusicId": "94mq0YBsn8U",
       "streams": 4632131,
       "peak": 10,
       "weeks": 28
@@ -758,7 +758,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "FrsOnNxIrg8",
+      "ytMusicId": "cHeAyTkOyEA",
       "streams": 3225093,
       "peak": 1,
       "weeks": 165
@@ -769,7 +769,7 @@
       "title": "2.0",
       "artist": "BTS",
       "spotifyId": "3bmpXHVie1GTy37OkXJ7Vc",
-      "ytMusicId": "T24g72UlXok",
+      "ytMusicId": "YF4EN5YwjpA",
       "streams": 3221336,
       "peak": 30,
       "weeks": 2
@@ -1143,7 +1143,7 @@
       "title": "PREACHER MAN (w/ Ye)",
       "artist": "Kanye West",
       "spotifyId": "0fD7KBtQgPR1YCtuPAsyZJ",
-      "ytMusicId": "EQ0G6KwyG5Y",
+      "ytMusicId": "VhEoCOWUtcU",
       "streams": 2882266,
       "peak": 104,
       "weeks": 1
@@ -1176,7 +1176,7 @@
       "title": "Les",
       "artist": "Childish Gambino",
       "spotifyId": "7ghKr0pCYyPPyp7t1FH8k4",
-      "ytMusicId": "eQL-E_TtB0o",
+      "ytMusicId": "L8gGHqPBuZM",
       "streams": 2864825,
       "peak": 70,
       "weeks": 44
@@ -2111,7 +2111,7 @@
       "title": "BEAUTY AND THE BEAST (w/ Ye)",
       "artist": "Kanye West",
       "spotifyId": "6pxHjkpwGmg97Yn5HcwNTn",
-      "ytMusicId": "wVIEr4Laiyw",
+      "ytMusicId": "VhEoCOWUtcU",
       "streams": 2350610,
       "peak": 192,
       "weeks": 1
