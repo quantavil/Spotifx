@@ -1,8 +1,8 @@
 {
   "country": "in",
   "countryName": "India",
-  "weekDate": "2026-04-04",
-  "lastUpdated": "2026-04-04T07:02:10.464Z",
+  "weekDate": "2026-04-06",
+  "lastUpdated": "2026-04-06T07:28:06.869Z",
   "tracks": [
     {
       "rank": 1,
@@ -472,7 +472,7 @@
       "title": "Mutta Kalakki (From \"Youth\") (w/ Ken Karunaas)",
       "artist": "G. V. Prakash",
       "spotifyId": "3GNlsHDf3OH7V3LgccGAFc",
-      "ytMusicId": "",
+      "ytMusicId": "sng0VbBxlJk",
       "streams": 2825747,
       "peak": 40,
       "weeks": 6
@@ -681,7 +681,7 @@
       "title": "Raabta (w/ Arijit Singh)",
       "artist": "Pritam",
       "spotifyId": "6FjbAnaPRPwiP3sciEYctO",
-      "ytMusicId": "piUHBTXsoiY",
+      "ytMusicId": "aVPwXQgY2QI",
       "streams": 2346951,
       "peak": 33,
       "weeks": 176
@@ -747,7 +747,7 @@
       "title": "Raanjhanaa (w/ Jaswinder Singh, Shiraz Uppal)",
       "artist": "A.R. Rahman",
       "spotifyId": "5OMUXgfXsSukZ0zxelpC3b",
-      "ytMusicId": "",
+      "ytMusicId": "EwLgGHAxTa8",
       "streams": 2216603,
       "peak": 50,
       "weeks": 85
@@ -1341,7 +1341,7 @@
       "title": "Kiya Kiya (w/ Shweta Pandit)",
       "artist": "Anand Raj Anand",
       "spotifyId": "0YCPCY9WhQFMFtoSpj6dhL",
-      "ytMusicId": "QV5SORKs3_s",
+      "ytMusicId": "fO3tnSvQfIs",
       "streams": 1686258,
       "peak": 122,
       "weeks": 6
@@ -1825,7 +1825,7 @@
       "title": "Aaj Se Teri (w/ Arijit Singh)",
       "artist": "Amit Trivedi",
       "spotifyId": "0EwRpK9wY6lHfcJSt82w4x",
-      "ytMusicId": "1E-ZSGWK6g0",
+      "ytMusicId": "3HlzLiCL9Xs",
       "streams": 1484085,
       "peak": 114,
       "weeks": 13
