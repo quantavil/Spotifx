@@ -333,6 +333,14 @@
 
 		if (player.currentTrack && player.isPlaying) {
 			player._onPlay(player.currentTrack.ytMusicId);
+		} else {
+			// Pre-warm the YT IFrame API in the background so the first play is instant.
+			const prewarm = () => loadYTApi();
+			if (typeof requestIdleCallback !== 'undefined') {
+				requestIdleCallback(prewarm, { timeout: 3000 });
+			} else {
+				setTimeout(prewarm, 2000);
+			}
 		}
 
 		document.addEventListener('visibilitychange', handleVisibilityChange);

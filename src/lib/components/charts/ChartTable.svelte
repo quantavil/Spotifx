@@ -64,6 +64,31 @@
 		e.stopPropagation();
 		player.playOrToggle(track, tracks);
 	}
+
+	// ── Virtual scroll ──
+	const ROW_HEIGHT = 52; // px — matches py-2.5 rows (~10+32+10)
+	const BUFFER = 8;      // extra rows rendered above and below viewport
+
+	let scrollTop = $state(0);
+	let containerHeight = $state(600);
+	let containerEl = $state<HTMLDivElement | null>(null);
+
+	$effect(() => {
+		if (!containerEl) return;
+		const ro = new ResizeObserver(([entry]) => {
+			containerHeight = entry.contentRect.height;
+		});
+		ro.observe(containerEl);
+		return () => ro.disconnect();
+	});
+
+	const startIndex = $derived(Math.max(0, Math.floor(scrollTop / ROW_HEIGHT) - BUFFER));
+	const endIndex = $derived(
+		Math.min(processed.length, Math.ceil((scrollTop + containerHeight) / ROW_HEIGHT) + BUFFER)
+	);
+	const visibleSlice = $derived(processed.slice(startIndex, endIndex));
+	const paddingTop = $derived(startIndex * ROW_HEIGHT);
+	const paddingBottom = $derived(Math.max(0, (processed.length - endIndex) * ROW_HEIGHT));
 </script>
 
 <div
@@ -86,7 +111,12 @@
 		{/if}
 	</div>
 
-	<div class="overflow-x-auto">
+	<!-- Virtualized scroll container -->
+	<div
+		bind:this={containerEl}
+		class="overflow-x-auto overflow-y-auto virtual-scroll-container"
+		onscroll={(e) => (scrollTop = (e.currentTarget as HTMLDivElement).scrollTop)}
+	>
 		<table class="w-full text-sm table-fixed">
 			<thead>
 				<tr class="border-b border-white/[0.06] text-gray-500 text-[11px] uppercase tracking-wider">
@@ -122,76 +152,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				{#each processed as track (track.spotifyId || `r${track.rank}-${track.title}`)}
-					{@const isActive = player.isCurrentTrack(track) && player.isPlaying}
-					{@const isCurrentTrack = player.isCurrentTrack(track)}
-					{@const trackFav = track.spotifyId ? favorites.has(track.spotifyId) : false}
-					<tr
-						class="group border-b border-white/[0.04] hover:bg-white/[0.03] transition-colors
-							{isActive ? '!bg-accent/10 border-accent/20' : ''}"
-					>
-						<!-- Rank / Equalizer -->
-						<td class="px-2 sm:px-3 py-2.5 align-middle">
-							{#if isCurrentTrack}
-								<Equalizer isPlaying={isActive} class="flex items-end gap-[2px] h-4 justify-center" />
-							{:else}
-								<span class="text-gray-500 font-mono text-xs tabular-nums">{track.rank}</span>
-							{/if}
-						</td>
-
-						<td class="px-0.5 sm:px-1 py-2.5 align-middle text-center">
-							<RankBadge change={track.change} />
-						</td>
-
-						<td class="px-2 py-2.5 overflow-hidden">
-							<div class="flex items-center gap-2.5">
-								<TrackArt {track} allTracks={tracks} />
-
-								<button
-									onclick={(e) => playTrack(e, track)}
-									class="flex-1 min-w-0 text-left group/title
-										{track.ytMusicId ? 'cursor-pointer' : ''}"
-								>
-									<div class="flex items-center gap-1.5">
-										<div
-											class="scroll-text flex-1 min-w-0 {isActive ? 'is-active' : ''}"
-											use:scrollText
-										>
-											<span class="text-sm font-medium text-white transition-colors
-												{track.ytMusicId ? 'group-hover/title:text-accent' : ''}">
-												<HighlightedText text={track.title} {query} />
-											</span>
-										</div>
-										{#if trackFav}
-											<Icon name="heart-filled" class="w-3 h-3 text-red-400 flex-shrink-0" />
-										{/if}
-									</div>
-									<p class="text-xs text-gray-400 truncate mt-0.5">
-										<HighlightedText text={track.artist} {query} />
-									</p>
-								</button>
-							</div>
-						</td>
-
-						<td class="px-1 sm:px-2 py-2.5 text-center font-mono text-xs tabular-nums text-gray-300 align-middle">
-							{formatCompact(track.streams)}
-						</td>
-
-						<td class="px-1 sm:px-2 py-2.5 text-center font-mono text-xs tabular-nums text-gray-500 hidden md:table-cell align-middle">
-							{track.peak}
-						</td>
-
-						<td class="px-1 sm:px-2 py-2.5 text-center font-mono text-xs tabular-nums text-gray-500 hidden md:table-cell align-middle">
-							{track.weeks}
-						</td>
-
-						<td class="px-1.5 sm:px-2 py-2.5 align-middle">
-							<div class="flex items-center justify-end gap-1">
-								<TrackMenu {track} />
-							</div>
-						</td>
-					</tr>
-				{:else}
+				{#if processed.length === 0}
 					<tr>
 						<td colspan="7" class="px-4 py-16 text-center">
 							<div class="text-gray-600">
@@ -205,8 +166,97 @@
 							</div>
 						</td>
 					</tr>
-				{/each}
+				{:else}
+					<!-- Top spacer: holds space for rows scrolled above the viewport -->
+					{#if paddingTop > 0}
+						<tr aria-hidden="true"><td colspan="7" style="height:{paddingTop}px;padding:0;"></td></tr>
+					{/if}
+
+					{#each visibleSlice as track (track.spotifyId || `r${track.rank}-${track.title}`)}
+						{@const isActive = player.isCurrentTrack(track) && player.isPlaying}
+						{@const isCurrentTrack = player.isCurrentTrack(track)}
+						{@const trackFav = track.spotifyId ? favorites.has(track.spotifyId) : false}
+						<tr
+							class="group border-b border-white/[0.04] hover:bg-white/[0.03] transition-colors
+								{isActive ? '!bg-accent/10 border-accent/20' : ''}"
+						>
+							<!-- Rank / Equalizer -->
+							<td class="px-2 sm:px-3 py-2.5 align-middle">
+								{#if isCurrentTrack}
+									<Equalizer isPlaying={isActive} class="flex items-end gap-[2px] h-4 justify-center" />
+								{:else}
+									<span class="text-gray-500 font-mono text-xs tabular-nums">{track.rank}</span>
+								{/if}
+							</td>
+
+							<td class="px-0.5 sm:px-1 py-2.5 align-middle text-center">
+								<RankBadge change={track.change} />
+							</td>
+
+							<td class="px-2 py-2.5 overflow-hidden">
+								<div class="flex items-center gap-2.5">
+									<TrackArt {track} allTracks={tracks} />
+
+									<button
+										onclick={(e) => playTrack(e, track)}
+										class="flex-1 min-w-0 text-left group/title
+											{track.ytMusicId ? 'cursor-pointer' : ''}"
+									>
+										<div class="flex items-center gap-1.5">
+											<div
+												class="scroll-text flex-1 min-w-0 {isActive ? 'is-active' : ''}"
+												use:scrollText
+											>
+												<span class="text-sm font-medium text-white transition-colors
+													{track.ytMusicId ? 'group-hover/title:text-accent' : ''}">
+													<HighlightedText text={track.title} {query} />
+												</span>
+											</div>
+											{#if trackFav}
+												<Icon name="heart-filled" class="w-3 h-3 text-red-400 flex-shrink-0" />
+											{/if}
+										</div>
+										<p class="text-xs text-gray-400 truncate mt-0.5">
+											<HighlightedText text={track.artist} {query} />
+										</p>
+									</button>
+								</div>
+							</td>
+
+							<td class="px-1 sm:px-2 py-2.5 text-center font-mono text-xs tabular-nums text-gray-300 align-middle">
+								{formatCompact(track.streams)}
+							</td>
+
+							<td class="px-1 sm:px-2 py-2.5 text-center font-mono text-xs tabular-nums text-gray-500 hidden md:table-cell align-middle">
+								{track.peak}
+							</td>
+
+							<td class="px-1 sm:px-2 py-2.5 text-center font-mono text-xs tabular-nums text-gray-500 hidden md:table-cell align-middle">
+								{track.weeks}
+							</td>
+
+							<td class="px-1.5 sm:px-2 py-2.5 align-middle">
+								<div class="flex items-center justify-end gap-1">
+									<TrackMenu {track} />
+								</div>
+							</td>
+						</tr>
+					{/each}
+
+					<!-- Bottom spacer: holds space for rows not yet scrolled to -->
+					{#if paddingBottom > 0}
+						<tr aria-hidden="true"><td colspan="7" style="height:{paddingBottom}px;padding:0;"></td></tr>
+					{/if}
+				{/if}
 			</tbody>
 		</table>
 	</div>
 </div>
+
+<style>
+	.virtual-scroll-container {
+		max-height: calc(100svh - 300px);
+		scrollbar-width: thin;
+		scrollbar-color: rgba(255,255,255,0.12) transparent;
+	}
+</style>

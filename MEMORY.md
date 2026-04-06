@@ -24,10 +24,8 @@ A hobby music charts dashboard displaying weekly Spotify streaming data for mult
 │   ├── lib/
 │   │   ├── components/
 │   │   │   ├── charts/
-│   │   │   │   ├── ChartStats.svelte    # (unused — stats removed from page)
 │   │   │   │   ├── ChartTable.svelte    # Sortable chart table (borderless)
-│   │   │   │   ├── CountrySelector.svelte
-│   │   │   │   └── StatCard.svelte      # (unused — stats removed from page)
+│   │   │   │   └── CountrySelector.svelte
 │   │   │   ├── player/
 │   │   │   │   ├── MusicPlayer.svelte   # Fixed bottom player bar + hidden YT iframe + queue panel
 │   │   │   │   ├── NowPlayingFull.svelte
@@ -88,7 +86,7 @@ A hobby music charts dashboard displaying weekly Spotify streaming data for mult
 ## Dependencies & Setup
 - Bun runtime required.
 - GitHub Actions for daily scraping and deployment.
-- No extra npm deps for player — YouTube IFrame API loaded via <script> tag on demand.
+- No extra npm deps for player — YouTube IFrame API pre-warmed via requestIdleCallback on mount (~2-3s after), so first play is instant.
 
 ## Critical Information
 - Data source is kworb.net.
@@ -162,3 +160,8 @@ A hobby music charts dashboard displaying weekly Spotify streaming data for mult
 - `spotifx-shuffle` — `"true"` | `"false"`
 - `spotifx-repeat` — `"off"` | `"all"` | `"one"`
 - `spotifx-favorites` — JSON array of Spotify track IDs
+
+## Fixes Applied (from issue.md)
+- **Dead code removed**: Deleted `ChartStats.svelte` and `StatCard.svelte` — were unused after stats were removed from the layout.
+- **YT API cold-start fixed**: `loadYTApi()` now called in `onMount` via `requestIdleCallback` (fallback: `setTimeout(2000ms)`) instead of waiting for first play click.
+- **Virtual scroll added**: `ChartTable.svelte` now renders only visible rows + 8-row buffer in a `max-height: calc(100svh - 300px)` scrollable container. `ResizeObserver` tracks container height; top/bottom spacer `<tr>` rows maintain correct scroll geometry.
