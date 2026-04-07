@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-04-06",
-  "lastUpdated": "2026-04-06T07:30:36.710Z",
+  "weekDate": "2026-04-07",
+  "lastUpdated": "2026-04-07T07:17:26.568Z",
   "tracks": [
     {
       "rank": 1,
@@ -1099,7 +1099,7 @@
       "title": "Unwritten",
       "artist": "Natasha Bedingfield",
       "spotifyId": "3U5JVgI2x4rDyHGObzJfNf",
-      "ytMusicId": "dxB6Gqg26Kw",
+      "ytMusicId": "iKejQrGq04w",
       "streams": 748758,
       "peak": 11,
       "weeks": 101
@@ -2001,7 +2001,7 @@
       "title": "Les",
       "artist": "Childish Gambino",
       "spotifyId": "7ghKr0pCYyPPyp7t1FH8k4",
-      "ytMusicId": "L8gGHqPBuZM",
+      "ytMusicId": "eQL-E_TtB0o",
       "streams": 592283,
       "peak": 117,
       "weeks": 19

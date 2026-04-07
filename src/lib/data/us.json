@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-04-06",
-  "lastUpdated": "2026-04-06T07:29:26.731Z",
+  "weekDate": "2026-04-07",
+  "lastUpdated": "2026-04-07T07:16:17.186Z",
   "tracks": [
     {
       "rank": 1,
@@ -1176,7 +1176,7 @@
       "title": "Les",
       "artist": "Childish Gambino",
       "spotifyId": "7ghKr0pCYyPPyp7t1FH8k4",
-      "ytMusicId": "L8gGHqPBuZM",
+      "ytMusicId": "eQL-E_TtB0o",
       "streams": 2864825,
       "peak": 70,
       "weeks": 44
@@ -1220,7 +1220,7 @@
       "title": "Sweet Boy",
       "artist": "Malcolm Todd",
       "spotifyId": "59c2xv2kMzYM6HR9oY6BIa",
-      "ytMusicId": "BI9HQCzpDgQ",
+      "ytMusicId": "p9OtySpRRL8",
       "streams": 2841315,
       "peak": 111,
       "weeks": 13
@@ -2111,7 +2111,7 @@
       "title": "BEAUTY AND THE BEAST (w/ Ye)",
       "artist": "Kanye West",
       "spotifyId": "6pxHjkpwGmg97Yn5HcwNTn",
-      "ytMusicId": "FRe7GWQeB4w",
+      "ytMusicId": "VhEoCOWUtcU",
       "streams": 2350610,
       "peak": 192,
       "weeks": 1
