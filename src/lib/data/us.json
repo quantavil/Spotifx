@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-04-07",
-  "lastUpdated": "2026-04-07T07:16:17.186Z",
+  "weekDate": "2026-04-09",
+  "lastUpdated": "2026-04-09T07:22:16.884Z",
   "tracks": [
     {
       "rank": 1,
@@ -1098,7 +1098,7 @@
       "change": "NEW",
       "title": "Jane!",
       "artist": "The Long Faces",
-      "spotifyId": "5BdTXOmNx4NANVF4IMitQQ",
+      "spotifyId": "0IjdXwCEhZR7JIwq6Za8j5",
       "ytMusicId": "HydkjjDNTmY",
       "streams": 2929925,
       "peak": 100,
@@ -1176,7 +1176,7 @@
       "title": "Les",
       "artist": "Childish Gambino",
       "spotifyId": "7ghKr0pCYyPPyp7t1FH8k4",
-      "ytMusicId": "eQL-E_TtB0o",
+      "ytMusicId": "L8gGHqPBuZM",
       "streams": 2864825,
       "peak": 70,
       "weeks": 44

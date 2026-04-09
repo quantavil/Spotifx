@@ -1,8 +1,8 @@
 {
   "country": "in",
   "countryName": "India",
-  "weekDate": "2026-04-07",
-  "lastUpdated": "2026-04-07T07:14:56.410Z",
+  "weekDate": "2026-04-09",
+  "lastUpdated": "2026-04-09T07:20:54.567Z",
   "tracks": [
     {
       "rank": 1,
@@ -76,7 +76,7 @@
       "title": "Jaan Se Guzarte Hain (w/ Khan Saab)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "4aWTPC6cuebk9zSpW1PY1Y",
-      "ytMusicId": "rVYB_5gwSes",
+      "ytMusicId": "iICM37_na2U",
       "streams": 6155392,
       "peak": 7,
       "weeks": 2
@@ -87,7 +87,7 @@
       "title": "Sitaare (From \"Ikkis\") (w/ White Noise Collectives, Amitabh Bhattacharya)",
       "artist": "Arijit Singh",
       "spotifyId": "6WlARP6h4CDVOcY386wW0W",
-      "ytMusicId": "",
+      "ytMusicId": "uT_HXrrmHX8",
       "streams": 5754771,
       "peak": 8,
       "weeks": 17
@@ -142,7 +142,7 @@
       "title": "Shararat (w/ Madhubanti Bagchi, Jasmine Sandlas)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "0R7grQWU1dRxiOQGIqZm0Z",
-      "ytMusicId": "L8Ea6VJCp-w",
+      "ytMusicId": "jBjhx2fAaFQ",
       "streams": 4813121,
       "peak": 7,
       "weeks": 17
@@ -252,7 +252,7 @@
       "title": "Bairi (w/ Pradeep Solanki, Heena)",
       "artist": "Virat",
       "spotifyId": "1GfcRba0wGXDTtT4r8C65Z",
-      "ytMusicId": "ijaPDOCNHXw",
+      "ytMusicId": "U6bKSnYHuhw",
       "streams": 3827749,
       "peak": 13,
       "weeks": 6
@@ -329,7 +329,7 @@
       "title": "Tum Ho Toh (From \"Saiyaara\") (w/ Hansika Pareek, Raj Shekhar)",
       "artist": "Vishal Mishra",
       "spotifyId": "6G8vN5EUtcDxOXOXadF6kp",
-      "ytMusicId": "",
+      "ytMusicId": "N7jDUBRVQVA",
       "streams": 3402253,
       "peak": 3,
       "weeks": 37
@@ -461,7 +461,7 @@
       "title": "Barbaad (From \"Saiyaara\") (w/ Jubin Nautiyal)",
       "artist": "The Rish",
       "spotifyId": "7Csa4PStpuYIfUqNMKQ4V8",
-      "ytMusicId": "4wbdPFvJ3ew",
+      "ytMusicId": "DRZHVrSmcWU",
       "streams": 2869324,
       "peak": 5,
       "weeks": 37
@@ -681,7 +681,7 @@
       "title": "Raabta (w/ Arijit Singh)",
       "artist": "Pritam",
       "spotifyId": "6FjbAnaPRPwiP3sciEYctO",
-      "ytMusicId": "piUHBTXsoiY",
+      "ytMusicId": "aVPwXQgY2QI",
       "streams": 2346951,
       "peak": 33,
       "weeks": 176
@@ -714,7 +714,7 @@
       "title": "Humsafar (From \"Saiyaara\") (w/ Sachet Tandon, Parampara Tandon, Irshad Kamil, Prashant Pandey)",
       "artist": "Sachet-Parampara",
       "spotifyId": "0OLTYqD8FpjkLsxJmdWmgi",
-      "ytMusicId": "",
+      "ytMusicId": "eqlt6CJ_Et4",
       "streams": 2261074,
       "peak": 6,
       "weeks": 37
@@ -725,7 +725,7 @@
       "title": "Zara Sa (w/ KK)",
       "artist": "Pritam",
       "spotifyId": "18YHbIhrleUkKKj2DvEp79",
-      "ytMusicId": "zv-tbc4F818",
+      "ytMusicId": "KzhgaKWplog",
       "streams": 2238160,
       "peak": 33,
       "weeks": 161
@@ -967,7 +967,7 @@
       "title": "Neelothi (From \"Sirai\") (w/ Chinmayi, Justin Prabhakaran, Sarathi)",
       "artist": "Sooraj Santhosh",
       "spotifyId": "6wqwVre9LoGnsUUzukxUy3",
-      "ytMusicId": "",
+      "ytMusicId": "wxmOt7Xhb6I",
       "streams": 1906026,
       "peak": 88,
       "weeks": 8
@@ -1242,7 +1242,7 @@
       "title": "Sajni (From \"Laapataa Ladies\") (w/ Arijit Singh, Prashant Pandey)",
       "artist": "Ram Sampath",
       "spotifyId": "5zCnGtCl5Ac5zlFHXaZmhy",
-      "ytMusicId": "omstMmno5nc",
+      "ytMusicId": "Ys6iPqfvmI0",
       "streams": 1742187,
       "peak": 1,
       "weeks": 100
@@ -1341,7 +1341,7 @@
       "title": "Kiya Kiya (w/ Shweta Pandit)",
       "artist": "Anand Raj Anand",
       "spotifyId": "0YCPCY9WhQFMFtoSpj6dhL",
-      "ytMusicId": "QV5SORKs3_s",
+      "ytMusicId": "fO3tnSvQfIs",
       "streams": 1686258,
       "peak": 122,
       "weeks": 6
@@ -1957,7 +1957,7 @@
       "title": "Kaattuchembakam (From \"Pallichattambi\") (w/ Vishal Mishra, Aavani Malhar, Kaithapram)",
       "artist": "Jakes Bejoy",
       "spotifyId": "2ZjwnRNaEEwQaJaIH2h6KY",
-      "ytMusicId": "",
+      "ytMusicId": "UqXEGGZzwSg",
       "streams": 1424430,
       "peak": 139,
       "weeks": 5
@@ -2188,7 +2188,7 @@
       "title": "Tu Hain Toh (From \"Mr. And Mrs. Mahi\") (w/ Bunny, Sagar)",
       "artist": "Hunny",
       "spotifyId": "6egfWbtFFhMToV2DvmEzmo",
-      "ytMusicId": "oEeet9t--tI",
+      "ytMusicId": "ohx5VxmQCmM",
       "streams": 1360831,
       "peak": 8,
       "weeks": 57
