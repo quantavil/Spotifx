@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-04-09",
-  "lastUpdated": "2026-04-09T07:22:16.884Z",
+  "weekDate": "2026-04-10",
+  "lastUpdated": "2026-04-10T07:27:13.556Z",
   "tracks": [
     {
       "rank": 1,
@@ -582,7 +582,7 @@
       "title": "Hooligan",
       "artist": "BTS",
       "spotifyId": "20dAJsyno9ZoBLJtqgQnUI",
-      "ytMusicId": "SpkOesMnW9U",
+      "ytMusicId": "lKgzkmTKvHU",
       "streams": 3520270,
       "peak": 15,
       "weeks": 2
@@ -758,7 +758,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "cHeAyTkOyEA",
+      "ytMusicId": "NVjfnrkD0J0",
       "streams": 3225093,
       "peak": 1,
       "weeks": 165
@@ -1902,7 +1902,7 @@
       "title": "Click Clack Symphony. (w/ Hans Zimmer)",
       "artist": "RAYE",
       "spotifyId": "0XOynYFi9hQfIXKnTct9A7",
-      "ytMusicId": "zzhYb-gZlCg",
+      "ytMusicId": "mG-yrPaq900",
       "streams": 2424964,
       "peak": 173,
       "weeks": 1

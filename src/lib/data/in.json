@@ -1,8 +1,8 @@
 {
   "country": "in",
   "countryName": "India",
-  "weekDate": "2026-04-09",
-  "lastUpdated": "2026-04-09T07:20:54.567Z",
+  "weekDate": "2026-04-10",
+  "lastUpdated": "2026-04-10T07:25:51.337Z",
   "tracks": [
     {
       "rank": 1,
@@ -373,7 +373,7 @@
       "title": "Main Aur Tu (w/ Jasmine Sandlas, Reble)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "5icrEfubHCXlHEue9YUT3q",
-      "ytMusicId": "BuQgRwVJglY",
+      "ytMusicId": "vj0ks4KUJww",
       "streams": 3288306,
       "peak": 34,
       "weeks": 2
@@ -681,7 +681,7 @@
       "title": "Raabta (w/ Arijit Singh)",
       "artist": "Pritam",
       "spotifyId": "6FjbAnaPRPwiP3sciEYctO",
-      "ytMusicId": "aVPwXQgY2QI",
+      "ytMusicId": "piUHBTXsoiY",
       "streams": 2346951,
       "peak": 33,
       "weeks": 176
@@ -1814,7 +1814,7 @@
       "title": "Vaaroon (w/ Romy, Ginny Diwan)",
       "artist": "Anand Bhaskar",
       "spotifyId": "4sgYmcu4FKb1ZC6qBlxMiw",
-      "ytMusicId": "pMnCDFzDJZ0",
+      "ytMusicId": "",
       "streams": 1484170,
       "peak": 73,
       "weeks": 40
@@ -2177,7 +2177,7 @@
       "title": "Hooligan",
       "artist": "BTS",
       "spotifyId": "20dAJsyno9ZoBLJtqgQnUI",
-      "ytMusicId": "SpkOesMnW9U",
+      "ytMusicId": "lKgzkmTKvHU",
       "streams": 1362826,
       "peak": 71,
       "weeks": 2

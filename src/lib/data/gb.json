@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-04-09",
-  "lastUpdated": "2026-04-09T07:23:24.014Z",
+  "weekDate": "2026-04-10",
+  "lastUpdated": "2026-04-10T07:28:22.608Z",
   "tracks": [
     {
       "rank": 1,
@@ -131,7 +131,7 @@
       "title": "Click Clack Symphony. (w/ Hans Zimmer)",
       "artist": "RAYE",
       "spotifyId": "0XOynYFi9hQfIXKnTct9A7",
-      "ytMusicId": "zzhYb-gZlCg",
+      "ytMusicId": "mG-yrPaq900",
       "streams": 1917901,
       "peak": 12,
       "weeks": 2
@@ -560,7 +560,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "cHeAyTkOyEA",
+      "ytMusicId": "NVjfnrkD0J0",
       "streams": 966605,
       "peak": 1,
       "weeks": 381

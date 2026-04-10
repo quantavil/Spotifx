@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-04-09",
-  "lastUpdated": "2026-04-09T07:18:02.013Z",
+  "weekDate": "2026-04-10",
+  "lastUpdated": "2026-04-10T07:22:52.889Z",
   "tracks": [
     {
       "rank": 1,
@@ -65,7 +65,7 @@
       "title": "Hooligan",
       "artist": "BTS",
       "spotifyId": "20dAJsyno9ZoBLJtqgQnUI",
-      "ytMusicId": "SpkOesMnW9U",
+      "ytMusicId": "lKgzkmTKvHU",
       "streams": 27975959,
       "peak": 4,
       "weeks": 2
@@ -571,7 +571,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "cHeAyTkOyEA",
+      "ytMusicId": "NVjfnrkD0J0",
       "streams": 14649192,
       "peak": 1,
       "weeks": 309
@@ -923,7 +923,7 @@
       "title": "Click Clack Symphony. (w/ Hans Zimmer)",
       "artist": "RAYE",
       "spotifyId": "0XOynYFi9hQfIXKnTct9A7",
-      "ytMusicId": "zzhYb-gZlCg",
+      "ytMusicId": "mG-yrPaq900",
       "streams": 11716268,
       "peak": 84,
       "weeks": 2
@@ -1143,7 +1143,7 @@
       "title": "Cuando No Era Cantante (w/ Yung Beef)",
       "artist": "El Bogueto",
       "spotifyId": "44xDy4h27s4ENaC8fKnCoC",
-      "ytMusicId": "tsZgBFZf6ZE",
+      "ytMusicId": "6sE5F9Y8f1o",
       "streams": 10538302,
       "peak": 18,
       "weeks": 24
