@@ -35,8 +35,15 @@ class PlayerState {
 	queueOpen = $state(false);
 	fullScreenOpen = $state(false);
 	shortcutsOpen = $state(false);
+	contextHue = $state<number | null>(null);
 
 	currentTrack = $derived.by(() => this.queue[this.currentIndex] ?? null);
+	hue = $derived.by(() => {
+		if (this.currentTrack) {
+			return trackToHue(this.currentTrack.artist, this.currentTrack.title);
+		}
+		return this.contextHue ?? 140;
+	});
 	progress = $derived.by(() =>
 		this.duration > 0 ? (this.currentTime / this.duration) * 100 : 0
 	);
