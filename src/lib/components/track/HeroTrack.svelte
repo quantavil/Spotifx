@@ -26,6 +26,7 @@
 			<TrackThumbnail 
 				{track} 
 				quality="default"
+				loading="eager"
 				class="flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-lg object-cover shadow-2xl shadow-black/50"
 				iconClass="w-8 h-8 text-gray-600"
 			/>
