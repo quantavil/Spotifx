@@ -1,4 +1,8 @@
 // src/lib/stores/favorites.svelte.ts
+import { loadPref, savePref } from '$lib/utils';
+
+const STORAGE_KEY = 'spotifx-favorites-v1';
+const LEGACY_KEY = 'spotifx-favorites';
 
 class FavoritesState {
 	private _ids = $state<Record<string, boolean>>({});
@@ -7,17 +11,26 @@ class FavoritesState {
 
 	constructor() {
 		if (typeof window === 'undefined') return;
-		try {
-			const raw = localStorage.getItem('spotifx-favorites');
-			if (raw) {
-				const arr = JSON.parse(raw) as string[];
-				if (Array.isArray(arr)) {
-					const map: Record<string, boolean> = {};
-					for (const id of arr) map[id] = true;
-					this._ids = map;
-				}
-			}
-		} catch { /* corrupted — ignore */ }
+
+		// Try v1 first
+		const v1 = loadPref<{ v: number; d: string[] } | null>(STORAGE_KEY, null);
+		if (v1 && Array.isArray(v1.d)) {
+			this._setIds(v1.d);
+			return;
+		}
+
+		// Migration from legacy
+		const legacy = loadPref<string[] | null>(LEGACY_KEY, null);
+		if (Array.isArray(legacy)) {
+			this._setIds(legacy);
+			this._save(); // Migrate to v1
+		}
+	}
+
+	private _setIds(ids: string[]) {
+		const map: Record<string, boolean> = {};
+		for (const id of ids) map[id] = true;
+		this._ids = map;
 	}
 
 	has(id: string): boolean {
@@ -38,10 +51,7 @@ class FavoritesState {
 	}
 
 	private _save() {
-		if (typeof window === 'undefined') return;
-		try {
-			localStorage.setItem('spotifx-favorites', JSON.stringify(Object.keys(this._ids)));
-		} catch { /* quota — ignore */ }
+		savePref(STORAGE_KEY, { v: 1, d: Object.keys(this._ids) });
 	}
 }
 
