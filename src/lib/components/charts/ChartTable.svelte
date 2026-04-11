@@ -72,6 +72,8 @@
 	let scrollTop = $state(0);
 	let containerHeight = $state(600);
 	let containerEl = $state<HTMLDivElement | null>(null);
+	let windowWidth = $state(typeof window !== 'undefined' ? window.innerWidth : 1024);
+	const colCount = $derived(windowWidth >= 768 ? 7 : 5);
 
 	$effect(() => {
 		if (!containerEl) return;
@@ -90,6 +92,8 @@
 	const paddingTop = $derived(startIndex * ROW_HEIGHT);
 	const paddingBottom = $derived(Math.max(0, (processed.length - endIndex) * ROW_HEIGHT));
 </script>
+
+<svelte:window onresize={() => (windowWidth = window.innerWidth)} />
 
 <div
 	class="overflow-hidden animate-fade-in"
@@ -154,7 +158,7 @@
 			<tbody>
 				{#if processed.length === 0}
 					<tr>
-						<td colspan="7" class="px-4 py-16 text-center">
+						<td colspan={colCount} class="px-4 py-16 text-center">
 							<div class="text-gray-600">
 								{#if searchQuery}
 									<p class="text-lg mb-1">No matches</p>
@@ -169,7 +173,7 @@
 				{:else}
 					<!-- Top spacer: holds space for rows scrolled above the viewport -->
 					{#if paddingTop > 0}
-						<tr aria-hidden="true"><td colspan="7" style="height:{paddingTop}px;padding:0;"></td></tr>
+						<tr aria-hidden="true"><td colspan={colCount} style="height:{paddingTop}px;padding:0;"></td></tr>
 					{/if}
 
 					{#each visibleSlice as track (track.spotifyId || `r${track.rank}-${track.title}`)}
@@ -245,7 +249,7 @@
 
 					<!-- Bottom spacer: holds space for rows not yet scrolled to -->
 					{#if paddingBottom > 0}
-						<tr aria-hidden="true"><td colspan="7" style="height:{paddingBottom}px;padding:0;"></td></tr>
+						<tr aria-hidden="true"><td colspan={colCount} style="height:{paddingBottom}px;padding:0;"></td></tr>
 					{/if}
 				{/if}
 			</tbody>
