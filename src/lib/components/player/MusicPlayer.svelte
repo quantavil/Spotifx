@@ -7,7 +7,6 @@
 		updatePlaybackState,
 		updatePositionState
 	} from '$lib/stores/mediaSession';
-	import { trackToHue } from '$lib/utils';
 	import { onMount, onDestroy } from 'svelte';
 	import { fly } from 'svelte/transition';
 
@@ -26,12 +25,6 @@
 	let seeking = $state(false);
 	let consecutiveErrors = 0;
 	let positionTick = 0;
-
-	const dynamicHue = $derived(
-		player.currentTrack
-			? trackToHue(player.currentTrack.artist, player.currentTrack.title)
-			: 140
-	);
 
 	// ── YouTube IFrame API ──
 
@@ -389,7 +382,7 @@
 	>
 		<div
 			class="backdrop-blur-2xl transition-colors duration-700"
-			style="background: linear-gradient(135deg, hsla({dynamicHue}, 40%, 8%, 0.98) 0%, rgba(18,18,18,0.98) 60%, hsla({dynamicHue}, 25%, 6%, 0.98) 100%);"
+			style="background: linear-gradient(135deg, hsla({player.hue}, 40%, 8%, 0.98) 0%, rgba(18,18,18,0.98) 60%, hsla({player.hue}, 25%, 6%, 0.98) 100%);"
 		>
 			<PlayerProgressBar bind:seeking />
 

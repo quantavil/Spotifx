@@ -4,19 +4,14 @@
 	import Icon from '../ui/Icon.svelte';
 	import TrackThumbnail from '../ui/TrackThumbnail.svelte';
 	import Equalizer from '../ui/Equalizer.svelte';
-	import { trackToHue } from '$lib/utils';
 	import { scrollText } from '$lib/actions';
 
 	let dragIndex: number | null = $state(null);
 	let dragOverIndex: number | null = $state(null);
-
-	const hue = $derived(
-		player.currentTrack
-			? trackToHue(player.currentTrack.artist, player.currentTrack.title)
-			: 140
-	);
+	let dragAbsFrom: number | null = $state(null);
 
 	function onDragStart(idx: number) {
+		dragAbsFrom = player.currentIndex + 1 + idx;
 		dragIndex = idx;
 	}
 
@@ -25,16 +20,17 @@
 	}
 
 	function onDrop(idx: number) {
-		if (dragIndex !== null && dragIndex !== idx) {
-			const absFrom = player.currentIndex + 1 + dragIndex;
+		if (dragAbsFrom !== null && dragIndex !== idx) {
 			const absTo = player.currentIndex + 1 + idx;
-			player.reorder(absFrom, absTo);
+			player.reorder(dragAbsFrom, absTo);
 		}
+		dragAbsFrom = null;
 		dragIndex = null;
 		dragOverIndex = null;
 	}
 
 	function onDragEnd() {
+		dragAbsFrom = null;
 		dragIndex = null;
 		dragOverIndex = null;
 	}
@@ -45,46 +41,29 @@
 <!-- svelte-ignore a11y_no_static_element_interactions -->
 {#if player.queueOpen}
 <div
-	class="fixed inset-0 z-[39] bg-black/60 sm:hidden"
-	onclick={() => player.toggleQueue()}
-	transition:fly={{ duration: 150, opacity: 0 }}
+	class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[55] sm:hidden"
+	transition:fly={{ duration: 200 }}
+	onclick={() => (player.queueOpen = false)}
 ></div>
-{/if}
 
 <div
-	class="z-40 flex flex-col overflow-hidden pb-[4.5rem] sm:pb-0
-		   w-full sm:w-full sm:shadow-none shadow-2xl
-		   { player.queueOpen ? 'fixed top-0 right-0 bottom-0 sm:static sm:h-full' : 'hidden sm:static sm:h-full sm:flex' }"
-	style="background: linear-gradient(180deg, hsla({hue}, 20%, 9%, 0.99) 0%, rgba(14,14,14,0.995) 25%);"
+	class="fixed inset-y-0 right-0 w-full sm:w-96 bg-[#090909] z-[60] sm:z-30 flex flex-col shadow-2xl border-l border-white/5"
+	transition:fly={{ x: 400, duration: 300 }}
+	style="--page-hue: {player.hue};"
 >
 	<!-- Header -->
-	<div class="flex items-center justify-between px-5 py-4 flex-shrink-0 border-b border-white/[0.05]">
-		<div>
-			<h3 class="text-base font-bold text-white tracking-tight">Queue</h3>
-			<p class="text-[11px] text-gray-500 mt-0.5">{player.upcomingTracks.length} upcoming</p>
-		</div>
+	<div class="px-5 py-4 flex items-center justify-between border-b border-white/5 flex-shrink-0">
+		<h2 class="text-sm font-bold text-white uppercase tracking-wider">Queue</h2>
 		<div class="flex items-center gap-1">
 			<button
-				onclick={() => player.toggleShuffle()}
-				class="p-2 rounded-full transition-colors cursor-pointer
-					   {player.shuffled ? 'text-accent bg-accent/10' : 'text-gray-500 hover:text-white hover:bg-white/5'}"
-				title="Shuffle"
-				aria-label="Toggle shuffle"
+				onclick={() => player.clearQueue()}
+				class="text-[11px] text-gray-500 hover:text-white transition-colors cursor-pointer px-2 py-1 rounded hover:bg-white/5"
 			>
-				<Icon name="shuffle" class="w-4 h-4" />
+				Clear
 			</button>
 			<button
-				onclick={() => player.cycleRepeat()}
-				class="p-2 rounded-full transition-colors cursor-pointer
-					   {player.repeat !== 'off' ? 'text-accent bg-accent/10' : 'text-gray-500 hover:text-white hover:bg-white/5'}"
-				title="Repeat"
-				aria-label="Cycle repeat"
-			>
-				<Icon name={player.repeat === 'one' ? 'repeat-one' : 'repeat'} class="w-4 h-4" />
-			</button>
-			<button
-				onclick={() => player.toggleQueue()}
-				class="text-gray-500 hover:text-white transition-colors cursor-pointer p-2 rounded-full hover:bg-white/5 ml-1 sm:hidden"
+				onclick={() => (player.queueOpen = false)}
+				class="text-gray-400 hover:text-white transition-colors cursor-pointer p-1.5 rounded-full hover:bg-white/5"
 				aria-label="Close queue"
 			>
 				<Icon name="close" class="w-4 h-4" />
@@ -92,96 +71,110 @@
 		</div>
 	</div>
 
-	<!-- Now Playing card -->
-	{#if player.currentTrack}
-		<div class="px-4 py-3 flex-shrink-0 border-b border-white/[0.05]"
-			style="background: hsla({hue}, 20%, 12%, 0.4);"
-		>
-			<p class="text-[10px] font-semibold uppercase tracking-widest text-accent/80 mb-2.5 flex items-center gap-2">
-				<Equalizer isPlaying={player.isPlaying} />
-				Now Playing
-			</p>
-			<div class="flex items-center gap-3">
-				<TrackThumbnail
-					track={player.currentTrack}
-					quality="default"
-					class="w-12 h-12 rounded-lg shadow-lg object-cover flex-shrink-0 bg-white/5"
-					iconClass="w-5 h-5 text-gray-600"
-				/>
-				<div class="min-w-0 flex-1">
-					<div class="scroll-text is-active" use:scrollText>
-						<span class="text-sm font-semibold text-white">{player.currentTrack.title}</span>
-					</div>
-					<p class="text-xs text-gray-400 truncate mt-0.5">{player.currentTrack.artist}</p>
-				</div>
-			</div>
-		</div>
-	{/if}
-
-	<!-- Upcoming heading -->
-	<div class="px-5 pt-3 pb-1.5 flex-shrink-0">
-		<p class="text-[10px] font-semibold uppercase tracking-widest text-gray-500">Next Up</p>
-	</div>
-
-	<!-- Queue list -->
-	<div class="overflow-y-auto flex-1 scrollbar-thin">
-		{#if player.upcomingTracks.length === 0}
-			<div class="px-5 py-12 text-center">
-				<Icon name="queue" class="w-8 h-8 text-gray-700 mx-auto mb-3" />
-				<p class="text-sm text-gray-600">No upcoming tracks</p>
-				<p class="text-xs text-gray-700 mt-1">Play something to build your queue</p>
-			</div>
-		{:else}
-			{#each player.upcomingTracks as track, i (track._qid)}
-				<div
-					class="flex items-center gap-2.5 px-4 py-2 hover:bg-white/[0.04] transition-colors group
-						{dragOverIndex === i && dragIndex !== null ? 'border-t-2 border-accent bg-accent/5' : 'border-t border-transparent'}"
-					role="listitem"
-					draggable="true"
-					ondragstart={(e) => { e.dataTransfer?.setData('text/plain', ''); onDragStart(i); }}
-					ondragover={(e) => { e.preventDefault(); onDragOver(i); }}
-					ondrop={(e) => { e.preventDefault(); onDrop(i); }}
-					ondragend={onDragEnd}
-				>
-					<!-- Drag handle + index -->
-					<div class="flex items-center gap-0.5 flex-shrink-0 w-8">
-						<span
-							class="text-gray-700 group-hover:text-gray-400 cursor-grab active:cursor-grabbing"
-							aria-hidden="true"
-						>
-							<Icon name="drag-handle" class="w-3.5 h-3.5" />
-						</span>
-						<span class="text-[10px] text-gray-600 font-mono tabular-nums">{i + 1}</span>
-					</div>
-
-					<!-- Thumbnail -->
+	<!-- Scrollable content -->
+	<div class="flex-1 overflow-y-auto custom-scrollbar p-3 space-y-4">
+		<!-- Now Playing -->
+		{#if player.currentTrack}
+			<div>
+				<h3 class="px-2 mb-2 text-[11px] font-bold text-gray-500 uppercase tracking-widest">Now Playing</h3>
+				<div class="group relative flex items-center gap-3 p-2 rounded-lg bg-white/5 border border-accent/20">
 					<TrackThumbnail
-						{track}
-						quality="default"
-						class="w-9 h-9 rounded object-cover flex-shrink-0 bg-white/5"
-						iconClass="w-3.5 h-3.5 text-gray-600"
+						track={player.currentTrack}
+						class="w-10 h-10 rounded shadow-md object-cover"
 					/>
-
-					<!-- Track info -->
-					<button
-						onclick={() => player.jumpTo(player.currentIndex + 1 + i)}
-						class="flex-1 min-w-0 text-left cursor-pointer"
-					>
-						<p class="text-[13px] text-gray-300 truncate group-hover:text-white transition-colors">{track.title}</p>
-						<p class="text-[11px] text-gray-600 truncate">{track.artist}</p>
-					</button>
-
-					<!-- Remove button -->
-					<button
-						onclick={() => player.removeFromQueue(player.currentIndex + 1 + i)}
-						class="text-gray-700 hover:text-red-400 transition-all cursor-pointer p-1.5 opacity-0 group-hover:opacity-100 flex-shrink-0 rounded-full hover:bg-white/[0.06]"
-						title="Remove from queue"
-						aria-label="Remove {track.title} from queue"
-					>
-						<Icon name="close" class="w-3.5 h-3.5" />
-					</button>
+					<div class="min-w-0 flex-1">
+						<div class="scroll-text is-active" use:scrollText>
+							<span class="text-sm font-medium text-accent">{player.currentTrack.title}</span>
+						</div>
+						<p class="text-xs text-gray-400 truncate">{player.currentTrack.artist}</p>
+					</div>
+					<Equalizer isPlaying={player.isPlaying} class="flex items-end gap-[2px] h-3 mr-1" />
 				</div>
-			{/each}
+			</div>
 		{/if}
+
+		<!-- Up Next -->
+		<div>
+			<h3 class="px-2 mb-2 text-[11px] font-bold text-gray-500 uppercase tracking-widest flex items-center justify-between">
+				Up Next
+				<span class="text-[10px] font-normal lowercase tracking-normal">
+					{player.upcomingTracks.length} tracks
+				</span>
+			</h3>
+
+			{#if player.upcomingTracks.length === 0}
+				<div class="px-2 py-8 text-center">
+					<p class="text-xs text-gray-600">No tracks in queue</p>
+				</div>
+			{:else}
+				<div class="space-y-1">
+					{#each player.upcomingTracks as track, i (track._qid)}
+						<!-- svelte-ignore a11y_no_static_element_interactions -->
+						<div
+							draggable="true"
+							ondragstart={() => onDragStart(i)}
+							ondragover={(e) => { e.preventDefault(); onDragOver(i); }}
+							onscroll={(e) => { e.preventDefault(); }}
+							ondrop={() => onDrop(i)}
+							ondragend={onDragEnd}
+							class="group relative flex items-center gap-3 p-2 rounded-lg hover:bg-white/5 transition-colors cursor-default
+								   {dragOverIndex === i ? 'bg-accent/10' : ''} {dragIndex === i ? 'opacity-40' : ''}"
+						>
+							<button
+								onclick={() => player.jumpToEntry(track._qid)}
+								class="relative group/thumb"
+							>
+								<TrackThumbnail
+									{track}
+									class="w-10 h-10 rounded shadow-sm object-cover transition-opacity group-hover/thumb:opacity-40"
+								/>
+								<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover/thumb:opacity-100 transition-opacity">
+									<Icon name="play" class="w-4 h-4 text-white" />
+								</div>
+							</button>
+
+							<div class="min-w-0 flex-1">
+								<p class="text-sm font-medium text-white truncate group-hover:text-accent transition-colors">
+									{track.title}
+								</p>
+								<p class="text-xs text-gray-500 truncate">{track.artist}</p>
+							</div>
+
+							<button
+								onclick={() => player.removeFromQueue(track._qid)}
+								class="opacity-0 group-hover:opacity-100 p-1.5 text-gray-500 hover:text-red-400 transition-all cursor-pointer"
+								title="Remove from queue"
+							>
+								<Icon name="close" class="w-4 h-4" />
+							</button>
+
+							<!-- Drag handle -->
+							<div class="cursor-grab active:cursor-grabbing text-gray-700 hover:text-gray-400 px-1">
+								<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+									<path d="M8 9h8v2H8V9zm0 4h8v2H8v-2z" />
+								</svg>
+							</div>
+						</div>
+					{/each}
+				</div>
+			{/if}
+		</div>
 	</div>
 </div>
+{/if}
+
+<style>
+	.custom-scrollbar::-webkit-scrollbar {
+		width: 4px;
+	}
+	.custom-scrollbar::-webkit-scrollbar-track {
+		background: transparent;
+	}
+	.custom-scrollbar::-webkit-scrollbar-thumb {
+		background: rgba(255, 255, 255, 0.1);
+		border-radius: 10px;
+	}
+	.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+		background: rgba(255, 255, 255, 0.2);
+	}
+</style>

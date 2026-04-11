@@ -12,19 +12,13 @@
 	import { page } from '$app/state';
 
 	let { children } = $props();
-
-	const dynamicHue = $derived(
-		player.currentTrack
-			? trackToHue(player.currentTrack.artist, player.currentTrack.title)
-			: 140
-	);
 </script>
 
 <div class="app-shell">
 	<!-- Panels row: left content + right queue -->
 	<div class="panels-row">
 		<!-- Left Panel -->
-		<div class="left-panel scrollbar-thin" style="--dynamic-hue: {dynamicHue};">
+		<div class="left-panel scrollbar-thin" style="--dynamic-hue: {player.hue};">
 			<header class="sticky top-0 z-10 backdrop-blur-xl bg-surface/80">
 				<div class="max-w-6xl mx-auto px-4 sm:px-5 py-3 w-full">
 					<div class="flex items-center justify-between mb-3">

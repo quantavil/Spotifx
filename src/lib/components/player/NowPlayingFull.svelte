@@ -1,15 +1,15 @@
 <!-- src/lib/components/NowPlayingFull.svelte -->
 <script lang="ts">
 	import { player } from '$lib/stores/player.svelte';
-	import { formatTime, formatCompact, trackToHue } from '$lib/utils';
+	import { formatTime, formatCompact } from '$lib/utils';
 	import { fly } from 'svelte/transition';
 	import { scrollText } from '$lib/actions';
 	import Icon from '../ui/Icon.svelte';
 	import TrackThumbnail from '../ui/TrackThumbnail.svelte';
 	import FavoriteButton from '../ui/FavoriteButton.svelte';
+	import PlaybackControls from './PlaybackControls.svelte';
 
 	const track = $derived(player.currentTrack);
-	const hue = $derived(track ? trackToHue(track.artist, track.title) : 140);
 
 	function openQueue() {
 		player.fullScreenOpen = false;
@@ -21,7 +21,9 @@
 
 		history.pushState({ playerOpen: true }, '');
 
+		let popped = false;
 		const onPopState = () => {
+			popped = true;
 			player.fullScreenOpen = false;
 		};
 
@@ -29,7 +31,7 @@
 
 		return () => {
 			window.removeEventListener('popstate', onPopState);
-			if (history.state && history.state.playerOpen) {
+			if (!popped && !player.fullScreenOpen && history.state && history.state.playerOpen) {
 				history.back();
 			}
 		};
@@ -39,7 +41,7 @@
 {#if player.fullScreenOpen && track}
 	<div
 		class="fixed inset-0 sm:bottom-0 sm:right-[24rem] z-[55] sm:z-40 flex flex-col overflow-hidden sm:pb-[5.5rem]"
-		style="background: linear-gradient(180deg, hsl({hue} 45% 14%) 0%, hsl({hue} 30% 5%) 50%, hsl({hue} 15% 3%) 100%);"
+		style="background: linear-gradient(180deg, hsl({player.hue} 45% 14%) 0%, hsl({player.hue} 30% 5%) 50%, hsl({player.hue} 15% 3%) 100%);"
 		transition:fly={{ y: 600, duration: 300 }}
 	>
 		<!-- Top bar -->
@@ -69,7 +71,7 @@
 					{#if track.ytMusicId}
 						<div
 							class="absolute inset-4 rounded-3xl blur-3xl opacity-30"
-							style="background: hsl({hue} 60% 30%);"
+							style="background: hsl({player.hue} 60% 30%);"
 						></div>
 					{/if}
 					<TrackThumbnail
@@ -153,56 +155,7 @@
 		</div>
 
 		<!-- Controls -->
-		<div class="flex items-center justify-center gap-5 sm:gap-7 px-6 pb-4 pt-1 flex-shrink-0 sm:hidden">
-			<button
-				onclick={() => player.toggleShuffle()}
-				class="p-2 transition-colors cursor-pointer
-					   {player.shuffled ? 'text-accent' : 'text-gray-500 hover:text-white'}"
-				aria-label="Toggle shuffle"
-			>
-				<Icon name="shuffle" class="w-5 h-5 sm:w-6 sm:h-6" />
-			</button>
-
-			<button
-				onclick={() => player.prev()}
-				class="p-2 text-gray-300 hover:text-white transition-colors cursor-pointer"
-				aria-label="Previous"
-			>
-				<Icon name="skip-back" class="w-7 h-7 sm:w-8 sm:h-8" />
-			</button>
-
-			<button
-				onclick={() => player.togglePlay()}
-				class="p-4 sm:p-5 bg-white rounded-full text-black hover:scale-105 active:scale-95 transition-transform cursor-pointer shadow-xl"
-				aria-label={player.isPlaying ? 'Pause' : 'Play'}
-			>
-				{#if player.buffering}
-					<svg class="w-7 h-7 sm:w-8 sm:h-8 animate-spin" viewBox="0 0 24 24" fill="none">
-						<circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" opacity="0.25"/>
-						<path d="M12 2a10 10 0 019.95 9" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-					</svg>
-				{:else}
-					<Icon name={player.isPlaying ? 'pause' : 'play'} class="w-7 h-7 sm:w-8 sm:h-8" />
-				{/if}
-			</button>
-
-			<button
-				onclick={() => player.next()}
-				class="p-2 text-gray-300 hover:text-white transition-colors cursor-pointer"
-				aria-label="Next"
-			>
-				<Icon name="skip-forward" class="w-7 h-7 sm:w-8 sm:h-8" />
-			</button>
-
-			<button
-				onclick={() => player.cycleRepeat()}
-				class="p-2 transition-colors cursor-pointer
-					   {player.repeat !== 'off' ? 'text-accent' : 'text-gray-500 hover:text-white'}"
-				aria-label="Cycle repeat"
-			>
-				<Icon name={player.repeat === 'one' ? 'repeat-one' : 'repeat'} class="w-5 h-5 sm:w-6 sm:h-6" />
-			</button>
-		</div>
+		<PlaybackControls size="lg" class="px-6 pb-4 pt-1 flex-shrink-0 sm:hidden" />
 
 	</div>
 {/if}

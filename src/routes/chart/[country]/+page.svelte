@@ -22,14 +22,14 @@
 		})
 	);
 
-	// Gradient hue: use playing track if available, else hero track
-	const pageHue = $derived(
-		player.currentTrack
-			? trackToHue(player.currentTrack.artist, player.currentTrack.title)
-			: heroTrack
-				? trackToHue(heroTrack.artist, heroTrack.title)
-				: 140
-	);
+	$effect(() => {
+		if (heroTrack) {
+			player.contextHue = trackToHue(heroTrack.artist, heroTrack.title);
+		}
+		return () => {
+			player.contextHue = null;
+		};
+	});
 </script>
 
 <svelte:head>
@@ -47,7 +47,7 @@
 </svelte:head>
 
 <!-- Gradient bleed zone -->
-<div class="gradient-zone" style="--page-hue: {pageHue};">
+<div class="gradient-zone" style="--page-hue: {player.hue};">
 	<div class="gradient-bg"></div>
 
 	<div class="relative z-[1]">
