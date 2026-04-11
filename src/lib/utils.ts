@@ -53,3 +53,32 @@ export function trackToHue(artist: string, title: string): number {
 	}
 	return ((hash % 360) + 360) % 360;
 }
+
+export function fisherYates<T>(arr: T[]): T[] {
+	const result = [...arr];
+	for (let i = result.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[result[i], result[j]] = [result[j], result[i]];
+	}
+	return result;
+}
+
+export function loadPref<T>(key: string, fallback: T, valid?: T[]): T {
+	if (typeof window === 'undefined') return fallback;
+	try {
+		const raw = localStorage.getItem(key);
+		if (raw === null) return fallback;
+		const val = JSON.parse(raw) as T;
+		if (valid && !valid.includes(val)) return fallback;
+		return val;
+	} catch {
+		return fallback;
+	}
+}
+
+export function savePref(key: string, value: any): void {
+	if (typeof window === 'undefined') return;
+	try {
+		localStorage.setItem(key, JSON.stringify(value));
+	} catch { /* ignore quota */ }
+}

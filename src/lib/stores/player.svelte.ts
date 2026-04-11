@@ -1,6 +1,7 @@
 import type { Track } from '$lib/types';
 import { toast } from '$lib/stores/toast.svelte';
 import { updateMediaMetadata, updatePlaybackState } from '$lib/stores/mediaSession';
+import { fisherYates, loadPref, savePref } from '$lib/utils';
 
 export interface QueueEntry extends Track {
 	_qid: number;
@@ -16,46 +17,7 @@ function toEntries(tracks: Track[]): QueueEntry[] {
 	return tracks.map(toEntry);
 }
 
-function fisherYates<T>(arr: T[]): T[] {
-	const a = [...arr];
-	for (let i = a.length - 1; i > 0; i--) {
-		const j = Math.floor(Math.random() * (i + 1));
-		[a[i], a[j]] = [a[j], a[i]];
-	}
-	return a;
-}
-
 export type RepeatMode = 'off' | 'all' | 'one';
-
-function loadPref<T>(key: string, fallback: T, valid?: T[]): T {
-	if (typeof window === 'undefined') return fallback;
-	try {
-		const raw = localStorage.getItem(key);
-		if (raw === null) return fallback;
-		let value: T;
-		if (typeof fallback === 'number') {
-			const n = Number(raw);
-			value = (isNaN(n) ? fallback : n) as T;
-		} else if (typeof fallback === 'boolean') {
-			value = (raw === 'true') as T;
-		} else {
-			value = raw as T;
-		}
-		if (valid && !valid.includes(value)) return fallback;
-		return value;
-	} catch {
-		return fallback;
-	}
-}
-
-function savePref(key: string, value: string | number | boolean): void {
-	if (typeof window === 'undefined') return;
-	try {
-		localStorage.setItem(key, String(value));
-	} catch {
-		/* quota — ignore */
-	}
-}
 
 class PlayerState {
 	queue = $state<QueueEntry[]>([]);
