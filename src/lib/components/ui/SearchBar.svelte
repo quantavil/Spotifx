@@ -4,12 +4,27 @@
 
 	let { value = $bindable('') }: { value: string } = $props();
 	let inputEl: HTMLInputElement | undefined = $state();
+	let internalValue = $state(value);
+
+	$effect(() => {
+		const t = setTimeout(() => {
+			value = internalValue;
+		}, 100);
+		return () => clearTimeout(t);
+	});
+
+	// Sync external changes back to internal (e.g. clear button)
+	$effect(() => {
+		if (value !== internalValue) {
+			internalValue = value;
+		}
+	});
 
 	function handleGlobalKey(e: KeyboardEvent) {
 		const tag = (e.target as HTMLElement)?.tagName;
 		if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') {
 			if (e.key === 'Escape') {
-				value = '';
+				internalValue = '';
 				inputEl?.blur();
 			}
 			return;
@@ -27,7 +42,7 @@
 	<Icon name="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" />
 	<input
 		bind:this={inputEl}
-		bind:value
+		bind:value={internalValue}
 		type="text"
 		placeholder="Search tracks or artists…"
 		class="w-full pl-10 pr-16 py-2.5 rounded-full bg-white/[0.07]
@@ -35,9 +50,9 @@
 			   focus:outline-none focus:bg-white/[0.12] focus:ring-1 focus:ring-white/20
 			   transition-colors"
 	/>
-	{#if value}
+	{#if internalValue}
 		<button
-			onclick={() => (value = '')}
+			onclick={() => (internalValue = '')}
 			class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white transition-colors cursor-pointer"
 			aria-label="Clear search"
 		>
