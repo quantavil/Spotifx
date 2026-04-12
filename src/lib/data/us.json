@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-04-11",
-  "lastUpdated": "2026-04-11T07:02:18.016Z",
+  "weekDate": "2026-04-12",
+  "lastUpdated": "2026-04-12T07:14:24.632Z",
   "tracks": [
     {
       "rank": 1,
@@ -10,7 +10,7 @@
       "title": "Choosin' Texas",
       "artist": "Ella Langley",
       "spotifyId": "65DbTqJKhbwqYbZ1Okr0rc",
-      "ytMusicId": "-82dK3N6ZVw",
+      "ytMusicId": "xukbqwRuN5w",
       "streams": 11535551,
       "peak": 1,
       "weeks": 25
@@ -406,7 +406,7 @@
       "title": "Loving Life Again",
       "artist": "Ella Langley",
       "spotifyId": "0n09hxqzKFxW1MBxIjctny",
-      "ytMusicId": "jTXfSQeFWAk",
+      "ytMusicId": "8CrYKKk2n4M",
       "streams": 3950866,
       "peak": 37,
       "weeks": 3
@@ -1033,7 +1033,7 @@
       "title": "Les",
       "artist": "Childish Gambino",
       "spotifyId": "7ghKr0pCYyPPyp7t1FH8k4",
-      "ytMusicId": "eQL-E_TtB0o",
+      "ytMusicId": "L8gGHqPBuZM",
       "streams": 2874956,
       "peak": 70,
       "weeks": 45
