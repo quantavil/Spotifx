@@ -1,8 +1,8 @@
 {
   "country": "in",
   "countryName": "India",
-  "weekDate": "2026-04-12",
-  "lastUpdated": "2026-04-12T07:12:57.511Z",
+  "weekDate": "2026-04-13",
+  "lastUpdated": "2026-04-13T08:00:01.192Z",
   "tracks": [
     {
       "rank": 1,
@@ -65,7 +65,7 @@
       "title": "Dhurandhar The Revenge - Aari Aari (w/ Bombay Rockers, Irshad Kamil, Khan Saab, Reble, Token, Jasmine Sandlas, Sudhir Yaduvanshi)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "157BtwkY54FQ3Xl8DsTso1",
-      "ytMusicId": "BuQgRwVJglY",
+      "ytMusicId": "f0i95p5l67Y",
       "streams": 6062980,
       "peak": 4,
       "weeks": 3
@@ -109,7 +109,7 @@
       "title": "Jaan Se Guzarte Hain (w/ Khan Saab)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "4aWTPC6cuebk9zSpW1PY1Y",
-      "ytMusicId": "iICM37_na2U",
+      "ytMusicId": "f0i95p5l67Y",
       "streams": 5344875,
       "peak": 7,
       "weeks": 3
@@ -263,7 +263,7 @@
       "title": "Bairi (w/ Pradeep Solanki, Heena)",
       "artist": "Virat",
       "spotifyId": "1GfcRba0wGXDTtT4r8C65Z",
-      "ytMusicId": "ijaPDOCNHXw",
+      "ytMusicId": "U6bKSnYHuhw",
       "streams": 3644770,
       "peak": 13,
       "weeks": 7
@@ -494,7 +494,7 @@
       "title": "Main Aur Tu (w/ Jasmine Sandlas, Reble)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "5icrEfubHCXlHEue9YUT3q",
-      "ytMusicId": "vj0ks4KUJww",
+      "ytMusicId": "BuQgRwVJglY",
       "streams": 2735601,
       "peak": 34,
       "weeks": 3
@@ -626,7 +626,7 @@
       "title": "Raabta (w/ Arijit Singh)",
       "artist": "Pritam",
       "spotifyId": "6FjbAnaPRPwiP3sciEYctO",
-      "ytMusicId": "piUHBTXsoiY",
+      "ytMusicId": "aVPwXQgY2QI",
       "streams": 2399645,
       "peak": 33,
       "weeks": 177
@@ -835,7 +835,7 @@
       "title": "Zara Sa (w/ KK)",
       "artist": "Pritam",
       "spotifyId": "18YHbIhrleUkKKj2DvEp79",
-      "ytMusicId": "zv-tbc4F818",
+      "ytMusicId": "KzhgaKWplog",
       "streams": 2066742,
       "peak": 33,
       "weeks": 162
@@ -1352,7 +1352,7 @@
       "title": "Kiya Kiya (w/ Shweta Pandit)",
       "artist": "Anand Raj Anand",
       "spotifyId": "0YCPCY9WhQFMFtoSpj6dhL",
-      "ytMusicId": "QV5SORKs3_s",
+      "ytMusicId": "fO3tnSvQfIs",
       "streams": 1701635,
       "peak": 122,
       "weeks": 7

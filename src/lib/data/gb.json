@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-04-12",
-  "lastUpdated": "2026-04-12T07:15:38.448Z",
+  "weekDate": "2026-04-13",
+  "lastUpdated": "2026-04-13T08:02:45.131Z",
   "tracks": [
     {
       "rank": 1,
@@ -274,7 +274,7 @@
       "title": "Click Clack Symphony. (w/ Hans Zimmer)",
       "artist": "RAYE",
       "spotifyId": "0XOynYFi9hQfIXKnTct9A7",
-      "ytMusicId": "zzhYb-gZlCg",
+      "ytMusicId": "22JOUliNzxs",
       "streams": 1366497,
       "peak": 12,
       "weeks": 3
@@ -758,7 +758,7 @@
       "title": "That’s So True",
       "artist": "Gracie Abrams",
       "spotifyId": "7ne4VBA60CxGM75vw0EYad",
-      "ytMusicId": "W_YOJWZIjxo",
+      "ytMusicId": "AOz9V0NhJe8",
       "streams": 789857,
       "peak": 1,
       "weeks": 77
@@ -824,7 +824,7 @@
       "title": "Landslide",
       "artist": "Fleetwood Mac",
       "spotifyId": "5ihS6UUlyQAfmp48eSkxuQ",
-      "ytMusicId": "k4M53xndqiU",
+      "ytMusicId": "mXonGAEPQp8",
       "streams": 760721,
       "peak": 35,
       "weeks": 24
@@ -1011,7 +1011,7 @@
       "title": "Scar Tissue - 2014 Remaster",
       "artist": "Red Hot Chili Peppers",
       "spotifyId": "32sx78QsGg6pKXn42XvF9L",
-      "ytMusicId": "tpYdGgzCW-M",
+      "ytMusicId": "U7k2qv8KTDI",
       "streams": 719303,
       "peak": 92,
       "weeks": 6
@@ -2177,7 +2177,7 @@
       "title": "We Found Love (w/ Calvin Harris)",
       "artist": "Rihanna",
       "spotifyId": "1zv3WFUbZ5vPxFq9I2jAU1",
-      "ytMusicId": "UUpuyzPJeWA",
+      "ytMusicId": "n6N1_sxlBU8",
       "streams": 550900,
       "peak": 34,
       "weeks": 100
