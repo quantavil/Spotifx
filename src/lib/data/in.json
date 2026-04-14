@@ -1,8 +1,8 @@
 {
   "country": "in",
   "countryName": "India",
-  "weekDate": "2026-04-13",
-  "lastUpdated": "2026-04-13T08:00:01.192Z",
+  "weekDate": "2026-04-14",
+  "lastUpdated": "2026-04-14T07:29:03.452Z",
   "tracks": [
     {
       "rank": 1,
@@ -109,7 +109,7 @@
       "title": "Jaan Se Guzarte Hain (w/ Khan Saab)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "4aWTPC6cuebk9zSpW1PY1Y",
-      "ytMusicId": "f0i95p5l67Y",
+      "ytMusicId": "iICM37_na2U",
       "streams": 5344875,
       "peak": 7,
       "weeks": 3
@@ -483,7 +483,7 @@
       "title": "Mutta Kalakki (From \"Youth\") (w/ Ken Karunaas)",
       "artist": "G. V. Prakash",
       "spotifyId": "3GNlsHDf3OH7V3LgccGAFc",
-      "ytMusicId": "sng0VbBxlJk",
+      "ytMusicId": "",
       "streams": 2755064,
       "peak": 40,
       "weeks": 7
@@ -835,7 +835,7 @@
       "title": "Zara Sa (w/ KK)",
       "artist": "Pritam",
       "spotifyId": "18YHbIhrleUkKKj2DvEp79",
-      "ytMusicId": "KzhgaKWplog",
+      "ytMusicId": "zv-tbc4F818",
       "streams": 2066742,
       "peak": 33,
       "weeks": 162
@@ -1143,7 +1143,7 @@
       "title": "Aakhri Ishq (w/ Jubin Nautiyal, Irshad Kamil)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "0KjTF8c2qGUJBCuAskhsGT",
-      "ytMusicId": "BS8il9QTp6c",
+      "ytMusicId": "i1o1p_DD6TU",
       "streams": 1821904,
       "peak": 67,
       "weeks": 3
@@ -1198,7 +1198,7 @@
       "title": "5-7 (w/ Mxrci)",
       "artist": "Karan Aujla",
       "spotifyId": "6PRFDCNAMLeSZimkPGrKMG",
-      "ytMusicId": "D6-WSZznJsc",
+      "ytMusicId": "iBUnDct2YGw",
       "streams": 1788261,
       "peak": 36,
       "weeks": 7

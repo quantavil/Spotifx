@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-04-13",
-  "lastUpdated": "2026-04-13T08:02:45.131Z",
+  "weekDate": "2026-04-14",
+  "lastUpdated": "2026-04-14T07:31:47.767Z",
   "tracks": [
     {
       "rank": 1,
@@ -824,7 +824,7 @@
       "title": "Landslide",
       "artist": "Fleetwood Mac",
       "spotifyId": "5ihS6UUlyQAfmp48eSkxuQ",
-      "ytMusicId": "mXonGAEPQp8",
+      "ytMusicId": "k4M53xndqiU",
       "streams": 760721,
       "peak": 35,
       "weeks": 24
@@ -1011,7 +1011,7 @@
       "title": "Scar Tissue - 2014 Remaster",
       "artist": "Red Hot Chili Peppers",
       "spotifyId": "32sx78QsGg6pKXn42XvF9L",
-      "ytMusicId": "U7k2qv8KTDI",
+      "ytMusicId": "tpYdGgzCW-M",
       "streams": 719303,
       "peak": 92,
       "weeks": 6
@@ -2100,7 +2100,7 @@
       "title": "Victory Lap (w/ Skepta, PlaqueBoyMax)",
       "artist": "Fred again..",
       "spotifyId": "1lbNgoJ5iMrMluCyhI4OQP",
-      "ytMusicId": "HVTPxnzLvUk",
+      "ytMusicId": "0wRYvsfhsR8",
       "streams": 558716,
       "peak": 5,
       "weeks": 43
@@ -2177,7 +2177,7 @@
       "title": "We Found Love (w/ Calvin Harris)",
       "artist": "Rihanna",
       "spotifyId": "1zv3WFUbZ5vPxFq9I2jAU1",
-      "ytMusicId": "n6N1_sxlBU8",
+      "ytMusicId": "UUpuyzPJeWA",
       "streams": 550900,
       "peak": 34,
       "weeks": 100
