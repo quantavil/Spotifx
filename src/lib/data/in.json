@@ -1,8 +1,8 @@
 {
   "country": "in",
   "countryName": "India",
-  "weekDate": "2026-04-14",
-  "lastUpdated": "2026-04-14T07:29:03.452Z",
+  "weekDate": "2026-04-15",
+  "lastUpdated": "2026-04-15T07:29:25.600Z",
   "tracks": [
     {
       "rank": 1,
@@ -21,7 +21,7 @@
       "title": "Jaiye Sajana (w/ Jasmine Sandlas, Satinder Sartaaj)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "6xwKNAUHeo2DbWNAPi8aEy",
-      "ytMusicId": "AxN0RjNx6WM",
+      "ytMusicId": "OZwqJTMdEXA",
       "streams": 9459266,
       "peak": 2,
       "weeks": 3
@@ -263,7 +263,7 @@
       "title": "Bairi (w/ Pradeep Solanki, Heena)",
       "artist": "Virat",
       "spotifyId": "1GfcRba0wGXDTtT4r8C65Z",
-      "ytMusicId": "U6bKSnYHuhw",
+      "ytMusicId": "ijaPDOCNHXw",
       "streams": 3644770,
       "peak": 13,
       "weeks": 7
@@ -307,7 +307,7 @@
       "title": "Phir Se (w/ Arijit Singh, Irshad Kamil)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "2NhPxmtxBFZQ8Nr583Iqqt",
-      "ytMusicId": "K7oVZub2KmM",
+      "ytMusicId": "i1o1p_DD6TU",
       "streams": 3547049,
       "peak": 22,
       "weeks": 3
@@ -483,7 +483,7 @@
       "title": "Mutta Kalakki (From \"Youth\") (w/ Ken Karunaas)",
       "artist": "G. V. Prakash",
       "spotifyId": "3GNlsHDf3OH7V3LgccGAFc",
-      "ytMusicId": "",
+      "ytMusicId": "sng0VbBxlJk",
       "streams": 2755064,
       "peak": 40,
       "weeks": 7
@@ -1143,7 +1143,7 @@
       "title": "Aakhri Ishq (w/ Jubin Nautiyal, Irshad Kamil)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "0KjTF8c2qGUJBCuAskhsGT",
-      "ytMusicId": "i1o1p_DD6TU",
+      "ytMusicId": "BS8il9QTp6c",
       "streams": 1821904,
       "peak": 67,
       "weeks": 3

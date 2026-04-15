@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-04-14",
-  "lastUpdated": "2026-04-14T07:30:34.225Z",
+  "weekDate": "2026-04-15",
+  "lastUpdated": "2026-04-15T07:30:56.075Z",
   "tracks": [
     {
       "rank": 1,
@@ -10,7 +10,7 @@
       "title": "Choosin' Texas",
       "artist": "Ella Langley",
       "spotifyId": "65DbTqJKhbwqYbZ1Okr0rc",
-      "ytMusicId": "xukbqwRuN5w",
+      "ytMusicId": "3s1sZbW7Rt8",
       "streams": 11535551,
       "peak": 1,
       "weeks": 25
@@ -153,7 +153,7 @@
       "title": "Be Her",
       "artist": "Ella Langley",
       "spotifyId": "05CjWFAcAlY6O9po6Qwakk",
-      "ytMusicId": "2xklUpzCXcQ",
+      "ytMusicId": "A0ttKAXj1xU",
       "streams": 5153661,
       "peak": 14,
       "weeks": 8
@@ -406,7 +406,7 @@
       "title": "Loving Life Again",
       "artist": "Ella Langley",
       "spotifyId": "0n09hxqzKFxW1MBxIjctny",
-      "ytMusicId": "8CrYKKk2n4M",
+      "ytMusicId": "UQA0ta4aEwc",
       "streams": 3950866,
       "peak": 37,
       "weeks": 3
@@ -791,7 +791,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "NVjfnrkD0J0",
+      "ytMusicId": "FrsOnNxIrg8",
       "streams": 3170724,
       "peak": 1,
       "weeks": 166

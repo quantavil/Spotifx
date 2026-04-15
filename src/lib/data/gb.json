@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-04-14",
-  "lastUpdated": "2026-04-14T07:31:47.767Z",
+  "weekDate": "2026-04-15",
+  "lastUpdated": "2026-04-15T07:32:11.890Z",
   "tracks": [
     {
       "rank": 1,
@@ -373,7 +373,7 @@
       "title": "Choosin' Texas",
       "artist": "Ella Langley",
       "spotifyId": "65DbTqJKhbwqYbZ1Okr0rc",
-      "ytMusicId": "xukbqwRuN5w",
+      "ytMusicId": "3s1sZbW7Rt8",
       "streams": 1136726,
       "peak": 34,
       "weeks": 10
@@ -505,7 +505,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "NVjfnrkD0J0",
+      "ytMusicId": "FrsOnNxIrg8",
       "streams": 975431,
       "peak": 1,
       "weeks": 382
