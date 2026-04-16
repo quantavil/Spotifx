@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-04-15",
-  "lastUpdated": "2026-04-15T07:30:56.075Z",
+  "weekDate": "2026-04-16",
+  "lastUpdated": "2026-04-16T07:31:22.556Z",
   "tracks": [
     {
       "rank": 1,
@@ -714,7 +714,7 @@
       "title": "Scar Tissue - 2014 Remaster",
       "artist": "Red Hot Chili Peppers",
       "spotifyId": "32sx78QsGg6pKXn42XvF9L",
-      "ytMusicId": "tpYdGgzCW-M",
+      "ytMusicId": "U7k2qv8KTDI",
       "streams": 3245863,
       "peak": 65,
       "weeks": 6
@@ -912,7 +912,7 @@
       "title": "Rein Me In (w/ Olivia Dean)",
       "artist": "Sam Fender",
       "spotifyId": "0MUXBhPUDF8or0kfQ0EHwV",
-      "ytMusicId": "H5mAMRgo1NI",
+      "ytMusicId": "4vpTO9TBZKc",
       "streams": 2927754,
       "peak": 83,
       "weeks": 3
@@ -1033,7 +1033,7 @@
       "title": "Les",
       "artist": "Childish Gambino",
       "spotifyId": "7ghKr0pCYyPPyp7t1FH8k4",
-      "ytMusicId": "L8gGHqPBuZM",
+      "ytMusicId": "eQL-E_TtB0o",
       "streams": 2874956,
       "peak": 70,
       "weeks": 45

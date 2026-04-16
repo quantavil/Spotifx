@@ -1,8 +1,8 @@
 {
   "country": "in",
   "countryName": "India",
-  "weekDate": "2026-04-15",
-  "lastUpdated": "2026-04-15T07:29:25.600Z",
+  "weekDate": "2026-04-16",
+  "lastUpdated": "2026-04-16T07:29:52.792Z",
   "tracks": [
     {
       "rank": 1,
@@ -21,7 +21,7 @@
       "title": "Jaiye Sajana (w/ Jasmine Sandlas, Satinder Sartaaj)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "6xwKNAUHeo2DbWNAPi8aEy",
-      "ytMusicId": "OZwqJTMdEXA",
+      "ytMusicId": "jQnMRnYeLe8",
       "streams": 9459266,
       "peak": 2,
       "weeks": 3
@@ -65,7 +65,7 @@
       "title": "Dhurandhar The Revenge - Aari Aari (w/ Bombay Rockers, Irshad Kamil, Khan Saab, Reble, Token, Jasmine Sandlas, Sudhir Yaduvanshi)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "157BtwkY54FQ3Xl8DsTso1",
-      "ytMusicId": "f0i95p5l67Y",
+      "ytMusicId": "BuQgRwVJglY",
       "streams": 6062980,
       "peak": 4,
       "weeks": 3
@@ -307,7 +307,7 @@
       "title": "Phir Se (w/ Arijit Singh, Irshad Kamil)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "2NhPxmtxBFZQ8Nr583Iqqt",
-      "ytMusicId": "i1o1p_DD6TU",
+      "ytMusicId": "K7oVZub2KmM",
       "streams": 3547049,
       "peak": 22,
       "weeks": 3
@@ -494,7 +494,7 @@
       "title": "Main Aur Tu (w/ Jasmine Sandlas, Reble)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "5icrEfubHCXlHEue9YUT3q",
-      "ytMusicId": "BuQgRwVJglY",
+      "ytMusicId": "vj0ks4KUJww",
       "streams": 2735601,
       "peak": 34,
       "weeks": 3
@@ -1198,7 +1198,7 @@
       "title": "5-7 (w/ Mxrci)",
       "artist": "Karan Aujla",
       "spotifyId": "6PRFDCNAMLeSZimkPGrKMG",
-      "ytMusicId": "iBUnDct2YGw",
+      "ytMusicId": "0DS5jYQeiw0",
       "streams": 1788261,
       "peak": 36,
       "weeks": 7
@@ -1297,7 +1297,7 @@
       "title": "Kashish (w/ Omkar Singh, Kashish Ratnani)",
       "artist": "Ashish Bhatia",
       "spotifyId": "3anHs4ijBd3Iw0E0fBPwtH",
-      "ytMusicId": "SQHLYgakef8",
+      "ytMusicId": "BDS87tD4jv4",
       "streams": 1732871,
       "peak": 8,
       "weeks": 29
@@ -1968,7 +1968,7 @@
       "title": "AZUL (w/ Gurjit Gill, Lavish Dhiman)",
       "artist": "Guru Randhawa",
       "spotifyId": "1XwOA83wulFYtimOir6MUL",
-      "ytMusicId": "znxqvAEkpMQ",
+      "ytMusicId": "fAKWARIeMNI",
       "streams": 1435024,
       "peak": 10,
       "weeks": 35
