@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-04-18",
-  "lastUpdated": "2026-04-18T07:03:24.247Z",
+  "weekDate": "2026-04-19",
+  "lastUpdated": "2026-04-19T07:14:26.148Z",
   "tracks": [
     {
       "rank": 1,
@@ -890,7 +890,7 @@
       "title": "Billie Jean",
       "artist": "Michael Jackson",
       "spotifyId": "7J1uxwnxfQLu4APicE5Rnj",
-      "ytMusicId": "Kr4EQDVETuA",
+      "ytMusicId": "7CTJcHjkq0E",
       "streams": 12906909,
       "peak": 48,
       "weeks": 47
@@ -1319,7 +1319,7 @@
       "title": "Kiss It Better",
       "artist": "Rihanna",
       "spotifyId": "0UHB9METy4VCXNgkcGqHqS",
-      "ytMusicId": "Ht2O3xYjJik",
+      "ytMusicId": "np30lwvSoPY",
       "streams": 10623799,
       "peak": 100,
       "weeks": 25
@@ -1418,7 +1418,7 @@
       "title": "Numb",
       "artist": "Linkin Park",
       "spotifyId": "2nLtzopw4rPReszdYBJU6h",
-      "ytMusicId": "Q7cQU86CDB0",
+      "ytMusicId": "dxp9w9Ggehc",
       "streams": 10333039,
       "peak": 24,
       "weeks": 106
@@ -2122,7 +2122,7 @@
       "title": "RUNWAY (w/ Doechii)",
       "artist": "Lady Gaga",
       "spotifyId": "7BjcYqD0CqXnG45ezWSTYR",
-      "ytMusicId": "uZfaqlnmi_g",
+      "ytMusicId": "N2pFAltZSGs",
       "streams": 8920475,
       "peak": 193,
       "weeks": 1
