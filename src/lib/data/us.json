@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-04-19",
-  "lastUpdated": "2026-04-19T07:18:44.837Z",
+  "weekDate": "2026-04-20",
+  "lastUpdated": "2026-04-20T08:05:00.790Z",
   "tracks": [
     {
       "rank": 1,
@@ -32,7 +32,7 @@
       "title": "Be Her",
       "artist": "Ella Langley",
       "spotifyId": "05CjWFAcAlY6O9po6Qwakk",
-      "ytMusicId": "3s1sZbW7Rt8",
+      "ytMusicId": "A0ttKAXj1xU",
       "streams": 7903208,
       "peak": 3,
       "weeks": 9
@@ -296,7 +296,7 @@
       "title": "Golden (w/ Ejae, AUDREY NUNA, REI AMI, KPop Demon Hunters Cast)",
       "artist": "HUNTR/X",
       "spotifyId": "1CPZ5BxNNd0n0nF4Orb9JS",
-      "ytMusicId": "9_bTl2vvYQg",
+      "ytMusicId": "rW2HmFDGdKs",
       "streams": 4775791,
       "peak": 1,
       "weeks": 43
@@ -703,7 +703,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "FrsOnNxIrg8",
+      "ytMusicId": "X7AN68W5qDI",
       "streams": 3354212,
       "peak": 1,
       "weeks": 167
@@ -813,7 +813,7 @@
       "title": "Scar Tissue - 2014 Remaster",
       "artist": "Red Hot Chili Peppers",
       "spotifyId": "32sx78QsGg6pKXn42XvF9L",
-      "ytMusicId": "U7k2qv8KTDI",
+      "ytMusicId": "tpYdGgzCW-M",
       "streams": 3173596,
       "peak": 65,
       "weeks": 7
@@ -1033,7 +1033,7 @@
       "title": "Rein Me In (w/ Olivia Dean)",
       "artist": "Sam Fender",
       "spotifyId": "0MUXBhPUDF8or0kfQ0EHwV",
-      "ytMusicId": "0Go3jBZs-cc",
+      "ytMusicId": "NO3JTAsB4NI",
       "streams": 2951853,
       "peak": 83,
       "weeks": 4
@@ -1341,7 +1341,7 @@
       "title": "All Falls Down (w/ Syleena Johnson)",
       "artist": "Kanye West",
       "spotifyId": "5SkRLpaGtvYPhw02vZhQQ9",
-      "ytMusicId": "W0VnPiyXSRQ",
+      "ytMusicId": "uHcP8XX5IJA",
       "streams": 2794309,
       "peak": 109,
       "weeks": 20
@@ -1429,7 +1429,7 @@
       "title": "Who Knows",
       "artist": "Daniel Caesar",
       "spotifyId": "6DH13QYXK7lKkYHSU88N48",
-      "ytMusicId": "Wzn4BLtE73o",
+      "ytMusicId": "xBJ4YkQq1i8",
       "streams": 2716205,
       "peak": 34,
       "weeks": 25
@@ -2100,7 +2100,7 @@
       "title": "Love Me (w/ Drake, Future)",
       "artist": "Lil Wayne",
       "spotifyId": "2XHzzp1j4IfTNp1FTn7YFg",
-      "ytMusicId": "YNP0YJ5gq0M",
+      "ytMusicId": "NajmHZ6kcUg",
       "streams": 2364881,
       "peak": 11,
       "weeks": 112
