@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-04-21",
-  "lastUpdated": "2026-04-21T07:35:04.700Z",
+  "weekDate": "2026-04-22",
+  "lastUpdated": "2026-04-22T07:32:37.629Z",
   "tracks": [
     {
       "rank": 1,
@@ -21,7 +21,7 @@
       "title": "Rein Me In (w/ Olivia Dean)",
       "artist": "Sam Fender",
       "spotifyId": "0MUXBhPUDF8or0kfQ0EHwV",
-      "ytMusicId": "NO3JTAsB4NI",
+      "ytMusicId": "0Go3jBZs-cc",
       "streams": 3657871,
       "peak": 2,
       "weeks": 43
@@ -318,7 +318,7 @@
       "title": "Golden (w/ Ejae, AUDREY NUNA, REI AMI, KPop Demon Hunters Cast)",
       "artist": "HUNTR/X",
       "spotifyId": "1CPZ5BxNNd0n0nF4Orb9JS",
-      "ytMusicId": "9_bTl2vvYQg",
+      "ytMusicId": "rW2HmFDGdKs",
       "streams": 1240088,
       "peak": 1,
       "weeks": 42
@@ -2122,7 +2122,7 @@
       "title": "Silver Springs - 2004 Remaster",
       "artist": "Fleetwood Mac",
       "spotifyId": "4nZi6XNe36Ut4Nij3IQ1yC",
-      "ytMusicId": "jFvopL-Lr2w",
+      "ytMusicId": "kVE4aOUX2iM",
       "streams": 567127,
       "peak": 76,
       "weeks": 32
