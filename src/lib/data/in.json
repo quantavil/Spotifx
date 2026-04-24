@@ -1,8 +1,8 @@
 {
   "country": "in",
   "countryName": "India",
-  "weekDate": "2026-04-23",
-  "lastUpdated": "2026-04-23T07:33:46.816Z",
+  "weekDate": "2026-04-24",
+  "lastUpdated": "2026-04-24T07:59:31.660Z",
   "tracks": [
     {
       "rank": 1,
@@ -21,7 +21,7 @@
       "title": "Jaiye Sajana (w/ Jasmine Sandlas, Satinder Sartaaj)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "6xwKNAUHeo2DbWNAPi8aEy",
-      "ytMusicId": "AxN0RjNx6WM",
+      "ytMusicId": "OZwqJTMdEXA",
       "streams": 8481788,
       "peak": 2,
       "weeks": 4
@@ -98,7 +98,7 @@
       "title": "Dhurandhar The Revenge - Aari Aari (w/ Bombay Rockers, Irshad Kamil, Khan Saab, Reble, Token, Jasmine Sandlas, Sudhir Yaduvanshi)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "157BtwkY54FQ3Xl8DsTso1",
-      "ytMusicId": "BuQgRwVJglY",
+      "ytMusicId": "f0i95p5l67Y",
       "streams": 5151434,
       "peak": 4,
       "weeks": 4
@@ -186,7 +186,7 @@
       "title": "Shararat (w/ Madhubanti Bagchi, Jasmine Sandlas)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "0R7grQWU1dRxiOQGIqZm0Z",
-      "ytMusicId": "L8Ea6VJCp-w",
+      "ytMusicId": "1vFZso3WgAA",
       "streams": 4356250,
       "peak": 7,
       "weeks": 19
@@ -1792,7 +1792,7 @@
       "title": "Admirin' You (w/ Ikky, Preston Pablo)",
       "artist": "Karan Aujla",
       "spotifyId": "6ygiy70ujkNOYXM1tQuMNe",
-      "ytMusicId": "a1P55Z1Jugg",
+      "ytMusicId": "3eDgV3KFCdI",
       "streams": 1510108,
       "peak": 24,
       "weeks": 139
@@ -1924,7 +1924,7 @@
       "title": "Meri Banogi Kya (w/ Rajat Nagpal)",
       "artist": "Rito Riba",
       "spotifyId": "6gprR0rGv59wALbBU7yZkl",
-      "ytMusicId": "hlbTxlBuA-I",
+      "ytMusicId": "ZKbxmsaZjxs",
       "streams": 1472772,
       "peak": 175,
       "weeks": 5
