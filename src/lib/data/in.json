@@ -1,8 +1,8 @@
 {
   "country": "in",
   "countryName": "India",
-  "weekDate": "2026-04-26",
-  "lastUpdated": "2026-04-26T07:26:36.390Z",
+  "weekDate": "2026-04-27",
+  "lastUpdated": "2026-04-27T08:18:17.199Z",
   "tracks": [
     {
       "rank": 1,
@@ -186,7 +186,7 @@
       "title": "Dhurandhar The Revenge - Aari Aari (w/ Bombay Rockers, Irshad Kamil, Khan Saab, Reble, Token, Jasmine Sandlas, Sudhir Yaduvanshi)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "157BtwkY54FQ3Xl8DsTso1",
-      "ytMusicId": "BuQgRwVJglY",
+      "ytMusicId": "f0i95p5l67Y",
       "streams": 4368364,
       "peak": 4,
       "weeks": 5
@@ -1143,7 +1143,7 @@
       "title": "Khuda Jaane (w/ KK, Shilpa Rao)",
       "artist": "Vishal-Shekhar",
       "spotifyId": "0gPgdRfB4jdGrlyXS0Vx78",
-      "ytMusicId": "aG7MaqtWxT8",
+      "ytMusicId": "",
       "streams": 1731352,
       "peak": 29,
       "weeks": 184
@@ -2133,7 +2133,7 @@
       "title": "Kaattuchembakam (w/ Vishal Mishra, Aavani Malhar, Kaithapram)",
       "artist": "Jakes Bejoy",
       "spotifyId": "7czB3FGFR1aZeTVN6vXtHO",
-      "ytMusicId": "pjBtvIUwqFo",
+      "ytMusicId": "yRB0yF3rzZQ",
       "streams": 1360287,
       "peak": 174,
       "weeks": 2

@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-04-26",
-  "lastUpdated": "2026-04-26T07:28:59.947Z",
+  "weekDate": "2026-04-27",
+  "lastUpdated": "2026-04-27T08:20:49.167Z",
   "tracks": [
     {
       "rank": 1,
@@ -1176,7 +1176,7 @@
       "title": "Risk It All",
       "artist": "Bruno Mars",
       "spotifyId": "5y2ijHECwFYWqcAHKTZgzD",
-      "ytMusicId": "BF2_ipR1OI0",
+      "ytMusicId": "spsM82DZqbE",
       "streams": 738649,
       "peak": 26,
       "weeks": 8
@@ -1220,7 +1220,7 @@
       "title": "Unwritten",
       "artist": "Natasha Bedingfield",
       "spotifyId": "3U5JVgI2x4rDyHGObzJfNf",
-      "ytMusicId": "iKejQrGq04w",
+      "ytMusicId": "dxB6Gqg26Kw",
       "streams": 723075,
       "peak": 11,
       "weeks": 104
@@ -1693,7 +1693,7 @@
       "title": "Purple Rain",
       "artist": "Prince",
       "spotifyId": "1uvyZBs4IZYRebHIB1747m",
-      "ytMusicId": "347vCib_lMs",
+      "ytMusicId": "iSBVeZrDfGY",
       "streams": 635340,
       "peak": 17,
       "weeks": 16

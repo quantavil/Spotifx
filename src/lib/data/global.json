@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-04-26",
-  "lastUpdated": "2026-04-26T07:23:48.090Z",
+  "weekDate": "2026-04-27",
+  "lastUpdated": "2026-04-27T08:15:20.098Z",
   "tracks": [
     {
       "rank": 1,
@@ -76,7 +76,7 @@
       "title": "Risk It All",
       "artist": "Bruno Mars",
       "spotifyId": "5y2ijHECwFYWqcAHKTZgzD",
-      "ytMusicId": "BF2_ipR1OI0",
+      "ytMusicId": "spsM82DZqbE",
       "streams": 28792781,
       "peak": 3,
       "weeks": 8
@@ -1539,7 +1539,7 @@
       "title": "Who Knows",
       "artist": "Daniel Caesar",
       "spotifyId": "6DH13QYXK7lKkYHSU88N48",
-      "ytMusicId": "Wzn4BLtE73o",
+      "ytMusicId": "xBJ4YkQq1i8",
       "streams": 10109395,
       "peak": 58,
       "weeks": 22
