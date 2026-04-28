@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-04-27",
-  "lastUpdated": "2026-04-27T08:19:45.275Z",
+  "weekDate": "2026-04-28",
+  "lastUpdated": "2026-04-28T08:21:32.292Z",
   "tracks": [
     {
       "rank": 1,
@@ -21,7 +21,7 @@
       "title": "Choosin' Texas",
       "artist": "Ella Langley",
       "spotifyId": "65DbTqJKhbwqYbZ1Okr0rc",
-      "ytMusicId": "3s1sZbW7Rt8",
+      "ytMusicId": "xukbqwRuN5w",
       "streams": 12171273,
       "peak": 1,
       "weeks": 27
@@ -142,7 +142,7 @@
       "title": "Risk It All",
       "artist": "Bruno Mars",
       "spotifyId": "5y2ijHECwFYWqcAHKTZgzD",
-      "ytMusicId": "spsM82DZqbE",
+      "ytMusicId": "BF2_ipR1OI0",
       "streams": 5967050,
       "peak": 1,
       "weeks": 8
@@ -340,7 +340,7 @@
       "title": "Golden (w/ Ejae, AUDREY NUNA, REI AMI, KPop Demon Hunters Cast)",
       "artist": "HUNTR/X",
       "spotifyId": "1CPZ5BxNNd0n0nF4Orb9JS",
-      "ytMusicId": "9_bTl2vvYQg",
+      "ytMusicId": "rW2HmFDGdKs",
       "streams": 4482209,
       "peak": 1,
       "weeks": 44
@@ -681,7 +681,7 @@
       "title": "Be By You",
       "artist": "Luke Combs",
       "spotifyId": "7aLndReanHBzpTGE5Am9H8",
-      "ytMusicId": "aRm7U10T8vw",
+      "ytMusicId": "IC16XVKc8CQ",
       "streams": 3403105,
       "peak": 13,
       "weeks": 10
@@ -758,7 +758,7 @@
       "title": "No Hands (w/ Roscoe Dash, Wale)",
       "artist": "Waka Flocka Flame",
       "spotifyId": "03tqyYWC9Um2ZqU0ZN849H",
-      "ytMusicId": "JjuLy7r1hOg",
+      "ytMusicId": "oKgxffp6mZ4",
       "streams": 3289376,
       "peak": 32,
       "weeks": 54
@@ -1418,7 +1418,7 @@
       "title": "Who Knows",
       "artist": "Daniel Caesar",
       "spotifyId": "6DH13QYXK7lKkYHSU88N48",
-      "ytMusicId": "xBJ4YkQq1i8",
+      "ytMusicId": "Wzn4BLtE73o",
       "streams": 2702787,
       "peak": 34,
       "weeks": 26
@@ -1990,7 +1990,7 @@
       "title": "All Falls Down (w/ Syleena Johnson)",
       "artist": "Kanye West",
       "spotifyId": "5SkRLpaGtvYPhw02vZhQQ9",
-      "ytMusicId": "uHcP8XX5IJA",
+      "ytMusicId": "W0VnPiyXSRQ",
       "streams": 2363774,
       "peak": 109,
       "weeks": 21

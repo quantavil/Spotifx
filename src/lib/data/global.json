@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-04-27",
-  "lastUpdated": "2026-04-27T08:15:20.098Z",
+  "weekDate": "2026-04-28",
+  "lastUpdated": "2026-04-28T08:17:05.364Z",
   "tracks": [
     {
       "rank": 1,
@@ -76,7 +76,7 @@
       "title": "Risk It All",
       "artist": "Bruno Mars",
       "spotifyId": "5y2ijHECwFYWqcAHKTZgzD",
-      "ytMusicId": "spsM82DZqbE",
+      "ytMusicId": "BF2_ipR1OI0",
       "streams": 28792781,
       "peak": 3,
       "weeks": 8
@@ -318,7 +318,7 @@
       "title": "Choosin' Texas",
       "artist": "Ella Langley",
       "spotifyId": "65DbTqJKhbwqYbZ1Okr0rc",
-      "ytMusicId": "3s1sZbW7Rt8",
+      "ytMusicId": "xukbqwRuN5w",
       "streams": 19195905,
       "peak": 23,
       "weeks": 16
@@ -362,7 +362,7 @@
       "title": "Golden (w/ Ejae, AUDREY NUNA, REI AMI, KPop Demon Hunters Cast)",
       "artist": "HUNTR/X",
       "spotifyId": "1CPZ5BxNNd0n0nF4Orb9JS",
-      "ytMusicId": "9_bTl2vvYQg",
+      "ytMusicId": "rW2HmFDGdKs",
       "streams": 18818651,
       "peak": 1,
       "weeks": 44
@@ -1539,7 +1539,7 @@
       "title": "Who Knows",
       "artist": "Daniel Caesar",
       "spotifyId": "6DH13QYXK7lKkYHSU88N48",
-      "ytMusicId": "xBJ4YkQq1i8",
+      "ytMusicId": "Wzn4BLtE73o",
       "streams": 10109395,
       "peak": 58,
       "weeks": 22
