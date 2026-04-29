@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-04-28",
-  "lastUpdated": "2026-04-28T08:21:32.292Z",
+  "weekDate": "2026-04-29",
+  "lastUpdated": "2026-04-29T08:14:26.850Z",
   "tracks": [
     {
       "rank": 1,
@@ -21,7 +21,7 @@
       "title": "Choosin' Texas",
       "artist": "Ella Langley",
       "spotifyId": "65DbTqJKhbwqYbZ1Okr0rc",
-      "ytMusicId": "xukbqwRuN5w",
+      "ytMusicId": "3s1sZbW7Rt8",
       "streams": 12171273,
       "peak": 1,
       "weeks": 27
@@ -142,7 +142,7 @@
       "title": "Risk It All",
       "artist": "Bruno Mars",
       "spotifyId": "5y2ijHECwFYWqcAHKTZgzD",
-      "ytMusicId": "BF2_ipR1OI0",
+      "ytMusicId": "spsM82DZqbE",
       "streams": 5967050,
       "peak": 1,
       "weeks": 8
@@ -758,7 +758,7 @@
       "title": "No Hands (w/ Roscoe Dash, Wale)",
       "artist": "Waka Flocka Flame",
       "spotifyId": "03tqyYWC9Um2ZqU0ZN849H",
-      "ytMusicId": "oKgxffp6mZ4",
+      "ytMusicId": "JjuLy7r1hOg",
       "streams": 3289376,
       "peak": 32,
       "weeks": 54
@@ -1814,7 +1814,7 @@
       "title": "Just the Way You Are",
       "artist": "Bruno Mars",
       "spotifyId": "7BqBn9nzAq8spo5e7cZ0dJ",
-      "ytMusicId": "GnUW4AF1LZo",
+      "ytMusicId": "HUvIJRFH2cA",
       "streams": 2424782,
       "peak": 79,
       "weeks": 30
@@ -1979,7 +1979,7 @@
       "title": "Northern Attitude",
       "artist": "Noah Kahan",
       "spotifyId": "4O2rRsoSPb5aN7N3tG6Y3v",
-      "ytMusicId": "KdtKJg2X7mY",
+      "ytMusicId": "0dw-rBTQ_P8",
       "streams": 2364751,
       "peak": 75,
       "weeks": 23
@@ -1990,7 +1990,7 @@
       "title": "All Falls Down (w/ Syleena Johnson)",
       "artist": "Kanye West",
       "spotifyId": "5SkRLpaGtvYPhw02vZhQQ9",
-      "ytMusicId": "W0VnPiyXSRQ",
+      "ytMusicId": "uHcP8XX5IJA",
       "streams": 2363774,
       "peak": 109,
       "weeks": 21

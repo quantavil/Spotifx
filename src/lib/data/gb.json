@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-04-28",
-  "lastUpdated": "2026-04-28T08:22:35.249Z",
+  "weekDate": "2026-04-29",
+  "lastUpdated": "2026-04-29T08:15:33.358Z",
   "tracks": [
     {
       "rank": 1,
@@ -340,7 +340,7 @@
       "title": "Choosin' Texas",
       "artist": "Ella Langley",
       "spotifyId": "65DbTqJKhbwqYbZ1Okr0rc",
-      "ytMusicId": "xukbqwRuN5w",
+      "ytMusicId": "3s1sZbW7Rt8",
       "streams": 1336355,
       "peak": 25,
       "weeks": 12
@@ -1176,7 +1176,7 @@
       "title": "Risk It All",
       "artist": "Bruno Mars",
       "spotifyId": "5y2ijHECwFYWqcAHKTZgzD",
-      "ytMusicId": "BF2_ipR1OI0",
+      "ytMusicId": "spsM82DZqbE",
       "streams": 738649,
       "peak": 26,
       "weeks": 8
@@ -1627,7 +1627,7 @@
       "title": "All Falls Down (w/ Syleena Johnson)",
       "artist": "Kanye West",
       "spotifyId": "5SkRLpaGtvYPhw02vZhQQ9",
-      "ytMusicId": "W0VnPiyXSRQ",
+      "ytMusicId": "uHcP8XX5IJA",
       "streams": 641146,
       "peak": 91,
       "weeks": 69
@@ -2045,7 +2045,7 @@
       "title": "Northern Attitude",
       "artist": "Noah Kahan",
       "spotifyId": "4O2rRsoSPb5aN7N3tG6Y3v",
-      "ytMusicId": "KdtKJg2X7mY",
+      "ytMusicId": "0dw-rBTQ_P8",
       "streams": 592361,
       "peak": 77,
       "weeks": 20
