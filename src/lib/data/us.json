@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-04-29",
-  "lastUpdated": "2026-04-29T08:14:26.850Z",
+  "weekDate": "2026-04-30",
+  "lastUpdated": "2026-04-30T08:18:07.961Z",
   "tracks": [
     {
       "rank": 1,
@@ -240,7 +240,7 @@
       "change": "-1",
       "title": "I Just Might",
       "artist": "Bruno Mars",
-      "spotifyId": "12bYYQaLqHliSXvRIYlq8G",
+      "spotifyId": "6f68Ac5tt5BQOpwr0BV9oN",
       "ytMusicId": "8_C6lXoGB5Y",
       "streams": 5136855,
       "peak": 1,
@@ -681,7 +681,7 @@
       "title": "Be By You",
       "artist": "Luke Combs",
       "spotifyId": "7aLndReanHBzpTGE5Am9H8",
-      "ytMusicId": "IC16XVKc8CQ",
+      "ytMusicId": "aRm7U10T8vw",
       "streams": 3403105,
       "peak": 13,
       "weeks": 10
@@ -758,7 +758,7 @@
       "title": "No Hands (w/ Roscoe Dash, Wale)",
       "artist": "Waka Flocka Flame",
       "spotifyId": "03tqyYWC9Um2ZqU0ZN849H",
-      "ytMusicId": "JjuLy7r1hOg",
+      "ytMusicId": "oKgxffp6mZ4",
       "streams": 3289376,
       "peak": 32,
       "weeks": 54
@@ -1748,7 +1748,7 @@
       "title": "you look like you love me (w/ Riley Green)",
       "artist": "Ella Langley",
       "spotifyId": "2PyJAiQjp1OPkow2FJZKHR",
-      "ytMusicId": "-82dK3N6ZVw",
+      "ytMusicId": "y5DZxc-dlaM",
       "streams": 2473405,
       "peak": 28,
       "weeks": 19
@@ -1979,7 +1979,7 @@
       "title": "Northern Attitude",
       "artist": "Noah Kahan",
       "spotifyId": "4O2rRsoSPb5aN7N3tG6Y3v",
-      "ytMusicId": "0dw-rBTQ_P8",
+      "ytMusicId": "KdtKJg2X7mY",
       "streams": 2364751,
       "peak": 75,
       "weeks": 23

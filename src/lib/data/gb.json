@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-04-29",
-  "lastUpdated": "2026-04-29T08:15:33.358Z",
+  "weekDate": "2026-04-30",
+  "lastUpdated": "2026-04-30T08:19:11.427Z",
   "tracks": [
     {
       "rank": 1,
@@ -251,7 +251,7 @@
       "change": "-2",
       "title": "I Just Might",
       "artist": "Bruno Mars",
-      "spotifyId": "12bYYQaLqHliSXvRIYlq8G",
+      "spotifyId": "6f68Ac5tt5BQOpwr0BV9oN",
       "ytMusicId": "8_C6lXoGB5Y",
       "streams": 1527903,
       "peak": 5,
@@ -1110,7 +1110,7 @@
       "title": "That’s So True",
       "artist": "Gracie Abrams",
       "spotifyId": "7ne4VBA60CxGM75vw0EYad",
-      "ytMusicId": "AOz9V0NhJe8",
+      "ytMusicId": "W_YOJWZIjxo",
       "streams": 759432,
       "peak": 1,
       "weeks": 79
@@ -2045,7 +2045,7 @@
       "title": "Northern Attitude",
       "artist": "Noah Kahan",
       "spotifyId": "4O2rRsoSPb5aN7N3tG6Y3v",
-      "ytMusicId": "0dw-rBTQ_P8",
+      "ytMusicId": "KdtKJg2X7mY",
       "streams": 592361,
       "peak": 77,
       "weeks": 20
