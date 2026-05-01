@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-04-30",
-  "lastUpdated": "2026-04-30T08:13:46.497Z",
+  "weekDate": "2026-05-01",
+  "lastUpdated": "2026-05-01T08:08:36.395Z",
   "tracks": [
     {
       "rank": 1,
@@ -76,7 +76,7 @@
       "title": "Risk It All",
       "artist": "Bruno Mars",
       "spotifyId": "5y2ijHECwFYWqcAHKTZgzD",
-      "ytMusicId": "spsM82DZqbE",
+      "ytMusicId": "BF2_ipR1OI0",
       "streams": 28792781,
       "peak": 3,
       "weeks": 8
@@ -1165,7 +1165,7 @@
       "title": "Danza Kuduro (w/ Lucenzo)",
       "artist": "Don Omar",
       "spotifyId": "2a1o6ZejUi8U3wzzOtCOYw",
-      "ytMusicId": "BbWY-avjDto",
+      "ytMusicId": "TgHB5BvtFvc",
       "streams": 11832337,
       "peak": 80,
       "weeks": 121
@@ -2133,7 +2133,7 @@
       "title": "Shut up My Moms Calling",
       "artist": "Hotel Ugly",
       "spotifyId": "3hxIUxnT27p5WcmjGUXNwx",
-      "ytMusicId": "HuJOVEaOrmw",
+      "ytMusicId": "a24EUd0zeqI",
       "streams": 9012555,
       "peak": 78,
       "weeks": 119
