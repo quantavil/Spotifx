@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-05-02",
-  "lastUpdated": "2026-05-02T07:31:29.423Z",
+  "weekDate": "2026-05-03",
+  "lastUpdated": "2026-05-03T08:00:42.838Z",
   "tracks": [
     {
       "rank": 1,
@@ -318,7 +318,7 @@
       "title": "Risk It All",
       "artist": "Bruno Mars",
       "spotifyId": "5y2ijHECwFYWqcAHKTZgzD",
-      "ytMusicId": "spsM82DZqbE",
+      "ytMusicId": "7lskAlKGZUE",
       "streams": 5610057,
       "peak": 1,
       "weeks": 9
@@ -747,7 +747,7 @@
       "title": "Cinderella (w/ Ty Dolla $ign)",
       "artist": "Mac Miller",
       "spotifyId": "2lpygKqzPFtItQ4ss3cgfb",
-      "ytMusicId": "wbt_E7LNDaA",
+      "ytMusicId": "HCgltcEaB_0",
       "streams": 3472795,
       "peak": 68,
       "weeks": 8
@@ -1209,7 +1209,7 @@
       "title": "No Hands (w/ Roscoe Dash, Wale)",
       "artist": "Waka Flocka Flame",
       "spotifyId": "03tqyYWC9Um2ZqU0ZN849H",
-      "ytMusicId": "JjuLy7r1hOg",
+      "ytMusicId": "oKgxffp6mZ4",
       "streams": 2945795,
       "peak": 32,
       "weeks": 55
@@ -1231,7 +1231,7 @@
       "title": "Les",
       "artist": "Childish Gambino",
       "spotifyId": "7ghKr0pCYyPPyp7t1FH8k4",
-      "ytMusicId": "L8gGHqPBuZM",
+      "ytMusicId": "eQL-E_TtB0o",
       "streams": 2924540,
       "peak": 70,
       "weeks": 48
@@ -1528,7 +1528,7 @@
       "title": "Timeless (w/ Playboi Carti)",
       "artist": "The Weeknd",
       "spotifyId": "0FIDCNYYjNvPVimz5icugS",
-      "ytMusicId": "a4O-abCXsfA",
+      "ytMusicId": "vxiMTwG0vWI",
       "streams": 2706552,
       "peak": 1,
       "weeks": 83
@@ -1792,7 +1792,7 @@
       "title": "Kiss It Better",
       "artist": "Rihanna",
       "spotifyId": "0UHB9METy4VCXNgkcGqHqS",
-      "ytMusicId": "np30lwvSoPY",
+      "ytMusicId": "Ht2O3xYjJik",
       "streams": 2492631,
       "peak": 89,
       "weeks": 35
