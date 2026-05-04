@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-05-03",
-  "lastUpdated": "2026-05-03T08:00:42.838Z",
+  "weekDate": "2026-05-04",
+  "lastUpdated": "2026-05-04T08:30:19.215Z",
   "tracks": [
     {
       "rank": 1,
@@ -318,7 +318,7 @@
       "title": "Risk It All",
       "artist": "Bruno Mars",
       "spotifyId": "5y2ijHECwFYWqcAHKTZgzD",
-      "ytMusicId": "7lskAlKGZUE",
+      "ytMusicId": "BF2_ipR1OI0",
       "streams": 5610057,
       "peak": 1,
       "weeks": 9
@@ -571,7 +571,7 @@
       "title": "Golden (w/ Ejae, AUDREY NUNA, REI AMI, KPop Demon Hunters Cast)",
       "artist": "HUNTR/X",
       "spotifyId": "1CPZ5BxNNd0n0nF4Orb9JS",
-      "ytMusicId": "rW2HmFDGdKs",
+      "ytMusicId": "9_bTl2vvYQg",
       "streams": 4180363,
       "peak": 1,
       "weeks": 45
@@ -637,7 +637,7 @@
       "title": "Beat It",
       "artist": "Michael Jackson",
       "spotifyId": "3BovdzfaX4jb5KFQwoPfAw",
-      "ytMusicId": "kOn-HdEg6AQ",
+      "ytMusicId": "WlTlUseVt7E",
       "streams": 3718830,
       "peak": 58,
       "weeks": 1
@@ -747,7 +747,7 @@
       "title": "Cinderella (w/ Ty Dolla $ign)",
       "artist": "Mac Miller",
       "spotifyId": "2lpygKqzPFtItQ4ss3cgfb",
-      "ytMusicId": "HCgltcEaB_0",
+      "ytMusicId": "wbt_E7LNDaA",
       "streams": 3472795,
       "peak": 68,
       "weeks": 8
@@ -1528,7 +1528,7 @@
       "title": "Timeless (w/ Playboi Carti)",
       "artist": "The Weeknd",
       "spotifyId": "0FIDCNYYjNvPVimz5icugS",
-      "ytMusicId": "vxiMTwG0vWI",
+      "ytMusicId": "a4O-abCXsfA",
       "streams": 2706552,
       "peak": 1,
       "weeks": 83

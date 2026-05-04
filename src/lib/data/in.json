@@ -1,8 +1,8 @@
 {
   "country": "in",
   "countryName": "India",
-  "weekDate": "2026-05-03",
-  "lastUpdated": "2026-05-03T07:59:21.836Z",
+  "weekDate": "2026-05-04",
+  "lastUpdated": "2026-05-04T08:28:51.330Z",
   "tracks": [
     {
       "rank": 1,
@@ -626,7 +626,7 @@
       "title": "Raabta (w/ Arijit Singh)",
       "artist": "Pritam",
       "spotifyId": "6FjbAnaPRPwiP3sciEYctO",
-      "ytMusicId": "tbXNVm8CXxg",
+      "ytMusicId": "piUHBTXsoiY",
       "streams": 2165958,
       "peak": 33,
       "weeks": 180
@@ -1308,7 +1308,7 @@
       "title": "Tu Hi Haqeeqat (w/ Javed Ali, Irshan Ashraf, Shadab)",
       "artist": "Pritam",
       "spotifyId": "3OLFqbd9ZeVjaUKTiaLsD6",
-      "ytMusicId": "-qvGOaid-wk",
+      "ytMusicId": "2CAiycLVy7s",
       "streams": 1573233,
       "peak": 110,
       "weeks": 30
@@ -1869,7 +1869,7 @@
       "title": "5-7 (w/ Mxrci)",
       "artist": "Karan Aujla",
       "spotifyId": "6PRFDCNAMLeSZimkPGrKMG",
-      "ytMusicId": "sM7-oYA__fk",
+      "ytMusicId": "iBUnDct2YGw",
       "streams": 1411575,
       "peak": 36,
       "weeks": 10
@@ -2122,7 +2122,7 @@
       "title": "Meri Banogi Kya (w/ Rajat Nagpal)",
       "artist": "Rito Riba",
       "spotifyId": "6gprR0rGv59wALbBU7yZkl",
-      "ytMusicId": "hlbTxlBuA-I",
+      "ytMusicId": "ZKbxmsaZjxs",
       "streams": 1329296,
       "peak": 175,
       "weeks": 6

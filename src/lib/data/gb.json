@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-05-03",
-  "lastUpdated": "2026-05-03T08:01:35.373Z",
+  "weekDate": "2026-05-04",
+  "lastUpdated": "2026-05-04T08:31:14.987Z",
   "tracks": [
     {
       "rank": 1,
@@ -340,7 +340,7 @@
       "title": "Beat It",
       "artist": "Michael Jackson",
       "spotifyId": "3BovdzfaX4jb5KFQwoPfAw",
-      "ytMusicId": "kOn-HdEg6AQ",
+      "ytMusicId": "WlTlUseVt7E",
       "streams": 1376988,
       "peak": 31,
       "weeks": 2
@@ -527,7 +527,7 @@
       "title": "Golden (w/ Ejae, AUDREY NUNA, REI AMI, KPop Demon Hunters Cast)",
       "artist": "HUNTR/X",
       "spotifyId": "1CPZ5BxNNd0n0nF4Orb9JS",
-      "ytMusicId": "rW2HmFDGdKs",
+      "ytMusicId": "9_bTl2vvYQg",
       "streams": 1150798,
       "peak": 1,
       "weeks": 44
@@ -1099,7 +1099,7 @@
       "title": "Unwritten",
       "artist": "Natasha Bedingfield",
       "spotifyId": "3U5JVgI2x4rDyHGObzJfNf",
-      "ytMusicId": "dxB6Gqg26Kw",
+      "ytMusicId": "iKejQrGq04w",
       "streams": 797583,
       "peak": 11,
       "weeks": 105
@@ -1704,7 +1704,7 @@
       "title": "Risk It All",
       "artist": "Bruno Mars",
       "spotifyId": "5y2ijHECwFYWqcAHKTZgzD",
-      "ytMusicId": "7lskAlKGZUE",
+      "ytMusicId": "BF2_ipR1OI0",
       "streams": 670760,
       "peak": 26,
       "weeks": 9
@@ -2155,7 +2155,7 @@
       "title": "We Found Love (w/ Calvin Harris)",
       "artist": "Rihanna",
       "spotifyId": "1zv3WFUbZ5vPxFq9I2jAU1",
-      "ytMusicId": "UUpuyzPJeWA",
+      "ytMusicId": "n6N1_sxlBU8",
       "streams": 616550,
       "peak": 34,
       "weeks": 102
