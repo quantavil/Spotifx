@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-05-04",
-  "lastUpdated": "2026-05-04T08:30:19.215Z",
+  "weekDate": "2026-05-05",
+  "lastUpdated": "2026-05-05T08:07:53.602Z",
   "tracks": [
     {
       "rank": 1,
@@ -21,7 +21,7 @@
       "title": "Choosin' Texas",
       "artist": "Ella Langley",
       "spotifyId": "65DbTqJKhbwqYbZ1Okr0rc",
-      "ytMusicId": "3s1sZbW7Rt8",
+      "ytMusicId": "xukbqwRuN5w",
       "streams": 11961123,
       "peak": 1,
       "weeks": 28
@@ -175,7 +175,7 @@
       "title": "Be Her",
       "artist": "Ella Langley",
       "spotifyId": "05CjWFAcAlY6O9po6Qwakk",
-      "ytMusicId": "A0ttKAXj1xU",
+      "ytMusicId": "xukbqwRuN5w",
       "streams": 7245188,
       "peak": 3,
       "weeks": 11
@@ -318,7 +318,7 @@
       "title": "Risk It All",
       "artist": "Bruno Mars",
       "spotifyId": "5y2ijHECwFYWqcAHKTZgzD",
-      "ytMusicId": "BF2_ipR1OI0",
+      "ytMusicId": "klvKT6oaviE",
       "streams": 5610057,
       "peak": 1,
       "weeks": 9
@@ -659,7 +659,7 @@
       "title": "Loving Life Again",
       "artist": "Ella Langley",
       "spotifyId": "7sSmQ1OuQqmOabSxLnOnT5",
-      "ytMusicId": "UQA0ta4aEwc",
+      "ytMusicId": "8CrYKKk2n4M",
       "streams": 3707681,
       "peak": 18,
       "weeks": 6
@@ -1528,7 +1528,7 @@
       "title": "Timeless (w/ Playboi Carti)",
       "artist": "The Weeknd",
       "spotifyId": "0FIDCNYYjNvPVimz5icugS",
-      "ytMusicId": "a4O-abCXsfA",
+      "ytMusicId": "vxiMTwG0vWI",
       "streams": 2706552,
       "peak": 1,
       "weeks": 83
@@ -1792,7 +1792,7 @@
       "title": "Kiss It Better",
       "artist": "Rihanna",
       "spotifyId": "0UHB9METy4VCXNgkcGqHqS",
-      "ytMusicId": "Ht2O3xYjJik",
+      "ytMusicId": "np30lwvSoPY",
       "streams": 2492631,
       "peak": 89,
       "weeks": 35
