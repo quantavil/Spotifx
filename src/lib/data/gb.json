@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-05-05",
-  "lastUpdated": "2026-05-05T08:08:46.718Z",
+  "weekDate": "2026-05-06",
+  "lastUpdated": "2026-05-06T08:23:02.575Z",
   "tracks": [
     {
       "rank": 1,
@@ -53,7 +53,7 @@
       "change": "-4",
       "title": "drop dead",
       "artist": "Olivia Rodrigo",
-      "spotifyId": "6gkbtMtioHgtyGjrMel6ei",
+      "spotifyId": "7Hc6qcJG4NtyZgbNvQyd8U",
       "ytMusicId": "G1--F4N-Gvs",
       "streams": 2766418,
       "peak": 1,
@@ -1099,7 +1099,7 @@
       "title": "Unwritten",
       "artist": "Natasha Bedingfield",
       "spotifyId": "3U5JVgI2x4rDyHGObzJfNf",
-      "ytMusicId": "iKejQrGq04w",
+      "ytMusicId": "dxB6Gqg26Kw",
       "streams": 797583,
       "peak": 11,
       "weeks": 105
@@ -1143,7 +1143,7 @@
       "title": "Click Clack Symphony. (w/ Hans Zimmer)",
       "artist": "RAYE",
       "spotifyId": "0XOynYFi9hQfIXKnTct9A7",
-      "ytMusicId": "taHYtEGxLnw",
+      "ytMusicId": "22JOUliNzxs",
       "streams": 787462,
       "peak": 12,
       "weeks": 6
@@ -1373,7 +1373,7 @@
       "change": "RE",
       "title": "I Want You Back",
       "artist": "The Jackson 5",
-      "spotifyId": "3b0EOvScbZUc0qJx0E1L2z",
+      "spotifyId": "5LxvwujISqiB8vpRYv887S",
       "ytMusicId": "UvynvnxZJ3Q",
       "streams": 738628,
       "peak": 101,
@@ -1704,7 +1704,7 @@
       "title": "Risk It All",
       "artist": "Bruno Mars",
       "spotifyId": "5y2ijHECwFYWqcAHKTZgzD",
-      "ytMusicId": "klvKT6oaviE",
+      "ytMusicId": "BF2_ipR1OI0",
       "streams": 670760,
       "peak": 26,
       "weeks": 9
@@ -2199,7 +2199,7 @@
       "title": "I Run (w/ Kaitlin Aragon)",
       "artist": "HAVEN.",
       "spotifyId": "1WwQ714xuznu44tEnkem2g",
-      "ytMusicId": "imQDelNtwwU",
+      "ytMusicId": "Dn5n6CQnERo",
       "streams": 612043,
       "peak": 25,
       "weeks": 23

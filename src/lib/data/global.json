@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-05-05",
-  "lastUpdated": "2026-05-05T08:03:35.147Z",
+  "weekDate": "2026-05-06",
+  "lastUpdated": "2026-05-06T08:17:46.177Z",
   "tracks": [
     {
       "rank": 1,
@@ -42,7 +42,7 @@
       "change": "-2",
       "title": "drop dead",
       "artist": "Olivia Rodrigo",
-      "spotifyId": "6gkbtMtioHgtyGjrMel6ei",
+      "spotifyId": "7Hc6qcJG4NtyZgbNvQyd8U",
       "ytMusicId": "G1--F4N-Gvs",
       "streams": 33785384,
       "peak": 2,
@@ -76,7 +76,7 @@
       "title": "Risk It All",
       "artist": "Bruno Mars",
       "spotifyId": "5y2ijHECwFYWqcAHKTZgzD",
-      "ytMusicId": "klvKT6oaviE",
+      "ytMusicId": "BF2_ipR1OI0",
       "streams": 26361188,
       "peak": 3,
       "weeks": 9
@@ -780,7 +780,7 @@
       "title": "Cuando No Era Cantante - Remix (w/ Anuel AA, Fuerza Regida, Yung Beef)",
       "artist": "El Bogueto",
       "spotifyId": "2pbSCYzxrG0wa6qcj8IyiE",
-      "ytMusicId": "3Nm3hkwGOGM",
+      "ytMusicId": "6sE5F9Y8f1o",
       "streams": 13516345,
       "peak": 30,
       "weeks": 20
@@ -1594,7 +1594,7 @@
       "title": "Timeless (w/ Playboi Carti)",
       "artist": "The Weeknd",
       "spotifyId": "0FIDCNYYjNvPVimz5icugS",
-      "ytMusicId": "vxiMTwG0vWI",
+      "ytMusicId": "a4O-abCXsfA",
       "streams": 10229139,
       "peak": 3,
       "weeks": 83
@@ -2122,7 +2122,7 @@
       "title": "Unwritten",
       "artist": "Natasha Bedingfield",
       "spotifyId": "3U5JVgI2x4rDyHGObzJfNf",
-      "ytMusicId": "iKejQrGq04w",
+      "ytMusicId": "dxB6Gqg26Kw",
       "streams": 8979879,
       "peak": 16,
       "weeks": 70
