@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-05-06",
-  "lastUpdated": "2026-05-06T08:22:06.428Z",
+  "weekDate": "2026-05-07",
+  "lastUpdated": "2026-05-07T08:32:12.549Z",
   "tracks": [
     {
       "rank": 1,
@@ -659,7 +659,7 @@
       "title": "Loving Life Again",
       "artist": "Ella Langley",
       "spotifyId": "7sSmQ1OuQqmOabSxLnOnT5",
-      "ytMusicId": "jTXfSQeFWAk",
+      "ytMusicId": "8CrYKKk2n4M",
       "streams": 3707681,
       "peak": 18,
       "weeks": 6
@@ -670,7 +670,7 @@
       "title": "Hell At Night (w/ Ella Langley)",
       "artist": "BigXthaPlug",
       "spotifyId": "6r1lboTadi5swMquaAWDzh",
-      "ytMusicId": "WxSmeY-fjZM",
+      "ytMusicId": "ACJiIgOZ7lU",
       "streams": 3704042,
       "peak": 19,
       "weeks": 37
@@ -824,7 +824,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "FrsOnNxIrg8",
+      "ytMusicId": "W8O30f0VpKs",
       "streams": 3393842,
       "peak": 1,
       "weeks": 169
@@ -1231,7 +1231,7 @@
       "title": "Les",
       "artist": "Childish Gambino",
       "spotifyId": "7ghKr0pCYyPPyp7t1FH8k4",
-      "ytMusicId": "eQL-E_TtB0o",
+      "ytMusicId": "L8gGHqPBuZM",
       "streams": 2924540,
       "peak": 70,
       "weeks": 48

@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-05-06",
-  "lastUpdated": "2026-05-06T08:23:02.575Z",
+  "weekDate": "2026-05-07",
+  "lastUpdated": "2026-05-07T08:33:04.983Z",
   "tracks": [
     {
       "rank": 1,
@@ -637,7 +637,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "FrsOnNxIrg8",
+      "ytMusicId": "W8O30f0VpKs",
       "streams": 1025788,
       "peak": 1,
       "weeks": 385
@@ -725,7 +725,7 @@
       "title": "Clean Baby Sleep White Noise (Loopable)",
       "artist": "Dream Supplier",
       "spotifyId": "4yVBarJHjhhzP1q7fU4p0W",
-      "ytMusicId": "2y6zdAbN9o8",
+      "ytMusicId": "tTFR2WK9Gz0",
       "streams": 932888,
       "peak": 46,
       "weeks": 2
@@ -1099,7 +1099,7 @@
       "title": "Unwritten",
       "artist": "Natasha Bedingfield",
       "spotifyId": "3U5JVgI2x4rDyHGObzJfNf",
-      "ytMusicId": "dxB6Gqg26Kw",
+      "ytMusicId": "iKejQrGq04w",
       "streams": 797583,
       "peak": 11,
       "weeks": 105
@@ -1143,7 +1143,7 @@
       "title": "Click Clack Symphony. (w/ Hans Zimmer)",
       "artist": "RAYE",
       "spotifyId": "0XOynYFi9hQfIXKnTct9A7",
-      "ytMusicId": "22JOUliNzxs",
+      "ytMusicId": "taHYtEGxLnw",
       "streams": 787462,
       "peak": 12,
       "weeks": 6
@@ -1297,7 +1297,7 @@
       "title": "Man in the Mirror - 2012 Remaster",
       "artist": "Michael Jackson",
       "spotifyId": "3c7Ctlw9MKlIQPxRH3fOTt",
-      "ytMusicId": "Z9NYDgbKsBE",
+      "ytMusicId": "8gqMRlN6mAA",
       "streams": 755762,
       "peak": 118,
       "weeks": 1
@@ -2089,7 +2089,7 @@
       "title": "Take Me Out",
       "artist": "Franz Ferdinand",
       "spotifyId": "20I8RduZC2PWMWTDCZuuAN",
-      "ytMusicId": "d11xns8lE4w",
+      "ytMusicId": "7dfBmjrN5W0",
       "streams": 630361,
       "peak": 77,
       "weeks": 105
