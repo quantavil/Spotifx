@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-05-07",
-  "lastUpdated": "2026-05-07T08:32:12.549Z",
+  "weekDate": "2026-05-08",
+  "lastUpdated": "2026-05-08T07:29:08.875Z",
   "tracks": [
     {
       "rank": 1,
@@ -659,7 +659,7 @@
       "title": "Loving Life Again",
       "artist": "Ella Langley",
       "spotifyId": "7sSmQ1OuQqmOabSxLnOnT5",
-      "ytMusicId": "8CrYKKk2n4M",
+      "ytMusicId": "jTXfSQeFWAk",
       "streams": 3707681,
       "peak": 18,
       "weeks": 6
@@ -824,7 +824,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "W8O30f0VpKs",
+      "ytMusicId": "FrsOnNxIrg8",
       "streams": 3393842,
       "peak": 1,
       "weeks": 169
@@ -1231,7 +1231,7 @@
       "title": "Les",
       "artist": "Childish Gambino",
       "spotifyId": "7ghKr0pCYyPPyp7t1FH8k4",
-      "ytMusicId": "L8gGHqPBuZM",
+      "ytMusicId": "eQL-E_TtB0o",
       "streams": 2924540,
       "peak": 70,
       "weeks": 48
@@ -1770,7 +1770,7 @@
       "title": "What I Want (w/ Tate McRae)",
       "artist": "Morgan Wallen",
       "spotifyId": "04emojnbYkrRmv5qtJcgVP",
-      "ytMusicId": "IpKJdfzLsdU",
+      "ytMusicId": "GwXVMhVjjCI",
       "streams": 2506656,
       "peak": 1,
       "weeks": 50
