@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-05-09",
-  "lastUpdated": "2026-05-09T07:56:33.088Z",
+  "weekDate": "2026-05-10",
+  "lastUpdated": "2026-05-10T08:09:08.377Z",
   "tracks": [
     {
       "rank": 1,
@@ -64,7 +64,7 @@
       "change": "+10",
       "title": "Be Her",
       "artist": "Ella Langley",
-      "spotifyId": "05CjWFAcAlY6O9po6Qwakk",
+      "spotifyId": "13HD3tYTiz8oSRxWzXEq7g",
       "ytMusicId": "2xklUpzCXcQ",
       "streams": 7445739,
       "peak": 3,
@@ -252,7 +252,7 @@
       "title": "Beat It",
       "artist": "Michael Jackson",
       "spotifyId": "3BovdzfaX4jb5KFQwoPfAw",
-      "ytMusicId": "kOn-HdEg6AQ",
+      "ytMusicId": "WlTlUseVt7E",
       "streams": 5373781,
       "peak": 23,
       "weeks": 2
@@ -648,7 +648,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "X7AN68W5qDI",
+      "ytMusicId": "FrsOnNxIrg8",
       "streams": 3569001,
       "peak": 1,
       "weeks": 170
@@ -802,7 +802,7 @@
       "title": "Passionfruit",
       "artist": "Drake",
       "spotifyId": "7hDc8b7IXETo14hHIHdnhd",
-      "ytMusicId": "COz9lDCFHjw",
+      "ytMusicId": "EgfsXTOn_pI",
       "streams": 3391510,
       "peak": 1,
       "weeks": 179
@@ -956,7 +956,7 @@
       "title": "Be By You",
       "artist": "Luke Combs",
       "spotifyId": "67Ar9BnEeB5FU5vQBYhbGe",
-      "ytMusicId": "IC16XVKc8CQ",
+      "ytMusicId": "aRm7U10T8vw",
       "streams": 3192057,
       "peak": 13,
       "weeks": 12
@@ -1000,7 +1000,7 @@
       "title": "No Role Modelz",
       "artist": "J. Cole",
       "spotifyId": "68Dni7IE4VyPkTOH9mRWHr",
-      "ytMusicId": "8HBcV0MtAQg",
+      "ytMusicId": "0EnRK5YvBwU",
       "streams": 3124837,
       "peak": 10,
       "weeks": 522
@@ -1066,7 +1066,7 @@
       "title": "Die With A Smile (w/ Bruno Mars)",
       "artist": "Lady Gaga",
       "spotifyId": "2plbrEY59IikOBgBGLjaoe",
-      "ytMusicId": "ioNYKflP4RY",
+      "ytMusicId": "DlFXDl_ROAM",
       "streams": 3076701,
       "peak": 1,
       "weeks": 90
@@ -1209,7 +1209,7 @@
       "title": "Les",
       "artist": "Childish Gambino",
       "spotifyId": "7ghKr0pCYyPPyp7t1FH8k4",
-      "ytMusicId": "eQL-E_TtB0o",
+      "ytMusicId": "L8gGHqPBuZM",
       "streams": 2949017,
       "peak": 70,
       "weeks": 49
@@ -1297,7 +1297,7 @@
       "title": "All The Stars (w/ SZA)",
       "artist": "Kendrick Lamar",
       "spotifyId": "3GCdLUSnKSMJhs4Tj6CV3s",
-      "ytMusicId": "EuKNEHLe3zM",
+      "ytMusicId": "ju4KQT0wL0I",
       "streams": 2862632,
       "peak": 2,
       "weeks": 191
@@ -1517,7 +1517,7 @@
       "title": "The Way You Make Me Feel - 2012 Remaster",
       "artist": "Michael Jackson",
       "spotifyId": "76HKOVWqsEg26SECtmw7Rz",
-      "ytMusicId": "T3FG_YQOW5k",
+      "ytMusicId": "VtM-rHPwN7o",
       "streams": 2743021,
       "peak": 138,
       "weeks": 1
@@ -1671,7 +1671,7 @@
       "title": "Scar Tissue - 2014 Remaster",
       "artist": "Red Hot Chili Peppers",
       "spotifyId": "32sx78QsGg6pKXn42XvF9L",
-      "ytMusicId": "U7k2qv8KTDI",
+      "ytMusicId": "tpYdGgzCW-M",
       "streams": 2619318,
       "peak": 65,
       "weeks": 10
@@ -1726,7 +1726,7 @@
       "title": "Unwritten",
       "artist": "Natasha Bedingfield",
       "spotifyId": "3U5JVgI2x4rDyHGObzJfNf",
-      "ytMusicId": "iKejQrGq04w",
+      "ytMusicId": "dxB6Gqg26Kw",
       "streams": 2583010,
       "peak": 85,
       "weeks": 56
@@ -2122,7 +2122,7 @@
       "title": "Dry Spell",
       "artist": "Kacey Musgraves",
       "spotifyId": "3q5qgzl5xwEtbrZVi3agEJ",
-      "ytMusicId": "_GrZRne_08s",
+      "ytMusicId": "7dospyWhj9U",
       "streams": 2347232,
       "peak": 141,
       "weeks": 2
@@ -2144,7 +2144,7 @@
       "title": "Love Me (w/ Drake, Future)",
       "artist": "Lil Wayne",
       "spotifyId": "2XHzzp1j4IfTNp1FTn7YFg",
-      "ytMusicId": "NajmHZ6kcUg",
+      "ytMusicId": "YNP0YJ5gq0M",
       "streams": 2338642,
       "peak": 11,
       "weeks": 115
