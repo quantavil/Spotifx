@@ -16,7 +16,7 @@
 
 <div class="app-shell">
 	<!-- Panels row: left content + right queue -->
-	<div class="panels-row">
+	<div class="panels-row" class:desktop-queue-closed={!player.desktopQueueOpen}>
 		<!-- Left Panel -->
 		<div class="left-panel scrollbar-thin" style="--dynamic-hue: {player.hue};">
 			<header class="sticky top-0 z-10 backdrop-blur-xl bg-surface/80">
@@ -72,34 +72,16 @@
 		</div>
 
 		<!-- Right Panel: Queue (Desktop only) -->
+		{#if player.desktopQueueOpen}
 		<div class="right-panel hidden sm:flex flex-col">
-			{#if player.visible || player.queue.length > 0}
-				<QueuePanel />
-			{:else}
-				<div class="flex flex-col items-center justify-center h-full px-6 text-center">
-					<svg
-						viewBox="0 0 24 24"
-						class="w-12 h-12 text-gray-700 mb-4"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.5"
-					>
-						<path
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"
-						/>
-					</svg>
-					<h3 class="text-base font-semibold text-gray-300 mb-1">Queue Empty</h3>
-					<p class="text-sm text-gray-500">Select a track to start playing</p>
-				</div>
-			{/if}
+			<QueuePanel isDesktop={true} />
 		</div>
+		{/if}
 	</div>
 
 	<!-- Mobile Queue Overlay -->
 	<div class="sm:hidden">
-		<QueuePanel />
+		<QueuePanel isDesktop={false} />
 	</div>
 
 	<!-- Player Bar: docked at bottom, spans full width -->
@@ -148,6 +130,47 @@
 	@media (min-width: 640px) {
 		.panels-row {
 			grid-template-columns: 1fr 22rem;
+		}
+	}
+
+	@media (max-width: 639px) {
+		.app-shell {
+			padding: 0;
+		}
+		.left-panel {
+			border-radius: 0;
+		}
+	}
+</style>s-row {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 6px;
+		min-height: 0;
+	}
+
+	.left-panel {
+		background-color: var(--color-surface);
+		border-radius: 8px;
+		overflow-y: auto;
+		overflow-x: hidden;
+		display: flex;
+		flex-direction: column;
+		min-height: 0;
+	}
+
+	.right-panel {
+		background-color: var(--color-surface);
+		border-radius: 8px;
+		overflow: hidden;
+		min-height: 0;
+	}
+
+	@media (min-width: 640px) {
+		.panels-row {
+			grid-template-columns: 1fr 22rem;
+		}
+		.panels-row.desktop-queue-closed {
+			grid-template-columns: 1fr;
 		}
 	}
 

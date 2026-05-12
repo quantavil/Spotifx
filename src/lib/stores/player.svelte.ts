@@ -35,6 +35,7 @@ class PlayerState {
 	volume = $state(loadPref('spotifx-volume', 80));
 	visible = $state(false);
 	queueOpen = $state(false);
+	desktopQueueOpen = $state(loadPref('spotifx-desktop-queue', true));
 	fullScreenOpen = $state(false);
 	shortcutsOpen = $state(false);
 	contextHue = $state<number | null>(null);
@@ -368,6 +369,12 @@ class PlayerState {
 		this.currentTime = 0;
 		this.duration = 0;
 		this._onPlay?.(track.ytMusicId);
+		updateMediaMetadata(track);
+		updatePlaybackState(true);
+	}
+}
+
+export const player = new PlayerState();?.(track.ytMusicId);
 		updateMediaMetadata(track);
 		updatePlaybackState(true);
 	}

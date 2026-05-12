@@ -6,6 +6,8 @@
 	import Equalizer from '../ui/Equalizer.svelte';
 	import { scrollText } from '$lib/actions';
 
+	let { isDesktop = false } = $props();
+
 	let dragIndex: number | null = $state(null);
 	let dragOverIndex: number | null = $state(null);
 	let dragAbsFrom: number | null = $state(null);
@@ -36,40 +38,52 @@
 	}
 </script>
 
-<!-- Backdrop overlay on mobile -->
-<!-- svelte-ignore a11y_click_events_have_key_events -->
-<!-- svelte-ignore a11y_no_static_element_interactions -->
-{#if player.queueOpen}
-<div
-	class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[55] sm:hidden"
-	transition:fly={{ duration: 200 }}
-	onclick={() => (player.queueOpen = false)}
-></div>
+{#if isDesktop || player.queueOpen}
+	<!-- Backdrop overlay on mobile -->
+	{#if !isDesktop && player.queueOpen}
+	<!-- svelte-ignore a11y_click_events_have_key_events -->
+	<!-- svelte-ignore a11y_no_static_element_interactions -->
+	<div
+		class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[55] sm:hidden"
+		transition:fly={{ duration: 200 }}
+		onclick={() => (player.queueOpen = false)}
+	></div>
+	{/if}
 
-<div
-	class="fixed inset-y-0 right-0 w-full sm:w-96 bg-[#090909] z-[60] sm:z-30 flex flex-col shadow-2xl border-l border-white/5"
-	transition:fly={{ x: 400, duration: 300 }}
-	style="--page-hue: {player.hue};"
->
-	<!-- Header -->
-	<div class="px-5 py-4 flex items-center justify-between border-b border-white/5 flex-shrink-0">
-		<h2 class="text-sm font-bold text-white uppercase tracking-wider">Queue</h2>
-		<div class="flex items-center gap-1">
-			<button
-				onclick={() => player.clearQueue()}
-				class="text-[11px] text-gray-500 hover:text-white transition-colors cursor-pointer px-2 py-1 rounded hover:bg-white/5"
-			>
-				Clear
-			</button>
-			<button
-				onclick={() => (player.queueOpen = false)}
-				class="text-gray-400 hover:text-white transition-colors cursor-pointer p-1.5 rounded-full hover:bg-white/5"
-				aria-label="Close queue"
-			>
-				<Icon name="close" class="w-4 h-4" />
-			</button>
+	<div
+		class={isDesktop ? "flex flex-col h-full bg-transparent relative" : "fixed inset-y-0 right-0 w-full bg-[#090909] z-[60] flex flex-col shadow-2xl border-l border-white/5"}
+		transition:fly={isDesktop ? undefined : { x: 400, duration: 300 }}
+		style={isDesktop ? '' : `--page-hue: ${player.hue};`}
+	>
+		<!-- Header -->
+		<div class="px-5 py-4 flex items-center justify-between border-b border-white/5 flex-shrink-0">
+			<h2 class="text-sm font-bold text-white uppercase tracking-wider">Queue</h2>
+			<div class="flex items-center gap-1">
+				<button
+					onclick={() => player.clearQueue()}
+					class="text-[11px] text-gray-500 hover:text-white transition-colors cursor-pointer px-2 py-1 rounded hover:bg-white/5"
+				>
+					Clear
+				</button>
+				{#if !isDesktop}
+				<button
+					onclick={() => (player.queueOpen = false)}
+					class="text-gray-400 hover:text-white transition-colors cursor-pointer p-1.5 rounded-full hover:bg-white/5"
+					aria-label="Close queue"
+				>
+					<Icon name="close" class="w-4 h-4" />
+				</button>
+				{:else}
+				<button
+					onclick={() => player.toggleQueue()}
+					class="text-gray-400 hover:text-white transition-colors cursor-pointer p-1.5 rounded-full hover:bg-white/5"
+					aria-label="Close queue"
+				>
+					<Icon name="close" class="w-4 h-4" />
+				</button>
+				{/if}
+			</div>
 		</div>
-	</div>
 
 	<!-- Scrollable content -->
 	<div class="flex-1 overflow-y-auto custom-scrollbar p-3 space-y-4">
