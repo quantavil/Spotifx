@@ -1,7 +1,7 @@
 import type { Track } from '$lib/types';
 import { toast } from '$lib/stores/toast.svelte';
 import { updateMediaMetadata, updatePlaybackState } from '$lib/stores/mediaSession';
-import { fisherYates, loadPref, savePref } from '$lib/utils';
+import { fisherYates, loadPref, savePref, trackToHue } from '$lib/utils';
 
 export interface QueueEntry extends Track {
 	_qid: number;

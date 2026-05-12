@@ -26,6 +26,7 @@
     "vitest": "^4.1.6"
   },
   "dependencies": {
+    "puppeteer": "^24.43.1",
     "ytmusic-api": "^5.3.1"
   }
 }
