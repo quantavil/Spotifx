@@ -141,7 +141,7 @@
 							</div>
 
 							<button
-								onclick={() => player.removeFromQueue(track._qid)}
+								onclick={() => player.removeEntry(track._qid)}
 								class="opacity-0 group-hover:opacity-100 p-1.5 text-gray-500 hover:text-red-400 transition-all cursor-pointer"
 								title="Remove from queue"
 							>

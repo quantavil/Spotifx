@@ -5,6 +5,7 @@ import { fisherYates, loadPref, savePref } from '$lib/utils';
 
 export interface QueueEntry extends Track {
 	_qid: number;
+	isManual?: boolean;
 }
 
 let _qid = 0;
@@ -21,6 +22,7 @@ export type RepeatMode = 'off' | 'all' | 'one';
 
 class PlayerState {
 	queue = $state<QueueEntry[]>([]);
+	originalQueue = $state<QueueEntry[]>([]);
 	currentIndex = $state(0);
 	isPlaying = $state(false);
 	buffering = $state(false);
@@ -64,21 +66,31 @@ class PlayerState {
 	_onSeek: ((seconds: number) => void) | null = null;
 	_onVolume: ((vol: number) => void) | null = null;
 
-	playTrack(track: Track, allTracks: Track[]) {
-		const playable = allTracks.filter((t) => t.ytMusicId);
-		if (!track.ytMusicId || playable.length === 0) return;
+	private _setNewQueue(playable: Track[], startTrack?: Track) {
+		this.originalQueue = toEntries(playable);
 
 		if (this.shuffled) {
-			const rest = playable.filter((t) => t.ytMusicId !== track.ytMusicId);
-			this.queue = toEntries([track, ...fisherYates(rest)]);
+			if (startTrack) {
+				const rest = this.originalQueue.filter((t) => t.ytMusicId !== startTrack.ytMusicId);
+				const current = this.originalQueue.find((t) => t.ytMusicId === startTrack.ytMusicId) || toEntry(startTrack);
+				this.queue = [current, ...fisherYates(rest)];
+			} else {
+				this.queue = fisherYates([...this.originalQueue]);
+			}
 			this.currentIndex = 0;
 		} else {
-			this.queue = toEntries(playable);
-			this.currentIndex = this.queue.findIndex((t) => t.ytMusicId === track.ytMusicId);
+			this.queue = [...this.originalQueue];
+			this.currentIndex = startTrack ? this.queue.findIndex((t) => t.ytMusicId === startTrack.ytMusicId) : 0;
 			if (this.currentIndex === -1) this.currentIndex = 0;
 		}
 
 		this._loadCurrent();
+	}
+
+	playTrack(track: Track, allTracks: Track[]) {
+		const playable = allTracks.filter((t) => t.ytMusicId);
+		if (!track.ytMusicId || playable.length === 0) return;
+		this._setNewQueue(playable, track);
 	}
 
 	playAll(tracks: Track[], doShuffle = false) {
@@ -87,46 +99,43 @@ class PlayerState {
 
 		this.shuffled = doShuffle;
 		savePref('spotifx-shuffle', doShuffle);
-		this.queue = toEntries(doShuffle ? fisherYates(playable) : playable);
-		this.currentIndex = 0;
-		this._loadCurrent();
+		this._setNewQueue(playable);
+	}
+
+	private _insertManualTrack(track: Track, insertAt: number, checkExisting: 'move' | 'reject'): boolean {
+		if (!track.ytMusicId) return false;
+
+		if (this.queue.length === 0 || !this.visible) {
+			this.queue = [{ ...toEntry(track), isManual: true }];
+			this.currentIndex = 0;
+			this._loadCurrent();
+			return true;
+		}
+
+		const existingIdx = this.queue.findIndex((t) => t.ytMusicId === track.ytMusicId);
+		if (existingIdx !== -1) {
+			if (existingIdx === this.currentIndex) return false;
+			if (checkExisting === 'reject') return false;
+			
+			this.queue.splice(existingIdx, 1);
+			if (existingIdx < this.currentIndex) this.currentIndex--;
+			if (existingIdx < insertAt) insertAt--;
+		}
+
+		this.queue.splice(insertAt, 0, { ...toEntry(track), isManual: true });
+		return true;
 	}
 
 	playNext(track: Track): boolean {
-		if (!track.ytMusicId) return false;
-
-		if (this.queue.length === 0 || !this.visible) {
-			this.queue = [toEntry(track)];
-			this.currentIndex = 0;
-			this._loadCurrent();
-			return true;
-		}
-
-		const existing = this.queue.findIndex((t) => t.ytMusicId === track.ytMusicId);
-		if (existing !== -1) {
-			if (existing === this.currentIndex) return false;
-			this.queue.splice(existing, 1);
-			if (existing < this.currentIndex) this.currentIndex--;
-		}
-
-		this.queue.splice(this.currentIndex + 1, 0, toEntry(track));
-		return true;
+		return this._insertManualTrack(track, this.currentIndex + 1, 'move');
 	}
 
 	addToQueue(track: Track): boolean {
-		if (!track.ytMusicId) return false;
-
-		if (this.queue.length === 0 || !this.visible) {
-			this.queue = [toEntry(track)];
-			this.currentIndex = 0;
-			this._loadCurrent();
-			return true;
+		let insertIndex = this.currentIndex + 1;
+		while (insertIndex < this.queue.length && this.queue[insertIndex].isManual) {
+			insertIndex++;
 		}
-
-		if (this.queue.some((t) => t.ytMusicId === track.ytMusicId)) return false;
-
-		this.queue.push(toEntry(track));
-		return true;
+		return this._insertManualTrack(track, insertIndex, 'reject');
 	}
 
 	play() {
@@ -211,15 +220,24 @@ class PlayerState {
 		}
 
 		const current = this.currentTrack;
+		const manuals = this.queue.filter((t, i) => t.isManual && i > this.currentIndex);
+
 		if (this.shuffled) {
-			const rest = this.queue.filter((_, i) => i !== this.currentIndex);
-			this.queue = [current, ...fisherYates(rest)];
+			const rest = this.queue.filter((t, i) => i !== this.currentIndex && !t.isManual);
+			this.queue = [current, ...manuals, ...fisherYates(rest)];
 			this.currentIndex = 0;
 		} else {
-			const sorted = [...this.queue].sort((a, b) => a.rank - b.rank);
-			this.queue = sorted;
-			this.currentIndex = sorted.findIndex((t) => t.ytMusicId === current.ytMusicId);
-			if (this.currentIndex === -1) this.currentIndex = 0;
+			if (this.originalQueue.length > 0) {
+				const origIdx = this.originalQueue.findIndex((t) => t.ytMusicId === current.ytMusicId);
+				if (origIdx !== -1) {
+					this.queue = [...this.originalQueue];
+					this.currentIndex = origIdx;
+					this.queue.splice(this.currentIndex + 1, 0, ...manuals);
+				} else {
+					this.queue = [current, ...manuals, ...this.originalQueue];
+					this.currentIndex = 0;
+				}
+			}
 		}
 
 		toast.show(this.shuffled ? 'Shuffle on' : 'Shuffle off');
@@ -287,13 +305,40 @@ class PlayerState {
 		this._loadCurrent();
 	}
 
+	jumpToEntry(qid: number) {
+		const idx = this.queue.findIndex(t => t._qid === qid);
+		if (idx !== -1) this.jumpTo(idx);
+	}
+
 	removeFromQueue(queueIndex: number) {
 		if (queueIndex < 0 || queueIndex >= this.queue.length) return;
 		if (queueIndex === this.currentIndex) return;
 
-		this.queue.splice(queueIndex, 1);
+		const [removed] = this.queue.splice(queueIndex, 1);
 		if (queueIndex < this.currentIndex) {
 			this.currentIndex--;
+		}
+
+		if (!removed.isManual) {
+			const origIdx = this.originalQueue.findIndex(t => t._qid === removed._qid);
+			if (origIdx !== -1) this.originalQueue.splice(origIdx, 1);
+		}
+	}
+
+	removeEntry(qid: number) {
+		const idx = this.queue.findIndex(t => t._qid === qid);
+		if (idx !== -1) this.removeFromQueue(idx);
+	}
+
+	clearQueue() {
+		if (this.queue.length > this.currentIndex + 1) {
+			const removed = this.queue.splice(this.currentIndex + 1);
+			for (const r of removed) {
+				if (!r.isManual) {
+					const origIdx = this.originalQueue.findIndex(t => t._qid === r._qid);
+					if (origIdx !== -1) this.originalQueue.splice(origIdx, 1);
+				}
+			}
 		}
 	}
 
