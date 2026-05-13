@@ -1,8 +1,8 @@
 {
   "country": "in",
   "countryName": "India",
-  "weekDate": "2026-05-12",
-  "lastUpdated": "2026-05-12T08:38:07.772Z",
+  "weekDate": "2026-05-13",
+  "lastUpdated": "2026-05-13T08:43:47.086Z",
   "tracks": [
     {
       "rank": 1,
@@ -54,7 +54,7 @@
       "title": "Jaiye Sajana (w/ Jasmine Sandlas, Satinder Sartaaj)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "6xwKNAUHeo2DbWNAPi8aEy",
-      "ytMusicId": "AxN0RjNx6WM",
+      "ytMusicId": "TaTZb7NXja0",
       "streams": 6134691,
       "peak": 2,
       "weeks": 7
@@ -351,7 +351,7 @@
       "title": "Tere Bina (w/ Chinmayi, Murtuza Khan, Qadir Khan, Abhishek Bachchan, Aishwarya Rai Bachchan, R. Madhavan, Vidya Balan, Mithun Chakraborty, Arya Babbar)",
       "artist": "A.R. Rahman",
       "spotifyId": "4FeczSomVWVyU4FW7xDeAI",
-      "ytMusicId": "HOiaqzWriAA",
+      "ytMusicId": "Fi3GovijpWA",
       "streams": 2834751,
       "peak": 8,
       "weeks": 90
@@ -417,7 +417,7 @@
       "title": "Bairi (w/ Pradeep Solanki, Heena)",
       "artist": "Virat",
       "spotifyId": "1GfcRba0wGXDTtT4r8C65Z",
-      "ytMusicId": "tio32gG3PFQ",
+      "ytMusicId": "Wajjr-7RajQ",
       "streams": 2489946,
       "peak": 13,
       "weeks": 11
@@ -538,7 +538,7 @@
       "title": "Thodi Si Daaru (w/ Shreya Ghoshal)",
       "artist": "AP Dhillon",
       "spotifyId": "3JiLQJmVW7d4O8AQDFB3oj",
-      "ytMusicId": "x18b0D8sTwo",
+      "ytMusicId": "45zJNqiANA4",
       "streams": 2256594,
       "peak": 3,
       "weeks": 40
@@ -626,7 +626,7 @@
       "title": "Raabta (w/ Arijit Singh)",
       "artist": "Pritam",
       "spotifyId": "6FjbAnaPRPwiP3sciEYctO",
-      "ytMusicId": "vL14wk2cj6U",
+      "ytMusicId": "piUHBTXsoiY",
       "streams": 2116175,
       "peak": 33,
       "weeks": 181
@@ -1319,7 +1319,7 @@
       "title": "Soch Na Sake (w/ Arijit Singh, Tulsi Kumar)",
       "artist": "Amaal Mallik",
       "spotifyId": "6mTvwBzWTGDOVeCNQEqtOE",
-      "ytMusicId": "hp02FwlpQYU",
+      "ytMusicId": "lAsxLc9_45w",
       "streams": 1509859,
       "peak": 46,
       "weeks": 147
@@ -1341,7 +1341,7 @@
       "title": "Starboy (w/ Daft Punk)",
       "artist": "The Weeknd",
       "spotifyId": "7MXVkk9YMctZqd1Srtv4MB",
-      "ytMusicId": "3_g2un5M350",
+      "ytMusicId": "plnfIj7dkJE",
       "streams": 1504396,
       "peak": 12,
       "weeks": 249
@@ -1385,7 +1385,7 @@
       "title": "Aaj Se Teri (w/ Arijit Singh)",
       "artist": "Amit Trivedi",
       "spotifyId": "0EwRpK9wY6lHfcJSt82w4x",
-      "ytMusicId": "1E-ZSGWK6g0",
+      "ytMusicId": "3HlzLiCL9Xs",
       "streams": 1492025,
       "peak": 114,
       "weeks": 18
@@ -1693,7 +1693,7 @@
       "title": "Piche Tere (w/ Dishant)",
       "artist": "Kunwarr",
       "spotifyId": "4ZWoJ4tRi74mHHnItB3k9h",
-      "ytMusicId": "AM7u5EmM-IQ",
+      "ytMusicId": "_kdqbcuXl5A",
       "streams": 1405145,
       "peak": 94,
       "weeks": 14
@@ -2144,7 +2144,7 @@
       "title": "Billie Jean",
       "artist": "Michael Jackson",
       "spotifyId": "7J1uxwnxfQLu4APicE5Rnj",
-      "ytMusicId": "Kr4EQDVETuA",
+      "ytMusicId": "7CTJcHjkq0E",
       "streams": 1290025,
       "peak": 195,
       "weeks": 1
