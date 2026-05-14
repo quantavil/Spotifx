@@ -1,8 +1,8 @@
 {
   "country": "in",
   "countryName": "India",
-  "weekDate": "2026-05-13",
-  "lastUpdated": "2026-05-13T08:43:47.086Z",
+  "weekDate": "2026-05-14",
+  "lastUpdated": "2026-05-14T08:37:37.867Z",
   "tracks": [
     {
       "rank": 1,
@@ -197,7 +197,7 @@
       "title": "Shararat (w/ Madhubanti Bagchi, Jasmine Sandlas)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "0R7grQWU1dRxiOQGIqZm0Z",
-      "ytMusicId": "1vFZso3WgAA",
+      "ytMusicId": "pRzS9QLvgZk",
       "streams": 3699057,
       "peak": 7,
       "weeks": 22
@@ -483,7 +483,7 @@
       "title": "Haseen (w/ NDS, Rippy Grewal)",
       "artist": "Talwiinder",
       "spotifyId": "08GYLNhKthS3arMdXsveRI",
-      "ytMusicId": "mkQMY0MEiXM",
+      "ytMusicId": "WSy0sjZiO8I",
       "streams": 2345453,
       "peak": 2,
       "weeks": 49
@@ -538,7 +538,7 @@
       "title": "Thodi Si Daaru (w/ Shreya Ghoshal)",
       "artist": "AP Dhillon",
       "spotifyId": "3JiLQJmVW7d4O8AQDFB3oj",
-      "ytMusicId": "45zJNqiANA4",
+      "ytMusicId": "x18b0D8sTwo",
       "streams": 2256594,
       "peak": 3,
       "weeks": 40
@@ -989,7 +989,7 @@
       "title": "Kashish (w/ Omkar Singh, Kashish Ratnani)",
       "artist": "Ashish Bhatia",
       "spotifyId": "3anHs4ijBd3Iw0E0fBPwtH",
-      "ytMusicId": "BDS87tD4jv4",
+      "ytMusicId": "D0rokHI8Cnk",
       "streams": 1680706,
       "peak": 8,
       "weeks": 33
@@ -1319,7 +1319,7 @@
       "title": "Soch Na Sake (w/ Arijit Singh, Tulsi Kumar)",
       "artist": "Amaal Mallik",
       "spotifyId": "6mTvwBzWTGDOVeCNQEqtOE",
-      "ytMusicId": "lAsxLc9_45w",
+      "ytMusicId": "hp02FwlpQYU",
       "streams": 1509859,
       "peak": 46,
       "weeks": 147
@@ -1385,7 +1385,7 @@
       "title": "Aaj Se Teri (w/ Arijit Singh)",
       "artist": "Amit Trivedi",
       "spotifyId": "0EwRpK9wY6lHfcJSt82w4x",
-      "ytMusicId": "3HlzLiCL9Xs",
+      "ytMusicId": "1E-ZSGWK6g0",
       "streams": 1492025,
       "peak": 114,
       "weeks": 18
@@ -2144,7 +2144,7 @@
       "title": "Billie Jean",
       "artist": "Michael Jackson",
       "spotifyId": "7J1uxwnxfQLu4APicE5Rnj",
-      "ytMusicId": "7CTJcHjkq0E",
+      "ytMusicId": "Kr4EQDVETuA",
       "streams": 1290025,
       "peak": 195,
       "weeks": 1

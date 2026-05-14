@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-05-13",
-  "lastUpdated": "2026-05-13T08:45:14.977Z",
+  "weekDate": "2026-05-14",
+  "lastUpdated": "2026-05-14T08:39:03.412Z",
   "tracks": [
     {
       "rank": 1,
@@ -76,7 +76,7 @@
       "title": "Billie Jean",
       "artist": "Michael Jackson",
       "spotifyId": "7J1uxwnxfQLu4APicE5Rnj",
-      "ytMusicId": "7CTJcHjkq0E",
+      "ytMusicId": "Kr4EQDVETuA",
       "streams": 7192539,
       "peak": 7,
       "weeks": 18
@@ -252,7 +252,7 @@
       "title": "Beat It",
       "artist": "Michael Jackson",
       "spotifyId": "3BovdzfaX4jb5KFQwoPfAw",
-      "ytMusicId": "WlTlUseVt7E",
+      "ytMusicId": "kOn-HdEg6AQ",
       "streams": 5373781,
       "peak": 23,
       "weeks": 2
@@ -340,7 +340,7 @@
       "title": "Risk It All",
       "artist": "Bruno Mars",
       "spotifyId": "5y2ijHECwFYWqcAHKTZgzD",
-      "ytMusicId": "BF2_ipR1OI0",
+      "ytMusicId": "spsM82DZqbE",
       "streams": 4956288,
       "peak": 1,
       "weeks": 10
@@ -648,7 +648,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "FrsOnNxIrg8",
+      "ytMusicId": "X7AN68W5qDI",
       "streams": 3569001,
       "peak": 1,
       "weeks": 170
@@ -802,7 +802,7 @@
       "title": "Passionfruit",
       "artist": "Drake",
       "spotifyId": "7hDc8b7IXETo14hHIHdnhd",
-      "ytMusicId": "EgfsXTOn_pI",
+      "ytMusicId": "COz9lDCFHjw",
       "streams": 3391510,
       "peak": 1,
       "weeks": 179
@@ -956,7 +956,7 @@
       "title": "Be By You",
       "artist": "Luke Combs",
       "spotifyId": "67Ar9BnEeB5FU5vQBYhbGe",
-      "ytMusicId": "aRm7U10T8vw",
+      "ytMusicId": "IC16XVKc8CQ",
       "streams": 3192057,
       "peak": 13,
       "weeks": 12
@@ -967,7 +967,7 @@
       "title": "Rein Me In (w/ Olivia Dean)",
       "artist": "Sam Fender",
       "spotifyId": "0MUXBhPUDF8or0kfQ0EHwV",
-      "ytMusicId": "NO3JTAsB4NI",
+      "ytMusicId": "0Go3jBZs-cc",
       "streams": 3145680,
       "peak": 83,
       "weeks": 7
@@ -1000,7 +1000,7 @@
       "title": "No Role Modelz",
       "artist": "J. Cole",
       "spotifyId": "68Dni7IE4VyPkTOH9mRWHr",
-      "ytMusicId": "0EnRK5YvBwU",
+      "ytMusicId": "8HBcV0MtAQg",
       "streams": 3124837,
       "peak": 10,
       "weeks": 522
@@ -1033,7 +1033,7 @@
       "title": "Worst Way",
       "artist": "Riley Green",
       "spotifyId": "1osfLqL6L2iQsirRf83ded",
-      "ytMusicId": "mjIZc3kz_oQ",
+      "ytMusicId": "XXC5i7B2UqA",
       "streams": 3107319,
       "peak": 39,
       "weeks": 70
@@ -1209,7 +1209,7 @@
       "title": "Les",
       "artist": "Childish Gambino",
       "spotifyId": "7ghKr0pCYyPPyp7t1FH8k4",
-      "ytMusicId": "L8gGHqPBuZM",
+      "ytMusicId": "eQL-E_TtB0o",
       "streams": 2949017,
       "peak": 70,
       "weeks": 49
@@ -1264,7 +1264,7 @@
       "title": "POP DAT THANG",
       "artist": "DaBaby",
       "spotifyId": "0QgwjxR1VchizzckKXwyBu",
-      "ytMusicId": "-lyBxb7nagk",
+      "ytMusicId": "ThdQv0PFUsc",
       "streams": 2879551,
       "peak": 54,
       "weeks": 9
@@ -1297,7 +1297,7 @@
       "title": "All The Stars (w/ SZA)",
       "artist": "Kendrick Lamar",
       "spotifyId": "3GCdLUSnKSMJhs4Tj6CV3s",
-      "ytMusicId": "ju4KQT0wL0I",
+      "ytMusicId": "vdXsLt0o_9g",
       "streams": 2862632,
       "peak": 2,
       "weeks": 191
@@ -1396,7 +1396,7 @@
       "title": "you look like you love me (w/ Riley Green)",
       "artist": "Ella Langley",
       "spotifyId": "2PyJAiQjp1OPkow2FJZKHR",
-      "ytMusicId": "y5DZxc-dlaM",
+      "ytMusicId": "-82dK3N6ZVw",
       "streams": 2820766,
       "peak": 28,
       "weeks": 21
@@ -1473,7 +1473,7 @@
       "title": "No Hands (w/ Roscoe Dash, Wale)",
       "artist": "Waka Flocka Flame",
       "spotifyId": "03tqyYWC9Um2ZqU0ZN849H",
-      "ytMusicId": "oKgxffp6mZ4",
+      "ytMusicId": "JjuLy7r1hOg",
       "streams": 2782466,
       "peak": 32,
       "weeks": 56
@@ -1517,7 +1517,7 @@
       "title": "The Way You Make Me Feel - 2012 Remaster",
       "artist": "Michael Jackson",
       "spotifyId": "76HKOVWqsEg26SECtmw7Rz",
-      "ytMusicId": "VtM-rHPwN7o",
+      "ytMusicId": "T3FG_YQOW5k",
       "streams": 2743021,
       "peak": 138,
       "weeks": 1
@@ -1649,7 +1649,7 @@
       "title": "Timeless (w/ Playboi Carti)",
       "artist": "The Weeknd",
       "spotifyId": "0FIDCNYYjNvPVimz5icugS",
-      "ytMusicId": "vxiMTwG0vWI",
+      "ytMusicId": "a4O-abCXsfA",
       "streams": 2632286,
       "peak": 1,
       "weeks": 84
@@ -1660,7 +1660,7 @@
       "title": "Latch (w/ Sam Smith)",
       "artist": "Disclosure",
       "spotifyId": "51ODNNDZm21HU7wI7cccRr",
-      "ytMusicId": "myP_VH9pOd0",
+      "ytMusicId": "VNg3MxYKSi0",
       "streams": 2625663,
       "peak": 4,
       "weeks": 70
@@ -1693,7 +1693,7 @@
       "title": "Who Knows",
       "artist": "Daniel Caesar",
       "spotifyId": "6DH13QYXK7lKkYHSU88N48",
-      "ytMusicId": "Wzn4BLtE73o",
+      "ytMusicId": "xBJ4YkQq1i8",
       "streams": 2610309,
       "peak": 34,
       "weeks": 28
@@ -2122,7 +2122,7 @@
       "title": "Dry Spell",
       "artist": "Kacey Musgraves",
       "spotifyId": "3q5qgzl5xwEtbrZVi3agEJ",
-      "ytMusicId": "7dospyWhj9U",
+      "ytMusicId": "xpyCPbyxUl8",
       "streams": 2347232,
       "peak": 141,
       "weeks": 2
@@ -2144,7 +2144,7 @@
       "title": "Love Me (w/ Drake, Future)",
       "artist": "Lil Wayne",
       "spotifyId": "2XHzzp1j4IfTNp1FTn7YFg",
-      "ytMusicId": "YNP0YJ5gq0M",
+      "ytMusicId": "NajmHZ6kcUg",
       "streams": 2338642,
       "peak": 11,
       "weeks": 115
