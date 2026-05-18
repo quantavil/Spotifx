@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-05-17",
-  "lastUpdated": "2026-05-17T08:23:21.410Z",
+  "weekDate": "2026-05-18",
+  "lastUpdated": "2026-05-18T09:58:18.696Z",
   "tracks": [
     {
       "rank": 1,
@@ -263,7 +263,7 @@
       "title": "Risk It All",
       "artist": "Bruno Mars",
       "spotifyId": "5y2ijHECwFYWqcAHKTZgzD",
-      "ytMusicId": "BF2_ipR1OI0",
+      "ytMusicId": "jXHa4egvB0o",
       "streams": 4875338,
       "peak": 1,
       "weeks": 11
@@ -703,7 +703,7 @@
       "title": "Passionfruit",
       "artist": "Drake",
       "spotifyId": "7hDc8b7IXETo14hHIHdnhd",
-      "ytMusicId": "COz9lDCFHjw",
+      "ytMusicId": "EgfsXTOn_pI",
       "streams": 3430725,
       "peak": 1,
       "weeks": 180
@@ -989,7 +989,7 @@
       "title": "Rein Me In (w/ Olivia Dean)",
       "artist": "Sam Fender",
       "spotifyId": "0MUXBhPUDF8or0kfQ0EHwV",
-      "ytMusicId": "gcsI-UGyqCk",
+      "ytMusicId": "NO3JTAsB4NI",
       "streams": 3036260,
       "peak": 83,
       "weeks": 8
@@ -1033,7 +1033,7 @@
       "title": "Be By You",
       "artist": "Luke Combs",
       "spotifyId": "67Ar9BnEeB5FU5vQBYhbGe",
-      "ytMusicId": "AMk786WeXDE",
+      "ytMusicId": "IC16XVKc8CQ",
       "streams": 3017450,
       "peak": 13,
       "weeks": 13
@@ -1583,7 +1583,7 @@
       "title": "Who Knows",
       "artist": "Daniel Caesar",
       "spotifyId": "6DH13QYXK7lKkYHSU88N48",
-      "ytMusicId": "vB5OUOLbTkQ",
+      "ytMusicId": "X6Kma_HdVHk",
       "streams": 2625264,
       "peak": 34,
       "weeks": 29
@@ -2111,7 +2111,7 @@
       "title": "Just the Way You Are",
       "artist": "Bruno Mars",
       "spotifyId": "7BqBn9nzAq8spo5e7cZ0dJ",
-      "ytMusicId": "GnUW4AF1LZo",
+      "ytMusicId": "HUvIJRFH2cA",
       "streams": 2304118,
       "peak": 79,
       "weeks": 31
