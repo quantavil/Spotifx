@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-05-18",
-  "lastUpdated": "2026-05-18T09:58:18.696Z",
+  "weekDate": "2026-05-19",
+  "lastUpdated": "2026-05-19T09:40:51.873Z",
   "tracks": [
     {
       "rank": 1,
@@ -263,7 +263,7 @@
       "title": "Risk It All",
       "artist": "Bruno Mars",
       "spotifyId": "5y2ijHECwFYWqcAHKTZgzD",
-      "ytMusicId": "jXHa4egvB0o",
+      "ytMusicId": "BF2_ipR1OI0",
       "streams": 4875338,
       "peak": 1,
       "weeks": 11
@@ -296,7 +296,7 @@
       "title": "End of August",
       "artist": "Noah Kahan",
       "spotifyId": "4fEUmNN8KK5sNqvKjBstKg",
-      "ytMusicId": "bhupEBurUQI",
+      "ytMusicId": "acJ-O8HufRA",
       "streams": 4659074,
       "peak": 4,
       "weeks": 3
@@ -703,7 +703,7 @@
       "title": "Passionfruit",
       "artist": "Drake",
       "spotifyId": "7hDc8b7IXETo14hHIHdnhd",
-      "ytMusicId": "EgfsXTOn_pI",
+      "ytMusicId": "COz9lDCFHjw",
       "streams": 3430725,
       "peak": 1,
       "weeks": 180
@@ -879,7 +879,7 @@
       "title": "No Role Modelz",
       "artist": "J. Cole",
       "spotifyId": "68Dni7IE4VyPkTOH9mRWHr",
-      "ytMusicId": "8HBcV0MtAQg",
+      "ytMusicId": "0EnRK5YvBwU",
       "streams": 3196229,
       "peak": 10,
       "weeks": 523
@@ -901,7 +901,7 @@
       "title": "Worst Way",
       "artist": "Riley Green",
       "spotifyId": "1osfLqL6L2iQsirRf83ded",
-      "ytMusicId": "XXC5i7B2UqA",
+      "ytMusicId": "mjIZc3kz_oQ",
       "streams": 3175155,
       "peak": 39,
       "weeks": 71
@@ -1033,7 +1033,7 @@
       "title": "Be By You",
       "artist": "Luke Combs",
       "spotifyId": "67Ar9BnEeB5FU5vQBYhbGe",
-      "ytMusicId": "IC16XVKc8CQ",
+      "ytMusicId": "1K6_h-Rkkao",
       "streams": 3017450,
       "peak": 13,
       "weeks": 13
@@ -1418,7 +1418,7 @@
       "title": "Too Sweet",
       "artist": "Hozier",
       "spotifyId": "19XpFsce28aByvCC4g89tJ",
-      "ytMusicId": "mfha0a8IXKs",
+      "ytMusicId": "6A3PMQA5c74",
       "streams": 2784473,
       "peak": 1,
       "weeks": 104
@@ -2111,7 +2111,7 @@
       "title": "Just the Way You Are",
       "artist": "Bruno Mars",
       "spotifyId": "7BqBn9nzAq8spo5e7cZ0dJ",
-      "ytMusicId": "HUvIJRFH2cA",
+      "ytMusicId": "GnUW4AF1LZo",
       "streams": 2304118,
       "peak": 79,
       "weeks": 31

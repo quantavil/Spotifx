@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-05-18",
-  "lastUpdated": "2026-05-18T09:53:38.254Z",
+  "weekDate": "2026-05-19",
+  "lastUpdated": "2026-05-19T09:36:04.512Z",
   "tracks": [
     {
       "rank": 1,
@@ -164,7 +164,7 @@
       "title": "Risk It All",
       "artist": "Bruno Mars",
       "spotifyId": "5y2ijHECwFYWqcAHKTZgzD",
-      "ytMusicId": "jXHa4egvB0o",
+      "ytMusicId": "BF2_ipR1OI0",
       "streams": 21795460,
       "peak": 3,
       "weeks": 11
@@ -857,7 +857,7 @@
       "title": "REDRED",
       "artist": "CORTIS",
       "spotifyId": "2fCwv2ppU5nTRTckomIGsd",
-      "ytMusicId": "DBOyG7y_FQg",
+      "ytMusicId": "5sOgJQ3N03Q",
       "streams": 12116272,
       "peak": 61,
       "weeks": 3
@@ -934,7 +934,7 @@
       "title": "Just the Way You Are",
       "artist": "Bruno Mars",
       "spotifyId": "7BqBn9nzAq8spo5e7cZ0dJ",
-      "ytMusicId": "HUvIJRFH2cA",
+      "ytMusicId": "GnUW4AF1LZo",
       "streams": 11741333,
       "peak": 34,
       "weeks": 181
@@ -1660,7 +1660,7 @@
       "title": "Passionfruit",
       "artist": "Drake",
       "spotifyId": "7hDc8b7IXETo14hHIHdnhd",
-      "ytMusicId": "EgfsXTOn_pI",
+      "ytMusicId": "COz9lDCFHjw",
       "streams": 9517709,
       "peak": 2,
       "weeks": 60
@@ -1693,7 +1693,7 @@
       "title": "Too Sweet",
       "artist": "Hozier",
       "spotifyId": "19XpFsce28aByvCC4g89tJ",
-      "ytMusicId": "mfha0a8IXKs",
+      "ytMusicId": "6A3PMQA5c74",
       "streams": 9503510,
       "peak": 2,
       "weeks": 94
