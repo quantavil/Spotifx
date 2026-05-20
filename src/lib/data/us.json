@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-05-19",
-  "lastUpdated": "2026-05-19T09:40:51.873Z",
+  "weekDate": "2026-05-20",
+  "lastUpdated": "2026-05-20T09:05:32.964Z",
   "tracks": [
     {
       "rank": 1,
@@ -263,7 +263,7 @@
       "title": "Risk It All",
       "artist": "Bruno Mars",
       "spotifyId": "5y2ijHECwFYWqcAHKTZgzD",
-      "ytMusicId": "BF2_ipR1OI0",
+      "ytMusicId": "46a5bRqPy_E",
       "streams": 4875338,
       "peak": 1,
       "weeks": 11
@@ -296,7 +296,7 @@
       "title": "End of August",
       "artist": "Noah Kahan",
       "spotifyId": "4fEUmNN8KK5sNqvKjBstKg",
-      "ytMusicId": "acJ-O8HufRA",
+      "ytMusicId": "bhupEBurUQI",
       "streams": 4659074,
       "peak": 4,
       "weeks": 3
@@ -593,7 +593,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "X7AN68W5qDI",
+      "ytMusicId": "FrsOnNxIrg8",
       "streams": 3662427,
       "peak": 1,
       "weeks": 171
@@ -703,7 +703,7 @@
       "title": "Passionfruit",
       "artist": "Drake",
       "spotifyId": "7hDc8b7IXETo14hHIHdnhd",
-      "ytMusicId": "COz9lDCFHjw",
+      "ytMusicId": "EgfsXTOn_pI",
       "streams": 3430725,
       "peak": 1,
       "weeks": 180
@@ -901,7 +901,7 @@
       "title": "Worst Way",
       "artist": "Riley Green",
       "spotifyId": "1osfLqL6L2iQsirRf83ded",
-      "ytMusicId": "mjIZc3kz_oQ",
+      "ytMusicId": "4KLt4_k4lKI",
       "streams": 3175155,
       "peak": 39,
       "weeks": 71
@@ -989,7 +989,7 @@
       "title": "Rein Me In (w/ Olivia Dean)",
       "artist": "Sam Fender",
       "spotifyId": "0MUXBhPUDF8or0kfQ0EHwV",
-      "ytMusicId": "NO3JTAsB4NI",
+      "ytMusicId": "0Go3jBZs-cc",
       "streams": 3036260,
       "peak": 83,
       "weeks": 8
@@ -1033,7 +1033,7 @@
       "title": "Be By You",
       "artist": "Luke Combs",
       "spotifyId": "67Ar9BnEeB5FU5vQBYhbGe",
-      "ytMusicId": "1K6_h-Rkkao",
+      "ytMusicId": "IC16XVKc8CQ",
       "streams": 3017450,
       "peak": 13,
       "weeks": 13
@@ -1154,7 +1154,7 @@
       "title": "Les",
       "artist": "Childish Gambino",
       "spotifyId": "7ghKr0pCYyPPyp7t1FH8k4",
-      "ytMusicId": "eQL-E_TtB0o",
+      "ytMusicId": "L8gGHqPBuZM",
       "streams": 2923248,
       "peak": 70,
       "weeks": 50
@@ -1418,7 +1418,7 @@
       "title": "Too Sweet",
       "artist": "Hozier",
       "spotifyId": "19XpFsce28aByvCC4g89tJ",
-      "ytMusicId": "6A3PMQA5c74",
+      "ytMusicId": "mfha0a8IXKs",
       "streams": 2784473,
       "peak": 1,
       "weeks": 104
@@ -1451,7 +1451,7 @@
       "title": "No Hands (w/ Roscoe Dash, Wale)",
       "artist": "Waka Flocka Flame",
       "spotifyId": "03tqyYWC9Um2ZqU0ZN849H",
-      "ytMusicId": "JjuLy7r1hOg",
+      "ytMusicId": "oKgxffp6mZ4",
       "streams": 2752964,
       "peak": 32,
       "weeks": 57
@@ -1583,7 +1583,7 @@
       "title": "Who Knows",
       "artist": "Daniel Caesar",
       "spotifyId": "6DH13QYXK7lKkYHSU88N48",
-      "ytMusicId": "X6Kma_HdVHk",
+      "ytMusicId": "xBJ4YkQq1i8",
       "streams": 2625264,
       "peak": 34,
       "weeks": 29
@@ -1649,7 +1649,7 @@
       "title": "Timeless (w/ Playboi Carti)",
       "artist": "The Weeknd",
       "spotifyId": "0FIDCNYYjNvPVimz5icugS",
-      "ytMusicId": "a4O-abCXsfA",
+      "ytMusicId": "Tk4W_c_bdso",
       "streams": 2556879,
       "peak": 1,
       "weeks": 85
@@ -2045,7 +2045,7 @@
       "title": "Love Me (w/ Drake, Future)",
       "artist": "Lil Wayne",
       "spotifyId": "2XHzzp1j4IfTNp1FTn7YFg",
-      "ytMusicId": "NajmHZ6kcUg",
+      "ytMusicId": "YNP0YJ5gq0M",
       "streams": 2343805,
       "peak": 11,
       "weeks": 116
