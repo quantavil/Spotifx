@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-05-20",
-  "lastUpdated": "2026-05-20T09:06:31.404Z",
+  "weekDate": "2026-05-21",
+  "lastUpdated": "2026-05-21T09:37:17.260Z",
   "tracks": [
     {
       "rank": 1,
@@ -10,7 +10,7 @@
       "title": "Rein Me In (w/ Olivia Dean)",
       "artist": "Sam Fender",
       "spotifyId": "0MUXBhPUDF8or0kfQ0EHwV",
-      "ytMusicId": "0Go3jBZs-cc",
+      "ytMusicId": "NO3JTAsB4NI",
       "streams": 3260660,
       "peak": 1,
       "weeks": 47
@@ -65,7 +65,7 @@
       "title": "Beat It",
       "artist": "Michael Jackson",
       "spotifyId": "3BovdzfaX4jb5KFQwoPfAw",
-      "ytMusicId": "kOn-HdEg6AQ",
+      "ytMusicId": "WlTlUseVt7E",
       "streams": 2144429,
       "peak": 6,
       "weeks": 4
@@ -615,7 +615,7 @@
       "title": "They Don't Care About Us",
       "artist": "Michael Jackson",
       "spotifyId": "3wuCCNCnBhJlwkIJTBZFiv",
-      "ytMusicId": "-_OPJ2d86kE",
+      "ytMusicId": "GsHZBisKwxg",
       "streams": 986406,
       "peak": 56,
       "weeks": 3
@@ -1869,7 +1869,7 @@
       "title": "Les",
       "artist": "Childish Gambino",
       "spotifyId": "7ghKr0pCYyPPyp7t1FH8k4",
-      "ytMusicId": "L8gGHqPBuZM",
+      "ytMusicId": "eQL-E_TtB0o",
       "streams": 594155,
       "peak": 117,
       "weeks": 24
@@ -2012,7 +2012,7 @@
       "title": "Don't Stop Believin' (2022 Remaster)",
       "artist": "Journey",
       "spotifyId": "5RKQ5NdjSh2QzD4MaunT91",
-      "ytMusicId": "_2JmghTq12E",
+      "ytMusicId": "mM3Vmn4pdog",
       "streams": 583057,
       "peak": 48,
       "weeks": 83

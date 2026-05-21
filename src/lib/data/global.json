@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-05-20",
-  "lastUpdated": "2026-05-20T09:00:59.184Z",
+  "weekDate": "2026-05-21",
+  "lastUpdated": "2026-05-21T09:31:39.327Z",
   "tracks": [
     {
       "rank": 1,
@@ -54,7 +54,7 @@
       "title": "Beat It",
       "artist": "Michael Jackson",
       "spotifyId": "3BovdzfaX4jb5KFQwoPfAw",
-      "ytMusicId": "kOn-HdEg6AQ",
+      "ytMusicId": "WlTlUseVt7E",
       "streams": 31526627,
       "peak": 5,
       "weeks": 6
@@ -571,7 +571,7 @@
       "title": "They Don't Care About Us",
       "artist": "Michael Jackson",
       "spotifyId": "3wuCCNCnBhJlwkIJTBZFiv",
-      "ytMusicId": "-_OPJ2d86kE",
+      "ytMusicId": "GsHZBisKwxg",
       "streams": 14268379,
       "peak": 52,
       "weeks": 3
@@ -758,7 +758,7 @@
       "title": "Rein Me In (w/ Olivia Dean)",
       "artist": "Sam Fender",
       "spotifyId": "0MUXBhPUDF8or0kfQ0EHwV",
-      "ytMusicId": "0Go3jBZs-cc",
+      "ytMusicId": "NO3JTAsB4NI",
       "streams": 12677989,
       "peak": 56,
       "weeks": 11
@@ -1528,7 +1528,7 @@
       "title": "Who Knows",
       "artist": "Daniel Caesar",
       "spotifyId": "6DH13QYXK7lKkYHSU88N48",
-      "ytMusicId": "xBJ4YkQq1i8",
+      "ytMusicId": "xyUQKDE57Ag",
       "streams": 9758752,
       "peak": 58,
       "weeks": 25
@@ -1902,7 +1902,7 @@
       "title": "We Found Love (w/ Calvin Harris)",
       "artist": "Rihanna",
       "spotifyId": "1zv3WFUbZ5vPxFq9I2jAU1",
-      "ytMusicId": "n6N1_sxlBU8",
+      "ytMusicId": "FiJgjWmvNHA",
       "streams": 9168335,
       "peak": 59,
       "weeks": 131
