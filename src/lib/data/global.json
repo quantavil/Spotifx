@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-05-21",
-  "lastUpdated": "2026-05-21T09:31:39.327Z",
+  "weekDate": "2026-05-22",
+  "lastUpdated": "2026-05-22T08:56:51.570Z",
   "tracks": [
     {
       "rank": 1,
@@ -571,7 +571,7 @@
       "title": "They Don't Care About Us",
       "artist": "Michael Jackson",
       "spotifyId": "3wuCCNCnBhJlwkIJTBZFiv",
-      "ytMusicId": "GsHZBisKwxg",
+      "ytMusicId": "-_OPJ2d86kE",
       "streams": 14268379,
       "peak": 52,
       "weeks": 3
@@ -1528,7 +1528,7 @@
       "title": "Who Knows",
       "artist": "Daniel Caesar",
       "spotifyId": "6DH13QYXK7lKkYHSU88N48",
-      "ytMusicId": "xyUQKDE57Ag",
+      "ytMusicId": "Wzn4BLtE73o",
       "streams": 9758752,
       "peak": 58,
       "weeks": 25
@@ -1902,7 +1902,7 @@
       "title": "We Found Love (w/ Calvin Harris)",
       "artist": "Rihanna",
       "spotifyId": "1zv3WFUbZ5vPxFq9I2jAU1",
-      "ytMusicId": "FiJgjWmvNHA",
+      "ytMusicId": "n6N1_sxlBU8",
       "streams": 9168335,
       "peak": 59,
       "weeks": 131

@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-05-21",
-  "lastUpdated": "2026-05-21T09:36:14.285Z",
+  "weekDate": "2026-05-22",
+  "lastUpdated": "2026-05-22T09:02:08.522Z",
   "tracks": [
     {
       "rank": 1,
@@ -1154,7 +1154,7 @@
       "title": "Les",
       "artist": "Childish Gambino",
       "spotifyId": "7ghKr0pCYyPPyp7t1FH8k4",
-      "ytMusicId": "eQL-E_TtB0o",
+      "ytMusicId": "L8gGHqPBuZM",
       "streams": 2923248,
       "peak": 70,
       "weeks": 50
@@ -1583,7 +1583,7 @@
       "title": "Who Knows",
       "artist": "Daniel Caesar",
       "spotifyId": "6DH13QYXK7lKkYHSU88N48",
-      "ytMusicId": "xyUQKDE57Ag",
+      "ytMusicId": "Wzn4BLtE73o",
       "streams": 2625264,
       "peak": 34,
       "weeks": 29
@@ -2100,7 +2100,7 @@
       "title": "They Don't Care About Us",
       "artist": "Michael Jackson",
       "spotifyId": "3wuCCNCnBhJlwkIJTBZFiv",
-      "ytMusicId": "GsHZBisKwxg",
+      "ytMusicId": "-_OPJ2d86kE",
       "streams": 2307826,
       "peak": 191,
       "weeks": 1
