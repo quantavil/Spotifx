@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-05-23",
-  "lastUpdated": "2026-05-23T08:13:52.849Z",
+  "weekDate": "2026-05-24",
+  "lastUpdated": "2026-05-24T08:25:21.035Z",
   "tracks": [
     {
       "rank": 1,
@@ -10,7 +10,7 @@
       "title": "Billie Jean",
       "artist": "Michael Jackson",
       "spotifyId": "7J1uxwnxfQLu4APicE5Rnj",
-      "ytMusicId": "Kr4EQDVETuA",
+      "ytMusicId": "7CTJcHjkq0E",
       "streams": 41730200,
       "peak": 1,
       "weeks": 52
@@ -98,7 +98,7 @@
       "title": "Beat It",
       "artist": "Michael Jackson",
       "spotifyId": "3BovdzfaX4jb5KFQwoPfAw",
-      "ytMusicId": "kOn-HdEg6AQ",
+      "ytMusicId": "WlTlUseVt7E",
       "streams": 32056288,
       "peak": 5,
       "weeks": 7
@@ -428,7 +428,7 @@
       "title": "Die With A Smile (w/ Bruno Mars)",
       "artist": "Lady Gaga",
       "spotifyId": "2plbrEY59IikOBgBGLjaoe",
-      "ytMusicId": "ioNYKflP4RY",
+      "ytMusicId": "DlFXDl_ROAM",
       "streams": 18181261,
       "peak": 1,
       "weeks": 92
@@ -637,7 +637,7 @@
       "title": "I Just Might",
       "artist": "Bruno Mars",
       "spotifyId": "6f68Ac5tt5BQOpwr0BV9oN",
-      "ytMusicId": "th92jw2CFOA",
+      "ytMusicId": "8_C6lXoGB5Y",
       "streams": 14654584,
       "peak": 3,
       "weeks": 19
@@ -967,7 +967,7 @@
       "title": "(When You Gonna) Give It Up to Me (w/ Keyshia Cole)",
       "artist": "Sean Paul",
       "spotifyId": "5nEdwtSv0qqeE0l4o1lR4q",
-      "ytMusicId": "aUajNfZwkjY",
+      "ytMusicId": "mFER2WeYnBo",
       "streams": 12465391,
       "peak": 36,
       "weeks": 18
@@ -1055,7 +1055,7 @@
       "title": "Just the Way You Are",
       "artist": "Bruno Mars",
       "spotifyId": "7BqBn9nzAq8spo5e7cZ0dJ",
-      "ytMusicId": "GnUW4AF1LZo",
+      "ytMusicId": "HUvIJRFH2cA",
       "streams": 11899761,
       "peak": 34,
       "weeks": 182
@@ -1297,7 +1297,7 @@
       "title": "Can't Hold Us (w/ Macklemore, Ryan Lewis, Ray Dalton)",
       "artist": "Macklemore & Ryan Lewis",
       "spotifyId": "22skzmqfdWrjJylampe0kt",
-      "ytMusicId": "96L5sV7rqX0",
+      "ytMusicId": "Vik1dtQ0eHc",
       "streams": 11049156,
       "peak": 86,
       "weeks": 184
@@ -1473,7 +1473,7 @@
       "title": "On The Floor (w/ Pitbull)",
       "artist": "Jennifer Lopez",
       "spotifyId": "3C0nOe05EIt1390bVABLyN",
-      "ytMusicId": "9lybsz-7TFM",
+      "ytMusicId": "gDRL47NzG5o",
       "streams": 10622335,
       "peak": 134,
       "weeks": 1
@@ -1517,7 +1517,7 @@
       "title": "All The Stars (w/ SZA)",
       "artist": "Kendrick Lamar",
       "spotifyId": "3GCdLUSnKSMJhs4Tj6CV3s",
-      "ytMusicId": "vdXsLt0o_9g",
+      "ytMusicId": "ju4KQT0wL0I",
       "streams": 10580217,
       "peak": 2,
       "weeks": 153
@@ -1913,7 +1913,7 @@
       "title": "That’s So True",
       "artist": "Gracie Abrams",
       "spotifyId": "7ne4VBA60CxGM75vw0EYad",
-      "ytMusicId": "AOz9V0NhJe8",
+      "ytMusicId": "W_YOJWZIjxo",
       "streams": 9471543,
       "peak": 3,
       "weeks": 83

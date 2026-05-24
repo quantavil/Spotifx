@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-05-23",
-  "lastUpdated": "2026-05-23T08:18:14.403Z",
+  "weekDate": "2026-05-24",
+  "lastUpdated": "2026-05-24T08:29:33.330Z",
   "tracks": [
     {
       "rank": 1,
@@ -175,7 +175,7 @@
       "title": "Billie Jean",
       "artist": "Michael Jackson",
       "spotifyId": "7J1uxwnxfQLu4APicE5Rnj",
-      "ytMusicId": "Kr4EQDVETuA",
+      "ytMusicId": "7CTJcHjkq0E",
       "streams": 8473240,
       "peak": 4,
       "weeks": 20
@@ -263,7 +263,7 @@
       "title": "Beat It",
       "artist": "Michael Jackson",
       "spotifyId": "3BovdzfaX4jb5KFQwoPfAw",
-      "ytMusicId": "kOn-HdEg6AQ",
+      "ytMusicId": "WlTlUseVt7E",
       "streams": 6301526,
       "peak": 12,
       "weeks": 4
@@ -626,7 +626,7 @@
       "title": "I Just Might",
       "artist": "Bruno Mars",
       "spotifyId": "6f68Ac5tt5BQOpwr0BV9oN",
-      "ytMusicId": "th92jw2CFOA",
+      "ytMusicId": "8_C6lXoGB5Y",
       "streams": 4191931,
       "peak": 1,
       "weeks": 19
@@ -1110,7 +1110,7 @@
       "title": "Gen 5",
       "artist": "Drake",
       "spotifyId": "0s3NwbrNRsUTVJVdBeD5Wa",
-      "ytMusicId": "M4tuxUz5u4E",
+      "ytMusicId": "XA6Z32l3FVc",
       "streams": 3241840,
       "peak": 101,
       "weeks": 1
@@ -1440,7 +1440,7 @@
       "title": "Sweet Boy",
       "artist": "Malcolm Todd",
       "spotifyId": "59c2xv2kMzYM6HR9oY6BIa",
-      "ytMusicId": "p9OtySpRRL8",
+      "ytMusicId": "BI9HQCzpDgQ",
       "streams": 2913101,
       "peak": 68,
       "weeks": 20
@@ -1473,7 +1473,7 @@
       "title": "Die With A Smile (w/ Bruno Mars)",
       "artist": "Lady Gaga",
       "spotifyId": "2plbrEY59IikOBgBGLjaoe",
-      "ytMusicId": "ioNYKflP4RY",
+      "ytMusicId": "DlFXDl_ROAM",
       "streams": 2872796,
       "peak": 1,
       "weeks": 92
@@ -1671,7 +1671,7 @@
       "title": "Landslide",
       "artist": "Fleetwood Mac",
       "spotifyId": "5ihS6UUlyQAfmp48eSkxuQ",
-      "ytMusicId": "mXonGAEPQp8",
+      "ytMusicId": "k4M53xndqiU",
       "streams": 2754653,
       "peak": 23,
       "weeks": 42
@@ -1836,7 +1836,7 @@
       "title": "All The Stars (w/ SZA)",
       "artist": "Kendrick Lamar",
       "spotifyId": "3GCdLUSnKSMJhs4Tj6CV3s",
-      "ytMusicId": "vdXsLt0o_9g",
+      "ytMusicId": "ju4KQT0wL0I",
       "streams": 2695788,
       "peak": 2,
       "weeks": 193
@@ -1858,7 +1858,7 @@
       "title": "POP DAT THANG",
       "artist": "DaBaby",
       "spotifyId": "0QgwjxR1VchizzckKXwyBu",
-      "ytMusicId": "-lyBxb7nagk",
+      "ytMusicId": "ThdQv0PFUsc",
       "streams": 2672591,
       "peak": 54,
       "weeks": 11

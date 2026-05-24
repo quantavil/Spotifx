@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-05-23",
-  "lastUpdated": "2026-05-23T08:19:04.946Z",
+  "weekDate": "2026-05-24",
+  "lastUpdated": "2026-05-24T08:30:24.276Z",
   "tracks": [
     {
       "rank": 1,
@@ -54,7 +54,7 @@
       "title": "Billie Jean",
       "artist": "Michael Jackson",
       "spotifyId": "7J1uxwnxfQLu4APicE5Rnj",
-      "ytMusicId": "Kr4EQDVETuA",
+      "ytMusicId": "7CTJcHjkq0E",
       "streams": 2665004,
       "peak": 4,
       "weeks": 48
@@ -120,7 +120,7 @@
       "title": "Beat It",
       "artist": "Michael Jackson",
       "spotifyId": "3BovdzfaX4jb5KFQwoPfAw",
-      "ytMusicId": "kOn-HdEg6AQ",
+      "ytMusicId": "WlTlUseVt7E",
       "streams": 2187626,
       "peak": 6,
       "weeks": 5
@@ -604,7 +604,7 @@
       "title": "I Just Might",
       "artist": "Bruno Mars",
       "spotifyId": "6f68Ac5tt5BQOpwr0BV9oN",
-      "ytMusicId": "th92jw2CFOA",
+      "ytMusicId": "8_C6lXoGB5Y",
       "streams": 1130716,
       "peak": 5,
       "weeks": 19
@@ -1121,7 +1121,7 @@
       "title": "(When You Gonna) Give It Up to Me (w/ Keyshia Cole)",
       "artist": "Sean Paul",
       "spotifyId": "5nEdwtSv0qqeE0l4o1lR4q",
-      "ytMusicId": "aUajNfZwkjY",
+      "ytMusicId": "mFER2WeYnBo",
       "streams": 797498,
       "peak": 37,
       "weeks": 19
@@ -1352,7 +1352,7 @@
       "title": "Landslide",
       "artist": "Fleetwood Mac",
       "spotifyId": "5ihS6UUlyQAfmp48eSkxuQ",
-      "ytMusicId": "mXonGAEPQp8",
+      "ytMusicId": "k4M53xndqiU",
       "streams": 728633,
       "peak": 35,
       "weeks": 30
@@ -1429,7 +1429,7 @@
       "title": "That’s So True",
       "artist": "Gracie Abrams",
       "spotifyId": "7ne4VBA60CxGM75vw0EYad",
-      "ytMusicId": "AOz9V0NhJe8",
+      "ytMusicId": "W_YOJWZIjxo",
       "streams": 717211,
       "peak": 1,
       "weeks": 83
@@ -1671,7 +1671,7 @@
       "title": "Can't Hold Us (w/ Macklemore, Ryan Lewis, Ray Dalton)",
       "artist": "Macklemore & Ryan Lewis",
       "spotifyId": "22skzmqfdWrjJylampe0kt",
-      "ytMusicId": "96L5sV7rqX0",
+      "ytMusicId": "Vik1dtQ0eHc",
       "streams": 667357,
       "peak": 68,
       "weeks": 183
@@ -1902,7 +1902,7 @@
       "title": "All The Stars (w/ SZA)",
       "artist": "Kendrick Lamar",
       "spotifyId": "3GCdLUSnKSMJhs4Tj6CV3s",
-      "ytMusicId": "vdXsLt0o_9g",
+      "ytMusicId": "ju4KQT0wL0I",
       "streams": 617534,
       "peak": 2,
       "weeks": 180
@@ -2023,7 +2023,7 @@
       "title": "Die With A Smile (w/ Bruno Mars)",
       "artist": "Lady Gaga",
       "spotifyId": "2plbrEY59IikOBgBGLjaoe",
-      "ytMusicId": "ioNYKflP4RY",
+      "ytMusicId": "DlFXDl_ROAM",
       "streams": 605765,
       "peak": 3,
       "weeks": 91
