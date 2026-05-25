@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-05-24",
-  "lastUpdated": "2026-05-24T08:25:21.035Z",
+  "weekDate": "2026-05-25",
+  "lastUpdated": "2026-05-25T09:58:31.379Z",
   "tracks": [
     {
       "rank": 1,
@@ -10,7 +10,7 @@
       "title": "Billie Jean",
       "artist": "Michael Jackson",
       "spotifyId": "7J1uxwnxfQLu4APicE5Rnj",
-      "ytMusicId": "7CTJcHjkq0E",
+      "ytMusicId": "Kr4EQDVETuA",
       "streams": 41730200,
       "peak": 1,
       "weeks": 52
@@ -98,7 +98,7 @@
       "title": "Beat It",
       "artist": "Michael Jackson",
       "spotifyId": "3BovdzfaX4jb5KFQwoPfAw",
-      "ytMusicId": "WlTlUseVt7E",
+      "ytMusicId": "kOn-HdEg6AQ",
       "streams": 32056288,
       "peak": 5,
       "weeks": 7
@@ -175,7 +175,7 @@
       "title": "What Did I Miss?",
       "artist": "Drake",
       "spotifyId": "57GsLpRtEtrzcPGPop20rS",
-      "ytMusicId": "Lx4gPURH35g",
+      "ytMusicId": "eBLfCp6M2To",
       "streams": 22884896,
       "peak": 16,
       "weeks": 5
@@ -967,7 +967,7 @@
       "title": "(When You Gonna) Give It Up to Me (w/ Keyshia Cole)",
       "artist": "Sean Paul",
       "spotifyId": "5nEdwtSv0qqeE0l4o1lR4q",
-      "ytMusicId": "mFER2WeYnBo",
+      "ytMusicId": "aUajNfZwkjY",
       "streams": 12465391,
       "peak": 36,
       "weeks": 18
@@ -1297,7 +1297,7 @@
       "title": "Can't Hold Us (w/ Macklemore, Ryan Lewis, Ray Dalton)",
       "artist": "Macklemore & Ryan Lewis",
       "spotifyId": "22skzmqfdWrjJylampe0kt",
-      "ytMusicId": "Vik1dtQ0eHc",
+      "ytMusicId": "96L5sV7rqX0",
       "streams": 11049156,
       "peak": 86,
       "weeks": 184
@@ -1517,7 +1517,7 @@
       "title": "All The Stars (w/ SZA)",
       "artist": "Kendrick Lamar",
       "spotifyId": "3GCdLUSnKSMJhs4Tj6CV3s",
-      "ytMusicId": "ju4KQT0wL0I",
+      "ytMusicId": "vdXsLt0o_9g",
       "streams": 10580217,
       "peak": 2,
       "weeks": 153
@@ -2155,7 +2155,7 @@
       "title": "We Found Love (w/ Calvin Harris)",
       "artist": "Rihanna",
       "spotifyId": "1zv3WFUbZ5vPxFq9I2jAU1",
-      "ytMusicId": "UUpuyzPJeWA",
+      "ytMusicId": "n6N1_sxlBU8",
       "streams": 9129567,
       "peak": 59,
       "weeks": 132

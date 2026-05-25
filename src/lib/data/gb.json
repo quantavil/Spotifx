@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-05-24",
-  "lastUpdated": "2026-05-24T08:30:24.276Z",
+  "weekDate": "2026-05-25",
+  "lastUpdated": "2026-05-25T10:04:12.544Z",
   "tracks": [
     {
       "rank": 1,
@@ -54,7 +54,7 @@
       "title": "Billie Jean",
       "artist": "Michael Jackson",
       "spotifyId": "7J1uxwnxfQLu4APicE5Rnj",
-      "ytMusicId": "7CTJcHjkq0E",
+      "ytMusicId": "Kr4EQDVETuA",
       "streams": 2665004,
       "peak": 4,
       "weeks": 48
@@ -120,7 +120,7 @@
       "title": "Beat It",
       "artist": "Michael Jackson",
       "spotifyId": "3BovdzfaX4jb5KFQwoPfAw",
-      "ytMusicId": "WlTlUseVt7E",
+      "ytMusicId": "kOn-HdEg6AQ",
       "streams": 2187626,
       "peak": 6,
       "weeks": 5
@@ -241,7 +241,7 @@
       "title": "What Did I Miss?",
       "artist": "Drake",
       "spotifyId": "57GsLpRtEtrzcPGPop20rS",
-      "ytMusicId": "Lx4gPURH35g",
+      "ytMusicId": "eBLfCp6M2To",
       "streams": 1654629,
       "peak": 22,
       "weeks": 6
@@ -1121,7 +1121,7 @@
       "title": "(When You Gonna) Give It Up to Me (w/ Keyshia Cole)",
       "artist": "Sean Paul",
       "spotifyId": "5nEdwtSv0qqeE0l4o1lR4q",
-      "ytMusicId": "mFER2WeYnBo",
+      "ytMusicId": "aUajNfZwkjY",
       "streams": 797498,
       "peak": 37,
       "weeks": 19
@@ -1671,7 +1671,7 @@
       "title": "Can't Hold Us (w/ Macklemore, Ryan Lewis, Ray Dalton)",
       "artist": "Macklemore & Ryan Lewis",
       "spotifyId": "22skzmqfdWrjJylampe0kt",
-      "ytMusicId": "Vik1dtQ0eHc",
+      "ytMusicId": "96L5sV7rqX0",
       "streams": 667357,
       "peak": 68,
       "weeks": 183
@@ -1704,7 +1704,7 @@
       "title": "Valerie (w/ Amy Winehouse)",
       "artist": "Mark Ronson",
       "spotifyId": "6kopmMZiyLmw7h66uXcXR7",
-      "ytMusicId": "-WrSLR5oEao",
+      "ytMusicId": "xMw1l5Z4B8U",
       "streams": 664245,
       "peak": 40,
       "weeks": 87
@@ -1748,7 +1748,7 @@
       "title": "Ain't No Mountain High Enough (w/ Tammi Terrell)",
       "artist": "Marvin Gaye",
       "spotifyId": "7tqhbajSfrz2F7E1Z75ASX",
-      "ytMusicId": "ABfQuZqq8wg",
+      "ytMusicId": "oB9JIz72BoM",
       "streams": 654161,
       "peak": 35,
       "weeks": 120
@@ -1902,7 +1902,7 @@
       "title": "All The Stars (w/ SZA)",
       "artist": "Kendrick Lamar",
       "spotifyId": "3GCdLUSnKSMJhs4Tj6CV3s",
-      "ytMusicId": "ju4KQT0wL0I",
+      "ytMusicId": "vdXsLt0o_9g",
       "streams": 617534,
       "peak": 2,
       "weeks": 180
@@ -2045,7 +2045,7 @@
       "title": "Les",
       "artist": "Childish Gambino",
       "spotifyId": "7ghKr0pCYyPPyp7t1FH8k4",
-      "ytMusicId": "eQL-E_TtB0o",
+      "ytMusicId": "L8gGHqPBuZM",
       "streams": 604367,
       "peak": 117,
       "weeks": 25

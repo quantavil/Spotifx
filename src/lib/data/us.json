@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-05-24",
-  "lastUpdated": "2026-05-24T08:29:33.330Z",
+  "weekDate": "2026-05-25",
+  "lastUpdated": "2026-05-25T10:03:17.704Z",
   "tracks": [
     {
       "rank": 1,
@@ -142,7 +142,7 @@
       "title": "What Did I Miss?",
       "artist": "Drake",
       "spotifyId": "57GsLpRtEtrzcPGPop20rS",
-      "ytMusicId": "Lx4gPURH35g",
+      "ytMusicId": "eBLfCp6M2To",
       "streams": 9618713,
       "peak": 4,
       "weeks": 8
@@ -175,7 +175,7 @@
       "title": "Billie Jean",
       "artist": "Michael Jackson",
       "spotifyId": "7J1uxwnxfQLu4APicE5Rnj",
-      "ytMusicId": "7CTJcHjkq0E",
+      "ytMusicId": "Kr4EQDVETuA",
       "streams": 8473240,
       "peak": 4,
       "weeks": 20
@@ -263,7 +263,7 @@
       "title": "Beat It",
       "artist": "Michael Jackson",
       "spotifyId": "3BovdzfaX4jb5KFQwoPfAw",
-      "ytMusicId": "WlTlUseVt7E",
+      "ytMusicId": "kOn-HdEg6AQ",
       "streams": 6301526,
       "peak": 12,
       "weeks": 4
@@ -1440,7 +1440,7 @@
       "title": "Sweet Boy",
       "artist": "Malcolm Todd",
       "spotifyId": "59c2xv2kMzYM6HR9oY6BIa",
-      "ytMusicId": "BI9HQCzpDgQ",
+      "ytMusicId": "p9OtySpRRL8",
       "streams": 2913101,
       "peak": 68,
       "weeks": 20
@@ -1594,7 +1594,7 @@
       "title": "Les",
       "artist": "Childish Gambino",
       "spotifyId": "7ghKr0pCYyPPyp7t1FH8k4",
-      "ytMusicId": "eQL-E_TtB0o",
+      "ytMusicId": "L8gGHqPBuZM",
       "streams": 2814630,
       "peak": 70,
       "weeks": 51
@@ -1836,7 +1836,7 @@
       "title": "All The Stars (w/ SZA)",
       "artist": "Kendrick Lamar",
       "spotifyId": "3GCdLUSnKSMJhs4Tj6CV3s",
-      "ytMusicId": "ju4KQT0wL0I",
+      "ytMusicId": "vdXsLt0o_9g",
       "streams": 2695788,
       "peak": 2,
       "weeks": 193
