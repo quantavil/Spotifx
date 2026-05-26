@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-05-25",
-  "lastUpdated": "2026-05-25T09:58:31.379Z",
+  "weekDate": "2026-05-26",
+  "lastUpdated": "2026-05-26T09:45:02.286Z",
   "tracks": [
     {
       "rank": 1,
@@ -1814,7 +1814,7 @@
       "title": "Viva La Vida",
       "artist": "Coldplay",
       "spotifyId": "1mea3bSkSGXuIRvnydlB5b",
-      "ytMusicId": "ALsvdSA9tOU",
+      "ytMusicId": "HGorCGszxZU",
       "streams": 9751309,
       "peak": 31,
       "weeks": 199

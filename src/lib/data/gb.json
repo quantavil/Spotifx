@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-05-25",
-  "lastUpdated": "2026-05-25T10:04:12.544Z",
+  "weekDate": "2026-05-26",
+  "lastUpdated": "2026-05-26T09:50:37.870Z",
   "tracks": [
     {
       "rank": 1,
@@ -1572,7 +1572,7 @@
       "title": "Viva La Vida",
       "artist": "Coldplay",
       "spotifyId": "1mea3bSkSGXuIRvnydlB5b",
-      "ytMusicId": "ALsvdSA9tOU",
+      "ytMusicId": "HGorCGszxZU",
       "streams": 688158,
       "peak": 27,
       "weeks": 202
@@ -1704,7 +1704,7 @@
       "title": "Valerie (w/ Amy Winehouse)",
       "artist": "Mark Ronson",
       "spotifyId": "6kopmMZiyLmw7h66uXcXR7",
-      "ytMusicId": "xMw1l5Z4B8U",
+      "ytMusicId": "-WrSLR5oEao",
       "streams": 664245,
       "peak": 40,
       "weeks": 87
