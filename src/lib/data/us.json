@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-05-26",
-  "lastUpdated": "2026-05-26T09:49:41.394Z",
+  "weekDate": "2026-05-27",
+  "lastUpdated": "2026-05-27T09:43:20.599Z",
   "tracks": [
     {
       "rank": 1,
@@ -109,7 +109,7 @@
       "title": "Make Them Pay",
       "artist": "Drake",
       "spotifyId": "57rkFdhoKjgkg16fsS4pgg",
-      "ytMusicId": "XSiEA19SeNE",
+      "ytMusicId": "4ifx74jSElc",
       "streams": 10540888,
       "peak": 10,
       "weeks": 1
@@ -131,7 +131,7 @@
       "title": "B's On The Table (w/ 21 Savage)",
       "artist": "Drake",
       "spotifyId": "4ygJHbpMGwZknVFaRikdFr",
-      "ytMusicId": "5xYbqgeUwLs",
+      "ytMusicId": "IrOTmo_OTUo",
       "streams": 9675594,
       "peak": 12,
       "weeks": 1
@@ -604,7 +604,7 @@
       "title": "Slap The City (w/ Qendresa)",
       "artist": "Drake",
       "spotifyId": "3nwcQXP0mBmXmlrirQxCkz",
-      "ytMusicId": "dNWeAdH4YuU",
+      "ytMusicId": "tV4KgqecsKw",
       "streams": 4297496,
       "peak": 55,
       "weeks": 1
@@ -1594,7 +1594,7 @@
       "title": "Les",
       "artist": "Childish Gambino",
       "spotifyId": "7ghKr0pCYyPPyp7t1FH8k4",
-      "ytMusicId": "L8gGHqPBuZM",
+      "ytMusicId": "eQL-E_TtB0o",
       "streams": 2814630,
       "peak": 70,
       "weeks": 51
@@ -1605,7 +1605,7 @@
       "title": "Flashing Lights (w/ Dwele)",
       "artist": "Kanye West",
       "spotifyId": "5TRPicyLGbAF2LGBFbHGvO",
-      "ytMusicId": "cxKs2b5lRsA",
+      "ytMusicId": "ZAz3rnLGthg",
       "streams": 2814040,
       "peak": 53,
       "weeks": 159
@@ -1792,7 +1792,7 @@
       "title": "No Hands (w/ Roscoe Dash, Wale)",
       "artist": "Waka Flocka Flame",
       "spotifyId": "03tqyYWC9Um2ZqU0ZN849H",
-      "ytMusicId": "JjuLy7r1hOg",
+      "ytMusicId": "oKgxffp6mZ4",
       "streams": 2712588,
       "peak": 32,
       "weeks": 58
@@ -1836,7 +1836,7 @@
       "title": "All The Stars (w/ SZA)",
       "artist": "Kendrick Lamar",
       "spotifyId": "3GCdLUSnKSMJhs4Tj6CV3s",
-      "ytMusicId": "vdXsLt0o_9g",
+      "ytMusicId": "ju4KQT0wL0I",
       "streams": 2695788,
       "peak": 2,
       "weeks": 193
