@@ -98,7 +98,7 @@
 							   hover:scale-105 hover:bg-[#1ed760] active:scale-95 transition-all cursor-pointer shadow-lg shadow-accent/20"
 					>
 						<Icon name="play" class="w-3.5 h-3.5" />
-						Play All
+						Play
 					</button>
 					<button
 						onclick={() => player.playAll(data.chart.tracks, true)}
