@@ -91,7 +91,7 @@
 
 			<!-- Play Actions -->
 			{#if playableCount > 0}
-				<div class="flex flex-wrap items-center gap-2">
+				<div class="flex items-center gap-1.5 sm:gap-2.5">
 					<button
 						onclick={() => player.playAll(data.chart.tracks)}
 						class="flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-accent text-black text-[11px] sm:text-xs font-bold
@@ -111,11 +111,11 @@
 					</button>
 
 					{#if heroTrack}
-						<div class="flex items-center gap-1 border-l border-white/10 pl-2 ml-1">
+						<div class="flex items-center gap-0.5 border-l border-white/10 pl-1.5 sm:pl-2 ml-0.5 sm:ml-1">
 							<FavoriteButton 
 								track={heroTrack} 
-								class="p-2 transition-colors cursor-pointer text-gray-400 hover:text-red-400 rounded-full hover:bg-white/5"
-								iconClass="w-4 h-4"
+								class="p-1.5 sm:p-2 transition-colors cursor-pointer text-gray-400 hover:text-red-400 rounded-full hover:bg-white/5"
+								iconClass="w-3.5 h-3.5 sm:w-4 sm:h-4"
 							/>
 							<TrackMenu track={heroTrack} />
 						</div>
