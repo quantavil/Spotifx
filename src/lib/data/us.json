@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-05-27",
-  "lastUpdated": "2026-05-27T09:43:20.599Z",
+  "weekDate": "2026-05-28",
+  "lastUpdated": "2026-05-28T10:00:12.242Z",
   "tracks": [
     {
       "rank": 1,
@@ -109,7 +109,7 @@
       "title": "Make Them Pay",
       "artist": "Drake",
       "spotifyId": "57rkFdhoKjgkg16fsS4pgg",
-      "ytMusicId": "4ifx74jSElc",
+      "ytMusicId": "XSiEA19SeNE",
       "streams": 10540888,
       "peak": 10,
       "weeks": 1
@@ -131,7 +131,7 @@
       "title": "B's On The Table (w/ 21 Savage)",
       "artist": "Drake",
       "spotifyId": "4ygJHbpMGwZknVFaRikdFr",
-      "ytMusicId": "IrOTmo_OTUo",
+      "ytMusicId": "5xYbqgeUwLs",
       "streams": 9675594,
       "peak": 12,
       "weeks": 1
@@ -1132,7 +1132,7 @@
       "title": "No Role Modelz",
       "artist": "J. Cole",
       "spotifyId": "68Dni7IE4VyPkTOH9mRWHr",
-      "ytMusicId": "8HBcV0MtAQg",
+      "ytMusicId": "0EnRK5YvBwU",
       "streams": 3206106,
       "peak": 10,
       "weeks": 524
@@ -1605,7 +1605,7 @@
       "title": "Flashing Lights (w/ Dwele)",
       "artist": "Kanye West",
       "spotifyId": "5TRPicyLGbAF2LGBFbHGvO",
-      "ytMusicId": "ZAz3rnLGthg",
+      "ytMusicId": "cxKs2b5lRsA",
       "streams": 2814040,
       "peak": 53,
       "weeks": 159
@@ -1737,7 +1737,7 @@
       "title": "The Way You Make Me Feel - 2012 Remaster",
       "artist": "Michael Jackson",
       "spotifyId": "76HKOVWqsEg26SECtmw7Rz",
-      "ytMusicId": "VtM-rHPwN7o",
+      "ytMusicId": "T3FG_YQOW5k",
       "streams": 2733043,
       "peak": 115,
       "weeks": 3
@@ -1792,7 +1792,7 @@
       "title": "No Hands (w/ Roscoe Dash, Wale)",
       "artist": "Waka Flocka Flame",
       "spotifyId": "03tqyYWC9Um2ZqU0ZN849H",
-      "ytMusicId": "oKgxffp6mZ4",
+      "ytMusicId": "JjuLy7r1hOg",
       "streams": 2712588,
       "peak": 32,
       "weeks": 58
@@ -1836,7 +1836,7 @@
       "title": "All The Stars (w/ SZA)",
       "artist": "Kendrick Lamar",
       "spotifyId": "3GCdLUSnKSMJhs4Tj6CV3s",
-      "ytMusicId": "ju4KQT0wL0I",
+      "ytMusicId": "vdXsLt0o_9g",
       "streams": 2695788,
       "peak": 2,
       "weeks": 193
@@ -1858,7 +1858,7 @@
       "title": "POP DAT THANG",
       "artist": "DaBaby",
       "spotifyId": "0QgwjxR1VchizzckKXwyBu",
-      "ytMusicId": "ThdQv0PFUsc",
+      "ytMusicId": "-lyBxb7nagk",
       "streams": 2672591,
       "peak": 54,
       "weeks": 11

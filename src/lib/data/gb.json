@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-05-27",
-  "lastUpdated": "2026-05-27T09:44:12.534Z",
+  "weekDate": "2026-05-28",
+  "lastUpdated": "2026-05-28T10:01:07.518Z",
   "tracks": [
     {
       "rank": 1,
@@ -219,7 +219,7 @@
       "title": "Make Them Pay",
       "artist": "Drake",
       "spotifyId": "57rkFdhoKjgkg16fsS4pgg",
-      "ytMusicId": "4ifx74jSElc",
+      "ytMusicId": "XSiEA19SeNE",
       "streams": 1740374,
       "peak": 20,
       "weeks": 1
@@ -296,7 +296,7 @@
       "title": "B's On The Table (w/ 21 Savage)",
       "artist": "Drake",
       "spotifyId": "4ygJHbpMGwZknVFaRikdFr",
-      "ytMusicId": "IrOTmo_OTUo",
+      "ytMusicId": "5xYbqgeUwLs",
       "streams": 1565629,
       "peak": 27,
       "weeks": 1
@@ -714,7 +714,7 @@
       "title": "The Way You Make Me Feel - 2012 Remaster",
       "artist": "Michael Jackson",
       "spotifyId": "76HKOVWqsEg26SECtmw7Rz",
-      "ytMusicId": "VtM-rHPwN7o",
+      "ytMusicId": "T3FG_YQOW5k",
       "streams": 1034398,
       "peak": 43,
       "weeks": 4
@@ -1121,7 +1121,7 @@
       "title": "(When You Gonna) Give It Up to Me (w/ Keyshia Cole)",
       "artist": "Sean Paul",
       "spotifyId": "5nEdwtSv0qqeE0l4o1lR4q",
-      "ytMusicId": "mFER2WeYnBo",
+      "ytMusicId": "aUajNfZwkjY",
       "streams": 797498,
       "peak": 37,
       "weeks": 19
@@ -1748,7 +1748,7 @@
       "title": "Ain't No Mountain High Enough (w/ Tammi Terrell)",
       "artist": "Marvin Gaye",
       "spotifyId": "7tqhbajSfrz2F7E1Z75ASX",
-      "ytMusicId": "ABfQuZqq8wg",
+      "ytMusicId": "oB9JIz72BoM",
       "streams": 654161,
       "peak": 35,
       "weeks": 120
@@ -1803,7 +1803,7 @@
       "title": "Purple Rain",
       "artist": "Prince",
       "spotifyId": "1uvyZBs4IZYRebHIB1747m",
-      "ytMusicId": "iSBVeZrDfGY",
+      "ytMusicId": "347vCib_lMs",
       "streams": 636065,
       "peak": 17,
       "weeks": 20
@@ -1902,7 +1902,7 @@
       "title": "All The Stars (w/ SZA)",
       "artist": "Kendrick Lamar",
       "spotifyId": "3GCdLUSnKSMJhs4Tj6CV3s",
-      "ytMusicId": "ju4KQT0wL0I",
+      "ytMusicId": "vdXsLt0o_9g",
       "streams": 617534,
       "peak": 2,
       "weeks": 180
@@ -2067,7 +2067,7 @@
       "title": "No Role Modelz",
       "artist": "J. Cole",
       "spotifyId": "68Dni7IE4VyPkTOH9mRWHr",
-      "ytMusicId": "8HBcV0MtAQg",
+      "ytMusicId": "0EnRK5YvBwU",
       "streams": 602944,
       "peak": 38,
       "weeks": 223
