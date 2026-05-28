@@ -34,7 +34,7 @@ class PlayerState {
 	duration = $state(0);
 	volume = $state(loadPref('spotifx-volume', 80));
 	visible = $state(false);
-	queueOpen = $state(loadPref('spotifx-desktop-queue', true));
+	queueOpen = $state(false);
 	fullScreenOpen = $state(false);
 	shortcutsOpen = $state(false);
 	contextHue = $state<number | null>(null);
@@ -91,10 +91,6 @@ class PlayerState {
 		const playable = allTracks.filter((t) => t.ytMusicId);
 		if (!track.ytMusicId || playable.length === 0) return;
 		this._setNewQueue(playable, track);
-		if (typeof window !== 'undefined' && window.innerWidth >= 640) {
-			this.queueOpen = true;
-			savePref('spotifx-desktop-queue', true);
-		}
 	}
 
 	playAll(tracks: Track[], doShuffle = false) {
@@ -104,10 +100,6 @@ class PlayerState {
 		this.shuffled = doShuffle;
 		savePref('spotifx-shuffle', doShuffle);
 		this._setNewQueue(playable);
-		if (typeof window !== 'undefined' && window.innerWidth >= 640) {
-			this.queueOpen = true;
-			savePref('spotifx-desktop-queue', true);
-		}
 	}
 
 	private _insertManualTrack(track: Track, insertAt: number, checkExisting: 'move' | 'reject'): boolean {
@@ -288,7 +280,6 @@ class PlayerState {
 
 	toggleQueue() {
 		this.queueOpen = !this.queueOpen;
-		savePref('spotifx-desktop-queue', this.queueOpen);
 	}
 
 	toggleFullScreen() {

@@ -2,11 +2,13 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import { player } from '$lib/stores/player.svelte';
-	import { trackToHue } from '$lib/utils';
+	import { trackToHue, formatCompact } from '$lib/utils';
 	import ChartTable from '$lib/components/charts/ChartTable.svelte';
 	import SearchBar from '$lib/components/ui/SearchBar.svelte';
-	import HeroTrack from '$lib/components/track/HeroTrack.svelte';
 	import Icon from '$lib/components/ui/Icon.svelte';
+	import TrackThumbnail from '$lib/components/ui/TrackThumbnail.svelte';
+	import FavoriteButton from '$lib/components/ui/FavoriteButton.svelte';
+	import TrackMenu from '$lib/components/track/TrackMenu.svelte';
 
 	let { data }: { data: PageData } = $props();
 	let searchQuery = $state('');
@@ -50,51 +52,85 @@
 <div class="gradient-zone" style="--page-hue: {player.hue};">
 	<div class="gradient-bg"></div>
 
-	<div class="relative z-[1]">
-		<!-- Page title -->
-		<div class="mb-5 animate-fade-in">
-			<h1 class="text-2xl sm:text-3xl font-bold text-white mb-1">
-				{data.chart.countryName}
-				<span class="text-gray-500 font-normal">Weekly Chart</span>
-			</h1>
-			<p class="text-sm text-gray-400">
-				Week of {data.chart.weekDate} · Updated {formattedDate}
-			</p>
-		</div>
-
-		<!-- Hero track -->
+	<div class="relative z-[1] flex items-center gap-4 sm:gap-6 text-left animate-fade-in">
+		<!-- Cover Artwork -->
 		{#if heroTrack}
-			<HeroTrack track={heroTrack} tracks={data.chart.tracks} />
-		{/if}
-
-		<!-- Play controls -->
-		{#if playableCount > 0}
-			<div class="flex items-center gap-3 mb-1 animate-fade-in" style="animation-delay:100ms">
-				<button
-					onclick={() => player.playAll(data.chart.tracks)}
-					class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent text-black text-sm font-bold
-						   hover:scale-105 hover:bg-[#1ed760] active:scale-95 transition-all cursor-pointer shadow-lg shadow-accent/20"
-				>
-					<Icon name="play" />
-					Play All
-				</button>
-				<button
-					onclick={() => player.playAll(data.chart.tracks, true)}
-					class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.07]
-						   text-white text-sm font-semibold hover:bg-white/[0.12]
-						   active:scale-95 transition-all cursor-pointer"
-				>
-					<Icon name="shuffle" />
-					Shuffle
-				</button>
-				<span class="text-xs text-gray-500 hidden sm:inline">{data.chart.tracks.length} tracks · {playableCount} playable</span>
+			<div class="flex-shrink-0 w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-xl overflow-hidden shadow-2xl shadow-black/60 relative group bg-white/5">
+				<TrackThumbnail 
+					track={heroTrack} 
+					quality="hqdefault"
+					loading="eager"
+					class="w-full h-full object-cover"
+				/>
+				<div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
 			</div>
 		{/if}
+
+		<!-- Details & Controls -->
+		<div class="flex-1 min-w-0">
+			<div class="flex items-center gap-1.5 text-[9px] sm:text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">
+				<span>Weekly Chart</span>
+				{#if heroTrack}
+					<span class="text-white/20">·</span>
+					<span class="text-accent">#1 Today</span>
+				{/if}
+			</div>
+
+			<h1 class="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-none mb-1.5 sm:mb-2">
+				{data.chart.countryName}
+			</h1>
+
+			{#if heroTrack}
+				<p class="text-xs sm:text-sm text-gray-300 mb-3 truncate">
+					<span class="text-accent font-medium">Top Track:</span> 
+					<span class="text-white font-bold">{heroTrack.title}</span> 
+					<span class="text-gray-400">by {heroTrack.artist}</span>
+					<span class="text-gray-500 font-mono hidden sm:inline">({formatCompact(heroTrack.streams)} streams)</span>
+				</p>
+			{/if}
+
+			<!-- Play Actions -->
+			{#if playableCount > 0}
+				<div class="flex flex-wrap items-center gap-2">
+					<button
+						onclick={() => player.playAll(data.chart.tracks)}
+						class="flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-accent text-black text-[11px] sm:text-xs font-bold
+							   hover:scale-105 hover:bg-[#1ed760] active:scale-95 transition-all cursor-pointer shadow-lg shadow-accent/20"
+					>
+						<Icon name="play" class="w-3.5 h-3.5" />
+						Play All
+					</button>
+					<button
+						onclick={() => player.playAll(data.chart.tracks, true)}
+						class="flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/[0.07]
+							   text-white text-[11px] sm:text-xs font-semibold hover:bg-white/[0.12]
+							   active:scale-95 transition-all cursor-pointer"
+					>
+						<Icon name="shuffle" class="w-3.5 h-3.5" />
+						Shuffle
+					</button>
+
+					{#if heroTrack}
+						<div class="flex items-center gap-1 border-l border-white/10 pl-2 ml-1">
+							<FavoriteButton 
+								track={heroTrack} 
+								class="p-2 transition-colors cursor-pointer text-gray-400 hover:text-red-400 rounded-full hover:bg-white/5"
+								iconClass="w-4 h-4"
+							/>
+							<TrackMenu track={heroTrack} />
+						</div>
+					{/if}
+				</div>
+			{/if}
+		</div>
 	</div>
 </div>
 
 <!-- Search + Table zone (below gradient) -->
-<div class="mt-2">
+<div class="mt-4">
+	<div class="flex items-center justify-between mb-3 text-[11px] sm:text-xs text-gray-500 font-medium">
+		<span>Week of {data.chart.weekDate} · Updated {formattedDate}</span>
+	</div>
 	<SearchBar bind:value={searchQuery} />
 	<ChartTable tracks={data.chart.tracks} {searchQuery} />
 </div>

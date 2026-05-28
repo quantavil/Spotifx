@@ -18,33 +18,37 @@
 	<!-- Panels row: left content + right queue -->
 	<div class="panels-row" class:desktop-queue-closed={!player.queueOpen}>
 		<!-- Left Panel -->
-		<div class="left-panel scrollbar-thin" style="--dynamic-hue: {player.hue};">
+		<div
+			class="left-panel scrollbar-thin"
+			class:full-screen-open={player.fullScreenOpen}
+			class:queue-open-mobile={player.queueOpen}
+			style="--dynamic-hue: {player.hue};"
+		>
 			{#if player.fullScreenOpen}
 				<NowPlayingFull />
 			{/if}
-			<header class="sticky top-0 z-10 backdrop-blur-xl bg-surface/80">
-				<div class="max-w-6xl mx-auto px-4 sm:px-5 py-3 w-full">
-					<div class="flex items-center justify-between mb-3">
+			<header class="border-b border-white/5 bg-surface/20 flex-shrink-0">
+				<div class="max-w-6xl mx-auto px-4 sm:px-5 py-2.5 w-full">
+					<div class="flex items-center justify-between gap-4">
 						<a
 							href="/chart/global"
-							class="flex items-center gap-2.5 hover:opacity-80 transition-opacity"
+							class="flex items-center gap-2 hover:opacity-80 transition-opacity flex-shrink-0"
 						>
-							<svg viewBox="0 0 32 32" class="w-7 h-7 flex-shrink-0" aria-hidden="true">
+							<svg viewBox="0 0 32 32" class="w-6 h-6 flex-shrink-0" aria-hidden="true">
 								<rect width="32" height="32" rx="6" fill="#1DB954" />
 								<path d="M8 22V14h4v8H8zm6-10v10h4V12h-4zm6-4v14h4V8h-4z" fill="white" />
 							</svg>
-							<div class="leading-tight">
-								<span class="text-lg font-bold text-white block">Spotifx</span>
-								<span class="text-[11px] text-gray-500 -mt-0.5 block"
-									>Weekly streaming charts</span
-								>
-							</div>
+							<span class="text-base font-bold text-white leading-none">Spotifx</span>
 						</a>
+
+						<div class="flex-1 min-w-0 max-w-md">
+							<CountrySelector active={page.params?.country ?? 'global'} />
+						</div>
 
 						<button
 							onclick={() => player.toggleShortcuts()}
-							class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md
-								   bg-white/5 border border-white/[0.06] text-[11px] text-gray-500
+							class="hidden sm:inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md
+								   bg-white/5 border border-white/[0.06] text-[10px] text-gray-500
 								   hover:text-gray-300 hover:border-white/15 transition-colors cursor-pointer"
 							title="Keyboard shortcuts"
 						>
@@ -52,7 +56,6 @@
 							<span>Shortcuts</span>
 						</button>
 					</div>
-					<CountrySelector active={page.params?.country ?? 'global'} />
 				</div>
 			</header>
 
@@ -109,6 +112,16 @@
 		display: flex;
 		flex-direction: column;
 		min-height: 0;
+	}
+
+	.left-panel.full-screen-open {
+		overflow-y: hidden;
+	}
+
+	@media (max-width: 639px) {
+		.left-panel.queue-open-mobile {
+			overflow-y: hidden;
+		}
 	}
 
 	.right-panel {

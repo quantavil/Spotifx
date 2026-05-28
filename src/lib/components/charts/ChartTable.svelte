@@ -65,32 +65,8 @@
 		player.playOrToggle(track, tracks);
 	}
 
-	// ── Virtual scroll ──
-	const ROW_HEIGHT = 52; // px — matches py-2.5 rows (~10+32+10)
-	const BUFFER = 8;      // extra rows rendered above and below viewport
-
-	let scrollTop = $state(0);
-	let containerHeight = $state(600);
-	let containerEl = $state<HTMLDivElement | null>(null);
 	let windowWidth = $state(typeof window !== 'undefined' ? window.innerWidth : 1024);
 	const colCount = $derived(windowWidth >= 768 ? 7 : 5);
-
-	$effect(() => {
-		if (!containerEl) return;
-		const ro = new ResizeObserver(([entry]) => {
-			containerHeight = entry.contentRect.height;
-		});
-		ro.observe(containerEl);
-		return () => ro.disconnect();
-	});
-
-	const startIndex = $derived(Math.max(0, Math.floor(scrollTop / ROW_HEIGHT) - BUFFER));
-	const endIndex = $derived(
-		Math.min(processed.length, Math.ceil((scrollTop + containerHeight) / ROW_HEIGHT) + BUFFER)
-	);
-	const visibleSlice = $derived(processed.slice(startIndex, endIndex));
-	const paddingTop = $derived(startIndex * ROW_HEIGHT);
-	const paddingBottom = $derived(Math.max(0, (processed.length - endIndex) * ROW_HEIGHT));
 </script>
 
 <svelte:window onresize={() => (windowWidth = window.innerWidth)} />
@@ -115,12 +91,8 @@
 		{/if}
 	</div>
 
-	<!-- Virtualized scroll container -->
-	<div
-		bind:this={containerEl}
-		class="overflow-x-auto overflow-y-auto virtual-scroll-container"
-		onscroll={(e) => (scrollTop = (e.currentTarget as HTMLDivElement).scrollTop)}
-	>
+	<!-- Scroll container for horizontal overflow only on narrow viewports -->
+	<div class="overflow-x-auto">
 		<table class="w-full text-sm table-fixed">
 			<thead>
 				<tr class="border-b border-white/[0.06] text-gray-500 text-[11px] uppercase tracking-wider">
@@ -171,12 +143,7 @@
 						</td>
 					</tr>
 				{:else}
-					<!-- Top spacer: holds space for rows scrolled above the viewport -->
-					{#if paddingTop > 0}
-						<tr aria-hidden="true"><td colspan={colCount} style="height:{paddingTop}px;padding:0;"></td></tr>
-					{/if}
-
-					{#each visibleSlice as track (track.spotifyId || `r${track.rank}-${track.title}`)}
+					{#each processed as track (track.spotifyId || `r${track.rank}-${track.title}`)}
 						{@const isActive = player.isCurrentTrack(track) && player.isPlaying}
 						{@const isCurrentTrack = player.isCurrentTrack(track)}
 						{@const trackFav = track.spotifyId ? favorites.has(track.spotifyId) : false}
@@ -246,21 +213,8 @@
 							</td>
 						</tr>
 					{/each}
-
-					<!-- Bottom spacer: holds space for rows not yet scrolled to -->
-					{#if paddingBottom > 0}
-						<tr aria-hidden="true"><td colspan={colCount} style="height:{paddingBottom}px;padding:0;"></td></tr>
-					{/if}
 				{/if}
 			</tbody>
 		</table>
 	</div>
 </div>
-
-<style>
-	.virtual-scroll-container {
-		max-height: calc(100svh - 300px);
-		scrollbar-width: thin;
-		scrollbar-color: rgba(255,255,255,0.12) transparent;
-	}
-</style>

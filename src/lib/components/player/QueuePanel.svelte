@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { player } from '$lib/stores/player.svelte';
 	import { fly } from 'svelte/transition';
+	import { cubicOut } from 'svelte/easing';
 	import Icon from '../ui/Icon.svelte';
 	import TrackThumbnail from '../ui/TrackThumbnail.svelte';
 	import Equalizer from '../ui/Equalizer.svelte';
@@ -52,7 +53,7 @@
 
 	<div
 		class={isDesktop ? "flex flex-col h-full bg-transparent relative" : "fixed inset-y-0 right-0 w-full bg-[#090909] z-[60] flex flex-col shadow-2xl border-l border-white/5"}
-		transition:fly={isDesktop ? undefined : { x: 400, duration: 300 }}
+		transition:fly={isDesktop ? undefined : { x: typeof window !== 'undefined' ? window.innerWidth : 400, duration: 350, easing: cubicOut }}
 		style={isDesktop ? '' : `--page-hue: ${player.hue};`}
 	>
 		<!-- Header -->

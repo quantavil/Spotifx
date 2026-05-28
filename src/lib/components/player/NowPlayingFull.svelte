@@ -3,6 +3,7 @@
 	import { player } from '$lib/stores/player.svelte';
 	import { formatTime, formatCompact } from '$lib/utils';
 	import { fly } from 'svelte/transition';
+	import { cubicOut } from 'svelte/easing';
 	import { scrollText } from '$lib/actions';
 	import Icon from '../ui/Icon.svelte';
 	import TrackThumbnail from '../ui/TrackThumbnail.svelte';
@@ -42,7 +43,7 @@
 	<div
 		class="fixed inset-0 sm:absolute sm:inset-0 z-[55] sm:z-20 flex flex-col overflow-hidden sm:rounded-lg"
 		style="background: linear-gradient(180deg, hsl({player.hue} 45% 14%) 0%, hsl({player.hue} 30% 5%) 50%, hsl({player.hue} 15% 3%) 100%);"
-		transition:fly={{ y: 600, duration: 300 }}
+		transition:fly={{ y: typeof window !== 'undefined' ? window.innerHeight : 800, duration: 400, easing: cubicOut }}
 	>
 		<!-- Top bar -->
 		<div class="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 flex-shrink-0">

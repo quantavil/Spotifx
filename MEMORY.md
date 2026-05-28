@@ -160,3 +160,9 @@ A hobby music charts dashboard displaying weekly Spotify streaming data for mult
 - `spotifx-shuffle` — `"true"` | `"false"`
 - `spotifx-repeat` — `"off"` | `"all"` | `"one"`
 - `spotifx-favorites` — JSON array of Spotify track IDs
+
+## Bug Fixes & Discoveries
+- Queue default-open: Queue is now closed by default on startup for both mobile and desktop, and does not auto-open when tracks are played.
+- Mobile scroll leak: Set `overflow-y: hidden` inline on `left-panel` when player fullscreen or mobile queue overlay is open to lock background scrolling.
+- Compact Top Banner: Removed redundant subtitle "Weekly streaming charts", shrunk logo size, and placed the logo, country selector, and shortcuts button on a single row (saving vertical space). Made header non-sticky so it scrolls away naturally. Redesigned the chart page banner to align in a clean row format on both mobile and desktop, enlarged the top song cover art to w-28 on mobile (properly filling the space), and moved the week date update text to sit natively above the search bar.
+- Single unified page scroll: Removed virtual scroll nested containers/max-height from `ChartTable.svelte`, consolidating all table content under the parent page scroll.
