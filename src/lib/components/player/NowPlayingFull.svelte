@@ -40,7 +40,7 @@
 
 {#if player.fullScreenOpen && track}
 	<div
-		class="fixed inset-0 sm:bottom-0 sm:right-[24rem] z-[55] sm:z-40 flex flex-col overflow-hidden sm:pb-[5.5rem]"
+		class="fixed inset-0 sm:absolute sm:inset-0 z-[55] sm:z-20 flex flex-col overflow-hidden sm:rounded-lg"
 		style="background: linear-gradient(180deg, hsl({player.hue} 45% 14%) 0%, hsl({player.hue} 30% 5%) 50%, hsl({player.hue} 15% 3%) 100%);"
 		transition:fly={{ y: 600, duration: 300 }}
 	>

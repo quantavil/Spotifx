@@ -16,9 +16,12 @@
 
 <div class="app-shell">
 	<!-- Panels row: left content + right queue -->
-	<div class="panels-row" class:desktop-queue-closed={!player.desktopQueueOpen}>
+	<div class="panels-row" class:desktop-queue-closed={!player.queueOpen}>
 		<!-- Left Panel -->
 		<div class="left-panel scrollbar-thin" style="--dynamic-hue: {player.hue};">
+			{#if player.fullScreenOpen}
+				<NowPlayingFull />
+			{/if}
 			<header class="sticky top-0 z-10 backdrop-blur-xl bg-surface/80">
 				<div class="max-w-6xl mx-auto px-4 sm:px-5 py-3 w-full">
 					<div class="flex items-center justify-between mb-3">
@@ -57,22 +60,10 @@
 				{@render children()}
 			</main>
 
-			<footer class="py-5 text-center text-xs text-gray-600">
-				<p>
-					Data from
-					<a
-						href="https://kworb.net"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="underline hover:text-gray-400 transition-colors">kworb.net</a
-					>
-					· Streaming data © Spotify · Not affiliated with Spotify AB
-				</p>
-			</footer>
 		</div>
 
 		<!-- Right Panel: Queue (Desktop only) -->
-		{#if player.desktopQueueOpen}
+		{#if player.queueOpen}
 		<div class="right-panel hidden sm:flex flex-col">
 			<QueuePanel isDesktop={true} />
 		</div>
@@ -88,7 +79,6 @@
 	<MusicPlayer />
 </div>
 
-<NowPlayingFull />
 <ShortcutsModal />
 <Toast />
 
@@ -111,44 +101,7 @@
 	}
 
 	.left-panel {
-		background-color: var(--color-surface);
-		border-radius: 8px;
-		overflow-y: auto;
-		overflow-x: hidden;
-		display: flex;
-		flex-direction: column;
-		min-height: 0;
-	}
-
-	.right-panel {
-		background-color: var(--color-surface);
-		border-radius: 8px;
-		overflow: hidden;
-		min-height: 0;
-	}
-
-	@media (min-width: 640px) {
-		.panels-row {
-			grid-template-columns: 1fr 22rem;
-		}
-	}
-
-	@media (max-width: 639px) {
-		.app-shell {
-			padding: 0;
-		}
-		.left-panel {
-			border-radius: 0;
-		}
-	}
-</style>s-row {
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: 6px;
-		min-height: 0;
-	}
-
-	.left-panel {
+		position: relative;
 		background-color: var(--color-surface);
 		border-radius: 8px;
 		overflow-y: auto;

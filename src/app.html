@@ -12,6 +12,20 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 		<meta name="apple-mobile-web-app-title" content="Spotifx" />
 		<meta name="description" content="Weekly Spotify streaming charts for multiple countries" />
+		<script>
+			window.addEventListener('error', function(e) {
+				const div = document.createElement('div');
+				div.style = 'position:fixed;top:0;left:0;right:0;background:red;color:white;z-index:999999;padding:20px;font-family:monospace;white-space:pre-wrap;';
+				div.textContent = 'ERROR: ' + e.message + '\n\n' + e.error?.stack;
+				document.body.appendChild(div);
+			});
+			window.addEventListener('unhandledrejection', function(e) {
+				const div = document.createElement('div');
+				div.style = 'position:fixed;top:0;left:0;right:0;background:red;color:white;z-index:999999;padding:20px;font-family:monospace;white-space:pre-wrap;';
+				div.textContent = 'PROMISE REJECTION: ' + (e.reason?.message || e.reason) + '\n\n' + e.reason?.stack;
+				document.body.appendChild(div);
+			});
+		</script>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">

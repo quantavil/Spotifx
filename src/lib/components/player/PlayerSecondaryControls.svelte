@@ -33,7 +33,7 @@
 
 		<button
 			onclick={() => player.toggleQueue()}
-			class="p-1.5 transition-colors cursor-pointer {player.desktopQueueOpen ? 'text-accent' : 'text-gray-500 hover:text-white'}"
+			class="p-1.5 transition-colors cursor-pointer {player.queueOpen ? 'text-accent' : 'text-gray-500 hover:text-white'}"
 			title="Toggle queue (Q)"
 			aria-label="Toggle queue"
 		>

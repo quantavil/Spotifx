@@ -1,30 +1,42 @@
-<!-- src/lib/components/SearchBar.svelte -->
+<!-- src/lib/components/ui/SearchBar.svelte -->
 <script lang="ts">
+	import { untrack } from 'svelte';
 	import Icon from './Icon.svelte';
 
 	let { value = $bindable('') }: { value: string } = $props();
 	let inputEl: HTMLInputElement | undefined = $state();
 	let internalValue = $state(value);
+	let timeoutId: any;
 
-	$effect(() => {
-		const t = setTimeout(() => {
+	function handleInput() {
+		clearTimeout(timeoutId);
+		timeoutId = setTimeout(() => {
 			value = internalValue;
 		}, 100);
-		return () => clearTimeout(t);
-	});
+	}
 
-	// Sync external changes back to internal (e.g. clear button)
+	function handleClear() {
+		internalValue = '';
+		value = '';
+		clearTimeout(timeoutId);
+		inputEl?.focus();
+	}
+
+	// Sync external changes back to internal (e.g. parent resetting it)
 	$effect(() => {
-		if (value !== internalValue) {
-			internalValue = value;
-		}
+		const external = value;
+		untrack(() => {
+			if (external !== internalValue) {
+				internalValue = external;
+			}
+		});
 	});
 
 	function handleGlobalKey(e: KeyboardEvent) {
 		const tag = (e.target as HTMLElement)?.tagName;
 		if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') {
 			if (e.key === 'Escape') {
-				internalValue = '';
+				handleClear();
 				inputEl?.blur();
 			}
 			return;
@@ -43,6 +55,7 @@
 	<input
 		bind:this={inputEl}
 		bind:value={internalValue}
+		oninput={handleInput}
 		type="text"
 		placeholder="Search tracks or artists…"
 		class="w-full pl-10 pr-16 py-2.5 rounded-full bg-white/[0.07]
@@ -52,7 +65,7 @@
 	/>
 	{#if internalValue}
 		<button
-			onclick={() => (internalValue = '')}
+			onclick={handleClear}
 			class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white transition-colors cursor-pointer"
 			aria-label="Clear search"
 		>

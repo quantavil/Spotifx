@@ -16,6 +16,7 @@
 	import PlayerSecondaryControls from './PlayerSecondaryControls.svelte';
 
 	let ytPlayer: any = null;
+	let ytContainer: HTMLDivElement | undefined = $state();
 	let progressInterval: ReturnType<typeof setInterval> | null = null;
 	let apiLoaded = false;
 	let apiLoading = false;
@@ -53,7 +54,12 @@
 	}
 
 	function createPlayer() {
-		if (ytPlayer || !apiLoaded) return;
+		if (ytPlayer || !apiLoaded || !ytContainer) return;
+		
+		const div = document.createElement('div');
+		div.id = 'yt-hidden-player';
+		ytContainer.appendChild(div);
+
 		ytPlayer = new (window as any).YT.Player('yt-hidden-player', {
 			height: '1',
 			width: '1',
@@ -368,12 +374,11 @@
 <svelte:window onkeydown={handleKeydown} />
 
 <div
+	bind:this={ytContainer}
 	class="fixed pointer-events-none"
 	style="left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden;"
 	aria-hidden="true"
->
-	<div id="yt-hidden-player"></div>
-</div>
+></div>
 
 {#if player.visible}
 	<div
@@ -407,10 +412,14 @@
 {/if}
 
 <style>
+	.player-bar {
+		position: relative;
+		width: 100%;
+		border-top: 1px solid rgba(255, 255, 255, 0.06);
+	}
+
 	.player-grid {
 		display: grid;
 		grid-template-columns: 1fr auto 1fr;
 	}
-
-
 </style>

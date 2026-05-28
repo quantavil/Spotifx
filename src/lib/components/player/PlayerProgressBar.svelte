@@ -21,12 +21,21 @@
 		easing: cubicOut
 	});
 
+	let currentAmp = $state(WAVE_THICK);
+
 	$effect(() => {
 		dynamicAmp.set((player.isPlaying && player.duration > 0) ? WAVE_AMP : WAVE_THICK);
 	});
 
+	$effect(() => {
+		const unsubscribe = dynamicAmp.subscribe((val) => {
+			currentAmp = val;
+		});
+		return unsubscribe;
+	});
+
 	let waveDataUrl = $derived.by(() => {
-		const h = $dynamicAmp;
+		const h = currentAmp;
 		const w = WAVE_LEN;
 		const s = WAVE_THICK;
 		
@@ -95,7 +104,7 @@
 	<div 
 		class="wavy-bar w-full relative"
 		class:playing={player.isPlaying && !seeking && player.duration > 0}
-		style="height: {WAVE_AMP}rem; --wave-mask: {waveDataUrl}; --mask-size-x: {WAVE_LEN}rem; --mask-size-y: {$dynamicAmp}rem; --wave-len: {WAVE_LEN}rem;"
+		style="height: {WAVE_AMP}rem; --wave-mask: {waveDataUrl}; --mask-size-x: {WAVE_LEN}rem; --mask-size-y: {currentAmp}rem; --wave-len: {WAVE_LEN}rem;"
 	>
 		<div
 			class="h-full bg-accent transition-[width]"

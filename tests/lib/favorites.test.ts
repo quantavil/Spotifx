@@ -28,7 +28,7 @@ describe('FavoritesState migration', () => {
 		localStorage.setItem(LEGACY_KEY, JSON.stringify(['id1', 'id2']));
 		
 		// Import favorites after setting up localStorage
-		const { favorites } = await import('../../src/lib/stores/favorites.svelte.ts');
+		const { favorites } = await import('../../src/lib/stores/favorites.svelte');
 		
 		// Wait for next tick if there are effects, but constructor is synchronous
 		expect(favorites.has('id1')).toBe(true);
