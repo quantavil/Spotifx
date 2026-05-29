@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-05-28",
-  "lastUpdated": "2026-05-28T10:01:07.518Z",
+  "weekDate": "2026-05-29",
+  "lastUpdated": "2026-05-29T09:50:54.816Z",
   "tracks": [
     {
       "rank": 1,
@@ -747,7 +747,7 @@
       "title": "Riptide",
       "artist": "Vance Joy",
       "spotifyId": "7yq4Qj7cqayVTp3FF9CWbm",
-      "ytMusicId": "En_6WWOWh8E",
+      "ytMusicId": "duD0EBbrOMk",
       "streams": 1022808,
       "peak": 7,
       "weeks": 583
@@ -758,7 +758,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "X7AN68W5qDI",
+      "ytMusicId": "FrsOnNxIrg8",
       "streams": 1021227,
       "peak": 1,
       "weeks": 388
@@ -799,7 +799,7 @@
     {
       "rank": 73,
       "change": "-19",
-      "title": "Golden (w/ Ejae, AUDREY NUNA, REI AMI, KPop Demon Hunters Cast)",
+      "title": "Golden (w/ EJae, AUDREY NUNA, REI AMI, KPop Demon Hunters Cast)",
       "artist": "HUNTR/X",
       "spotifyId": "1CPZ5BxNNd0n0nF4Orb9JS",
       "ytMusicId": "9_bTl2vvYQg",
@@ -1044,7 +1044,7 @@
       "title": "Everywhere",
       "artist": "Fleetwood Mac",
       "spotifyId": "38iKuyifRL4mQ36F2hIxmF",
-      "ytMusicId": "wLSUDSNqLgQ",
+      "ytMusicId": "fIoxpiS01gE",
       "streams": 826605,
       "peak": 48,
       "weeks": 19
@@ -1143,7 +1143,7 @@
       "title": "The Great Divide",
       "artist": "Noah Kahan",
       "spotifyId": "77zqs8ucHCSk5jh9TYec4b",
-      "ytMusicId": "zDYCdhyswko",
+      "ytMusicId": "wk5P5nV_3wI",
       "streams": 790064,
       "peak": 7,
       "weeks": 16
@@ -1429,7 +1429,7 @@
       "title": "That’s So True",
       "artist": "Gracie Abrams",
       "spotifyId": "7ne4VBA60CxGM75vw0EYad",
-      "ytMusicId": "AOz9V0NhJe8",
+      "ytMusicId": "W_YOJWZIjxo",
       "streams": 717211,
       "peak": 1,
       "weeks": 83
@@ -1649,7 +1649,7 @@
       "title": "Dakota",
       "artist": "Stereophonics",
       "spotifyId": "3qaSqrrevBrb84xl5JlptU",
-      "ytMusicId": "Z54A_Q0vAL0",
+      "ytMusicId": "hV2nAVjV8Fc",
       "streams": 676734,
       "peak": 49,
       "weeks": 97
@@ -1803,7 +1803,7 @@
       "title": "Purple Rain",
       "artist": "Prince",
       "spotifyId": "1uvyZBs4IZYRebHIB1747m",
-      "ytMusicId": "347vCib_lMs",
+      "ytMusicId": "iSBVeZrDfGY",
       "streams": 636065,
       "peak": 17,
       "weeks": 20
@@ -1902,7 +1902,7 @@
       "title": "All The Stars (w/ SZA)",
       "artist": "Kendrick Lamar",
       "spotifyId": "3GCdLUSnKSMJhs4Tj6CV3s",
-      "ytMusicId": "vdXsLt0o_9g",
+      "ytMusicId": "ju4KQT0wL0I",
       "streams": 617534,
       "peak": 2,
       "weeks": 180

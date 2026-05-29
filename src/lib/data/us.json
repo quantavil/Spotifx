@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-05-28",
-  "lastUpdated": "2026-05-28T10:00:12.242Z",
+  "weekDate": "2026-05-29",
+  "lastUpdated": "2026-05-29T09:50:02.828Z",
   "tracks": [
     {
       "rank": 1,
@@ -703,7 +703,7 @@
       "title": "The Great Divide",
       "artist": "Noah Kahan",
       "spotifyId": "77zqs8ucHCSk5jh9TYec4b",
-      "ytMusicId": "zDYCdhyswko",
+      "ytMusicId": "wk5P5nV_3wI",
       "streams": 4001318,
       "peak": 1,
       "weeks": 16
@@ -744,7 +744,7 @@
     {
       "rank": 68,
       "change": "-20",
-      "title": "Golden (w/ Ejae, AUDREY NUNA, REI AMI, KPop Demon Hunters Cast)",
+      "title": "Golden (w/ EJae, AUDREY NUNA, REI AMI, KPop Demon Hunters Cast)",
       "artist": "HUNTR/X",
       "spotifyId": "1CPZ5BxNNd0n0nF4Orb9JS",
       "ytMusicId": "9_bTl2vvYQg",
@@ -758,7 +758,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "X7AN68W5qDI",
+      "ytMusicId": "FrsOnNxIrg8",
       "streams": 3852447,
       "peak": 1,
       "weeks": 172
@@ -934,7 +934,7 @@
       "title": "Riptide",
       "artist": "Vance Joy",
       "spotifyId": "7yq4Qj7cqayVTp3FF9CWbm",
-      "ytMusicId": "En_6WWOWh8E",
+      "ytMusicId": "duD0EBbrOMk",
       "streams": 3443034,
       "peak": 12,
       "weeks": 230
@@ -1836,7 +1836,7 @@
       "title": "All The Stars (w/ SZA)",
       "artist": "Kendrick Lamar",
       "spotifyId": "3GCdLUSnKSMJhs4Tj6CV3s",
-      "ytMusicId": "vdXsLt0o_9g",
+      "ytMusicId": "ju4KQT0wL0I",
       "streams": 2695788,
       "peak": 2,
       "weeks": 193
