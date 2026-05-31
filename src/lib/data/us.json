@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-05-30",
-  "lastUpdated": "2026-05-30T08:29:33.026Z",
+  "weekDate": "2026-05-31",
+  "lastUpdated": "2026-05-31T08:45:06.504Z",
   "tracks": [
     {
       "rank": 1,
@@ -32,7 +32,7 @@
       "title": "Choosin' Texas",
       "artist": "Ella Langley",
       "spotifyId": "65DbTqJKhbwqYbZ1Okr0rc",
-      "ytMusicId": "xukbqwRuN5w",
+      "ytMusicId": "3s1sZbW7Rt8",
       "streams": 12243673,
       "peak": 1,
       "weeks": 32
@@ -109,7 +109,7 @@
       "title": "Be Her",
       "artist": "Ella Langley",
       "spotifyId": "13HD3tYTiz8oSRxWzXEq7g",
-      "ytMusicId": "2xklUpzCXcQ",
+      "ytMusicId": "A0ttKAXj1xU",
       "streams": 7439856,
       "peak": 3,
       "weeks": 15
@@ -560,7 +560,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "FrsOnNxIrg8",
+      "ytMusicId": "X7AN68W5qDI",
       "streams": 3727747,
       "peak": 1,
       "weeks": 173
@@ -1055,7 +1055,7 @@
       "title": "Rein Me In (w/ Olivia Dean)",
       "artist": "Sam Fender",
       "spotifyId": "0MUXBhPUDF8or0kfQ0EHwV",
-      "ytMusicId": "4vpTO9TBZKc",
+      "ytMusicId": "NO3JTAsB4NI",
       "streams": 2989473,
       "peak": 83,
       "weeks": 10
@@ -1209,7 +1209,7 @@
       "title": "Scar Tissue - 2014 Remaster",
       "artist": "Red Hot Chili Peppers",
       "spotifyId": "32sx78QsGg6pKXn42XvF9L",
-      "ytMusicId": "tpYdGgzCW-M",
+      "ytMusicId": "U7k2qv8KTDI",
       "streams": 2878013,
       "peak": 65,
       "weeks": 13
@@ -1352,7 +1352,7 @@
       "title": "No Role Modelz",
       "artist": "J. Cole",
       "spotifyId": "68Dni7IE4VyPkTOH9mRWHr",
-      "ytMusicId": "0EnRK5YvBwU",
+      "ytMusicId": "8HBcV0MtAQg",
       "streams": 2742625,
       "peak": 10,
       "weeks": 525
@@ -1396,7 +1396,7 @@
       "title": "Make Them Remember",
       "artist": "Drake",
       "spotifyId": "73ycOMnODtUc2Ggj6EfCpO",
-      "ytMusicId": "OzSX0r2JJ_Q",
+      "ytMusicId": "Yg1ASzd6Qko",
       "streams": 2721556,
       "peak": 18,
       "weeks": 2
@@ -1627,7 +1627,7 @@
       "title": "That's What I Like",
       "artist": "Bruno Mars",
       "spotifyId": "0KKkJNfGyhkQ5aFogxQAPU",
-      "ytMusicId": "",
+      "ytMusicId": "JucvYrdSIcM",
       "streams": 2573993,
       "peak": 3,
       "weeks": 125

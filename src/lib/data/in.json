@@ -1,8 +1,8 @@
 {
   "country": "in",
   "countryName": "India",
-  "weekDate": "2026-05-30",
-  "lastUpdated": "2026-05-30T08:28:02.010Z",
+  "weekDate": "2026-05-31",
+  "lastUpdated": "2026-05-31T08:43:43.899Z",
   "tracks": [
     {
       "rank": 1,
@@ -76,7 +76,7 @@
       "title": "Jaiye Sajana (w/ Jasmine Sandlas, Satinder Sartaaj)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "6xwKNAUHeo2DbWNAPi8aEy",
-      "ytMusicId": "TaTZb7NXja0",
+      "ytMusicId": "AxN0RjNx6WM",
       "streams": 4826285,
       "peak": 2,
       "weeks": 10
@@ -373,7 +373,7 @@
       "title": "Mast Magan (From \"2 States) (w/ Chinmayi)",
       "artist": "Arijit Singh",
       "spotifyId": "5bVmOD7UKfP2iLFUGMtdnS",
-      "ytMusicId": "InD68CDGT9Q",
+      "ytMusicId": "SDQdGibJ9mE",
       "streams": 2646365,
       "peak": 28,
       "weeks": 39
@@ -384,7 +384,7 @@
       "title": "Jaan Se Guzarte Hain (w/ Khan Saab)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "4aWTPC6cuebk9zSpW1PY1Y",
-      "ytMusicId": "iICM37_na2U",
+      "ytMusicId": "9wnBVhOpJCU",
       "streams": 2579877,
       "peak": 7,
       "weeks": 10
@@ -428,7 +428,7 @@
       "title": "God Mode (w/ Gana Muthu, Vishnu Edavan)",
       "artist": "Sai Abhyankkar",
       "spotifyId": "1KT8UcTXHJVOLuRFZmRxtA",
-      "ytMusicId": "eIeIkZ5Li88",
+      "ytMusicId": "qemjcgBJMCE",
       "streams": 2481802,
       "peak": 39,
       "weeks": 2
@@ -1066,7 +1066,7 @@
       "title": "Paro (w/ UNPLG'd)",
       "artist": "Aditya Rikhari",
       "spotifyId": "6nRGPf5tpeJtKpXZO5cgIT",
-      "ytMusicId": "U04qjtXo7V0",
+      "ytMusicId": "gZ0vHQKfNH8",
       "streams": 1610616,
       "peak": 7,
       "weeks": 64
@@ -1209,7 +1209,7 @@
       "title": "Aawaara Angaara (w/ Faheem Abdullah, Irshad Kamil)",
       "artist": "A.R. Rahman",
       "spotifyId": "6flQ5XJKj5qIhpxSHOd3jC",
-      "ytMusicId": "gkQx5m2KHAQ",
+      "ytMusicId": "FN1Pw26WmxY",
       "streams": 1541205,
       "peak": 6,
       "weeks": 27
@@ -1451,7 +1451,7 @@
       "title": "Sajde (w/ Huzaif Nazar)",
       "artist": "Faheem Abdullah",
       "spotifyId": "4BGfzLrK6lgvKDjKSU7wrN",
-      "ytMusicId": "k8bXbFBItgI",
+      "ytMusicId": "RGePEWv5Vx0",
       "streams": 1480955,
       "peak": 13,
       "weeks": 52
@@ -1605,7 +1605,7 @@
       "title": "Piche Tere (w/ Dishant)",
       "artist": "Kunwarr",
       "spotifyId": "4ZWoJ4tRi74mHHnItB3k9h",
-      "ytMusicId": "_kdqbcuXl5A",
+      "ytMusicId": "AM7u5EmM-IQ",
       "streams": 1441171,
       "peak": 94,
       "weeks": 17
@@ -1836,7 +1836,7 @@
       "title": "Baarish (w/ Ash King)",
       "artist": "Shashaa Tirupati",
       "spotifyId": "3jnSt2tdPBUduMTRipkIBF",
-      "ytMusicId": "4ZfATiCxsmw",
+      "ytMusicId": "xHIFoslaWoo",
       "streams": 1354702,
       "peak": 112,
       "weeks": 4
@@ -1957,7 +1957,7 @@
       "title": "Hawayein (w/ Arijit Singh)",
       "artist": "Pritam",
       "spotifyId": "0l6g8Z8mqGbGXFOjigYetD",
-      "ytMusicId": "ii9KLQoV78I",
+      "ytMusicId": "8bpvsIxGsO4",
       "streams": 1327982,
       "peak": 51,
       "weeks": 228
@@ -2045,7 +2045,7 @@
       "title": "Tu Hain Toh (From \"Mr. And Mrs. Mahi\") (w/ Bunny, Sagar)",
       "artist": "Hunny",
       "spotifyId": "6egfWbtFFhMToV2DvmEzmo",
-      "ytMusicId": "ohx5VxmQCmM",
+      "ytMusicId": "G5WYGHjXdDw",
       "streams": 1303110,
       "peak": 8,
       "weeks": 62
