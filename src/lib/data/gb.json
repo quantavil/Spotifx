@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-05-31",
-  "lastUpdated": "2026-05-31T08:46:00.930Z",
+  "weekDate": "2026-06-01",
+  "lastUpdated": "2026-06-01T11:29:04.421Z",
   "tracks": [
     {
       "rank": 1,
@@ -76,7 +76,7 @@
       "title": "Beat It",
       "artist": "Michael Jackson",
       "spotifyId": "3BovdzfaX4jb5KFQwoPfAw",
-      "ytMusicId": "kOn-HdEg6AQ",
+      "ytMusicId": "WlTlUseVt7E",
       "streams": 2117030,
       "peak": 6,
       "weeks": 6
@@ -175,7 +175,7 @@
       "title": "Choosin' Texas",
       "artist": "Ella Langley",
       "spotifyId": "65DbTqJKhbwqYbZ1Okr0rc",
-      "ytMusicId": "3s1sZbW7Rt8",
+      "ytMusicId": "xukbqwRuN5w",
       "streams": 1725732,
       "peak": 16,
       "weeks": 17
@@ -483,7 +483,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "X7AN68W5qDI",
+      "ytMusicId": "FrsOnNxIrg8",
       "streams": 1198023,
       "peak": 1,
       "weeks": 389
@@ -527,7 +527,7 @@
       "title": "Shabang",
       "artist": "Drake",
       "spotifyId": "6vjpQIdABqntoe3zPazPec",
-      "ytMusicId": "alREBKH_AJg",
+      "ytMusicId": "fpr2AM8ziEs",
       "streams": 1146161,
       "peak": 12,
       "weeks": 2
@@ -681,7 +681,7 @@
       "title": "The Way You Make Me Feel - 2012 Remaster",
       "artist": "Michael Jackson",
       "spotifyId": "76HKOVWqsEg26SECtmw7Rz",
-      "ytMusicId": "T3FG_YQOW5k",
+      "ytMusicId": "VtM-rHPwN7o",
       "streams": 947161,
       "peak": 43,
       "weeks": 5
@@ -1000,7 +1000,7 @@
       "title": "They Don't Care About Us",
       "artist": "Michael Jackson",
       "spotifyId": "3wuCCNCnBhJlwkIJTBZFiv",
-      "ytMusicId": "GsHZBisKwxg",
+      "ytMusicId": "-_OPJ2d86kE",
       "streams": 819365,
       "peak": 56,
       "weeks": 5
@@ -1154,7 +1154,7 @@
       "title": "Cinderella (w/ Ty Dolla $ign)",
       "artist": "Mac Miller",
       "spotifyId": "2lpygKqzPFtItQ4ss3cgfb",
-      "ytMusicId": "wbt_E7LNDaA",
+      "ytMusicId": "HCgltcEaB_0",
       "streams": 784619,
       "peak": 105,
       "weeks": 2
@@ -1627,7 +1627,7 @@
       "title": "Scar Tissue - 2014 Remaster",
       "artist": "Red Hot Chili Peppers",
       "spotifyId": "32sx78QsGg6pKXn42XvF9L",
-      "ytMusicId": "U7k2qv8KTDI",
+      "ytMusicId": "tpYdGgzCW-M",
       "streams": 690398,
       "peak": 92,
       "weeks": 12
@@ -1649,7 +1649,7 @@
       "title": "Ain't No Mountain High Enough (w/ Tammi Terrell)",
       "artist": "Marvin Gaye",
       "spotifyId": "7tqhbajSfrz2F7E1Z75ASX",
-      "ytMusicId": "oB9JIz72BoM",
+      "ytMusicId": "ABfQuZqq8wg",
       "streams": 688689,
       "peak": 35,
       "weeks": 121
@@ -2045,7 +2045,7 @@
       "title": "All The Stars (w/ SZA)",
       "artist": "Kendrick Lamar",
       "spotifyId": "3GCdLUSnKSMJhs4Tj6CV3s",
-      "ytMusicId": "ju4KQT0wL0I",
+      "ytMusicId": "vdXsLt0o_9g",
       "streams": 624840,
       "peak": 2,
       "weeks": 181
@@ -2100,7 +2100,7 @@
       "title": "I Run (w/ Kaitlin Aragon)",
       "artist": "HAVEN.",
       "spotifyId": "1WwQ714xuznu44tEnkem2g",
-      "ytMusicId": "rK6XC4_n1rY",
+      "ytMusicId": "Dn5n6CQnERo",
       "streams": 619285,
       "peak": 25,
       "weeks": 26
@@ -2177,7 +2177,7 @@
       "title": "Die With A Smile (w/ Bruno Mars)",
       "artist": "Lady Gaga",
       "spotifyId": "2plbrEY59IikOBgBGLjaoe",
-      "ytMusicId": "DlFXDl_ROAM",
+      "ytMusicId": "koGyvheXKvM",
       "streams": 606830,
       "peak": 3,
       "weeks": 92

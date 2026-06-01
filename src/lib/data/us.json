@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-05-31",
-  "lastUpdated": "2026-05-31T08:45:06.504Z",
+  "weekDate": "2026-06-01",
+  "lastUpdated": "2026-06-01T11:28:04.198Z",
   "tracks": [
     {
       "rank": 1,
@@ -32,7 +32,7 @@
       "title": "Choosin' Texas",
       "artist": "Ella Langley",
       "spotifyId": "65DbTqJKhbwqYbZ1Okr0rc",
-      "ytMusicId": "3s1sZbW7Rt8",
+      "ytMusicId": "xukbqwRuN5w",
       "streams": 12243673,
       "peak": 1,
       "weeks": 32
@@ -76,7 +76,7 @@
       "title": "Shabang",
       "artist": "Drake",
       "spotifyId": "6vjpQIdABqntoe3zPazPec",
-      "ytMusicId": "alREBKH_AJg",
+      "ytMusicId": "fpr2AM8ziEs",
       "streams": 7999678,
       "peak": 5,
       "weeks": 2
@@ -164,7 +164,7 @@
       "title": "Beat It",
       "artist": "Michael Jackson",
       "spotifyId": "3BovdzfaX4jb5KFQwoPfAw",
-      "ytMusicId": "kOn-HdEg6AQ",
+      "ytMusicId": "WlTlUseVt7E",
       "streams": 6014263,
       "peak": 12,
       "weeks": 5
@@ -252,7 +252,7 @@
       "title": "Cinderella (w/ Ty Dolla $ign)",
       "artist": "Mac Miller",
       "spotifyId": "2lpygKqzPFtItQ4ss3cgfb",
-      "ytMusicId": "wbt_E7LNDaA",
+      "ytMusicId": "HCgltcEaB_0",
       "streams": 5152269,
       "peak": 23,
       "weeks": 12
@@ -560,7 +560,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "X7AN68W5qDI",
+      "ytMusicId": "FrsOnNxIrg8",
       "streams": 3727747,
       "peak": 1,
       "weeks": 173
@@ -1033,7 +1033,7 @@
       "title": "Porch Light",
       "artist": "Noah Kahan",
       "spotifyId": "0AV4GhGeGCVJphsMTxDWdE",
-      "ytMusicId": "ZhWTiZiTB7Y",
+      "ytMusicId": "TGea7BD-Lfg",
       "streams": 3032895,
       "peak": 5,
       "weeks": 11
@@ -1209,7 +1209,7 @@
       "title": "Scar Tissue - 2014 Remaster",
       "artist": "Red Hot Chili Peppers",
       "spotifyId": "32sx78QsGg6pKXn42XvF9L",
-      "ytMusicId": "U7k2qv8KTDI",
+      "ytMusicId": "tpYdGgzCW-M",
       "streams": 2878013,
       "peak": 65,
       "weeks": 13
@@ -1352,7 +1352,7 @@
       "title": "No Role Modelz",
       "artist": "J. Cole",
       "spotifyId": "68Dni7IE4VyPkTOH9mRWHr",
-      "ytMusicId": "8HBcV0MtAQg",
+      "ytMusicId": "0EnRK5YvBwU",
       "streams": 2742625,
       "peak": 10,
       "weeks": 525
@@ -1550,7 +1550,7 @@
       "title": "Die With A Smile (w/ Bruno Mars)",
       "artist": "Lady Gaga",
       "spotifyId": "2plbrEY59IikOBgBGLjaoe",
-      "ytMusicId": "DlFXDl_ROAM",
+      "ytMusicId": "koGyvheXKvM",
       "streams": 2621217,
       "peak": 1,
       "weeks": 93
@@ -1693,7 +1693,7 @@
       "title": "The Way You Make Me Feel - 2012 Remaster",
       "artist": "Michael Jackson",
       "spotifyId": "76HKOVWqsEg26SECtmw7Rz",
-      "ytMusicId": "T3FG_YQOW5k",
+      "ytMusicId": "VtM-rHPwN7o",
       "streams": 2553793,
       "peak": 115,
       "weeks": 4
@@ -1814,7 +1814,7 @@
       "title": "All The Stars (w/ SZA)",
       "artist": "Kendrick Lamar",
       "spotifyId": "3GCdLUSnKSMJhs4Tj6CV3s",
-      "ytMusicId": "ju4KQT0wL0I",
+      "ytMusicId": "vdXsLt0o_9g",
       "streams": 2507112,
       "peak": 2,
       "weeks": 194
