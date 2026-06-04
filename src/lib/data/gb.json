@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-06-03",
-  "lastUpdated": "2026-06-03T10:56:40.394Z",
+  "weekDate": "2026-06-04",
+  "lastUpdated": "2026-06-04T09:56:49.881Z",
   "tracks": [
     {
       "rank": 1,
@@ -76,7 +76,7 @@
       "title": "Beat It",
       "artist": "Michael Jackson",
       "spotifyId": "3BovdzfaX4jb5KFQwoPfAw",
-      "ytMusicId": "WlTlUseVt7E",
+      "ytMusicId": "kOn-HdEg6AQ",
       "streams": 2117030,
       "peak": 6,
       "weeks": 6
@@ -483,7 +483,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "X7AN68W5qDI",
+      "ytMusicId": "EG6xVbwwLiI",
       "streams": 1198023,
       "peak": 1,
       "weeks": 389
@@ -868,7 +868,7 @@
       "title": "The Chain - 2001 Remaster",
       "artist": "Fleetwood Mac",
       "spotifyId": "2MRjYBbIbH1VTToIrO1mdi",
-      "ytMusicId": "P160_odTwyY",
+      "ytMusicId": "FhgFtXESdPk",
       "streams": 879332,
       "peak": 55,
       "weeks": 7
@@ -1143,7 +1143,7 @@
       "title": "Bitter Sweet Symphony",
       "artist": "The Verve",
       "spotifyId": "57iDDD9N9tTWe75x6qhStw",
-      "ytMusicId": "JnRw8bXVbPI",
+      "ytMusicId": "1WTATreAg08",
       "streams": 793155,
       "peak": 85,
       "weeks": 69
@@ -1154,7 +1154,7 @@
       "title": "Cinderella (w/ Ty Dolla $ign)",
       "artist": "Mac Miller",
       "spotifyId": "2lpygKqzPFtItQ4ss3cgfb",
-      "ytMusicId": "wbt_E7LNDaA",
+      "ytMusicId": "HCgltcEaB_0",
       "streams": 784619,
       "peak": 105,
       "weeks": 2
@@ -1506,7 +1506,7 @@
       "title": "The Days - NOTION Remix (w/ NOTION)",
       "artist": "Chrystal",
       "spotifyId": "2FAZskT9yRjp2Oow9szJD8",
-      "ytMusicId": "BZ7mOoey5sE",
+      "ytMusicId": "RUm36FWCyqA",
       "streams": 710665,
       "peak": 8,
       "weeks": 74
@@ -1561,7 +1561,7 @@
       "title": "We Found Love (w/ Calvin Harris)",
       "artist": "Rihanna",
       "spotifyId": "1zv3WFUbZ5vPxFq9I2jAU1",
-      "ytMusicId": "FiJgjWmvNHA",
+      "ytMusicId": "UUpuyzPJeWA",
       "streams": 703163,
       "peak": 34,
       "weeks": 104
@@ -1583,7 +1583,7 @@
       "title": "Dust",
       "artist": "Drake",
       "spotifyId": "4eE16RJFDKf2WxBTqqfylu",
-      "ytMusicId": "spjUd9KtIbo",
+      "ytMusicId": "cdpofb3Pzx8",
       "streams": 699330,
       "peak": 14,
       "weeks": 2
@@ -1649,7 +1649,7 @@
       "title": "Ain't No Mountain High Enough (w/ Tammi Terrell)",
       "artist": "Marvin Gaye",
       "spotifyId": "7tqhbajSfrz2F7E1Z75ASX",
-      "ytMusicId": "oB9JIz72BoM",
+      "ytMusicId": "ABfQuZqq8wg",
       "streams": 688689,
       "peak": 35,
       "weeks": 121
@@ -1781,7 +1781,7 @@
       "title": "Make Them Pay",
       "artist": "Drake",
       "spotifyId": "57rkFdhoKjgkg16fsS4pgg",
-      "ytMusicId": "XSiEA19SeNE",
+      "ytMusicId": "4ifx74jSElc",
       "streams": 661782,
       "peak": 20,
       "weeks": 2
@@ -1902,7 +1902,7 @@
       "title": "Wonderwall - Remastered",
       "artist": "Oasis",
       "spotifyId": "5qqabIl2vWzo9ApSC317sa",
-      "ytMusicId": "FVdjZYfDuLE",
+      "ytMusicId": "hpSrLjc5SMs",
       "streams": 653019,
       "peak": 15,
       "weeks": 495
@@ -2089,7 +2089,7 @@
       "title": "Last Friday Night (T.G.I.F.)",
       "artist": "Katy Perry",
       "spotifyId": "3avYqdwHKEq8beXbeWCKqJ",
-      "ytMusicId": "6RMt2II3QXQ",
+      "ytMusicId": "FhIWrcRZrus",
       "streams": 620849,
       "peak": 111,
       "weeks": 25

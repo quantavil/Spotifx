@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-06-03",
-  "lastUpdated": "2026-06-03T10:55:41.174Z",
+  "weekDate": "2026-06-04",
+  "lastUpdated": "2026-06-04T09:55:44.007Z",
   "tracks": [
     {
       "rank": 1,
@@ -164,7 +164,7 @@
       "title": "Beat It",
       "artist": "Michael Jackson",
       "spotifyId": "3BovdzfaX4jb5KFQwoPfAw",
-      "ytMusicId": "WlTlUseVt7E",
+      "ytMusicId": "kOn-HdEg6AQ",
       "streams": 6014263,
       "peak": 12,
       "weeks": 5
@@ -252,7 +252,7 @@
       "title": "Cinderella (w/ Ty Dolla $ign)",
       "artist": "Mac Miller",
       "spotifyId": "2lpygKqzPFtItQ4ss3cgfb",
-      "ytMusicId": "wbt_E7LNDaA",
+      "ytMusicId": "HCgltcEaB_0",
       "streams": 5152269,
       "peak": 23,
       "weeks": 12
@@ -318,7 +318,7 @@
       "title": "Dust",
       "artist": "Drake",
       "spotifyId": "4eE16RJFDKf2WxBTqqfylu",
-      "ytMusicId": "spjUd9KtIbo",
+      "ytMusicId": "cdpofb3Pzx8",
       "streams": 4688242,
       "peak": 8,
       "weeks": 2
@@ -417,7 +417,7 @@
       "title": "Make Them Pay",
       "artist": "Drake",
       "spotifyId": "57rkFdhoKjgkg16fsS4pgg",
-      "ytMusicId": "XSiEA19SeNE",
+      "ytMusicId": "4ifx74jSElc",
       "streams": 4192584,
       "peak": 10,
       "weeks": 2
@@ -560,7 +560,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "X7AN68W5qDI",
+      "ytMusicId": "EG6xVbwwLiI",
       "streams": 3727747,
       "peak": 1,
       "weeks": 173
@@ -1462,7 +1462,7 @@
       "title": "Flashing Lights (w/ Dwele)",
       "artist": "Kanye West",
       "spotifyId": "5TRPicyLGbAF2LGBFbHGvO",
-      "ytMusicId": "cxKs2b5lRsA",
+      "ytMusicId": "ZAz3rnLGthg",
       "streams": 2678806,
       "peak": 53,
       "weeks": 160
@@ -1880,7 +1880,7 @@
       "title": "The Chain - 2001 Remaster",
       "artist": "Fleetwood Mac",
       "spotifyId": "2MRjYBbIbH1VTToIrO1mdi",
-      "ytMusicId": "P160_odTwyY",
+      "ytMusicId": "FhgFtXESdPk",
       "streams": 2489365,
       "peak": 115,
       "weeks": 6
@@ -1979,7 +1979,7 @@
       "title": "Last Friday Night (T.G.I.F.)",
       "artist": "Katy Perry",
       "spotifyId": "3avYqdwHKEq8beXbeWCKqJ",
-      "ytMusicId": "6RMt2II3QXQ",
+      "ytMusicId": "FhIWrcRZrus",
       "streams": 2447667,
       "peak": 148,
       "weeks": 12

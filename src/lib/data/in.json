@@ -1,8 +1,8 @@
 {
   "country": "in",
   "countryName": "India",
-  "weekDate": "2026-06-03",
-  "lastUpdated": "2026-06-03T10:54:14.874Z",
+  "weekDate": "2026-06-04",
+  "lastUpdated": "2026-06-04T09:54:12.049Z",
   "tracks": [
     {
       "rank": 1,
@@ -76,7 +76,7 @@
       "title": "Jaiye Sajana (w/ Jasmine Sandlas, Satinder Sartaaj)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "6xwKNAUHeo2DbWNAPi8aEy",
-      "ytMusicId": "AxN0RjNx6WM",
+      "ytMusicId": "TaTZb7NXja0",
       "streams": 4826285,
       "peak": 2,
       "weeks": 10
@@ -252,7 +252,7 @@
       "title": "Shararat (w/ Madhubanti Bagchi, Jasmine Sandlas)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "0R7grQWU1dRxiOQGIqZm0Z",
-      "ytMusicId": "pRzS9QLvgZk",
+      "ytMusicId": "1vFZso3WgAA",
       "streams": 3243517,
       "peak": 7,
       "weeks": 25
@@ -384,7 +384,7 @@
       "title": "Jaan Se Guzarte Hain (w/ Khan Saab)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "4aWTPC6cuebk9zSpW1PY1Y",
-      "ytMusicId": "9wnBVhOpJCU",
+      "ytMusicId": "iICM37_na2U",
       "streams": 2579877,
       "peak": 7,
       "weeks": 10
@@ -582,7 +582,7 @@
       "title": "Raabta (w/ Arijit Singh)",
       "artist": "Pritam",
       "spotifyId": "6FjbAnaPRPwiP3sciEYctO",
-      "ytMusicId": "tbXNVm8CXxg",
+      "ytMusicId": "piUHBTXsoiY",
       "streams": 2232699,
       "peak": 33,
       "weeks": 184
@@ -614,7 +614,7 @@
       "change": "+19",
       "title": "Karuppa Kooda Va (w/ V.M. Mahalingam, Pa. Vijay)",
       "artist": "Sai Abhyankkar",
-      "spotifyId": "2QAUV5OUidTbSCEo4NToEG",
+      "spotifyId": "0otC5nlgJZ27Q38AA8z6zj",
       "ytMusicId": "WIbmUGWykTw",
       "streams": 2148850,
       "peak": 56,
@@ -1066,7 +1066,7 @@
       "title": "Paro (w/ UNPLG'd)",
       "artist": "Aditya Rikhari",
       "spotifyId": "6nRGPf5tpeJtKpXZO5cgIT",
-      "ytMusicId": "U04qjtXo7V0",
+      "ytMusicId": "gZ0vHQKfNH8",
       "streams": 1610616,
       "peak": 7,
       "weeks": 64
@@ -1165,7 +1165,7 @@
       "title": "Pani Da Rang - Male (w/ Rochak Kohli)",
       "artist": "Ayushmann Khurrana",
       "spotifyId": "0bLCiBR9AOtfp98dk7iCL5",
-      "ytMusicId": "p1VmlDL6T6A",
+      "ytMusicId": "s6oQTPs0rZI",
       "streams": 1562743,
       "peak": 105,
       "weeks": 11
@@ -1176,7 +1176,7 @@
       "title": "Tera Chehra (w/ Arijit Singh)",
       "artist": "Himesh Reshammiya",
       "spotifyId": "0fU73va0bnroitbOzudBU4",
-      "ytMusicId": "VMmLBjcEXrM",
+      "ytMusicId": "lcLXvoZj2Fg",
       "streams": 1558007,
       "peak": 68,
       "weeks": 35
@@ -1220,7 +1220,7 @@
       "title": "Soch Na Sake (w/ Arijit Singh, Tulsi Kumar)",
       "artist": "Amaal Mallik",
       "spotifyId": "6mTvwBzWTGDOVeCNQEqtOE",
-      "ytMusicId": "lAsxLc9_45w",
+      "ytMusicId": "hp02FwlpQYU",
       "streams": 1540419,
       "peak": 46,
       "weeks": 150
@@ -1253,7 +1253,7 @@
       "title": "Dil Ibaadat (w/ KK)",
       "artist": "Pritam",
       "spotifyId": "3Kl8p2PxVf8eAayLwTxOIm",
-      "ytMusicId": "QQrKqUnPT1A",
+      "ytMusicId": "IgITZfS7L_8",
       "streams": 1528151,
       "peak": 54,
       "weeks": 67
@@ -1319,7 +1319,7 @@
       "title": "Lae Dooba (w/ Manoj Muntashir)",
       "artist": "Sunidhi Chauhan",
       "spotifyId": "4pXw2nCeT1GVKGVb1OiE3a",
-      "ytMusicId": "X_i-iIcz1d0",
+      "ytMusicId": "o3hfVWIQE1w",
       "streams": 1506501,
       "peak": 79,
       "weeks": 12
@@ -2023,7 +2023,7 @@
       "title": "Mitwa (w/ Shankar Mahadevan, Caralisa Monteiro, Shafqat Amanat Ali)",
       "artist": "Shankar-Ehsaan-Loy",
       "spotifyId": "4BTPzhEsyW3blWcxcuhLM0",
-      "ytMusicId": "-acMMyVFhZk",
+      "ytMusicId": "AsieVqOTRs0",
       "streams": 1307998,
       "peak": 57,
       "weeks": 92

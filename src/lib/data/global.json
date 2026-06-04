@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-06-03",
-  "lastUpdated": "2026-06-03T10:51:11.411Z",
+  "weekDate": "2026-06-04",
+  "lastUpdated": "2026-06-04T09:50:56.344Z",
   "tracks": [
     {
       "rank": 1,
@@ -76,7 +76,7 @@
       "title": "Beat It",
       "artist": "Michael Jackson",
       "spotifyId": "3BovdzfaX4jb5KFQwoPfAw",
-      "ytMusicId": "WlTlUseVt7E",
+      "ytMusicId": "kOn-HdEg6AQ",
       "streams": 30086839,
       "peak": 5,
       "weeks": 8
@@ -505,7 +505,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "X7AN68W5qDI",
+      "ytMusicId": "EG6xVbwwLiI",
       "streams": 15138799,
       "peak": 1,
       "weeks": 317
@@ -1187,7 +1187,7 @@
       "title": "REDRED",
       "artist": "CORTIS",
       "spotifyId": "2fCwv2ppU5nTRTckomIGsd",
-      "ytMusicId": "DBOyG7y_FQg",
+      "ytMusicId": "5sOgJQ3N03Q",
       "streams": 10704466,
       "peak": 61,
       "weeks": 5
@@ -1308,7 +1308,7 @@
       "title": "Dust",
       "artist": "Drake",
       "spotifyId": "4eE16RJFDKf2WxBTqqfylu",
-      "ytMusicId": "spjUd9KtIbo",
+      "ytMusicId": "cdpofb3Pzx8",
       "streams": 10519252,
       "peak": 12,
       "weeks": 2
@@ -1363,7 +1363,7 @@
       "title": "Wonderwall - Remastered",
       "artist": "Oasis",
       "spotifyId": "5qqabIl2vWzo9ApSC317sa",
-      "ytMusicId": "FVdjZYfDuLE",
+      "ytMusicId": "hpSrLjc5SMs",
       "streams": 10348469,
       "peak": 63,
       "weeks": 137
@@ -1660,7 +1660,7 @@
       "title": "Payphone (w/ Wiz Khalifa)",
       "artist": "Maroon 5",
       "spotifyId": "1XGmzt0PVuFgQYYnV2It7A",
-      "ytMusicId": "3ssXSY7f3s4",
+      "ytMusicId": "zooaTplu8jw",
       "streams": 9659973,
       "peak": 70,
       "weeks": 105
@@ -1693,7 +1693,7 @@
       "title": "We Found Love (w/ Calvin Harris)",
       "artist": "Rihanna",
       "spotifyId": "1zv3WFUbZ5vPxFq9I2jAU1",
-      "ytMusicId": "FiJgjWmvNHA",
+      "ytMusicId": "UUpuyzPJeWA",
       "streams": 9587561,
       "peak": 59,
       "weeks": 133
@@ -1759,7 +1759,7 @@
       "title": "Cinderella (w/ Ty Dolla $ign)",
       "artist": "Mac Miller",
       "spotifyId": "2lpygKqzPFtItQ4ss3cgfb",
-      "ytMusicId": "wbt_E7LNDaA",
+      "ytMusicId": "HCgltcEaB_0",
       "streams": 9539136,
       "peak": 160,
       "weeks": 1
@@ -1803,7 +1803,7 @@
       "title": "Last Friday Night (T.G.I.F.)",
       "artist": "Katy Perry",
       "spotifyId": "3avYqdwHKEq8beXbeWCKqJ",
-      "ytMusicId": "6RMt2II3QXQ",
+      "ytMusicId": "FhIWrcRZrus",
       "streams": 9402493,
       "peak": 131,
       "weeks": 19
@@ -1946,7 +1946,7 @@
       "title": "Make Them Pay",
       "artist": "Drake",
       "spotifyId": "57rkFdhoKjgkg16fsS4pgg",
-      "ytMusicId": "XSiEA19SeNE",
+      "ytMusicId": "4ifx74jSElc",
       "streams": 9082034,
       "peak": 15,
       "weeks": 2
