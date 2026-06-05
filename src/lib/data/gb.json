@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-06-04",
-  "lastUpdated": "2026-06-04T09:56:49.881Z",
+  "weekDate": "2026-06-05",
+  "lastUpdated": "2026-06-05T09:46:40.086Z",
   "tracks": [
     {
       "rank": 1,
@@ -175,7 +175,7 @@
       "title": "Choosin' Texas",
       "artist": "Ella Langley",
       "spotifyId": "65DbTqJKhbwqYbZ1Okr0rc",
-      "ytMusicId": "xukbqwRuN5w",
+      "ytMusicId": "3s1sZbW7Rt8",
       "streams": 1725732,
       "peak": 16,
       "weeks": 17
@@ -527,7 +527,7 @@
       "title": "Shabang",
       "artist": "Drake",
       "spotifyId": "6vjpQIdABqntoe3zPazPec",
-      "ytMusicId": "fpr2AM8ziEs",
+      "ytMusicId": "alREBKH_AJg",
       "streams": 1146161,
       "peak": 12,
       "weeks": 2
@@ -1022,7 +1022,7 @@
       "title": "On The Floor (w/ Pitbull)",
       "artist": "Jennifer Lopez",
       "spotifyId": "3C0nOe05EIt1390bVABLyN",
-      "ytMusicId": "9lybsz-7TFM",
+      "ytMusicId": "MzrLNDgDeKk",
       "streams": 812506,
       "peak": 93,
       "weeks": 1
@@ -1055,7 +1055,7 @@
       "title": "Viva La Vida",
       "artist": "Coldplay",
       "spotifyId": "1mea3bSkSGXuIRvnydlB5b",
-      "ytMusicId": "HGorCGszxZU",
+      "ytMusicId": "ALsvdSA9tOU",
       "streams": 806643,
       "peak": 27,
       "weeks": 203
@@ -1242,7 +1242,7 @@
       "title": "Blessings (w/ Clementine Douglas)",
       "artist": "Calvin Harris",
       "spotifyId": "78nx0HDJIFD5xDq2L5420Z",
-      "ytMusicId": "tImti6vu0mE",
+      "ytMusicId": "YVFmVdgeivo",
       "streams": 765691,
       "peak": 10,
       "weeks": 39
@@ -1506,7 +1506,7 @@
       "title": "The Days - NOTION Remix (w/ NOTION)",
       "artist": "Chrystal",
       "spotifyId": "2FAZskT9yRjp2Oow9szJD8",
-      "ytMusicId": "RUm36FWCyqA",
+      "ytMusicId": "BZ7mOoey5sE",
       "streams": 710665,
       "peak": 8,
       "weeks": 74
@@ -1561,7 +1561,7 @@
       "title": "We Found Love (w/ Calvin Harris)",
       "artist": "Rihanna",
       "spotifyId": "1zv3WFUbZ5vPxFq9I2jAU1",
-      "ytMusicId": "UUpuyzPJeWA",
+      "ytMusicId": "n6N1_sxlBU8",
       "streams": 703163,
       "peak": 34,
       "weeks": 104
@@ -1660,7 +1660,7 @@
       "title": "Wanna Be Startin' Somethin'",
       "artist": "Michael Jackson",
       "spotifyId": "1hu2s7qkm5bo03eODpRQO3",
-      "ytMusicId": "8KWf_-ofYgI",
+      "ytMusicId": "4Ibtio5coYQ",
       "streams": 684136,
       "peak": 75,
       "weeks": 5
@@ -2089,7 +2089,7 @@
       "title": "Last Friday Night (T.G.I.F.)",
       "artist": "Katy Perry",
       "spotifyId": "3avYqdwHKEq8beXbeWCKqJ",
-      "ytMusicId": "FhIWrcRZrus",
+      "ytMusicId": "6RMt2II3QXQ",
       "streams": 620849,
       "peak": 111,
       "weeks": 25

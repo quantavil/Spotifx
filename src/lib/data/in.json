@@ -1,8 +1,8 @@
 {
   "country": "in",
   "countryName": "India",
-  "weekDate": "2026-06-04",
-  "lastUpdated": "2026-06-04T09:54:12.049Z",
+  "weekDate": "2026-06-05",
+  "lastUpdated": "2026-06-05T09:44:02.310Z",
   "tracks": [
     {
       "rank": 1,
@@ -340,7 +340,7 @@
       "title": "Agar Tum Saath Ho (From \"Tamasha\") (w/ Arijit Singh)",
       "artist": "Alka Yagnik",
       "spotifyId": "2FCXQHugkoHE1K3tiDu8pu",
-      "ytMusicId": "FOA9iyxsW_A",
+      "ytMusicId": "Yg5Knar2vlk",
       "streams": 2829998,
       "peak": 4,
       "weeks": 347
@@ -427,8 +427,8 @@
       "change": "+12",
       "title": "God Mode (w/ Gana Muthu, Vishnu Edavan)",
       "artist": "Sai Abhyankkar",
-      "spotifyId": "1KT8UcTXHJVOLuRFZmRxtA",
-      "ytMusicId": "qemjcgBJMCE",
+      "spotifyId": "5IA1BVN8OKwpCxkgeOR8YM",
+      "ytMusicId": "eIeIkZ5Li88",
       "streams": 2481802,
       "peak": 39,
       "weeks": 2
@@ -571,7 +571,7 @@
       "title": "On The Floor (w/ Pitbull)",
       "artist": "Jennifer Lopez",
       "spotifyId": "3C0nOe05EIt1390bVABLyN",
-      "ytMusicId": "9lybsz-7TFM",
+      "ytMusicId": "MzrLNDgDeKk",
       "streams": 2236498,
       "peak": 52,
       "weeks": 1
@@ -791,7 +791,7 @@
       "title": "Zara Sa (w/ KK)",
       "artist": "Pritam",
       "spotifyId": "18YHbIhrleUkKKj2DvEp79",
-      "ytMusicId": "Chp2DAqpKqU",
+      "ytMusicId": "zv-tbc4F818",
       "streams": 1866551,
       "peak": 33,
       "weeks": 169
@@ -856,7 +856,7 @@
       "change": "+29",
       "title": "Verappa - Extended (w/ Arivu, Arun Srinivasan)",
       "artist": "Sai Abhyankkar",
-      "spotifyId": "0Kj7msixW8qqqmNsCx2jpD",
+      "spotifyId": "3FDZKPorPuhOZYw9WileCl",
       "ytMusicId": "CrSqrqG5o-c",
       "streams": 1788893,
       "peak": 78,
@@ -988,7 +988,7 @@
       "change": "+7",
       "title": "Ishq de Fanniyar - Female Version (w/ Kumaar)",
       "artist": "Jyotica Tangri",
-      "spotifyId": "6JARNpkUypyzQEltxZM95O",
+      "spotifyId": "5jCuQyeS4WP4ZYskYhfRlH",
       "ytMusicId": "lGO21pNVLK8",
       "streams": 1679725,
       "peak": 89,
@@ -1066,7 +1066,7 @@
       "title": "Paro (w/ UNPLG'd)",
       "artist": "Aditya Rikhari",
       "spotifyId": "6nRGPf5tpeJtKpXZO5cgIT",
-      "ytMusicId": "gZ0vHQKfNH8",
+      "ytMusicId": "U04qjtXo7V0",
       "streams": 1610616,
       "peak": 7,
       "weeks": 64
@@ -1176,7 +1176,7 @@
       "title": "Tera Chehra (w/ Arijit Singh)",
       "artist": "Himesh Reshammiya",
       "spotifyId": "0fU73va0bnroitbOzudBU4",
-      "ytMusicId": "lcLXvoZj2Fg",
+      "ytMusicId": "VMmLBjcEXrM",
       "streams": 1558007,
       "peak": 68,
       "weeks": 35
@@ -1220,7 +1220,7 @@
       "title": "Soch Na Sake (w/ Arijit Singh, Tulsi Kumar)",
       "artist": "Amaal Mallik",
       "spotifyId": "6mTvwBzWTGDOVeCNQEqtOE",
-      "ytMusicId": "hp02FwlpQYU",
+      "ytMusicId": "lAsxLc9_45w",
       "streams": 1540419,
       "peak": 46,
       "weeks": 150
@@ -1319,7 +1319,7 @@
       "title": "Lae Dooba (w/ Manoj Muntashir)",
       "artist": "Sunidhi Chauhan",
       "spotifyId": "4pXw2nCeT1GVKGVb1OiE3a",
-      "ytMusicId": "o3hfVWIQE1w",
+      "ytMusicId": "0od3syHAS4g",
       "streams": 1506501,
       "peak": 79,
       "weeks": 12

@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-06-04",
-  "lastUpdated": "2026-06-04T09:55:44.007Z",
+  "weekDate": "2026-06-05",
+  "lastUpdated": "2026-06-05T09:45:36.685Z",
   "tracks": [
     {
       "rank": 1,
@@ -32,7 +32,7 @@
       "title": "Choosin' Texas",
       "artist": "Ella Langley",
       "spotifyId": "65DbTqJKhbwqYbZ1Okr0rc",
-      "ytMusicId": "xukbqwRuN5w",
+      "ytMusicId": "3s1sZbW7Rt8",
       "streams": 12243673,
       "peak": 1,
       "weeks": 32
@@ -76,7 +76,7 @@
       "title": "Shabang",
       "artist": "Drake",
       "spotifyId": "6vjpQIdABqntoe3zPazPec",
-      "ytMusicId": "fpr2AM8ziEs",
+      "ytMusicId": "alREBKH_AJg",
       "streams": 7999678,
       "peak": 5,
       "weeks": 2
@@ -461,7 +461,7 @@
       "title": "Risk It All",
       "artist": "Bruno Mars",
       "spotifyId": "5y2ijHECwFYWqcAHKTZgzD",
-      "ytMusicId": "46a5bRqPy_E",
+      "ytMusicId": "BF2_ipR1OI0",
       "streams": 4075869,
       "peak": 1,
       "weeks": 13
@@ -636,7 +636,7 @@
       "change": "+17",
       "title": "Hell At Night (w/ Ella Langley)",
       "artist": "BigXthaPlug",
-      "spotifyId": "6r1lboTadi5swMquaAWDzh",
+      "spotifyId": "3pAVk6Ydn0dcGpG8gDyxSJ",
       "ytMusicId": "ACJiIgOZ7lU",
       "streams": 3621540,
       "peak": 19,
@@ -857,7 +857,7 @@
       "title": "Willing and Able",
       "artist": "Noah Kahan",
       "spotifyId": "6pk6E0SZxILzfaAGFngxEs",
-      "ytMusicId": "lRujFWpXglU",
+      "ytMusicId": "8aRIsqbLN_U",
       "streams": 3130434,
       "peak": 12,
       "weeks": 5
@@ -1396,7 +1396,7 @@
       "title": "Make Them Remember",
       "artist": "Drake",
       "spotifyId": "73ycOMnODtUc2Ggj6EfCpO",
-      "ytMusicId": "Yg1ASzd6Qko",
+      "ytMusicId": "OzSX0r2JJ_Q",
       "streams": 2721556,
       "peak": 18,
       "weeks": 2
@@ -1462,7 +1462,7 @@
       "title": "Flashing Lights (w/ Dwele)",
       "artist": "Kanye West",
       "spotifyId": "5TRPicyLGbAF2LGBFbHGvO",
-      "ytMusicId": "ZAz3rnLGthg",
+      "ytMusicId": "cxKs2b5lRsA",
       "streams": 2678806,
       "peak": 53,
       "weeks": 160
@@ -1979,7 +1979,7 @@
       "title": "Last Friday Night (T.G.I.F.)",
       "artist": "Katy Perry",
       "spotifyId": "3avYqdwHKEq8beXbeWCKqJ",
-      "ytMusicId": "FhIWrcRZrus",
+      "ytMusicId": "6RMt2II3QXQ",
       "streams": 2447667,
       "peak": 148,
       "weeks": 12

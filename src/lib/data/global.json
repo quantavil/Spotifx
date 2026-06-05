@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-06-04",
-  "lastUpdated": "2026-06-04T09:50:56.344Z",
+  "weekDate": "2026-06-05",
+  "lastUpdated": "2026-06-05T09:40:15.935Z",
   "tracks": [
     {
       "rank": 1,
@@ -175,7 +175,7 @@
       "title": "Choosin' Texas",
       "artist": "Ella Langley",
       "spotifyId": "65DbTqJKhbwqYbZ1Okr0rc",
-      "ytMusicId": "xukbqwRuN5w",
+      "ytMusicId": "3s1sZbW7Rt8",
       "streams": 20547320,
       "peak": 16,
       "weeks": 21
@@ -230,7 +230,7 @@
       "title": "Risk It All",
       "artist": "Bruno Mars",
       "spotifyId": "5y2ijHECwFYWqcAHKTZgzD",
-      "ytMusicId": "46a5bRqPy_E",
+      "ytMusicId": "BF2_ipR1OI0",
       "streams": 19816091,
       "peak": 3,
       "weeks": 13
@@ -329,7 +329,7 @@
       "title": "On The Floor (w/ Pitbull)",
       "artist": "Jennifer Lopez",
       "spotifyId": "3C0nOe05EIt1390bVABLyN",
-      "ytMusicId": "9lybsz-7TFM",
+      "ytMusicId": "MzrLNDgDeKk",
       "streams": 17942540,
       "peak": 30,
       "weeks": 2
@@ -351,7 +351,7 @@
       "title": "Shabang",
       "artist": "Drake",
       "spotifyId": "6vjpQIdABqntoe3zPazPec",
-      "ytMusicId": "fpr2AM8ziEs",
+      "ytMusicId": "alREBKH_AJg",
       "streams": 17453822,
       "peak": 11,
       "weeks": 2
@@ -1187,7 +1187,7 @@
       "title": "REDRED",
       "artist": "CORTIS",
       "spotifyId": "2fCwv2ppU5nTRTckomIGsd",
-      "ytMusicId": "5sOgJQ3N03Q",
+      "ytMusicId": "DBOyG7y_FQg",
       "streams": 10704466,
       "peak": 61,
       "weeks": 5
@@ -1429,7 +1429,7 @@
       "title": "Eenie Meenie (w/ Justin Bieber)",
       "artist": "Sean Kingston",
       "spotifyId": "4vVTI94F9uJ8lHNDWKv0i2",
-      "ytMusicId": "BcrYfme_wUc",
+      "ytMusicId": "1ibelOsqVnQ",
       "streams": 10213455,
       "peak": 14,
       "weeks": 8
@@ -1484,7 +1484,7 @@
       "title": "Viva La Vida",
       "artist": "Coldplay",
       "spotifyId": "1mea3bSkSGXuIRvnydlB5b",
-      "ytMusicId": "HGorCGszxZU",
+      "ytMusicId": "ALsvdSA9tOU",
       "streams": 10140974,
       "peak": 31,
       "weeks": 200
@@ -1660,7 +1660,7 @@
       "title": "Payphone (w/ Wiz Khalifa)",
       "artist": "Maroon 5",
       "spotifyId": "1XGmzt0PVuFgQYYnV2It7A",
-      "ytMusicId": "zooaTplu8jw",
+      "ytMusicId": "8UY5BGFLtK0",
       "streams": 9659973,
       "peak": 70,
       "weeks": 105
@@ -1693,7 +1693,7 @@
       "title": "We Found Love (w/ Calvin Harris)",
       "artist": "Rihanna",
       "spotifyId": "1zv3WFUbZ5vPxFq9I2jAU1",
-      "ytMusicId": "UUpuyzPJeWA",
+      "ytMusicId": "n6N1_sxlBU8",
       "streams": 9587561,
       "peak": 59,
       "weeks": 133
@@ -1803,7 +1803,7 @@
       "title": "Last Friday Night (T.G.I.F.)",
       "artist": "Katy Perry",
       "spotifyId": "3avYqdwHKEq8beXbeWCKqJ",
-      "ytMusicId": "FhIWrcRZrus",
+      "ytMusicId": "6RMt2II3QXQ",
       "streams": 9402493,
       "peak": 131,
       "weeks": 19
