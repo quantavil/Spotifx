@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-06-06",
-  "lastUpdated": "2026-06-06T08:35:59.650Z",
+  "weekDate": "2026-06-07",
+  "lastUpdated": "2026-06-07T08:57:02.281Z",
   "tracks": [
     {
       "rank": 1,
@@ -604,7 +604,7 @@
       "title": "Rain Sounds for Sleeping, Pt. 06 (Continuous No Gaps) (w/ Rain Sounds)",
       "artist": "White Noise Radiance",
       "spotifyId": "7gF2mPcjipv2hLGHY7bi17",
-      "ytMusicId": "dedXQV_wO1c",
+      "ytMusicId": "13EL6Mgeocc",
       "streams": 937219,
       "peak": 38,
       "weeks": 18
@@ -857,7 +857,7 @@
       "title": "The Chain - 2001 Remaster",
       "artist": "Fleetwood Mac",
       "spotifyId": "2MRjYBbIbH1VTToIrO1mdi",
-      "ytMusicId": "FhgFtXESdPk",
+      "ytMusicId": "",
       "streams": 774579,
       "peak": 55,
       "weeks": 8
@@ -1088,7 +1088,7 @@
       "title": "Landslide",
       "artist": "Fleetwood Mac",
       "spotifyId": "5ihS6UUlyQAfmp48eSkxuQ",
-      "ytMusicId": "mXonGAEPQp8",
+      "ytMusicId": "k4M53xndqiU",
       "streams": 713252,
       "peak": 35,
       "weeks": 32
@@ -1869,7 +1869,7 @@
       "title": "Rather Be (w/ Jess Glynne)",
       "artist": "Clean Bandit",
       "spotifyId": "3s4U7OHV7gnj42VV72eSZ6",
-      "ytMusicId": "EMN3N6oyDv0",
+      "ytMusicId": "",
       "streams": 578210,
       "peak": 1,
       "weeks": 138
@@ -1891,7 +1891,7 @@
       "title": "Take Me To Church",
       "artist": "Hozier",
       "spotifyId": "3dYD57lRAUcMHufyqn9GcI",
-      "ytMusicId": "6A3PMQA5c74",
+      "ytMusicId": "",
       "streams": 576979,
       "peak": 2,
       "weeks": 410
@@ -2001,7 +2001,7 @@
       "title": "Budapest",
       "artist": "George Ezra",
       "spotifyId": "7GJClzimvMSghjcrKxuf1M",
-      "ytMusicId": "jYSLu01Lc5A",
+      "ytMusicId": "",
       "streams": 557215,
       "peak": 3,
       "weeks": 258
@@ -2166,7 +2166,7 @@
       "title": "Passionfruit",
       "artist": "Drake",
       "spotifyId": "7hDc8b7IXETo14hHIHdnhd",
-      "ytMusicId": "EgfsXTOn_pI",
+      "ytMusicId": "COz9lDCFHjw",
       "streams": 541573,
       "peak": 3,
       "weeks": 90

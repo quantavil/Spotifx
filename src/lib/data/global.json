@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-06-06",
-  "lastUpdated": "2026-06-06T08:30:26.596Z",
+  "weekDate": "2026-06-07",
+  "lastUpdated": "2026-06-07T08:51:29.537Z",
   "tracks": [
     {
       "rank": 1,
@@ -219,7 +219,7 @@
       "title": "Risk It All",
       "artist": "Bruno Mars",
       "spotifyId": "5y2ijHECwFYWqcAHKTZgzD",
-      "ytMusicId": "46a5bRqPy_E",
+      "ytMusicId": "BF2_ipR1OI0",
       "streams": 19803519,
       "peak": 3,
       "weeks": 14
@@ -703,7 +703,7 @@
       "title": "LEMONADE",
       "artist": "aespa",
       "spotifyId": "7a3iH9vM5Z58GqOMqXBU1M",
-      "ytMusicId": "LBhcqYqeu0U",
+      "ytMusicId": "EBFYYjdGwJg",
       "streams": 12883258,
       "peak": 64,
       "weeks": 1
@@ -835,7 +835,7 @@
       "title": "Danza Kuduro (w/ Lucenzo)",
       "artist": "Don Omar",
       "spotifyId": "2a1o6ZejUi8U3wzzOtCOYw",
-      "ytMusicId": "EKjdR-5XKYs",
+      "ytMusicId": "BbWY-avjDto",
       "streams": 12154735,
       "peak": 76,
       "weeks": 127
@@ -868,7 +868,7 @@
       "title": "Baby (w/ Ludacris)",
       "artist": "Justin Bieber",
       "spotifyId": "6epn3r7S14KUqlReYr77hA",
-      "ytMusicId": "GqWYJT-iMTw",
+      "ytMusicId": "TpddIBTiDUc",
       "streams": 11894171,
       "peak": 6,
       "weeks": 8
@@ -2056,7 +2056,7 @@
       "title": "Peão Todo Tatuado (w/ Mariana Fagundes)",
       "artist": "Jeninho",
       "spotifyId": "1wrA9K1P177mkPNt9BB2OZ",
-      "ytMusicId": "9eWo9z6zUi0",
+      "ytMusicId": "MQb8oGBXD_k",
       "streams": 8787341,
       "peak": 187,
       "weeks": 1

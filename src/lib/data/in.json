@@ -1,8 +1,8 @@
 {
   "country": "in",
   "countryName": "India",
-  "weekDate": "2026-06-06",
-  "lastUpdated": "2026-06-06T08:33:28.907Z",
+  "weekDate": "2026-06-07",
+  "lastUpdated": "2026-06-07T08:54:27.972Z",
   "tracks": [
     {
       "rank": 1,
@@ -76,7 +76,7 @@
       "title": "Jaiye Sajana (w/ Jasmine Sandlas, Satinder Sartaaj)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "6xwKNAUHeo2DbWNAPi8aEy",
-      "ytMusicId": "AxN0RjNx6WM",
+      "ytMusicId": "TaTZb7NXja0",
       "streams": 4518225,
       "peak": 2,
       "weeks": 11
@@ -593,7 +593,7 @@
       "title": "Bairi (w/ Pradeep Solanki, Heena)",
       "artist": "Virat",
       "spotifyId": "1GfcRba0wGXDTtT4r8C65Z",
-      "ytMusicId": "ijaPDOCNHXw",
+      "ytMusicId": "U6bKSnYHuhw",
       "streams": 2119146,
       "peak": 13,
       "weeks": 15
@@ -637,7 +637,7 @@
       "title": "Raabta (w/ Arijit Singh)",
       "artist": "Pritam",
       "spotifyId": "6FjbAnaPRPwiP3sciEYctO",
-      "ytMusicId": "tbXNVm8CXxg",
+      "ytMusicId": "piUHBTXsoiY",
       "streams": 2076394,
       "peak": 33,
       "weeks": 185
@@ -1110,7 +1110,7 @@
       "title": "Lae Dooba (w/ Manoj Muntashir)",
       "artist": "Sunidhi Chauhan",
       "spotifyId": "4pXw2nCeT1GVKGVb1OiE3a",
-      "ytMusicId": "X_i-iIcz1d0",
+      "ytMusicId": "o3hfVWIQE1w",
       "streams": 1566326,
       "peak": 79,
       "weeks": 13
@@ -1209,7 +1209,7 @@
       "title": "Tera Hone Laga Hoon (w/ Alisha Chinai, Pritam)",
       "artist": "Atif Aslam",
       "spotifyId": "48Ix6ReYdJf2H4mKb3TIpj",
-      "ytMusicId": "HDJ7fF8qYX8",
+      "ytMusicId": "oeYgD5w3NQo",
       "streams": 1539063,
       "peak": 30,
       "weeks": 264
@@ -1660,7 +1660,7 @@
       "title": "Main Rang Sharbaton Ka (w/ Chinmayi, Pritam)",
       "artist": "Atif Aslam",
       "spotifyId": "2IEhtVeM9TVql8fZdKdlo9",
-      "ytMusicId": "3tAmZlcZsHo",
+      "ytMusicId": "cE4atI_v-Z0",
       "streams": 1398841,
       "peak": 73,
       "weeks": 88
@@ -1803,7 +1803,7 @@
       "title": "Aakh Ye Taalibaani (w/ Bali Sharma, Vampire)",
       "artist": "Manish Sonipat Aala",
       "spotifyId": "5yS0pxhp7gRtTke8YSg8q1",
-      "ytMusicId": "4Wfk0sUvHWw",
+      "ytMusicId": "",
       "streams": 1364396,
       "peak": 37,
       "weeks": 29
