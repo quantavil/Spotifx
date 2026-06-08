@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-06-07",
-  "lastUpdated": "2026-06-07T08:55:59.015Z",
+  "weekDate": "2026-06-08",
+  "lastUpdated": "2026-06-08T10:32:50.510Z",
   "tracks": [
     {
       "rank": 1,
@@ -175,7 +175,7 @@
       "title": "Cinderella (w/ Ty Dolla $ign)",
       "artist": "Mac Miller",
       "spotifyId": "2lpygKqzPFtItQ4ss3cgfb",
-      "ytMusicId": "wbt_E7LNDaA",
+      "ytMusicId": "HCgltcEaB_0",
       "streams": 5820958,
       "peak": 16,
       "weeks": 13
@@ -966,7 +966,7 @@
       "change": "+1",
       "title": "Dandelion",
       "artist": "Ella Langley",
-      "spotifyId": "7FudQLDIYCX6F7ruexVn2X",
+      "spotifyId": "34D5CH3DKBGpAj8ktFOAUH",
       "ytMusicId": "8CrYKKk2n4M",
       "streams": 2974435,
       "peak": 29,
@@ -1297,7 +1297,7 @@
       "title": "Passionfruit",
       "artist": "Drake",
       "spotifyId": "7hDc8b7IXETo14hHIHdnhd",
-      "ytMusicId": "COz9lDCFHjw",
+      "ytMusicId": "EgfsXTOn_pI",
       "streams": 2744445,
       "peak": 1,
       "weeks": 183
@@ -1704,7 +1704,7 @@
       "title": "Last Friday Night (T.G.I.F.)",
       "artist": "Katy Perry",
       "spotifyId": "3avYqdwHKEq8beXbeWCKqJ",
-      "ytMusicId": "6RMt2II3QXQ",
+      "ytMusicId": "FhIWrcRZrus",
       "streams": 2569943,
       "peak": 148,
       "weeks": 13
@@ -1990,7 +1990,7 @@
       "title": "The Chain - 2001 Remaster",
       "artist": "Fleetwood Mac",
       "spotifyId": "2MRjYBbIbH1VTToIrO1mdi",
-      "ytMusicId": "",
+      "ytMusicId": "FhgFtXESdPk",
       "streams": 2384524,
       "peak": 115,
       "weeks": 7
