@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-06-08",
-  "lastUpdated": "2026-06-08T10:28:20.725Z",
+  "weekDate": "2026-06-09",
+  "lastUpdated": "2026-06-09T09:33:48.955Z",
   "tracks": [
     {
       "rank": 1,
@@ -76,7 +76,7 @@
       "title": "Beat It",
       "artist": "Michael Jackson",
       "spotifyId": "3BovdzfaX4jb5KFQwoPfAw",
-      "ytMusicId": "WlTlUseVt7E",
+      "ytMusicId": "kOn-HdEg6AQ",
       "streams": 28486375,
       "peak": 5,
       "weeks": 9
@@ -219,7 +219,7 @@
       "title": "Risk It All",
       "artist": "Bruno Mars",
       "spotifyId": "5y2ijHECwFYWqcAHKTZgzD",
-      "ytMusicId": "BF2_ipR1OI0",
+      "ytMusicId": "46a5bRqPy_E",
       "streams": 19803519,
       "peak": 3,
       "weeks": 14
@@ -274,7 +274,7 @@
       "title": "On The Floor (w/ Pitbull)",
       "artist": "Jennifer Lopez",
       "spotifyId": "3C0nOe05EIt1390bVABLyN",
-      "ytMusicId": "9lybsz-7TFM",
+      "ytMusicId": "MzrLNDgDeKk",
       "streams": 18900616,
       "peak": 25,
       "weeks": 3
@@ -659,7 +659,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "X7AN68W5qDI",
+      "ytMusicId": "FrsOnNxIrg8",
       "streams": 13070138,
       "peak": 1,
       "weeks": 318
@@ -923,7 +923,7 @@
       "title": "Viva La Vida",
       "artist": "Coldplay",
       "spotifyId": "1mea3bSkSGXuIRvnydlB5b",
-      "ytMusicId": "ALsvdSA9tOU",
+      "ytMusicId": "HGorCGszxZU",
       "streams": 11693151,
       "peak": 31,
       "weeks": 201
@@ -1715,7 +1715,7 @@
       "title": "We Found Love (w/ Calvin Harris)",
       "artist": "Rihanna",
       "spotifyId": "1zv3WFUbZ5vPxFq9I2jAU1",
-      "ytMusicId": "n6N1_sxlBU8",
+      "ytMusicId": "UUpuyzPJeWA",
       "streams": 9328219,
       "peak": 59,
       "weeks": 134
@@ -1858,7 +1858,7 @@
       "title": "That Should Be Me",
       "artist": "Justin Bieber",
       "spotifyId": "0aPZbnkMoWJaJ5CNVLCj8S",
-      "ytMusicId": "jNfI-sp5n-A",
+      "ytMusicId": "2Xulk9Ahqmc",
       "streams": 9109597,
       "peak": 46,
       "weeks": 8
@@ -1924,7 +1924,7 @@
       "title": "Unwritten",
       "artist": "Natasha Bedingfield",
       "spotifyId": "3U5JVgI2x4rDyHGObzJfNf",
-      "ytMusicId": "dxB6Gqg26Kw",
+      "ytMusicId": "iKejQrGq04w",
       "streams": 9005132,
       "peak": 16,
       "weeks": 75
@@ -2012,7 +2012,7 @@
       "title": "Flashing Lights (w/ Dwele)",
       "artist": "Kanye West",
       "spotifyId": "5TRPicyLGbAF2LGBFbHGvO",
-      "ytMusicId": "cxKs2b5lRsA",
+      "ytMusicId": "ZAz3rnLGthg",
       "streams": 8813370,
       "peak": 121,
       "weeks": 39
@@ -2023,7 +2023,7 @@
       "title": "Take on Me - 2015 Remaster",
       "artist": "a-ha",
       "spotifyId": "04aigH9HRGebQZu1JAN6X1",
-      "ytMusicId": "-iKeUC5_Wyw",
+      "ytMusicId": "JLyTfOZp8oM",
       "streams": 8808288,
       "peak": 133,
       "weeks": 6
@@ -2111,7 +2111,7 @@
       "title": "That’s So True",
       "artist": "Gracie Abrams",
       "spotifyId": "7ne4VBA60CxGM75vw0EYad",
-      "ytMusicId": "AOz9V0NhJe8",
+      "ytMusicId": "W_YOJWZIjxo",
       "streams": 8736508,
       "peak": 3,
       "weeks": 84

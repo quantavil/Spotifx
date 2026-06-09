@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-06-08",
-  "lastUpdated": "2026-06-08T10:32:50.510Z",
+  "weekDate": "2026-06-09",
+  "lastUpdated": "2026-06-09T09:38:16.671Z",
   "tracks": [
     {
       "rank": 1,
@@ -142,7 +142,7 @@
       "title": "Beat It",
       "artist": "Michael Jackson",
       "spotifyId": "3BovdzfaX4jb5KFQwoPfAw",
-      "ytMusicId": "WlTlUseVt7E",
+      "ytMusicId": "kOn-HdEg6AQ",
       "streams": 5933229,
       "peak": 12,
       "weeks": 6
@@ -450,7 +450,7 @@
       "title": "Risk It All",
       "artist": "Bruno Mars",
       "spotifyId": "5y2ijHECwFYWqcAHKTZgzD",
-      "ytMusicId": "BF2_ipR1OI0",
+      "ytMusicId": "46a5bRqPy_E",
       "streams": 3943534,
       "peak": 1,
       "weeks": 14
@@ -659,7 +659,7 @@
       "title": "The Great Divide",
       "artist": "Noah Kahan",
       "spotifyId": "77zqs8ucHCSk5jh9TYec4b",
-      "ytMusicId": "zDYCdhyswko",
+      "ytMusicId": "sKaMlLT3tro",
       "streams": 3342573,
       "peak": 1,
       "weeks": 18
@@ -681,7 +681,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "X7AN68W5qDI",
+      "ytMusicId": "FrsOnNxIrg8",
       "streams": 3300947,
       "peak": 1,
       "weeks": 174
@@ -1253,7 +1253,7 @@
       "title": "Flashing Lights (w/ Dwele)",
       "artist": "Kanye West",
       "spotifyId": "5TRPicyLGbAF2LGBFbHGvO",
-      "ytMusicId": "cxKs2b5lRsA",
+      "ytMusicId": "ZAz3rnLGthg",
       "streams": 2770169,
       "peak": 53,
       "weeks": 161
@@ -1297,7 +1297,7 @@
       "title": "Passionfruit",
       "artist": "Drake",
       "spotifyId": "7hDc8b7IXETo14hHIHdnhd",
-      "ytMusicId": "EgfsXTOn_pI",
+      "ytMusicId": "COz9lDCFHjw",
       "streams": 2744445,
       "peak": 1,
       "weeks": 183
@@ -1638,7 +1638,7 @@
       "title": "On The Floor (w/ Pitbull)",
       "artist": "Jennifer Lopez",
       "spotifyId": "3C0nOe05EIt1390bVABLyN",
-      "ytMusicId": "9lybsz-7TFM",
+      "ytMusicId": "MzrLNDgDeKk",
       "streams": 2580577,
       "peak": 149,
       "weeks": 1
@@ -1913,7 +1913,7 @@
       "title": "Unwritten",
       "artist": "Natasha Bedingfield",
       "spotifyId": "3U5JVgI2x4rDyHGObzJfNf",
-      "ytMusicId": "dxB6Gqg26Kw",
+      "ytMusicId": "iKejQrGq04w",
       "streams": 2437620,
       "peak": 85,
       "weeks": 59
