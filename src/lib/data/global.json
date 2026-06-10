@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-06-09",
-  "lastUpdated": "2026-06-09T09:33:48.955Z",
+  "weekDate": "2026-06-10",
+  "lastUpdated": "2026-06-10T09:47:58.869Z",
   "tracks": [
     {
       "rank": 1,
@@ -76,7 +76,7 @@
       "title": "Beat It",
       "artist": "Michael Jackson",
       "spotifyId": "3BovdzfaX4jb5KFQwoPfAw",
-      "ytMusicId": "kOn-HdEg6AQ",
+      "ytMusicId": "WlTlUseVt7E",
       "streams": 28486375,
       "peak": 5,
       "weeks": 9
@@ -274,7 +274,7 @@
       "title": "On The Floor (w/ Pitbull)",
       "artist": "Jennifer Lopez",
       "spotifyId": "3C0nOe05EIt1390bVABLyN",
-      "ytMusicId": "MzrLNDgDeKk",
+      "ytMusicId": "9lybsz-7TFM",
       "streams": 18900616,
       "peak": 25,
       "weeks": 3
@@ -659,7 +659,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "FrsOnNxIrg8",
+      "ytMusicId": "cHeAyTkOyEA",
       "streams": 13070138,
       "peak": 1,
       "weeks": 318
@@ -923,7 +923,7 @@
       "title": "Viva La Vida",
       "artist": "Coldplay",
       "spotifyId": "1mea3bSkSGXuIRvnydlB5b",
-      "ytMusicId": "HGorCGszxZU",
+      "ytMusicId": "ALsvdSA9tOU",
       "streams": 11693151,
       "peak": 31,
       "weeks": 201
@@ -1715,7 +1715,7 @@
       "title": "We Found Love (w/ Calvin Harris)",
       "artist": "Rihanna",
       "spotifyId": "1zv3WFUbZ5vPxFq9I2jAU1",
-      "ytMusicId": "UUpuyzPJeWA",
+      "ytMusicId": "n6N1_sxlBU8",
       "streams": 9328219,
       "peak": 59,
       "weeks": 134
@@ -1759,7 +1759,7 @@
       "title": "Payphone (w/ Wiz Khalifa)",
       "artist": "Maroon 5",
       "spotifyId": "1XGmzt0PVuFgQYYnV2It7A",
-      "ytMusicId": "3ssXSY7f3s4",
+      "ytMusicId": "8UY5BGFLtK0",
       "streams": 9282218,
       "peak": 70,
       "weeks": 106
@@ -1858,7 +1858,7 @@
       "title": "That Should Be Me",
       "artist": "Justin Bieber",
       "spotifyId": "0aPZbnkMoWJaJ5CNVLCj8S",
-      "ytMusicId": "2Xulk9Ahqmc",
+      "ytMusicId": "jNfI-sp5n-A",
       "streams": 9109597,
       "peak": 46,
       "weeks": 8
@@ -1924,7 +1924,7 @@
       "title": "Unwritten",
       "artist": "Natasha Bedingfield",
       "spotifyId": "3U5JVgI2x4rDyHGObzJfNf",
-      "ytMusicId": "iKejQrGq04w",
+      "ytMusicId": "dxB6Gqg26Kw",
       "streams": 9005132,
       "peak": 16,
       "weeks": 75
@@ -2012,7 +2012,7 @@
       "title": "Flashing Lights (w/ Dwele)",
       "artist": "Kanye West",
       "spotifyId": "5TRPicyLGbAF2LGBFbHGvO",
-      "ytMusicId": "ZAz3rnLGthg",
+      "ytMusicId": "cxKs2b5lRsA",
       "streams": 8813370,
       "peak": 121,
       "weeks": 39
@@ -2056,7 +2056,7 @@
       "title": "Peão Todo Tatuado (w/ Mariana Fagundes)",
       "artist": "Jeninho",
       "spotifyId": "1wrA9K1P177mkPNt9BB2OZ",
-      "ytMusicId": "MQb8oGBXD_k",
+      "ytMusicId": "9eWo9z6zUi0",
       "streams": 8787341,
       "peak": 187,
       "weeks": 1
@@ -2111,7 +2111,7 @@
       "title": "That’s So True",
       "artist": "Gracie Abrams",
       "spotifyId": "7ne4VBA60CxGM75vw0EYad",
-      "ytMusicId": "W_YOJWZIjxo",
+      "ytMusicId": "AOz9V0NhJe8",
       "streams": 8736508,
       "peak": 3,
       "weeks": 84
