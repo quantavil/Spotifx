@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-06-10",
-  "lastUpdated": "2026-06-10T09:47:58.869Z",
+  "weekDate": "2026-06-11",
+  "lastUpdated": "2026-06-11T10:16:32.235Z",
   "tracks": [
     {
       "rank": 1,
@@ -21,7 +21,7 @@
       "title": "Billie Jean",
       "artist": "Michael Jackson",
       "spotifyId": "7J1uxwnxfQLu4APicE5Rnj",
-      "ytMusicId": "Kr4EQDVETuA",
+      "ytMusicId": "7CTJcHjkq0E",
       "streams": 37516431,
       "peak": 1,
       "weeks": 54
@@ -76,7 +76,7 @@
       "title": "Beat It",
       "artist": "Michael Jackson",
       "spotifyId": "3BovdzfaX4jb5KFQwoPfAw",
-      "ytMusicId": "WlTlUseVt7E",
+      "ytMusicId": "kOn-HdEg6AQ",
       "streams": 28486375,
       "peak": 5,
       "weeks": 9
@@ -582,7 +582,7 @@
       "title": "Cuando No Era Cantante - Remix (w/ Anuel AA, Fuerza Regida, Yung Beef)",
       "artist": "El Bogueto",
       "spotifyId": "2pbSCYzxrG0wa6qcj8IyiE",
-      "ytMusicId": "6sE5F9Y8f1o",
+      "ytMusicId": "3Nm3hkwGOGM",
       "streams": 13474260,
       "peak": 30,
       "weeks": 25
@@ -637,7 +637,7 @@
       "title": "I Just Might",
       "artist": "Bruno Mars",
       "spotifyId": "6f68Ac5tt5BQOpwr0BV9oN",
-      "ytMusicId": "8_C6lXoGB5Y",
+      "ytMusicId": "VjxWshMPMJo",
       "streams": 13164584,
       "peak": 3,
       "weeks": 21
@@ -659,7 +659,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "cHeAyTkOyEA",
+      "ytMusicId": "X7AN68W5qDI",
       "streams": 13070138,
       "peak": 1,
       "weeks": 318
@@ -857,7 +857,7 @@
       "title": "Ran To Atlanta (w/ Future, Molly Santana)",
       "artist": "Drake",
       "spotifyId": "3DK90400cDlV5WUJPraMph",
-      "ytMusicId": "KrKeZZafngg",
+      "ytMusicId": "JlfnEms4vRI",
       "streams": 12004552,
       "peak": 5,
       "weeks": 3
@@ -879,7 +879,7 @@
       "title": "Starboy (w/ Daft Punk)",
       "artist": "The Weeknd",
       "spotifyId": "7MXVkk9YMctZqd1Srtv4MB",
-      "ytMusicId": "plnfIj7dkJE",
+      "ytMusicId": "3_g2un5M350",
       "streams": 11878627,
       "peak": 1,
       "weeks": 310
@@ -978,7 +978,7 @@
       "title": "Cinderella (w/ Ty Dolla $ign)",
       "artist": "Mac Miller",
       "spotifyId": "2lpygKqzPFtItQ4ss3cgfb",
-      "ytMusicId": "HCgltcEaB_0",
+      "ytMusicId": "wbt_E7LNDaA",
       "streams": 11483451,
       "peak": 89,
       "weeks": 2
@@ -1143,7 +1143,7 @@
       "title": "REDRED",
       "artist": "CORTIS",
       "spotifyId": "2fCwv2ppU5nTRTckomIGsd",
-      "ytMusicId": "DBOyG7y_FQg",
+      "ytMusicId": "5sOgJQ3N03Q",
       "streams": 10945024,
       "peak": 61,
       "weeks": 6
@@ -1759,7 +1759,7 @@
       "title": "Payphone (w/ Wiz Khalifa)",
       "artist": "Maroon 5",
       "spotifyId": "1XGmzt0PVuFgQYYnV2It7A",
-      "ytMusicId": "8UY5BGFLtK0",
+      "ytMusicId": "3ssXSY7f3s4",
       "streams": 9282218,
       "peak": 70,
       "weeks": 106
@@ -1792,7 +1792,7 @@
       "title": "Last Friday Night (T.G.I.F.)",
       "artist": "Katy Perry",
       "spotifyId": "3avYqdwHKEq8beXbeWCKqJ",
-      "ytMusicId": "FhIWrcRZrus",
+      "ytMusicId": "6RMt2II3QXQ",
       "streams": 9234195,
       "peak": 131,
       "weeks": 20
@@ -1825,7 +1825,7 @@
       "title": "Stay (w/ Justin Bieber)",
       "artist": "The Kid LAROI",
       "spotifyId": "5PjdY0CKGZdEuoNab3yDmX",
-      "ytMusicId": "XfEMj-z3TtA",
+      "ytMusicId": "",
       "streams": 9184167,
       "peak": 1,
       "weeks": 183
@@ -1858,7 +1858,7 @@
       "title": "That Should Be Me",
       "artist": "Justin Bieber",
       "spotifyId": "0aPZbnkMoWJaJ5CNVLCj8S",
-      "ytMusicId": "jNfI-sp5n-A",
+      "ytMusicId": "2Xulk9Ahqmc",
       "streams": 9109597,
       "peak": 46,
       "weeks": 8
@@ -1924,7 +1924,7 @@
       "title": "Unwritten",
       "artist": "Natasha Bedingfield",
       "spotifyId": "3U5JVgI2x4rDyHGObzJfNf",
-      "ytMusicId": "dxB6Gqg26Kw",
+      "ytMusicId": "iKejQrGq04w",
       "streams": 9005132,
       "peak": 16,
       "weeks": 75
@@ -2012,7 +2012,7 @@
       "title": "Flashing Lights (w/ Dwele)",
       "artist": "Kanye West",
       "spotifyId": "5TRPicyLGbAF2LGBFbHGvO",
-      "ytMusicId": "cxKs2b5lRsA",
+      "ytMusicId": "ZAz3rnLGthg",
       "streams": 8813370,
       "peak": 121,
       "weeks": 39
