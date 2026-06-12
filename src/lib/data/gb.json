@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-06-11",
-  "lastUpdated": "2026-06-11T10:22:07.294Z",
+  "weekDate": "2026-06-12",
+  "lastUpdated": "2026-06-12T10:09:38.126Z",
   "tracks": [
     {
       "rank": 1,
@@ -10,7 +10,7 @@
       "title": "Rein Me In (w/ Olivia Dean)",
       "artist": "Sam Fender",
       "spotifyId": "0MUXBhPUDF8or0kfQ0EHwV",
-      "ytMusicId": "NO3JTAsB4NI",
+      "ytMusicId": "4vpTO9TBZKc",
       "streams": 2839921,
       "peak": 1,
       "weeks": 50
@@ -65,7 +65,7 @@
       "title": "Billie Jean",
       "artist": "Michael Jackson",
       "spotifyId": "7J1uxwnxfQLu4APicE5Rnj",
-      "ytMusicId": "7CTJcHjkq0E",
+      "ytMusicId": "Kr4EQDVETuA",
       "streams": 2238184,
       "peak": 4,
       "weeks": 50
@@ -571,7 +571,7 @@
       "title": "I Just Might",
       "artist": "Bruno Mars",
       "spotifyId": "6f68Ac5tt5BQOpwr0BV9oN",
-      "ytMusicId": "VjxWshMPMJo",
+      "ytMusicId": "8_C6lXoGB5Y",
       "streams": 995329,
       "peak": 5,
       "weeks": 21
@@ -604,7 +604,7 @@
       "title": "Rain Sounds for Sleeping, Pt. 06 (Continuous No Gaps) (w/ Rain Sounds)",
       "artist": "White Noise Radiance",
       "spotifyId": "7gF2mPcjipv2hLGHY7bi17",
-      "ytMusicId": "dedXQV_wO1c",
+      "ytMusicId": "13EL6Mgeocc",
       "streams": 937219,
       "peak": 38,
       "weeks": 18
@@ -659,7 +659,7 @@
       "title": "Clean Baby Sleep White Noise (Loopable no fade)",
       "artist": "Dream Supplier",
       "spotifyId": "3BgK59BTBUs8iQtnegfMfz",
-      "ytMusicId": "oGvrcrY8Xbs",
+      "ytMusicId": "2y6zdAbN9o8",
       "streams": 894719,
       "peak": 60,
       "weeks": 7
@@ -692,7 +692,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "X7AN68W5qDI",
+      "ytMusicId": "cHeAyTkOyEA",
       "streams": 876458,
       "peak": 1,
       "weeks": 390
@@ -967,7 +967,7 @@
       "title": "Ran To Atlanta (w/ Future, Molly Santana)",
       "artist": "Drake",
       "spotifyId": "3DK90400cDlV5WUJPraMph",
-      "ytMusicId": "JlfnEms4vRI",
+      "ytMusicId": "KrKeZZafngg",
       "streams": 759393,
       "peak": 9,
       "weeks": 3
@@ -1055,7 +1055,7 @@
       "title": "Viva La Vida",
       "artist": "Coldplay",
       "spotifyId": "1mea3bSkSGXuIRvnydlB5b",
-      "ytMusicId": "ALsvdSA9tOU",
+      "ytMusicId": "HGorCGszxZU",
       "streams": 721070,
       "peak": 27,
       "weeks": 204
@@ -1088,7 +1088,7 @@
       "title": "Landslide",
       "artist": "Fleetwood Mac",
       "spotifyId": "5ihS6UUlyQAfmp48eSkxuQ",
-      "ytMusicId": "k4M53xndqiU",
+      "ytMusicId": "mXonGAEPQp8",
       "streams": 713252,
       "peak": 35,
       "weeks": 32
@@ -1319,7 +1319,7 @@
       "title": "That’s So True",
       "artist": "Gracie Abrams",
       "spotifyId": "7ne4VBA60CxGM75vw0EYad",
-      "ytMusicId": "AOz9V0NhJe8",
+      "ytMusicId": "W_YOJWZIjxo",
       "streams": 657789,
       "peak": 1,
       "weeks": 85
@@ -1583,7 +1583,7 @@
       "title": "Ain't No Mountain High Enough (w/ Tammi Terrell)",
       "artist": "Marvin Gaye",
       "spotifyId": "7tqhbajSfrz2F7E1Z75ASX",
-      "ytMusicId": "ABfQuZqq8wg",
+      "ytMusicId": "oB9JIz72BoM",
       "streams": 615796,
       "peak": 35,
       "weeks": 122
@@ -1649,7 +1649,7 @@
       "title": "The Days - NOTION Remix (w/ NOTION)",
       "artist": "Chrystal",
       "spotifyId": "2FAZskT9yRjp2Oow9szJD8",
-      "ytMusicId": "bgWmgmoCCSc",
+      "ytMusicId": "BZ7mOoey5sE",
       "streams": 602448,
       "peak": 8,
       "weeks": 75
@@ -1748,7 +1748,7 @@
       "title": "Wanna Be Startin' Somethin'",
       "artist": "Michael Jackson",
       "spotifyId": "1hu2s7qkm5bo03eODpRQO3",
-      "ytMusicId": "8KWf_-ofYgI",
+      "ytMusicId": "4Ibtio5coYQ",
       "streams": 599034,
       "peak": 75,
       "weeks": 6
@@ -1814,7 +1814,7 @@
       "title": "We Found Love (w/ Calvin Harris)",
       "artist": "Rihanna",
       "spotifyId": "1zv3WFUbZ5vPxFq9I2jAU1",
-      "ytMusicId": "n6N1_sxlBU8",
+      "ytMusicId": "UUpuyzPJeWA",
       "streams": 589105,
       "peak": 34,
       "weeks": 105

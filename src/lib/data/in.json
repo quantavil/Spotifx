@@ -1,8 +1,8 @@
 {
   "country": "in",
   "countryName": "India",
-  "weekDate": "2026-06-11",
-  "lastUpdated": "2026-06-11T10:19:33.982Z",
+  "weekDate": "2026-06-12",
+  "lastUpdated": "2026-06-12T10:07:06.314Z",
   "tracks": [
     {
       "rank": 1,
@@ -76,7 +76,7 @@
       "title": "Jaiye Sajana (w/ Jasmine Sandlas, Satinder Sartaaj)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "6xwKNAUHeo2DbWNAPi8aEy",
-      "ytMusicId": "TaTZb7NXja0",
+      "ytMusicId": "AxN0RjNx6WM",
       "streams": 4518225,
       "peak": 2,
       "weeks": 11
@@ -362,7 +362,7 @@
       "title": "Ye Tune Kya Kiya (w/ Javed Bashir)",
       "artist": "Pritam",
       "spotifyId": "2cPUB8EOT6AfJ8oxhyoNXL",
-      "ytMusicId": "jcAn44985E0",
+      "ytMusicId": "y6uL9Oz6Tts",
       "streams": 2633596,
       "peak": 9,
       "weeks": 120
@@ -439,7 +439,7 @@
       "title": "Jaan Se Guzarte Hain (w/ Khan Saab)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "4aWTPC6cuebk9zSpW1PY1Y",
-      "ytMusicId": "iICM37_na2U",
+      "ytMusicId": "9wnBVhOpJCU",
       "streams": 2402800,
       "peak": 7,
       "weeks": 11
@@ -582,7 +582,7 @@
       "title": "God Mode (w/ Gana Muthu, Vishnu Edavan)",
       "artist": "Sai Abhyankkar",
       "spotifyId": "5IA1BVN8OKwpCxkgeOR8YM",
-      "ytMusicId": "eIeIkZ5Li88",
+      "ytMusicId": "qemjcgBJMCE",
       "streams": 2127695,
       "peak": 39,
       "weeks": 3
@@ -637,7 +637,7 @@
       "title": "Raabta (w/ Arijit Singh)",
       "artist": "Pritam",
       "spotifyId": "6FjbAnaPRPwiP3sciEYctO",
-      "ytMusicId": "tbXNVm8CXxg",
+      "ytMusicId": "piUHBTXsoiY",
       "streams": 2076394,
       "peak": 33,
       "weeks": 185
@@ -901,7 +901,7 @@
       "title": "Maahi (w/ Toshi Sabri)",
       "artist": "Shaarib Toshi",
       "spotifyId": "4bIQXffbALkCC0Xo6aTicP",
-      "ytMusicId": "_OgdZQ0c8Pw",
+      "ytMusicId": "L0FzCiuTVEw",
       "streams": 1742750,
       "peak": 57,
       "weeks": 55
@@ -1352,7 +1352,7 @@
       "title": "Yeh Fitoor Mera (w/ Arijit Singh)",
       "artist": "Amit Trivedi",
       "spotifyId": "7kvLAPEnEPlSbhZDlHFv0p",
-      "ytMusicId": "HZdooZcE5T4",
+      "ytMusicId": "Zkqhiil2kSo",
       "streams": 1484008,
       "peak": 123,
       "weeks": 5
@@ -1429,7 +1429,7 @@
       "title": "Mitwa (w/ Shankar Mahadevan, Caralisa Monteiro, Shafqat Amanat Ali)",
       "artist": "Shankar-Ehsaan-Loy",
       "spotifyId": "4BTPzhEsyW3blWcxcuhLM0",
-      "ytMusicId": "AsieVqOTRs0",
+      "ytMusicId": "-acMMyVFhZk",
       "streams": 1457314,
       "peak": 57,
       "weeks": 93
@@ -1484,7 +1484,7 @@
       "title": "Soch Na Sake (w/ Arijit Singh, Tulsi Kumar)",
       "artist": "Amaal Mallik",
       "spotifyId": "6mTvwBzWTGDOVeCNQEqtOE",
-      "ytMusicId": "lAsxLc9_45w",
+      "ytMusicId": "hp02FwlpQYU",
       "streams": 1447905,
       "peak": 46,
       "weeks": 151
@@ -1660,7 +1660,7 @@
       "title": "Main Rang Sharbaton Ka (w/ Chinmayi, Pritam)",
       "artist": "Atif Aslam",
       "spotifyId": "2IEhtVeM9TVql8fZdKdlo9",
-      "ytMusicId": "3tAmZlcZsHo",
+      "ytMusicId": "KXrEb9KYpoU",
       "streams": 1398841,
       "peak": 73,
       "weeks": 88
