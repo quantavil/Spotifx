@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-06-13",
-  "lastUpdated": "2026-06-13T08:53:43.798Z",
+  "weekDate": "2026-06-14",
+  "lastUpdated": "2026-06-14T09:26:54.968Z",
   "tracks": [
     {
       "rank": 1,
@@ -21,7 +21,7 @@
       "title": "Billie Jean",
       "artist": "Michael Jackson",
       "spotifyId": "7J1uxwnxfQLu4APicE5Rnj",
-      "ytMusicId": "7CTJcHjkq0E",
+      "ytMusicId": "Kr4EQDVETuA",
       "streams": 34840771,
       "peak": 1,
       "weeks": 55
@@ -76,7 +76,7 @@
       "title": "Beat It",
       "artist": "Michael Jackson",
       "spotifyId": "3BovdzfaX4jb5KFQwoPfAw",
-      "ytMusicId": "WlTlUseVt7E",
+      "ytMusicId": "kOn-HdEg6AQ",
       "streams": 26686848,
       "peak": 5,
       "weeks": 10
@@ -560,7 +560,7 @@
       "title": "Cuando No Era Cantante - Remix (w/ Anuel AA, Fuerza Regida, Yung Beef)",
       "artist": "El Bogueto",
       "spotifyId": "2pbSCYzxrG0wa6qcj8IyiE",
-      "ytMusicId": "3Nm3hkwGOGM",
+      "ytMusicId": "6sE5F9Y8f1o",
       "streams": 13538833,
       "peak": 30,
       "weeks": 26
@@ -758,7 +758,7 @@
       "title": "Danza Kuduro (w/ Lucenzo)",
       "artist": "Don Omar",
       "spotifyId": "2a1o6ZejUi8U3wzzOtCOYw",
-      "ytMusicId": "EKjdR-5XKYs",
+      "ytMusicId": "BbWY-avjDto",
       "streams": 12260559,
       "peak": 69,
       "weeks": 128
@@ -780,7 +780,7 @@
       "title": "Starboy (w/ Daft Punk)",
       "artist": "The Weeknd",
       "spotifyId": "7MXVkk9YMctZqd1Srtv4MB",
-      "ytMusicId": "3_g2un5M350",
+      "ytMusicId": "plnfIj7dkJE",
       "streams": 12136775,
       "peak": 1,
       "weeks": 311
@@ -1022,7 +1022,7 @@
       "title": "I Just Might",
       "artist": "Bruno Mars",
       "spotifyId": "6f68Ac5tt5BQOpwr0BV9oN",
-      "ytMusicId": "BF2_ipR1OI0",
+      "ytMusicId": "8_C6lXoGB5Y",
       "streams": 11046420,
       "peak": 3,
       "weeks": 22
@@ -1528,7 +1528,7 @@
       "title": "LEMONADE",
       "artist": "aespa",
       "spotifyId": "7a3iH9vM5Z58GqOMqXBU1M",
-      "ytMusicId": "EBFYYjdGwJg",
+      "ytMusicId": "LBhcqYqeu0U",
       "streams": 9704085,
       "peak": 64,
       "weeks": 2
@@ -1627,7 +1627,7 @@
       "title": "Ran To Atlanta (w/ Future, Molly Santana)",
       "artist": "Drake",
       "spotifyId": "3DK90400cDlV5WUJPraMph",
-      "ytMusicId": "JlfnEms4vRI",
+      "ytMusicId": "KrKeZZafngg",
       "streams": 9412142,
       "peak": 5,
       "weeks": 4
@@ -1781,7 +1781,7 @@
       "title": "We Found Love (w/ Calvin Harris)",
       "artist": "Rihanna",
       "spotifyId": "1zv3WFUbZ5vPxFq9I2jAU1",
-      "ytMusicId": "n6N1_sxlBU8",
+      "ytMusicId": "UUpuyzPJeWA",
       "streams": 9030060,
       "peak": 59,
       "weeks": 135
@@ -2100,7 +2100,7 @@
       "title": "Umbrella (w/ JAŸ-Z)",
       "artist": "Rihanna",
       "spotifyId": "2yPoXCs7BSIUrucMdK5PzV",
-      "ytMusicId": "x_GqgW94eSg",
+      "ytMusicId": "xXD5tltX9Pg",
       "streams": 8584980,
       "peak": 59,
       "weeks": 6

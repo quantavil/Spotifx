@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-06-13",
-  "lastUpdated": "2026-06-13T08:58:17.337Z",
+  "weekDate": "2026-06-14",
+  "lastUpdated": "2026-06-14T09:31:26.499Z",
   "tracks": [
     {
       "rank": 1,
@@ -76,7 +76,7 @@
       "title": "Billie Jean",
       "artist": "Michael Jackson",
       "spotifyId": "7J1uxwnxfQLu4APicE5Rnj",
-      "ytMusicId": "7CTJcHjkq0E",
+      "ytMusicId": "Kr4EQDVETuA",
       "streams": 7352453,
       "peak": 4,
       "weeks": 23
@@ -164,7 +164,7 @@
       "title": "Beat It",
       "artist": "Michael Jackson",
       "spotifyId": "3BovdzfaX4jb5KFQwoPfAw",
-      "ytMusicId": "WlTlUseVt7E",
+      "ytMusicId": "kOn-HdEg6AQ",
       "streams": 5365179,
       "peak": 12,
       "weeks": 7
@@ -340,7 +340,7 @@
       "title": "Ran To Atlanta (w/ Future, Molly Santana)",
       "artist": "Drake",
       "spotifyId": "3DK90400cDlV5WUJPraMph",
-      "ytMusicId": "JlfnEms4vRI",
+      "ytMusicId": "KrKeZZafngg",
       "streams": 4250010,
       "peak": 2,
       "weeks": 4
@@ -703,7 +703,7 @@
       "title": "Rain Sounds for Sleeping, Pt. 06 (Continuous No Gaps) (w/ Rain Sounds)",
       "artist": "White Noise Radiance",
       "spotifyId": "7gF2mPcjipv2hLGHY7bi17",
-      "ytMusicId": "dedXQV_wO1c",
+      "ytMusicId": "13EL6Mgeocc",
       "streams": 3158327,
       "peak": 60,
       "weeks": 17
@@ -725,7 +725,7 @@
       "title": "I Just Might",
       "artist": "Bruno Mars",
       "spotifyId": "6f68Ac5tt5BQOpwr0BV9oN",
-      "ytMusicId": "BF2_ipR1OI0",
+      "ytMusicId": "8_C6lXoGB5Y",
       "streams": 3099658,
       "peak": 1,
       "weeks": 22
@@ -1275,7 +1275,7 @@
       "title": "Scar Tissue - 2014 Remaster",
       "artist": "Red Hot Chili Peppers",
       "spotifyId": "32sx78QsGg6pKXn42XvF9L",
-      "ytMusicId": "tpYdGgzCW-M",
+      "ytMusicId": "A__cH65WRvE",
       "streams": 2696642,
       "peak": 65,
       "weeks": 15
@@ -1715,7 +1715,7 @@
       "title": "Landslide",
       "artist": "Fleetwood Mac",
       "spotifyId": "5ihS6UUlyQAfmp48eSkxuQ",
-      "ytMusicId": "k4M53xndqiU",
+      "ytMusicId": "mXonGAEPQp8",
       "streams": 2477533,
       "peak": 23,
       "weeks": 45
