@@ -37,6 +37,7 @@ class PlayerState {
 	queueOpen = $state(false);
 	fullScreenOpen = $state(false);
 	shortcutsOpen = $state(false);
+	showVideo = $state(false);
 	contextHue = $state<number | null>(null);
 
 	currentTrack = $derived.by(() => this.queue[this.currentIndex] ?? null);
@@ -272,6 +273,7 @@ class PlayerState {
 		this.visible = false;
 		this.queueOpen = false;
 		this.fullScreenOpen = false;
+		this.showVideo = false;
 		this.queue = [];
 		this.currentIndex = 0;
 		this.currentTime = 0;
@@ -284,6 +286,9 @@ class PlayerState {
 
 	toggleFullScreen() {
 		this.fullScreenOpen = !this.fullScreenOpen;
+		if (!this.fullScreenOpen) {
+			this.showVideo = false;
+		}
 	}
 
 	toggleShortcuts() {

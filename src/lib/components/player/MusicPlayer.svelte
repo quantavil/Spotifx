@@ -86,6 +86,11 @@
 		playerReady = true;
 		ytPlayer.setVolume(player.volume);
 
+		const iframe = ytContainer?.querySelector('iframe');
+		if (iframe) {
+			iframe.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture; fullscreen');
+		}
+
 		if (pendingVideoId && wantedPlaying) {
 			ytPlayer.loadVideoById(pendingVideoId);
 		}
@@ -375,9 +380,17 @@
 
 <div
 	bind:this={ytContainer}
-	class="fixed pointer-events-none"
-	style="left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden;"
-	aria-hidden="true"
+	id="yt-video-container"
+	class="fixed bg-black transition-all duration-300 rounded-xl overflow-hidden shadow-2xl flex items-center justify-center"
+	class:pointer-events-none={!player.showVideo || !player.fullScreenOpen}
+	class:z-[60]={player.showVideo && player.fullScreenOpen}
+	class:z-[-10]={!player.showVideo || !player.fullScreenOpen}
+	style={
+		(player.showVideo && player.fullScreenOpen)
+			? "left: 50%; top: 40%; transform: translate(-50%, -50%); width: calc(100% - 2rem); max-width: 500px; aspect-ratio: 16/9;"
+			: "left:-9999px;top:-9999px;width:1px;height:1px;opacity:0;"
+	}
+	aria-hidden={!player.showVideo}
 ></div>
 
 {#if player.visible}
@@ -421,5 +434,24 @@
 	.player-grid {
 		display: grid;
 		grid-template-columns: 1fr auto 1fr;
+	}
+
+	:global(#yt-hidden-player) {
+		width: 100% !important;
+		height: 100% !important;
+		border: 0;
+	}
+
+	#yt-video-container:fullscreen,
+	#yt-video-container:-webkit-full-screen {
+		left: 0 !important;
+		top: 0 !important;
+		transform: none !important;
+		width: 100vw !important;
+		height: 100vh !important;
+		max-width: none !important;
+		border-radius: 0 !important;
+		margin: 0 !important;
+		padding: 0 !important;
 	}
 </style>

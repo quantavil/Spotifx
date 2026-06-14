@@ -12,9 +12,22 @@
 
 	const track = $derived(player.currentTrack);
 
+	let placeholderEl = $state<HTMLDivElement>();
+
 	function openQueue() {
 		player.fullScreenOpen = false;
 		player.queueOpen = true;
+	}
+
+	function enterVideoFullscreen() {
+		const container = document.getElementById('yt-video-container');
+		if (container) {
+			if (container.requestFullscreen) {
+				container.requestFullscreen();
+			} else if ((container as any).webkitRequestFullscreen) {
+				(container as any).webkitRequestFullscreen();
+			}
+		}
 	}
 
 	$effect(() => {
@@ -37,6 +50,43 @@
 			}
 		};
 	});
+
+	$effect(() => {
+		if (!player.showVideo || !player.fullScreenOpen || !placeholderEl) return;
+
+		const updatePosition = () => {
+			if (!placeholderEl) return;
+			const rect = placeholderEl.getBoundingClientRect();
+			const container = document.getElementById('yt-video-container');
+			if (container) {
+				container.style.left = `${rect.left}px`;
+				container.style.top = `${rect.top}px`;
+				container.style.width = `${rect.width}px`;
+				container.style.height = `${rect.height}px`;
+				container.style.transform = 'none';
+				container.style.borderRadius = '1rem';
+			}
+		};
+
+		updatePosition();
+		window.addEventListener('resize', updatePosition);
+		const interval = setInterval(updatePosition, 100);
+
+		return () => {
+			window.removeEventListener('resize', updatePosition);
+			clearInterval(interval);
+
+			const container = document.getElementById('yt-video-container');
+			if (container) {
+				container.style.left = '';
+				container.style.top = '';
+				container.style.width = '';
+				container.style.height = '';
+				container.style.transform = '';
+				container.style.borderRadius = '';
+			}
+		};
+	});
 </script>
 
 {#if player.fullScreenOpen && track}
@@ -54,20 +104,46 @@
 			>
 				<Icon name="chevron-down" class="w-6 h-6" />
 			</button>
+			
 			<span class="text-[11px] text-gray-500 uppercase tracking-[0.2em] font-medium">Now Playing</span>
-			<button
-				onclick={openQueue}
-				class="text-gray-400 hover:text-white transition-colors cursor-pointer p-2 rounded-full hover:bg-white/5"
-				aria-label="Open queue"
-			>
-				<Icon name="queue" class="w-5 h-5" />
-			</button>
+			
+			<div class="flex items-center gap-1">
+				<!-- Toggle Video/Artwork -->
+				<button
+					onclick={() => player.showVideo = !player.showVideo}
+					class="text-gray-400 hover:text-white transition-colors cursor-pointer p-2 rounded-full hover:bg-white/5"
+					title={player.showVideo ? "Show Artwork" : "Watch Video"}
+					aria-label="Toggle Video Mode"
+				>
+					<Icon name={player.showVideo ? "music" : "youtube"} class="w-5 h-5" />
+				</button>
+
+				<!-- Fullscreen for Auto-PiP -->
+				{#if player.showVideo}
+					<button
+						onclick={enterVideoFullscreen}
+						class="text-gray-400 hover:text-white transition-colors cursor-pointer p-2 rounded-full hover:bg-white/5 animate-fade-in"
+						title="Fullscreen (Auto-PiP on Minimize)"
+						aria-label="Enter Video Fullscreen"
+					>
+						<Icon name="fullscreen" class="w-5 h-5" />
+					</button>
+				{/if}
+
+				<button
+					onclick={openQueue}
+					class="text-gray-400 hover:text-white transition-colors cursor-pointer p-2 rounded-full hover:bg-white/5"
+					aria-label="Open queue"
+				>
+					<Icon name="queue" class="w-5 h-5" />
+				</button>
+			</div>
 		</div>
 
 		<!-- Artwork -->
 		<div class="flex-1 flex items-center justify-center px-8 sm:px-12 py-4 min-h-0">
 			{#key track.ytMusicId}
-				<div class="animate-fade-in w-full max-w-xs sm:max-w-sm md:max-w-md aspect-square relative">
+				<div class="animate-fade-in w-full max-w-xs sm:max-w-sm md:max-w-md aspect-square relative flex items-center justify-center">
 					<!-- Glow shadow behind artwork -->
 					{#if track.ytMusicId}
 						<div
@@ -75,12 +151,19 @@
 							style="background: hsl({player.hue} 60% 30%);"
 						></div>
 					{/if}
-					<TrackThumbnail
-						track={track}
-						quality="hqdefault"
-						class="w-full h-full object-cover rounded-2xl shadow-2xl relative z-10 bg-white/5"
-						iconClass="w-16 h-16 text-gray-600"
-					/>
+					{#if player.showVideo}
+						<div
+							bind:this={placeholderEl}
+							class="w-full aspect-video rounded-2xl shadow-2xl relative z-10 bg-black/60"
+						></div>
+					{:else}
+						<TrackThumbnail
+							track={track}
+							quality="hqdefault"
+							class="w-full h-full object-cover rounded-2xl shadow-2xl relative z-10 bg-white/5"
+							iconClass="w-16 h-16 text-gray-600"
+						/>
+					{/if}
 				</div>
 			{/key}
 		</div>
