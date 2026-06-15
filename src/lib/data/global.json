@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-06-14",
-  "lastUpdated": "2026-06-14T09:26:54.968Z",
+  "weekDate": "2026-06-15",
+  "lastUpdated": "2026-06-15T11:55:29.553Z",
   "tracks": [
     {
       "rank": 1,
@@ -21,7 +21,7 @@
       "title": "Billie Jean",
       "artist": "Michael Jackson",
       "spotifyId": "7J1uxwnxfQLu4APicE5Rnj",
-      "ytMusicId": "Kr4EQDVETuA",
+      "ytMusicId": "7CTJcHjkq0E",
       "streams": 34840771,
       "peak": 1,
       "weeks": 55
@@ -76,7 +76,7 @@
       "title": "Beat It",
       "artist": "Michael Jackson",
       "spotifyId": "3BovdzfaX4jb5KFQwoPfAw",
-      "ytMusicId": "kOn-HdEg6AQ",
+      "ytMusicId": "WlTlUseVt7E",
       "streams": 26686848,
       "peak": 5,
       "weeks": 10
@@ -285,7 +285,7 @@
       "title": "Risk It All",
       "artist": "Bruno Mars",
       "spotifyId": "5y2ijHECwFYWqcAHKTZgzD",
-      "ytMusicId": "46a5bRqPy_E",
+      "ytMusicId": "BF2_ipR1OI0",
       "streams": 18050783,
       "peak": 3,
       "weeks": 15
@@ -560,7 +560,7 @@
       "title": "Cuando No Era Cantante - Remix (w/ Anuel AA, Fuerza Regida, Yung Beef)",
       "artist": "El Bogueto",
       "spotifyId": "2pbSCYzxrG0wa6qcj8IyiE",
-      "ytMusicId": "6sE5F9Y8f1o",
+      "ytMusicId": "3Nm3hkwGOGM",
       "streams": 13538833,
       "peak": 30,
       "weeks": 26
@@ -593,7 +593,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "X7AN68W5qDI",
+      "ytMusicId": "cHeAyTkOyEA",
       "streams": 13258618,
       "peak": 1,
       "weeks": 319
@@ -758,7 +758,7 @@
       "title": "Danza Kuduro (w/ Lucenzo)",
       "artist": "Don Omar",
       "spotifyId": "2a1o6ZejUi8U3wzzOtCOYw",
-      "ytMusicId": "BbWY-avjDto",
+      "ytMusicId": "EKjdR-5XKYs",
       "streams": 12260559,
       "peak": 69,
       "weeks": 128
@@ -1704,7 +1704,7 @@
       "title": "Unwritten",
       "artist": "Natasha Bedingfield",
       "spotifyId": "3U5JVgI2x4rDyHGObzJfNf",
-      "ytMusicId": "iKejQrGq04w",
+      "ytMusicId": "dxB6Gqg26Kw",
       "streams": 9182510,
       "peak": 16,
       "weeks": 76
