@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-06-15",
-  "lastUpdated": "2026-06-15T12:00:10.935Z",
+  "weekDate": "2026-06-16",
+  "lastUpdated": "2026-06-16T11:07:54.114Z",
   "tracks": [
     {
       "rank": 1,
@@ -153,7 +153,7 @@
       "title": "Shabang",
       "artist": "Drake",
       "spotifyId": "6vjpQIdABqntoe3zPazPec",
-      "ytMusicId": "fpr2AM8ziEs",
+      "ytMusicId": "alREBKH_AJg",
       "streams": 5530577,
       "peak": 5,
       "weeks": 4
@@ -703,7 +703,7 @@
       "title": "Rain Sounds for Sleeping, Pt. 06 (Continuous No Gaps) (w/ Rain Sounds)",
       "artist": "White Noise Radiance",
       "spotifyId": "7gF2mPcjipv2hLGHY7bi17",
-      "ytMusicId": "dedXQV_wO1c",
+      "ytMusicId": "13EL6Mgeocc",
       "streams": 3158327,
       "peak": 60,
       "weeks": 17
@@ -725,7 +725,7 @@
       "title": "I Just Might",
       "artist": "Bruno Mars",
       "spotifyId": "6f68Ac5tt5BQOpwr0BV9oN",
-      "ytMusicId": "8_C6lXoGB5Y",
+      "ytMusicId": "BF2_ipR1OI0",
       "streams": 3099658,
       "peak": 1,
       "weeks": 22
@@ -1022,7 +1022,7 @@
       "title": "Promiscuous (w/ Timbaland)",
       "artist": "Nelly Furtado",
       "spotifyId": "2gam98EZKrF9XuOkU13ApN",
-      "ytMusicId": "BO7FQnegW1o",
+      "ytMusicId": "KOmV9oEgm34",
       "streams": 2841764,
       "peak": 81,
       "weeks": 62
@@ -1176,7 +1176,7 @@
       "title": "Passionfruit",
       "artist": "Drake",
       "spotifyId": "7hDc8b7IXETo14hHIHdnhd",
-      "ytMusicId": "COz9lDCFHjw",
+      "ytMusicId": "EgfsXTOn_pI",
       "streams": 2761524,
       "peak": 1,
       "weeks": 184
@@ -1715,7 +1715,7 @@
       "title": "Landslide",
       "artist": "Fleetwood Mac",
       "spotifyId": "5ihS6UUlyQAfmp48eSkxuQ",
-      "ytMusicId": "mXonGAEPQp8",
+      "ytMusicId": "k4M53xndqiU",
       "streams": 2477533,
       "peak": 23,
       "weeks": 45
@@ -2122,7 +2122,7 @@
       "title": "Don't Stop Believin' (2022 Remaster)",
       "artist": "Journey",
       "spotifyId": "5RKQ5NdjSh2QzD4MaunT91",
-      "ytMusicId": "mM3Vmn4pdog",
+      "ytMusicId": "_2JmghTq12E",
       "streams": 2289962,
       "peak": 57,
       "weeks": 76
