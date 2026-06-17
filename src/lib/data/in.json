@@ -1,8 +1,8 @@
 {
   "country": "in",
   "countryName": "India",
-  "weekDate": "2026-06-16",
-  "lastUpdated": "2026-06-16T11:06:22.830Z",
+  "weekDate": "2026-06-17",
+  "lastUpdated": "2026-06-17T10:50:26.227Z",
   "tracks": [
     {
       "rank": 1,
@@ -65,7 +65,7 @@
       "title": "Finding Her (w/ Bharath)",
       "artist": "Kushagra",
       "spotifyId": "5ThyDv6aRVU8AH4vXQNldF",
-      "ytMusicId": "pmlyR-dqDnM",
+      "ytMusicId": "PZtSnQBsBW0",
       "streams": 4508844,
       "peak": 1,
       "weeks": 66
@@ -615,7 +615,7 @@
       "title": "Sadi Sun",
       "artist": "Harsh Nussi",
       "spotifyId": "2OISeKFXjDKqNm4BlWaC0w",
-      "ytMusicId": "6PHpxi-_GVY",
+      "ytMusicId": "LTtHMYHpMhg",
       "streams": 2090537,
       "peak": 56,
       "weeks": 1
@@ -703,7 +703,7 @@
       "title": "Jeena Jeena (w/ Atif Aslam)",
       "artist": "Sachin-Jigar",
       "spotifyId": "5lKE040hUfDAKOR8HLG92p",
-      "ytMusicId": "h2N4hw5ndbk",
+      "ytMusicId": "AsLPGPs5iQk",
       "streams": 1973093,
       "peak": 44,
       "weeks": 32
@@ -967,7 +967,7 @@
       "title": "Aaya Sher (From \"The Paradise\") (Telugu) (w/ Jangi Reddy, Arjun Chandy, Kasarla Shyam)",
       "artist": "Anirudh Ravichander",
       "spotifyId": "4kV0ugCwyF7OAb3huIdThG",
-      "ytMusicId": "lbEtG0ZjyJA",
+      "ytMusicId": "",
       "streams": 1724776,
       "peak": 8,
       "weeks": 16
@@ -978,7 +978,7 @@
       "title": "Haareya (From \"Meri Pyaari Bindu \") (w/ Arijit Singh, Priya Saraiya)",
       "artist": "Sachin-Jigar",
       "spotifyId": "678JJ0TF3KFkzw6bIFKcew",
-      "ytMusicId": "YALvuUpY_b0",
+      "ytMusicId": "C14askJ1tO8",
       "streams": 1715632,
       "peak": 89,
       "weeks": 2
@@ -1154,7 +1154,7 @@
       "title": "Starboy (w/ Daft Punk)",
       "artist": "The Weeknd",
       "spotifyId": "7MXVkk9YMctZqd1Srtv4MB",
-      "ytMusicId": "plnfIj7dkJE",
+      "ytMusicId": "3_g2un5M350",
       "streams": 1583051,
       "peak": 12,
       "weeks": 254
@@ -1220,7 +1220,7 @@
       "title": "Itni Si Baat Hain (From \"Azhar\") (w/ Antara Mitra)",
       "artist": "Arijit Singh",
       "spotifyId": "55TlMMnPJTk9Qq6CrqB6dx",
-      "ytMusicId": "LJSPjyeRFSo",
+      "ytMusicId": "MzKvcV0Re7U",
       "streams": 1555478,
       "peak": 42,
       "weeks": 87
@@ -1407,7 +1407,7 @@
       "title": "Aawaara Angaara (w/ Faheem Abdullah, Irshad Kamil)",
       "artist": "A.R. Rahman",
       "spotifyId": "6flQ5XJKj5qIhpxSHOd3jC",
-      "ytMusicId": "gkQx5m2KHAQ",
+      "ytMusicId": "kumQCeEitac",
       "streams": 1490752,
       "peak": 6,
       "weeks": 29
@@ -1528,7 +1528,7 @@
       "title": "Dil Ibaadat (w/ KK)",
       "artist": "Pritam",
       "spotifyId": "3Kl8p2PxVf8eAayLwTxOIm",
-      "ytMusicId": "QQrKqUnPT1A",
+      "ytMusicId": "IgITZfS7L_8",
       "streams": 1461362,
       "peak": 54,
       "weeks": 69
@@ -1594,7 +1594,7 @@
       "title": "Bekhayali (From \"Kabir Singh\") (w/ Sachet-Parampara, Shahid Kapoor, Kiara Advani)",
       "artist": "Sachet Tandon",
       "spotifyId": "1feANd8EfcDP5UqSvbheM3",
-      "ytMusicId": "0HoQoPuNjAs",
+      "ytMusicId": "PVDPkS4v8FQ",
       "streams": 1445871,
       "peak": 1,
       "weeks": 288
@@ -1847,7 +1847,7 @@
       "title": "Deewaniyat (From \"Ek Deewane Ki Deewaniyat\") (Original Motion Picture Soundtrack) (w/ Kaushik-Guddu, Kunaal Vermaa)",
       "artist": "Vishal Mishra",
       "spotifyId": "3EKHZNd0qflQK8UImpUu3k",
-      "ytMusicId": "BU5kkhpgLz8",
+      "ytMusicId": "",
       "streams": 1395041,
       "peak": 6,
       "weeks": 40
@@ -2034,7 +2034,7 @@
       "title": "Sanam Re (w/ Arijit Singh)",
       "artist": "Mithoon",
       "spotifyId": "0CVfovmUv7BnemOyTtOcbL",
-      "ytMusicId": "1vVGjAonhEA",
+      "ytMusicId": "utU4laPPKls",
       "streams": 1333191,
       "peak": 144,
       "weeks": 9
