@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-06-17",
-  "lastUpdated": "2026-06-17T10:52:58.029Z",
+  "weekDate": "2026-06-18",
+  "lastUpdated": "2026-06-18T10:21:04.825Z",
   "tracks": [
     {
       "rank": 1,
@@ -1055,7 +1055,7 @@
       "title": "They Don't Care About Us",
       "artist": "Michael Jackson",
       "spotifyId": "3wuCCNCnBhJlwkIJTBZFiv",
-      "ytMusicId": "-_OPJ2d86kE",
+      "ytMusicId": "GsHZBisKwxg",
       "streams": 703835,
       "peak": 56,
       "weeks": 7
@@ -1077,7 +1077,7 @@
       "title": "Viva La Vida",
       "artist": "Coldplay",
       "spotifyId": "1mea3bSkSGXuIRvnydlB5b",
-      "ytMusicId": "HGorCGszxZU",
+      "ytMusicId": "ALsvdSA9tOU",
       "streams": 701178,
       "peak": 27,
       "weeks": 205
@@ -2188,7 +2188,7 @@
       "title": "Flashing Lights (w/ Dwele)",
       "artist": "Kanye West",
       "spotifyId": "5TRPicyLGbAF2LGBFbHGvO",
-      "ytMusicId": "cxKs2b5lRsA",
+      "ytMusicId": "ZAz3rnLGthg",
       "streams": 538960,
       "peak": 56,
       "weeks": 75

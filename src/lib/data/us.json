@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-06-17",
-  "lastUpdated": "2026-06-17T10:51:57.084Z",
+  "weekDate": "2026-06-18",
+  "lastUpdated": "2026-06-18T10:20:05.635Z",
   "tracks": [
     {
       "rank": 1,
@@ -1264,7 +1264,7 @@
       "title": "Flashing Lights (w/ Dwele)",
       "artist": "Kanye West",
       "spotifyId": "5TRPicyLGbAF2LGBFbHGvO",
-      "ytMusicId": "cxKs2b5lRsA",
+      "ytMusicId": "ZAz3rnLGthg",
       "streams": 2708897,
       "peak": 53,
       "weeks": 162
@@ -2166,7 +2166,7 @@
       "title": "Viva La Vida",
       "artist": "Coldplay",
       "spotifyId": "1mea3bSkSGXuIRvnydlB5b",
-      "ytMusicId": "HGorCGszxZU",
+      "ytMusicId": "ALsvdSA9tOU",
       "streams": 2273452,
       "peak": 95,
       "weeks": 63
