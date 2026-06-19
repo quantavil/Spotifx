@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-06-18",
-  "lastUpdated": "2026-06-18T10:21:04.825Z",
+  "weekDate": "2026-06-19",
+  "lastUpdated": "2026-06-19T10:25:51.092Z",
   "tracks": [
     {
       "rank": 1,
@@ -65,7 +65,7 @@
       "title": "Billie Jean",
       "artist": "Michael Jackson",
       "spotifyId": "7J1uxwnxfQLu4APicE5Rnj",
-      "ytMusicId": "7CTJcHjkq0E",
+      "ytMusicId": "Kr4EQDVETuA",
       "streams": 2191028,
       "peak": 4,
       "weeks": 51
@@ -87,7 +87,7 @@
       "title": "Janice STFU",
       "artist": "Drake",
       "spotifyId": "514joG57v4yKTsfQmz7stz",
-      "ytMusicId": "x30_IHP1x3s",
+      "ytMusicId": "h5u4dKq8C2w",
       "streams": 2046659,
       "peak": 2,
       "weeks": 4
@@ -98,7 +98,7 @@
       "title": "Beat It",
       "artist": "Michael Jackson",
       "spotifyId": "3BovdzfaX4jb5KFQwoPfAw",
-      "ytMusicId": "WlTlUseVt7E",
+      "ytMusicId": "kOn-HdEg6AQ",
       "streams": 1834458,
       "peak": 6,
       "weeks": 8
@@ -241,7 +241,7 @@
       "title": "Cinderella (w/ Ty Dolla $ign)",
       "artist": "Mac Miller",
       "spotifyId": "2lpygKqzPFtItQ4ss3cgfb",
-      "ytMusicId": "wbt_E7LNDaA",
+      "ytMusicId": "HCgltcEaB_0",
       "streams": 1337897,
       "peak": 22,
       "weeks": 4
@@ -494,7 +494,7 @@
       "title": "Rain Sounds for Sleeping, Pt. 06 (Continuous No Gaps) (w/ Rain Sounds)",
       "artist": "White Noise Radiance",
       "spotifyId": "7gF2mPcjipv2hLGHY7bi17",
-      "ytMusicId": "dedXQV_wO1c",
+      "ytMusicId": "13EL6Mgeocc",
       "streams": 1041210,
       "peak": 38,
       "weeks": 19
@@ -560,7 +560,7 @@
       "title": "Clean Baby Sleep White Noise (Loopable no fade)",
       "artist": "Dream Supplier",
       "spotifyId": "3BgK59BTBUs8iQtnegfMfz",
-      "ytMusicId": "oGvrcrY8Xbs",
+      "ytMusicId": "2y6zdAbN9o8",
       "streams": 991054,
       "peak": 51,
       "weeks": 8
@@ -648,7 +648,7 @@
       "title": "Clean Baby Sleep White Noise (Loopable)",
       "artist": "Dream Supplier",
       "spotifyId": "4yVBarJHjhhzP1q7fU4p0W",
-      "ytMusicId": "tTFR2WK9Gz0",
+      "ytMusicId": "2y6zdAbN9o8",
       "streams": 934011,
       "peak": 46,
       "weeks": 8
@@ -901,7 +901,7 @@
       "title": "On The Floor (w/ Pitbull)",
       "artist": "Jennifer Lopez",
       "spotifyId": "3C0nOe05EIt1390bVABLyN",
-      "ytMusicId": "9lybsz-7TFM",
+      "ytMusicId": "gDRL47NzG5o",
       "streams": 763148,
       "peak": 69,
       "weeks": 3
@@ -1055,7 +1055,7 @@
       "title": "They Don't Care About Us",
       "artist": "Michael Jackson",
       "spotifyId": "3wuCCNCnBhJlwkIJTBZFiv",
-      "ytMusicId": "GsHZBisKwxg",
+      "ytMusicId": "-_OPJ2d86kE",
       "streams": 703835,
       "peak": 56,
       "weeks": 7
@@ -1077,7 +1077,7 @@
       "title": "Viva La Vida",
       "artist": "Coldplay",
       "spotifyId": "1mea3bSkSGXuIRvnydlB5b",
-      "ytMusicId": "ALsvdSA9tOU",
+      "ytMusicId": "HGorCGszxZU",
       "streams": 701178,
       "peak": 27,
       "weeks": 205
@@ -1132,7 +1132,7 @@
       "title": "Landslide",
       "artist": "Fleetwood Mac",
       "spotifyId": "5ihS6UUlyQAfmp48eSkxuQ",
-      "ytMusicId": "k4M53xndqiU",
+      "ytMusicId": "mXonGAEPQp8",
       "streams": 685830,
       "peak": 35,
       "weeks": 33
@@ -1297,7 +1297,7 @@
       "title": "That’s So True",
       "artist": "Gracie Abrams",
       "spotifyId": "7ne4VBA60CxGM75vw0EYad",
-      "ytMusicId": "AOz9V0NhJe8",
+      "ytMusicId": "W_YOJWZIjxo",
       "streams": 657245,
       "peak": 1,
       "weeks": 86
@@ -1363,7 +1363,7 @@
       "title": "Ran To Atlanta (w/ Future, Molly Santana)",
       "artist": "Drake",
       "spotifyId": "3DK90400cDlV5WUJPraMph",
-      "ytMusicId": "JlfnEms4vRI",
+      "ytMusicId": "KrKeZZafngg",
       "streams": 638304,
       "peak": 9,
       "weeks": 4
@@ -2188,7 +2188,7 @@
       "title": "Flashing Lights (w/ Dwele)",
       "artist": "Kanye West",
       "spotifyId": "5TRPicyLGbAF2LGBFbHGvO",
-      "ytMusicId": "ZAz3rnLGthg",
+      "ytMusicId": "cxKs2b5lRsA",
       "streams": 538960,
       "peak": 56,
       "weeks": 75
