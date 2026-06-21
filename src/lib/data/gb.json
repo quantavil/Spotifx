@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-06-20",
-  "lastUpdated": "2026-06-20T08:54:39.406Z",
+  "weekDate": "2026-06-21",
+  "lastUpdated": "2026-06-21T09:49:54.183Z",
   "tracks": [
     {
       "rank": 1,
@@ -21,7 +21,7 @@
       "title": "the cure",
       "artist": "Olivia Rodrigo",
       "spotifyId": "4EoJ151oQ5jY48z4RhSE96",
-      "ytMusicId": "Pzoz_xhIMlE",
+      "ytMusicId": "LuxizOvIbog",
       "streams": 3391727,
       "peak": 2,
       "weeks": 4
@@ -1132,7 +1132,7 @@
       "title": "Bitter Sweet Symphony",
       "artist": "The Verve",
       "spotifyId": "57iDDD9N9tTWe75x6qhStw",
-      "ytMusicId": "1WTATreAg08",
+      "ytMusicId": "JnRw8bXVbPI",
       "streams": 716674,
       "peak": 85,
       "weeks": 72
@@ -1165,7 +1165,7 @@
       "title": "Unwritten",
       "artist": "Natasha Bedingfield",
       "spotifyId": "3U5JVgI2x4rDyHGObzJfNf",
-      "ytMusicId": "dxB6Gqg26Kw",
+      "ytMusicId": "iKejQrGq04w",
       "streams": 710368,
       "peak": 11,
       "weeks": 112
@@ -1385,7 +1385,7 @@
       "title": "Landslide",
       "artist": "Fleetwood Mac",
       "spotifyId": "5ihS6UUlyQAfmp48eSkxuQ",
-      "ytMusicId": "mXonGAEPQp8",
+      "ytMusicId": "k4M53xndqiU",
       "streams": 665422,
       "peak": 35,
       "weeks": 34
@@ -1528,7 +1528,7 @@
       "title": "Viva La Vida",
       "artist": "Coldplay",
       "spotifyId": "1mea3bSkSGXuIRvnydlB5b",
-      "ytMusicId": "HGorCGszxZU",
+      "ytMusicId": "ALsvdSA9tOU",
       "streams": 643130,
       "peak": 27,
       "weeks": 206
@@ -1539,7 +1539,7 @@
       "title": "That’s So True",
       "artist": "Gracie Abrams",
       "spotifyId": "7ne4VBA60CxGM75vw0EYad",
-      "ytMusicId": "W_YOJWZIjxo",
+      "ytMusicId": "AOz9V0NhJe8",
       "streams": 642194,
       "peak": 1,
       "weeks": 87
@@ -1561,7 +1561,7 @@
       "title": "Boys Don't Cry",
       "artist": "The Cure",
       "spotifyId": "1QFh8OH1e78dGd3VyJZCAC",
-      "ytMusicId": "JAHZVS4tb1I",
+      "ytMusicId": "YSAqXEcgoZ4",
       "streams": 637000,
       "peak": 34,
       "weeks": 27
@@ -2122,7 +2122,7 @@
       "title": "We Found Love (w/ Calvin Harris)",
       "artist": "Rihanna",
       "spotifyId": "1zv3WFUbZ5vPxFq9I2jAU1",
-      "ytMusicId": "n6N1_sxlBU8",
+      "ytMusicId": "UUpuyzPJeWA",
       "streams": 560002,
       "peak": 34,
       "weeks": 107
@@ -2133,7 +2133,7 @@
       "title": "Waka Waka (This Time for Africa) [The Official 2010 FIFA World Cup (TM) Song] (w/ Freshlyground)",
       "artist": "Shakira",
       "spotifyId": "3XyCSaEvFQeflTqlF8FAjL",
-      "ytMusicId": "1FeEa2Ew2yo",
+      "ytMusicId": "Z_slTWayFK0",
       "streams": 559446,
       "peak": 194,
       "weeks": 1

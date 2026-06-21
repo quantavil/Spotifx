@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-06-20",
-  "lastUpdated": "2026-06-20T08:53:35.477Z",
+  "weekDate": "2026-06-21",
+  "lastUpdated": "2026-06-21T09:48:50.597Z",
   "tracks": [
     {
       "rank": 1,
@@ -21,7 +21,7 @@
       "title": "the cure",
       "artist": "Olivia Rodrigo",
       "spotifyId": "4EoJ151oQ5jY48z4RhSE96",
-      "ytMusicId": "Pzoz_xhIMlE",
+      "ytMusicId": "LuxizOvIbog",
       "streams": 13535905,
       "peak": 2,
       "weeks": 4
@@ -1154,7 +1154,7 @@
       "title": "Flashing Lights (w/ Dwele)",
       "artist": "Kanye West",
       "spotifyId": "5TRPicyLGbAF2LGBFbHGvO",
-      "ytMusicId": "cxKs2b5lRsA",
+      "ytMusicId": "ZAz3rnLGthg",
       "streams": 2726036,
       "peak": 53,
       "weeks": 163
@@ -1220,7 +1220,7 @@
       "title": "No Role Modelz",
       "artist": "J. Cole",
       "spotifyId": "68Dni7IE4VyPkTOH9mRWHr",
-      "ytMusicId": "0EnRK5YvBwU",
+      "ytMusicId": "8HBcV0MtAQg",
       "streams": 2695502,
       "peak": 10,
       "weeks": 528
@@ -1418,7 +1418,7 @@
       "title": "Les",
       "artist": "Childish Gambino",
       "spotifyId": "7ghKr0pCYyPPyp7t1FH8k4",
-      "ytMusicId": "L8gGHqPBuZM",
+      "ytMusicId": "eQL-E_TtB0o",
       "streams": 2593730,
       "peak": 70,
       "weeks": 55
@@ -1924,7 +1924,7 @@
       "title": "Landslide",
       "artist": "Fleetwood Mac",
       "spotifyId": "5ihS6UUlyQAfmp48eSkxuQ",
-      "ytMusicId": "mXonGAEPQp8",
+      "ytMusicId": "k4M53xndqiU",
       "streams": 2330344,
       "peak": 23,
       "weeks": 46
@@ -2166,7 +2166,7 @@
       "title": "RUBBERZ (w/ Purps On The Beat)",
       "artist": "Fenix Flexin",
       "spotifyId": "1iTBTk4xtwo4lBMcPVNoPh",
-      "ytMusicId": "qsKSfCCxrnk",
+      "ytMusicId": "A2xkp8KPEvw",
       "streams": 2254274,
       "peak": 197,
       "weeks": 1

@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-06-20",
-  "lastUpdated": "2026-06-20T08:49:10.795Z",
+  "weekDate": "2026-06-21",
+  "lastUpdated": "2026-06-21T09:44:20.076Z",
   "tracks": [
     {
       "rank": 1,
@@ -21,7 +21,7 @@
       "title": "the cure",
       "artist": "Olivia Rodrigo",
       "spotifyId": "4EoJ151oQ5jY48z4RhSE96",
-      "ytMusicId": "Pzoz_xhIMlE",
+      "ytMusicId": "LuxizOvIbog",
       "streams": 40707911,
       "peak": 2,
       "weeks": 4
@@ -1187,7 +1187,7 @@
       "title": "Viva La Vida",
       "artist": "Coldplay",
       "spotifyId": "1mea3bSkSGXuIRvnydlB5b",
-      "ytMusicId": "HGorCGszxZU",
+      "ytMusicId": "ALsvdSA9tOU",
       "streams": 10867399,
       "peak": 31,
       "weeks": 203
@@ -1726,7 +1726,7 @@
       "title": "Waka Waka (This Time for Africa) [The Official 2010 FIFA World Cup (TM) Song] (w/ Freshlyground)",
       "artist": "Shakira",
       "spotifyId": "3XyCSaEvFQeflTqlF8FAjL",
-      "ytMusicId": "1FeEa2Ew2yo",
+      "ytMusicId": "Z_slTWayFK0",
       "streams": 9405057,
       "peak": 157,
       "weeks": 1
@@ -1869,7 +1869,7 @@
       "title": "We Found Love (w/ Calvin Harris)",
       "artist": "Rihanna",
       "spotifyId": "1zv3WFUbZ5vPxFq9I2jAU1",
-      "ytMusicId": "n6N1_sxlBU8",
+      "ytMusicId": "UUpuyzPJeWA",
       "streams": 9136156,
       "peak": 59,
       "weeks": 136
@@ -1957,7 +1957,7 @@
       "title": "That’s So True",
       "artist": "Gracie Abrams",
       "spotifyId": "7ne4VBA60CxGM75vw0EYad",
-      "ytMusicId": "W_YOJWZIjxo",
+      "ytMusicId": "AOz9V0NhJe8",
       "streams": 8991318,
       "peak": 3,
       "weeks": 86
@@ -2056,7 +2056,7 @@
       "title": "Die For You",
       "artist": "The Weeknd",
       "spotifyId": "2LBqCSwhJGcFQeTHMVGwy3",
-      "ytMusicId": "QLCpqdqeoII",
+      "ytMusicId": "mTLQhPFx2nM",
       "streams": 8714009,
       "peak": 12,
       "weeks": 218
@@ -2144,7 +2144,7 @@
       "title": "Flashing Lights (w/ Dwele)",
       "artist": "Kanye West",
       "spotifyId": "5TRPicyLGbAF2LGBFbHGvO",
-      "ytMusicId": "cxKs2b5lRsA",
+      "ytMusicId": "ZAz3rnLGthg",
       "streams": 8588025,
       "peak": 121,
       "weeks": 41
