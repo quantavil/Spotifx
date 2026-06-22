@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-06-21",
-  "lastUpdated": "2026-06-21T09:49:54.183Z",
+  "weekDate": "2026-06-22",
+  "lastUpdated": "2026-06-22T11:50:32.258Z",
   "tracks": [
     {
       "rank": 1,
@@ -1132,7 +1132,7 @@
       "title": "Bitter Sweet Symphony",
       "artist": "The Verve",
       "spotifyId": "57iDDD9N9tTWe75x6qhStw",
-      "ytMusicId": "JnRw8bXVbPI",
+      "ytMusicId": "1WTATreAg08",
       "streams": 716674,
       "peak": 85,
       "weeks": 72
@@ -1528,7 +1528,7 @@
       "title": "Viva La Vida",
       "artist": "Coldplay",
       "spotifyId": "1mea3bSkSGXuIRvnydlB5b",
-      "ytMusicId": "ALsvdSA9tOU",
+      "ytMusicId": "HGorCGszxZU",
       "streams": 643130,
       "peak": 27,
       "weeks": 206
@@ -1561,7 +1561,7 @@
       "title": "Boys Don't Cry",
       "artist": "The Cure",
       "spotifyId": "1QFh8OH1e78dGd3VyJZCAC",
-      "ytMusicId": "YSAqXEcgoZ4",
+      "ytMusicId": "JAHZVS4tb1I",
       "streams": 637000,
       "peak": 34,
       "weeks": 27
@@ -1847,7 +1847,7 @@
       "title": "Don't Stop Believin' (2022 Remaster)",
       "artist": "Journey",
       "spotifyId": "5RKQ5NdjSh2QzD4MaunT91",
-      "ytMusicId": "mM3Vmn4pdog",
+      "ytMusicId": "_2JmghTq12E",
       "streams": 597452,
       "peak": 48,
       "weeks": 88
@@ -1968,7 +1968,7 @@
       "title": "Baby (w/ Murda Beatz)",
       "artist": "Prospa",
       "spotifyId": "5q6QXK4K3DvIlwGEtElny3",
-      "ytMusicId": "mEl5J4JC4q4",
+      "ytMusicId": "K0uYRWa0XSo",
       "streams": 578759,
       "peak": 125,
       "weeks": 5
