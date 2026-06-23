@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-06-22",
-  "lastUpdated": "2026-06-22T11:49:29.085Z",
+  "weekDate": "2026-06-23",
+  "lastUpdated": "2026-06-23T09:35:50.794Z",
   "tracks": [
     {
       "rank": 1,
@@ -21,7 +21,7 @@
       "title": "the cure",
       "artist": "Olivia Rodrigo",
       "spotifyId": "4EoJ151oQ5jY48z4RhSE96",
-      "ytMusicId": "LuxizOvIbog",
+      "ytMusicId": "cmzCwz4NkOA",
       "streams": 13535905,
       "peak": 2,
       "weeks": 4
@@ -670,7 +670,7 @@
       "title": "Ran To Atlanta (w/ Future, Molly Santana)",
       "artist": "Drake",
       "spotifyId": "3DK90400cDlV5WUJPraMph",
-      "ytMusicId": "KrKeZZafngg",
+      "ytMusicId": "JlfnEms4vRI",
       "streams": 3350066,
       "peak": 2,
       "weeks": 5
@@ -1220,7 +1220,7 @@
       "title": "No Role Modelz",
       "artist": "J. Cole",
       "spotifyId": "68Dni7IE4VyPkTOH9mRWHr",
-      "ytMusicId": "0EnRK5YvBwU",
+      "ytMusicId": "8HBcV0MtAQg",
       "streams": 2695502,
       "peak": 10,
       "weeks": 528
@@ -2078,7 +2078,7 @@
       "title": "Don't Stop Believin' (2022 Remaster)",
       "artist": "Journey",
       "spotifyId": "5RKQ5NdjSh2QzD4MaunT91",
-      "ytMusicId": "_2JmghTq12E",
+      "ytMusicId": "mM3Vmn4pdog",
       "streams": 2277295,
       "peak": 57,
       "weeks": 77

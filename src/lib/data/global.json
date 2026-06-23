@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-06-22",
-  "lastUpdated": "2026-06-22T11:45:05.769Z",
+  "weekDate": "2026-06-23",
+  "lastUpdated": "2026-06-23T09:31:15.798Z",
   "tracks": [
     {
       "rank": 1,
@@ -21,7 +21,7 @@
       "title": "the cure",
       "artist": "Olivia Rodrigo",
       "spotifyId": "4EoJ151oQ5jY48z4RhSE96",
-      "ytMusicId": "LuxizOvIbog",
+      "ytMusicId": "cmzCwz4NkOA",
       "streams": 40707911,
       "peak": 2,
       "weeks": 4
@@ -725,7 +725,7 @@
       "title": "Cuando No Era Cantante RMX - Remix (w/ Anuel AA, Fuerza Regida, Yung Beef)",
       "artist": "El Bogueto",
       "spotifyId": "56V7nzrqr6Sq1uFym4odwa",
-      "ytMusicId": "6sE5F9Y8f1o",
+      "ytMusicId": "3Nm3hkwGOGM",
       "streams": 13555804,
       "peak": 66,
       "weeks": 1
@@ -780,7 +780,7 @@
       "title": "Starboy (w/ Daft Punk)",
       "artist": "The Weeknd",
       "spotifyId": "7MXVkk9YMctZqd1Srtv4MB",
-      "ytMusicId": "3_g2un5M350",
+      "ytMusicId": "plnfIj7dkJE",
       "streams": 12481793,
       "peak": 1,
       "weeks": 312
@@ -1726,7 +1726,7 @@
       "title": "Waka Waka (This Time for Africa) [The Official 2010 FIFA World Cup (TM) Song] (w/ Freshlyground)",
       "artist": "Shakira",
       "spotifyId": "3XyCSaEvFQeflTqlF8FAjL",
-      "ytMusicId": "Z_slTWayFK0",
+      "ytMusicId": "1FeEa2Ew2yo",
       "streams": 9405057,
       "peak": 157,
       "weeks": 1
@@ -1869,7 +1869,7 @@
       "title": "We Found Love (w/ Calvin Harris)",
       "artist": "Rihanna",
       "spotifyId": "1zv3WFUbZ5vPxFq9I2jAU1",
-      "ytMusicId": "UUpuyzPJeWA",
+      "ytMusicId": "n6N1_sxlBU8",
       "streams": 9136156,
       "peak": 59,
       "weeks": 136
@@ -1957,7 +1957,7 @@
       "title": "That’s So True",
       "artist": "Gracie Abrams",
       "spotifyId": "7ne4VBA60CxGM75vw0EYad",
-      "ytMusicId": "AOz9V0NhJe8",
+      "ytMusicId": "W_YOJWZIjxo",
       "streams": 8991318,
       "peak": 3,
       "weeks": 86
