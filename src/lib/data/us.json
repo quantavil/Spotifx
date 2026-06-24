@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-06-23",
-  "lastUpdated": "2026-06-23T09:35:50.794Z",
+  "weekDate": "2026-06-24",
+  "lastUpdated": "2026-06-24T09:04:45.370Z",
   "tracks": [
     {
       "rank": 1,
@@ -1418,7 +1418,7 @@
       "title": "Les",
       "artist": "Childish Gambino",
       "spotifyId": "7ghKr0pCYyPPyp7t1FH8k4",
-      "ytMusicId": "eQL-E_TtB0o",
+      "ytMusicId": "L8gGHqPBuZM",
       "streams": 2593730,
       "peak": 70,
       "weeks": 55
