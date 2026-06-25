@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-06-24",
-  "lastUpdated": "2026-06-24T09:00:21.154Z",
+  "weekDate": "2026-06-25",
+  "lastUpdated": "2026-06-25T08:54:56.269Z",
   "tracks": [
     {
       "rank": 1,
@@ -439,7 +439,7 @@
       "title": "Risk It All",
       "artist": "Bruno Mars",
       "spotifyId": "5y2ijHECwFYWqcAHKTZgzD",
-      "ytMusicId": "BF2_ipR1OI0",
+      "ytMusicId": "46a5bRqPy_E",
       "streams": 16939538,
       "peak": 3,
       "weeks": 16
@@ -1187,7 +1187,7 @@
       "title": "Viva La Vida",
       "artist": "Coldplay",
       "spotifyId": "1mea3bSkSGXuIRvnydlB5b",
-      "ytMusicId": "ALsvdSA9tOU",
+      "ytMusicId": "HGorCGszxZU",
       "streams": 10867399,
       "peak": 31,
       "weeks": 203
@@ -1330,7 +1330,7 @@
       "title": "I Just Might",
       "artist": "Bruno Mars",
       "spotifyId": "6f68Ac5tt5BQOpwr0BV9oN",
-      "ytMusicId": "8_C6lXoGB5Y",
+      "ytMusicId": "8bvbiq9nM-4",
       "streams": 10459097,
       "peak": 3,
       "weeks": 23
