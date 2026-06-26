@@ -1,8 +1,8 @@
 {
   "country": "in",
   "countryName": "India",
-  "weekDate": "2026-06-25",
-  "lastUpdated": "2026-06-25T08:57:56.478Z",
+  "weekDate": "2026-06-26",
+  "lastUpdated": "2026-06-26T09:00:41.647Z",
   "tracks": [
     {
       "rank": 1,
@@ -296,7 +296,7 @@
       "title": "Sadi Sun",
       "artist": "Harsh Nussi",
       "spotifyId": "2OISeKFXjDKqNm4BlWaC0w",
-      "ytMusicId": "LTtHMYHpMhg",
+      "ytMusicId": "K7K45cmsDt0",
       "streams": 2967385,
       "peak": 27,
       "weeks": 2
@@ -318,7 +318,7 @@
       "title": "Shararat (w/ Madhubanti Bagchi, Jasmine Sandlas)",
       "artist": "Shashwat Sachdev",
       "spotifyId": "0R7grQWU1dRxiOQGIqZm0Z",
-      "ytMusicId": "Gayw5AQvWcQ",
+      "ytMusicId": "1vFZso3WgAA",
       "streams": 2936709,
       "peak": 7,
       "weeks": 27
@@ -659,7 +659,7 @@
       "title": "Raabta (w/ Arijit Singh)",
       "artist": "Pritam",
       "spotifyId": "6FjbAnaPRPwiP3sciEYctO",
-      "ytMusicId": "aVPwXQgY2QI",
+      "ytMusicId": "tbXNVm8CXxg",
       "streams": 2084933,
       "peak": 33,
       "weeks": 187
@@ -747,7 +747,7 @@
       "title": "God Mode (w/ Gana Muthu, Vishnu Edavan)",
       "artist": "Sai Abhyankkar",
       "spotifyId": "5IA1BVN8OKwpCxkgeOR8YM",
-      "ytMusicId": "eIeIkZ5Li88",
+      "ytMusicId": "qemjcgBJMCE",
       "streams": 1929098,
       "peak": 39,
       "weeks": 5
@@ -978,7 +978,7 @@
       "title": "Jhol - Acoustic (w/ Annural Khalid, Abdullah Siddiqui)",
       "artist": "Maanu",
       "spotifyId": "44LaY2y6wRRlSRjsqbKnuU",
-      "ytMusicId": "-WE_iBqLmMI",
+      "ytMusicId": "15tpdUBflC0",
       "streams": 1745694,
       "peak": 11,
       "weeks": 61
@@ -1605,7 +1605,7 @@
       "title": "Main Rang Sharbaton Ka (w/ Chinmayi, Pritam)",
       "artist": "Atif Aslam",
       "spotifyId": "2IEhtVeM9TVql8fZdKdlo9",
-      "ytMusicId": "cE4atI_v-Z0",
+      "ytMusicId": "3tAmZlcZsHo",
       "streams": 1476519,
       "peak": 73,
       "weeks": 90

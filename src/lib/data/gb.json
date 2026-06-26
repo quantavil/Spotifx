@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-06-25",
-  "lastUpdated": "2026-06-25T09:00:22.794Z",
+  "weekDate": "2026-06-26",
+  "lastUpdated": "2026-06-26T09:03:02.178Z",
   "tracks": [
     {
       "rank": 1,
@@ -43,7 +43,7 @@
       "title": "drop dead",
       "artist": "Olivia Rodrigo",
       "spotifyId": "7Hc6qcJG4NtyZgbNvQyd8U",
-      "ytMusicId": "G1--F4N-Gvs",
+      "ytMusicId": "wLmLB4Zzyiw",
       "streams": 2582778,
       "peak": 1,
       "weeks": 9
@@ -373,7 +373,7 @@
       "title": "Don't Stop 'Til You Get Enough - Single Version",
       "artist": "Michael Jackson",
       "spotifyId": "46eu3SBuFCXWsPT39Yg3tJ",
-      "ytMusicId": "n3qQtSRmHxo",
+      "ytMusicId": "m_O25dOQpCQ",
       "streams": 1330625,
       "peak": 8,
       "weeks": 8
@@ -868,7 +868,7 @@
       "title": "I Just Might",
       "artist": "Bruno Mars",
       "spotifyId": "6f68Ac5tt5BQOpwr0BV9oN",
-      "ytMusicId": "8bvbiq9nM-4",
+      "ytMusicId": "8_C6lXoGB5Y",
       "streams": 791762,
       "peak": 5,
       "weeks": 23
@@ -2100,7 +2100,7 @@
       "title": "The Days - NOTION Remix (w/ NOTION)",
       "artist": "Chrystal",
       "spotifyId": "2FAZskT9yRjp2Oow9szJD8",
-      "ytMusicId": "Oo9sekHsm3I",
+      "ytMusicId": "bgWmgmoCCSc",
       "streams": 560792,
       "peak": 8,
       "weeks": 77
