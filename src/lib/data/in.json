@@ -1,8 +1,8 @@
 {
   "country": "in",
   "countryName": "India",
-  "weekDate": "2026-06-26",
-  "lastUpdated": "2026-06-26T09:00:41.647Z",
+  "weekDate": "2026-06-27",
+  "lastUpdated": "2026-06-27T08:35:28.782Z",
   "tracks": [
     {
       "rank": 1,
@@ -340,7 +340,7 @@
       "title": "Raanjhan (From \"Do Patti\") (w/ Parampara Tandon, Kausar Munir)",
       "artist": "Sachet-Parampara",
       "spotifyId": "4vHRQnzGcKEtqsLH70tAms",
-      "ytMusicId": "7Iqe_yCYwvM",
+      "ytMusicId": "",
       "streams": 2759209,
       "peak": 1,
       "weeks": 87
@@ -351,7 +351,7 @@
       "title": "Zaalima (w/ Harshdeep Kaur)",
       "artist": "Arijit Singh",
       "spotifyId": "4MU4Kfkd9EnkArK2ocQyqK",
-      "ytMusicId": "eXkHvT--DBU",
+      "ytMusicId": "i_BBUsAZmd4",
       "streams": 2733228,
       "peak": 27,
       "weeks": 156
@@ -747,7 +747,7 @@
       "title": "God Mode (w/ Gana Muthu, Vishnu Edavan)",
       "artist": "Sai Abhyankkar",
       "spotifyId": "5IA1BVN8OKwpCxkgeOR8YM",
-      "ytMusicId": "qemjcgBJMCE",
+      "ytMusicId": "eIeIkZ5Li88",
       "streams": 1929098,
       "peak": 39,
       "weeks": 5
@@ -978,7 +978,7 @@
       "title": "Jhol - Acoustic (w/ Annural Khalid, Abdullah Siddiqui)",
       "artist": "Maanu",
       "spotifyId": "44LaY2y6wRRlSRjsqbKnuU",
-      "ytMusicId": "15tpdUBflC0",
+      "ytMusicId": "-WE_iBqLmMI",
       "streams": 1745694,
       "peak": 11,
       "weeks": 61
@@ -2045,7 +2045,7 @@
       "title": "Deewaniyat (From \"Ek Deewane Ki Deewaniyat\") (Original Motion Picture Soundtrack) (w/ Kaushik-Guddu, Kunaal Vermaa)",
       "artist": "Vishal Mishra",
       "spotifyId": "3EKHZNd0qflQK8UImpUu3k",
-      "ytMusicId": "BU5kkhpgLz8",
+      "ytMusicId": "",
       "streams": 1357714,
       "peak": 6,
       "weeks": 41
