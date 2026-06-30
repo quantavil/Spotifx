@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-06-29",
-  "lastUpdated": "2026-06-29T10:54:34.100Z",
+  "weekDate": "2026-06-30",
+  "lastUpdated": "2026-06-30T09:31:56.967Z",
   "tracks": [
     {
       "rank": 1,
@@ -373,7 +373,7 @@
       "title": "Don't Stop 'Til You Get Enough - Single Version",
       "artist": "Michael Jackson",
       "spotifyId": "46eu3SBuFCXWsPT39Yg3tJ",
-      "ytMusicId": "n3qQtSRmHxo",
+      "ytMusicId": "m_O25dOQpCQ",
       "streams": 1243137,
       "peak": 8,
       "weeks": 9
@@ -1099,7 +1099,7 @@
       "title": "Bitter Sweet Symphony",
       "artist": "The Verve",
       "spotifyId": "57iDDD9N9tTWe75x6qhStw",
-      "ytMusicId": "1WTATreAg08",
+      "ytMusicId": "JnRw8bXVbPI",
       "streams": 722716,
       "peak": 85,
       "weeks": 73
@@ -1583,7 +1583,7 @@
       "title": "Viva La Vida",
       "artist": "Coldplay",
       "spotifyId": "1mea3bSkSGXuIRvnydlB5b",
-      "ytMusicId": "ALsvdSA9tOU",
+      "ytMusicId": "HGorCGszxZU",
       "streams": 633830,
       "peak": 27,
       "weeks": 207
@@ -1660,7 +1660,7 @@
       "title": "Boys Don't Cry",
       "artist": "The Cure",
       "spotifyId": "1QFh8OH1e78dGd3VyJZCAC",
-      "ytMusicId": "JAHZVS4tb1I",
+      "ytMusicId": "YSAqXEcgoZ4",
       "streams": 628445,
       "peak": 34,
       "weeks": 28
