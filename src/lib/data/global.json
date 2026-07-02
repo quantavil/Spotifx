@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-07-01",
-  "lastUpdated": "2026-07-01T09:38:28.421Z",
+  "weekDate": "2026-07-02",
+  "lastUpdated": "2026-07-02T08:49:01.856Z",
   "tracks": [
     {
       "rank": 1,
@@ -527,7 +527,7 @@
       "title": "Don't Stop 'Til You Get Enough - Single Version",
       "artist": "Michael Jackson",
       "spotifyId": "46eu3SBuFCXWsPT39Yg3tJ",
-      "ytMusicId": "n3qQtSRmHxo",
+      "ytMusicId": "m_O25dOQpCQ",
       "streams": 14965728,
       "peak": 8,
       "weeks": 9
@@ -714,7 +714,7 @@
       "title": "Danza Kuduro (w/ Lucenzo)",
       "artist": "Don Omar",
       "spotifyId": "2a1o6ZejUi8U3wzzOtCOYw",
-      "ytMusicId": "EKjdR-5XKYs",
+      "ytMusicId": "BbWY-avjDto",
       "streams": 13182606,
       "peak": 65,
       "weeks": 130
@@ -758,7 +758,7 @@
       "title": "Starboy (w/ Daft Punk)",
       "artist": "The Weeknd",
       "spotifyId": "7MXVkk9YMctZqd1Srtv4MB",
-      "ytMusicId": "plnfIj7dkJE",
+      "ytMusicId": "3_g2un5M350",
       "streams": 12769277,
       "peak": 1,
       "weeks": 313
@@ -824,7 +824,7 @@
       "title": "Jamaican (Bam Bam) (w/ SOLTO (FR))",
       "artist": "HUGEL",
       "spotifyId": "7e4zDInS6tA2jwzphvs2Ay",
-      "ytMusicId": "bI_85qC2UWk",
+      "ytMusicId": "i34pFNr42mc",
       "streams": 12296987,
       "peak": 75,
       "weeks": 12
@@ -1264,7 +1264,7 @@
       "title": "I Just Might",
       "artist": "Bruno Mars",
       "spotifyId": "6f68Ac5tt5BQOpwr0BV9oN",
-      "ytMusicId": "8_C6lXoGB5Y",
+      "ytMusicId": "8bvbiq9nM-4",
       "streams": 10369593,
       "peak": 3,
       "weeks": 24
@@ -2166,7 +2166,7 @@
       "title": "Umbrella (w/ JAŸ-Z)",
       "artist": "Rihanna",
       "spotifyId": "2yPoXCs7BSIUrucMdK5PzV",
-      "ytMusicId": "xXD5tltX9Pg",
+      "ytMusicId": "x_GqgW94eSg",
       "streams": 8511738,
       "peak": 59,
       "weeks": 7

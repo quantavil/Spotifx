@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-07-01",
-  "lastUpdated": "2026-07-01T09:43:09.938Z",
+  "weekDate": "2026-07-02",
+  "lastUpdated": "2026-07-02T08:53:38.578Z",
   "tracks": [
     {
       "rank": 1,
@@ -461,7 +461,7 @@
       "title": "Don't Stop 'Til You Get Enough - Single Version",
       "artist": "Michael Jackson",
       "spotifyId": "46eu3SBuFCXWsPT39Yg3tJ",
-      "ytMusicId": "n3qQtSRmHxo",
+      "ytMusicId": "m_O25dOQpCQ",
       "streams": 3945726,
       "peak": 14,
       "weeks": 9
@@ -978,7 +978,7 @@
       "title": "Ran To Atlanta (w/ Future, Molly Santana)",
       "artist": "Drake",
       "spotifyId": "3DK90400cDlV5WUJPraMph",
-      "ytMusicId": "KrKeZZafngg",
+      "ytMusicId": "JlfnEms4vRI",
       "streams": 2865736,
       "peak": 2,
       "weeks": 6
@@ -1055,7 +1055,7 @@
       "title": "No Role Modelz",
       "artist": "J. Cole",
       "spotifyId": "68Dni7IE4VyPkTOH9mRWHr",
-      "ytMusicId": "0EnRK5YvBwU",
+      "ytMusicId": "8HBcV0MtAQg",
       "streams": 2773061,
       "peak": 10,
       "weeks": 529
@@ -1066,7 +1066,7 @@
       "title": "I Just Might",
       "artist": "Bruno Mars",
       "spotifyId": "6f68Ac5tt5BQOpwr0BV9oN",
-      "ytMusicId": "8_C6lXoGB5Y",
+      "ytMusicId": "8bvbiq9nM-4",
       "streams": 2763863,
       "peak": 1,
       "weeks": 24
@@ -1407,7 +1407,7 @@
       "title": "Les",
       "artist": "Childish Gambino",
       "spotifyId": "7ghKr0pCYyPPyp7t1FH8k4",
-      "ytMusicId": "eQL-E_TtB0o",
+      "ytMusicId": "L8gGHqPBuZM",
       "streams": 2559454,
       "peak": 70,
       "weeks": 56

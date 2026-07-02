@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-07-01",
-  "lastUpdated": "2026-07-01T09:44:10.866Z",
+  "weekDate": "2026-07-02",
+  "lastUpdated": "2026-07-02T08:54:40.555Z",
   "tracks": [
     {
       "rank": 1,
@@ -373,7 +373,7 @@
       "title": "Don't Stop 'Til You Get Enough - Single Version",
       "artist": "Michael Jackson",
       "spotifyId": "46eu3SBuFCXWsPT39Yg3tJ",
-      "ytMusicId": "n3qQtSRmHxo",
+      "ytMusicId": "m_O25dOQpCQ",
       "streams": 1243137,
       "peak": 8,
       "weeks": 9
@@ -813,7 +813,7 @@
       "title": "I Just Might",
       "artist": "Bruno Mars",
       "spotifyId": "6f68Ac5tt5BQOpwr0BV9oN",
-      "ytMusicId": "8_C6lXoGB5Y",
+      "ytMusicId": "8bvbiq9nM-4",
       "streams": 826064,
       "peak": 5,
       "weeks": 24
@@ -1099,7 +1099,7 @@
       "title": "Bitter Sweet Symphony",
       "artist": "The Verve",
       "spotifyId": "57iDDD9N9tTWe75x6qhStw",
-      "ytMusicId": "1WTATreAg08",
+      "ytMusicId": "JnRw8bXVbPI",
       "streams": 722716,
       "peak": 85,
       "weeks": 73
@@ -1968,7 +1968,7 @@
       "title": "Go Your Own Way - 2001 Remaster",
       "artist": "Fleetwood Mac",
       "spotifyId": "34F6qT8udksbeKO7CVDBqF",
-      "ytMusicId": "IPBcoIlGp-8",
+      "ytMusicId": "MTIkFwMuiTw",
       "streams": 600033,
       "peak": 125,
       "weeks": 10
@@ -2045,7 +2045,7 @@
       "title": "Danza Kuduro (w/ Lucenzo)",
       "artist": "Don Omar",
       "spotifyId": "2a1o6ZejUi8U3wzzOtCOYw",
-      "ytMusicId": "EKjdR-5XKYs",
+      "ytMusicId": "BbWY-avjDto",
       "streams": 587651,
       "peak": 186,
       "weeks": 2
@@ -2056,7 +2056,7 @@
       "title": "Landslide",
       "artist": "Fleetwood Mac",
       "spotifyId": "5ihS6UUlyQAfmp48eSkxuQ",
-      "ytMusicId": "mXonGAEPQp8",
+      "ytMusicId": "k4M53xndqiU",
       "streams": 586659,
       "peak": 35,
       "weeks": 35
