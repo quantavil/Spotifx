@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-07-04",
-  "lastUpdated": "2026-07-04T08:36:01.779Z",
+  "weekDate": "2026-07-05",
+  "lastUpdated": "2026-07-05T08:52:54.253Z",
   "tracks": [
     {
       "rank": 1,
@@ -53,7 +53,7 @@
       "change": "-2",
       "title": "the cure",
       "artist": "Olivia Rodrigo",
-      "spotifyId": "4EoJ151oQ5jY48z4RhSE96",
+      "spotifyId": "55pBIZO1cqoldeqpp5WR7H",
       "ytMusicId": "cmzCwz4NkOA",
       "streams": 7461379,
       "peak": 2,
@@ -769,7 +769,7 @@
       "title": "misery.",
       "artist": "pupsies",
       "spotifyId": "6De8sirPzVyAoBDlQpcutY",
-      "ytMusicId": "OtRmg73rsIU",
+      "ytMusicId": "qJKcADiAuAw",
       "streams": 3072798,
       "peak": 70,
       "weeks": 1
@@ -2177,7 +2177,7 @@
       "title": "Landslide",
       "artist": "Fleetwood Mac",
       "spotifyId": "5ihS6UUlyQAfmp48eSkxuQ",
-      "ytMusicId": "mXonGAEPQp8",
+      "ytMusicId": "k4M53xndqiU",
       "streams": 2218774,
       "peak": 23,
       "weeks": 47

@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-07-04",
-  "lastUpdated": "2026-07-04T08:31:29.693Z",
+  "weekDate": "2026-07-05",
+  "lastUpdated": "2026-07-05T08:48:20.031Z",
   "tracks": [
     {
       "rank": 1,
@@ -97,7 +97,7 @@
       "change": "-2",
       "title": "the cure",
       "artist": "Olivia Rodrigo",
-      "spotifyId": "4EoJ151oQ5jY48z4RhSE96",
+      "spotifyId": "55pBIZO1cqoldeqpp5WR7H",
       "ytMusicId": "cmzCwz4NkOA",
       "streams": 24056230,
       "peak": 2,
@@ -582,7 +582,7 @@
       "title": "Danza Kuduro (w/ Lucenzo)",
       "artist": "Don Omar",
       "spotifyId": "2a1o6ZejUi8U3wzzOtCOYw",
-      "ytMusicId": "EKjdR-5XKYs",
+      "ytMusicId": "BbWY-avjDto",
       "streams": 13406974,
       "peak": 53,
       "weeks": 131
@@ -747,7 +747,7 @@
       "title": "Starboy (w/ Daft Punk)",
       "artist": "The Weeknd",
       "spotifyId": "7MXVkk9YMctZqd1Srtv4MB",
-      "ytMusicId": "plnfIj7dkJE",
+      "ytMusicId": "3_g2un5M350",
       "streams": 12219507,
       "peak": 1,
       "weeks": 314
@@ -769,7 +769,7 @@
       "title": "Jamaican (Bam Bam) (w/ SOLTO (FR))",
       "artist": "HUGEL",
       "spotifyId": "7e4zDInS6tA2jwzphvs2Ay",
-      "ytMusicId": "bI_85qC2UWk",
+      "ytMusicId": "i34pFNr42mc",
       "streams": 12097874,
       "peak": 70,
       "weeks": 13
@@ -1077,7 +1077,7 @@
       "title": "REDRED",
       "artist": "CORTIS",
       "spotifyId": "2fCwv2ppU5nTRTckomIGsd",
-      "ytMusicId": "DBOyG7y_FQg",
+      "ytMusicId": "5sOgJQ3N03Q",
       "streams": 10734067,
       "peak": 61,
       "weeks": 10
