@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-07-05",
-  "lastUpdated": "2026-07-05T08:48:20.031Z",
+  "weekDate": "2026-07-06",
+  "lastUpdated": "2026-07-06T10:07:27.622Z",
   "tracks": [
     {
       "rank": 1,
@@ -131,7 +131,7 @@
       "title": "The One That Got Away",
       "artist": "Katy Perry",
       "spotifyId": "6hkOqJ5mE093AQf2lbZnsG",
-      "ytMusicId": "5ZsotZ-IqZs",
+      "ytMusicId": "64wxAbbWNag",
       "streams": 22124213,
       "peak": 9,
       "weeks": 15
@@ -174,7 +174,7 @@
       "change": "+2",
       "title": "Choosin' Texas",
       "artist": "Ella Langley",
-      "spotifyId": "65DbTqJKhbwqYbZ1Okr0rc",
+      "spotifyId": "7scFxt9VhL4FJwuPSfRlfN",
       "ytMusicId": "3s1sZbW7Rt8",
       "streams": 19319964,
       "peak": 16,
@@ -483,7 +483,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "EG6xVbwwLiI",
+      "ytMusicId": "7193204dpGU",
       "streams": 14384634,
       "peak": 1,
       "weeks": 322
@@ -516,7 +516,7 @@
       "title": "Don't Stop 'Til You Get Enough - Single Version",
       "artist": "Michael Jackson",
       "spotifyId": "46eu3SBuFCXWsPT39Yg3tJ",
-      "ytMusicId": "m_O25dOQpCQ",
+      "ytMusicId": "n3qQtSRmHxo",
       "streams": 14121113,
       "peak": 8,
       "weeks": 10
@@ -978,7 +978,7 @@
       "title": "Viva La Vida",
       "artist": "Coldplay",
       "spotifyId": "1mea3bSkSGXuIRvnydlB5b",
-      "ytMusicId": "ALsvdSA9tOU",
+      "ytMusicId": "HGorCGszxZU",
       "streams": 11013946,
       "peak": 31,
       "weeks": 205
@@ -1066,7 +1066,7 @@
       "title": "I Just Might",
       "artist": "Bruno Mars",
       "spotifyId": "6f68Ac5tt5BQOpwr0BV9oN",
-      "ytMusicId": "8bvbiq9nM-4",
+      "ytMusicId": "8_C6lXoGB5Y",
       "streams": 10738445,
       "peak": 3,
       "weeks": 25
@@ -1077,7 +1077,7 @@
       "title": "REDRED",
       "artist": "CORTIS",
       "spotifyId": "2fCwv2ppU5nTRTckomIGsd",
-      "ytMusicId": "5sOgJQ3N03Q",
+      "ytMusicId": "DBOyG7y_FQg",
       "streams": 10734067,
       "peak": 61,
       "weeks": 10
@@ -2056,7 +2056,7 @@
       "title": "Pilé",
       "artist": "Mauvais djo",
       "spotifyId": "3Vac8kKIqOTCEE3nuaIcec",
-      "ytMusicId": "grRKZU-s3Ps",
+      "ytMusicId": "DIkTFk38k_E",
       "streams": 8499408,
       "peak": 187,
       "weeks": 2
@@ -2199,7 +2199,7 @@
       "title": "Somebody That I Used To Know (w/ Kimbra)",
       "artist": "Gotye",
       "spotifyId": "1qDrWA6lyx8cLECdZE7TV7",
-      "ytMusicId": "T3Pe10TPDMU",
+      "ytMusicId": "jg51kFe7CWU",
       "streams": 8298036,
       "peak": 129,
       "weeks": 29
