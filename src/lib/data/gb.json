@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-07-06",
-  "lastUpdated": "2026-07-06T10:12:57.735Z",
+  "weekDate": "2026-07-07",
+  "lastUpdated": "2026-07-07T09:39:05.276Z",
   "tracks": [
     {
       "rank": 1,
@@ -351,7 +351,7 @@
       "title": "Don't Stop 'Til You Get Enough - Single Version",
       "artist": "Michael Jackson",
       "spotifyId": "46eu3SBuFCXWsPT39Yg3tJ",
-      "ytMusicId": "n3qQtSRmHxo",
+      "ytMusicId": "m_O25dOQpCQ",
       "streams": 1126437,
       "peak": 8,
       "weeks": 10
@@ -560,7 +560,7 @@
       "title": "The One That Got Away",
       "artist": "Katy Perry",
       "spotifyId": "6hkOqJ5mE093AQf2lbZnsG",
-      "ytMusicId": "64wxAbbWNag",
+      "ytMusicId": "5ZsotZ-IqZs",
       "streams": 948011,
       "peak": 46,
       "weeks": 14
@@ -791,7 +791,7 @@
       "title": "NOBLE",
       "artist": "F3miii",
       "spotifyId": "4Jsus7N4d8hFB2G9gcRdBv",
-      "ytMusicId": "4rDMvIZ4nWE",
+      "ytMusicId": "ucylSF4YPvw",
       "streams": 797254,
       "peak": 39,
       "weeks": 11
@@ -956,7 +956,7 @@
       "title": "Bitter Sweet Symphony",
       "artist": "The Verve",
       "spotifyId": "57iDDD9N9tTWe75x6qhStw",
-      "ytMusicId": "JnRw8bXVbPI",
+      "ytMusicId": "1WTATreAg08",
       "streams": 739152,
       "peak": 85,
       "weeks": 74
@@ -1748,7 +1748,7 @@
       "title": "Viva La Vida",
       "artist": "Coldplay",
       "spotifyId": "1mea3bSkSGXuIRvnydlB5b",
-      "ytMusicId": "HGorCGszxZU",
+      "ytMusicId": "ALsvdSA9tOU",
       "streams": 602837,
       "peak": 27,
       "weeks": 208
@@ -1836,7 +1836,7 @@
       "title": "Landslide",
       "artist": "Fleetwood Mac",
       "spotifyId": "5ihS6UUlyQAfmp48eSkxuQ",
-      "ytMusicId": "mXonGAEPQp8",
+      "ytMusicId": "k4M53xndqiU",
       "streams": 590654,
       "peak": 35,
       "weeks": 36

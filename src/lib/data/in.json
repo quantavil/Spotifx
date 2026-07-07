@@ -1,8 +1,8 @@
 {
   "country": "in",
   "countryName": "India",
-  "weekDate": "2026-07-06",
-  "lastUpdated": "2026-07-06T10:10:32.238Z",
+  "weekDate": "2026-07-07",
+  "lastUpdated": "2026-07-07T09:36:40.239Z",
   "tracks": [
     {
       "rank": 1,
@@ -417,7 +417,7 @@
       "title": "Raanjhan (From \"Do Patti\") (w/ Parampara Tandon, Kausar Munir)",
       "artist": "Sachet-Parampara",
       "spotifyId": "4vHRQnzGcKEtqsLH70tAms",
-      "ytMusicId": "7Iqe_yCYwvM",
+      "ytMusicId": "",
       "streams": 2538304,
       "peak": 1,
       "weeks": 89
@@ -659,7 +659,7 @@
       "title": "Tu Thodi Der Aur Thehar Ja (w/ Farhan Saeed, Kumaar)",
       "artist": "Shreya Ghoshal",
       "spotifyId": "2Rz2F6KoLH6TtbX4TZ2qcP",
-      "ytMusicId": "UhYYsdOgwKo",
+      "ytMusicId": "xuBwv7yyjR8",
       "streams": 2063072,
       "peak": 60,
       "weeks": 1
@@ -692,7 +692,7 @@
       "title": "Raabta (w/ Arijit Singh)",
       "artist": "Pritam",
       "spotifyId": "6FjbAnaPRPwiP3sciEYctO",
-      "ytMusicId": "tbXNVm8CXxg",
+      "ytMusicId": "aVPwXQgY2QI",
       "streams": 2028314,
       "peak": 33,
       "weeks": 189
@@ -967,7 +967,7 @@
       "title": "Ucha Lamba Kad Forever (From \"Welcome To The Jungle\") (w/ Vikram Montrose, Rubai, Meggha Bali)",
       "artist": "Anand Raj Anand",
       "spotifyId": "7J9m7Heb1kdSVdqRgSIDGq",
-      "ytMusicId": "hJOKXvtb6VQ",
+      "ytMusicId": "",
       "streams": 1724463,
       "peak": 85,
       "weeks": 2
@@ -989,7 +989,7 @@
       "title": "Tere Paas Main - Female Version (From \"Main Vaapas Aaunga\") (w/ Irshad Kamil, Deepali Sahay)",
       "artist": "A.R. Rahman",
       "spotifyId": "50EDY0zGZteoBy3hORXSba",
-      "ytMusicId": "OJr6XQaQwnU",
+      "ytMusicId": "",
       "streams": 1699983,
       "peak": 90,
       "weeks": 1
@@ -1473,7 +1473,7 @@
       "title": "Bekhayali (From \"Kabir Singh\") (w/ Sachet-Parampara, Shahid Kapoor, Kiara Advani)",
       "artist": "Sachet Tandon",
       "spotifyId": "1feANd8EfcDP5UqSvbheM3",
-      "ytMusicId": "PVDPkS4v8FQ",
+      "ytMusicId": "0HoQoPuNjAs",
       "streams": 1491848,
       "peak": 1,
       "weeks": 291
@@ -2067,7 +2067,7 @@
       "title": "Aaya Sher (From \"The Paradise\") (Telugu) (w/ Jangi Reddy, Arjun Chandy, Kasarla Shyam)",
       "artist": "Anirudh Ravichander",
       "spotifyId": "4kV0ugCwyF7OAb3huIdThG",
-      "ytMusicId": "lbEtG0ZjyJA",
+      "ytMusicId": "",
       "streams": 1320142,
       "peak": 8,
       "weeks": 19
