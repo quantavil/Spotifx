@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-07-07",
-  "lastUpdated": "2026-07-07T09:38:09.175Z",
+  "weekDate": "2026-07-08",
+  "lastUpdated": "2026-07-08T08:22:36.907Z",
   "tracks": [
     {
       "rank": 1,
@@ -527,7 +527,7 @@
       "title": "NOBLE",
       "artist": "F3miii",
       "spotifyId": "4Jsus7N4d8hFB2G9gcRdBv",
-      "ytMusicId": "ucylSF4YPvw",
+      "ytMusicId": "4rDMvIZ4nWE",
       "streams": 3559881,
       "peak": 21,
       "weeks": 10
@@ -549,7 +549,7 @@
       "title": "The One That Got Away",
       "artist": "Katy Perry",
       "spotifyId": "6hkOqJ5mE093AQf2lbZnsG",
-      "ytMusicId": "5ZsotZ-IqZs",
+      "ytMusicId": "64wxAbbWNag",
       "streams": 3445141,
       "peak": 37,
       "weeks": 14
@@ -626,7 +626,7 @@
       "title": "Ordinary",
       "artist": "Alex Warren",
       "spotifyId": "2RkZ5LkEzeHGRsmDqKwmaJ",
-      "ytMusicId": "TR19QSL7WuQ",
+      "ytMusicId": "Q2NePVoGxYg",
       "streams": 3296940,
       "peak": 1,
       "weeks": 73
@@ -1440,7 +1440,7 @@
       "title": "Les",
       "artist": "Childish Gambino",
       "spotifyId": "7ghKr0pCYyPPyp7t1FH8k4",
-      "ytMusicId": "eQL-E_TtB0o",
+      "ytMusicId": "L8gGHqPBuZM",
       "streams": 2517170,
       "peak": 70,
       "weeks": 57
@@ -1956,7 +1956,7 @@
       "change": "RE",
       "title": "bloodstream",
       "artist": "Alyssa Grace",
-      "spotifyId": "1fdgakuuEEfjRt3KYF36eG",
+      "spotifyId": "2oWFJJW9d1bIra3zHjR6GO",
       "ytMusicId": "CLSuAhT71yU",
       "streams": 2286628,
       "peak": 90,
@@ -2122,7 +2122,7 @@
       "title": "How You Remind Me",
       "artist": "Nickelback",
       "spotifyId": "0gmbgwZ8iqyMPmXefof8Yf",
-      "ytMusicId": "hhSLkkLl750",
+      "ytMusicId": "vkvrbbtnp6s",
       "streams": 2231781,
       "peak": 175,
       "weeks": 13

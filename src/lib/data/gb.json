@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-07-07",
-  "lastUpdated": "2026-07-07T09:39:05.276Z",
+  "weekDate": "2026-07-08",
+  "lastUpdated": "2026-07-08T08:23:31.756Z",
   "tracks": [
     {
       "rank": 1,
@@ -340,7 +340,7 @@
       "title": "Ordinary",
       "artist": "Alex Warren",
       "spotifyId": "2RkZ5LkEzeHGRsmDqKwmaJ",
-      "ytMusicId": "TR19QSL7WuQ",
+      "ytMusicId": "Q2NePVoGxYg",
       "streams": 1136975,
       "peak": 1,
       "weeks": 73
@@ -560,7 +560,7 @@
       "title": "The One That Got Away",
       "artist": "Katy Perry",
       "spotifyId": "6hkOqJ5mE093AQf2lbZnsG",
-      "ytMusicId": "5ZsotZ-IqZs",
+      "ytMusicId": "64wxAbbWNag",
       "streams": 948011,
       "peak": 46,
       "weeks": 14
@@ -791,7 +791,7 @@
       "title": "NOBLE",
       "artist": "F3miii",
       "spotifyId": "4Jsus7N4d8hFB2G9gcRdBv",
-      "ytMusicId": "ucylSF4YPvw",
+      "ytMusicId": "4rDMvIZ4nWE",
       "streams": 797254,
       "peak": 39,
       "weeks": 11
@@ -812,7 +812,7 @@
       "change": "+51",
       "title": "bloodstream",
       "artist": "Alyssa Grace",
-      "spotifyId": "1fdgakuuEEfjRt3KYF36eG",
+      "spotifyId": "2oWFJJW9d1bIra3zHjR6GO",
       "ytMusicId": "CLSuAhT71yU",
       "streams": 792437,
       "peak": 41,
@@ -956,7 +956,7 @@
       "title": "Bitter Sweet Symphony",
       "artist": "The Verve",
       "spotifyId": "57iDDD9N9tTWe75x6qhStw",
-      "ytMusicId": "1WTATreAg08",
+      "ytMusicId": "JnRw8bXVbPI",
       "streams": 739152,
       "peak": 85,
       "weeks": 74
@@ -1748,7 +1748,7 @@
       "title": "Viva La Vida",
       "artist": "Coldplay",
       "spotifyId": "1mea3bSkSGXuIRvnydlB5b",
-      "ytMusicId": "ALsvdSA9tOU",
+      "ytMusicId": "HGorCGszxZU",
       "streams": 602837,
       "peak": 27,
       "weeks": 208
