@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-07-08",
-  "lastUpdated": "2026-07-08T08:23:31.756Z",
+  "weekDate": "2026-07-09",
+  "lastUpdated": "2026-07-09T09:45:42.633Z",
   "tracks": [
     {
       "rank": 1,
@@ -340,7 +340,7 @@
       "title": "Ordinary",
       "artist": "Alex Warren",
       "spotifyId": "2RkZ5LkEzeHGRsmDqKwmaJ",
-      "ytMusicId": "Q2NePVoGxYg",
+      "ytMusicId": "TR19QSL7WuQ",
       "streams": 1136975,
       "peak": 1,
       "weeks": 73
@@ -351,7 +351,7 @@
       "title": "Don't Stop 'Til You Get Enough - Single Version",
       "artist": "Michael Jackson",
       "spotifyId": "46eu3SBuFCXWsPT39Yg3tJ",
-      "ytMusicId": "m_O25dOQpCQ",
+      "ytMusicId": "n3qQtSRmHxo",
       "streams": 1126437,
       "peak": 8,
       "weeks": 10
@@ -571,7 +571,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "7193204dpGU",
+      "ytMusicId": "X7AN68W5qDI",
       "streams": 947392,
       "peak": 1,
       "weeks": 394
@@ -758,7 +758,7 @@
       "title": "I Just Might",
       "artist": "Bruno Mars",
       "spotifyId": "6f68Ac5tt5BQOpwr0BV9oN",
-      "ytMusicId": "8_C6lXoGB5Y",
+      "ytMusicId": "8bvbiq9nM-4",
       "streams": 818502,
       "peak": 5,
       "weeks": 25

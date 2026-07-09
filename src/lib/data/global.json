@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-07-08",
-  "lastUpdated": "2026-07-08T08:18:10.161Z",
+  "weekDate": "2026-07-09",
+  "lastUpdated": "2026-07-09T09:40:27.631Z",
   "tracks": [
     {
       "rank": 1,
@@ -483,7 +483,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "7193204dpGU",
+      "ytMusicId": "X7AN68W5qDI",
       "streams": 14384634,
       "peak": 1,
       "weeks": 322
@@ -494,7 +494,7 @@
       "title": "Ordinary",
       "artist": "Alex Warren",
       "spotifyId": "2RkZ5LkEzeHGRsmDqKwmaJ",
-      "ytMusicId": "Q2NePVoGxYg",
+      "ytMusicId": "TR19QSL7WuQ",
       "streams": 14343096,
       "peak": 1,
       "weeks": 73
@@ -516,7 +516,7 @@
       "title": "Don't Stop 'Til You Get Enough - Single Version",
       "artist": "Michael Jackson",
       "spotifyId": "46eu3SBuFCXWsPT39Yg3tJ",
-      "ytMusicId": "m_O25dOQpCQ",
+      "ytMusicId": "n3qQtSRmHxo",
       "streams": 14121113,
       "peak": 8,
       "weeks": 10
@@ -1066,7 +1066,7 @@
       "title": "I Just Might",
       "artist": "Bruno Mars",
       "spotifyId": "6f68Ac5tt5BQOpwr0BV9oN",
-      "ytMusicId": "8_C6lXoGB5Y",
+      "ytMusicId": "8bvbiq9nM-4",
       "streams": 10738445,
       "peak": 3,
       "weeks": 25
@@ -1077,7 +1077,7 @@
       "title": "REDRED",
       "artist": "CORTIS",
       "spotifyId": "2fCwv2ppU5nTRTckomIGsd",
-      "ytMusicId": "DBOyG7y_FQg",
+      "ytMusicId": "5sOgJQ3N03Q",
       "streams": 10734067,
       "peak": 61,
       "weeks": 10
@@ -2111,7 +2111,7 @@
       "title": "Die For You",
       "artist": "The Weeknd",
       "spotifyId": "2LBqCSwhJGcFQeTHMVGwy3",
-      "ytMusicId": "mTLQhPFx2nM",
+      "ytMusicId": "QLCpqdqeoII",
       "streams": 8431017,
       "peak": 12,
       "weeks": 220

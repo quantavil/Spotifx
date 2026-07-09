@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-07-08",
-  "lastUpdated": "2026-07-08T08:22:36.907Z",
+  "weekDate": "2026-07-09",
+  "lastUpdated": "2026-07-09T09:44:49.986Z",
   "tracks": [
     {
       "rank": 1,
@@ -472,7 +472,7 @@
       "title": "Don't Stop 'Til You Get Enough - Single Version",
       "artist": "Michael Jackson",
       "spotifyId": "46eu3SBuFCXWsPT39Yg3tJ",
-      "ytMusicId": "m_O25dOQpCQ",
+      "ytMusicId": "n3qQtSRmHxo",
       "streams": 3735010,
       "peak": 14,
       "weeks": 10
@@ -593,7 +593,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "7193204dpGU",
+      "ytMusicId": "X7AN68W5qDI",
       "streams": 3387724,
       "peak": 1,
       "weeks": 178
@@ -626,7 +626,7 @@
       "title": "Ordinary",
       "artist": "Alex Warren",
       "spotifyId": "2RkZ5LkEzeHGRsmDqKwmaJ",
-      "ytMusicId": "Q2NePVoGxYg",
+      "ytMusicId": "TR19QSL7WuQ",
       "streams": 3296940,
       "peak": 1,
       "weeks": 73
@@ -1077,7 +1077,7 @@
       "title": "I Just Might",
       "artist": "Bruno Mars",
       "spotifyId": "6f68Ac5tt5BQOpwr0BV9oN",
-      "ytMusicId": "8_C6lXoGB5Y",
+      "ytMusicId": "8bvbiq9nM-4",
       "streams": 2773537,
       "peak": 1,
       "weeks": 25
@@ -1440,7 +1440,7 @@
       "title": "Les",
       "artist": "Childish Gambino",
       "spotifyId": "7ghKr0pCYyPPyp7t1FH8k4",
-      "ytMusicId": "L8gGHqPBuZM",
+      "ytMusicId": "eQL-E_TtB0o",
       "streams": 2517170,
       "peak": 70,
       "weeks": 57
