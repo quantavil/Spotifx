@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-07-09",
-  "lastUpdated": "2026-07-09T09:45:42.633Z",
+  "weekDate": "2026-07-10",
+  "lastUpdated": "2026-07-10T09:32:17.538Z",
   "tracks": [
     {
       "rank": 1,
@@ -10,7 +10,7 @@
       "title": "Rein Me In (w/ Olivia Dean)",
       "artist": "Sam Fender",
       "spotifyId": "0MUXBhPUDF8or0kfQ0EHwV",
-      "ytMusicId": "4vpTO9TBZKc",
+      "ytMusicId": "NO3JTAsB4NI",
       "streams": 2490075,
       "peak": 1,
       "weeks": 54
@@ -141,7 +141,7 @@
       "change": "+1",
       "title": "Free Your Mind (w/ Cloonee)",
       "artist": "Prospa",
-      "spotifyId": "6TWbY1dq8eYtFiMiGdBlOa",
+      "spotifyId": "39hHUnYBmyMwprzRaPODCX",
       "ytMusicId": "V9Suvx0K5Eo",
       "streams": 1435405,
       "peak": 13,
@@ -340,7 +340,7 @@
       "title": "Ordinary",
       "artist": "Alex Warren",
       "spotifyId": "2RkZ5LkEzeHGRsmDqKwmaJ",
-      "ytMusicId": "TR19QSL7WuQ",
+      "ytMusicId": "Q2NePVoGxYg",
       "streams": 1136975,
       "peak": 1,
       "weeks": 73
@@ -758,7 +758,7 @@
       "title": "I Just Might",
       "artist": "Bruno Mars",
       "spotifyId": "6f68Ac5tt5BQOpwr0BV9oN",
-      "ytMusicId": "8bvbiq9nM-4",
+      "ytMusicId": "8_C6lXoGB5Y",
       "streams": 818502,
       "peak": 5,
       "weeks": 25
@@ -2088,7 +2088,7 @@
       "change": "-36",
       "title": "GIRLS",
       "artist": "The Kid LAROI",
-      "spotifyId": "7z3PblAN3dH1JMewiRydkZ",
+      "spotifyId": "6WhwHYd38f4ZB2CefpDgLo",
       "ytMusicId": "lHQ90ok8jm8",
       "streams": 571502,
       "peak": 71,

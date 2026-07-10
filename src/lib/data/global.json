@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-07-09",
-  "lastUpdated": "2026-07-09T09:40:27.631Z",
+  "weekDate": "2026-07-10",
+  "lastUpdated": "2026-07-10T09:26:56.280Z",
   "tracks": [
     {
       "rank": 1,
@@ -494,7 +494,7 @@
       "title": "Ordinary",
       "artist": "Alex Warren",
       "spotifyId": "2RkZ5LkEzeHGRsmDqKwmaJ",
-      "ytMusicId": "TR19QSL7WuQ",
+      "ytMusicId": "Q2NePVoGxYg",
       "streams": 14343096,
       "peak": 1,
       "weeks": 73
@@ -868,7 +868,7 @@
       "title": "Cuando No Era Cantante RMX - Remix (w/ Anuel AA, Fuerza Regida, Yung Beef)",
       "artist": "El Bogueto",
       "spotifyId": "56V7nzrqr6Sq1uFym4odwa",
-      "ytMusicId": "3Nm3hkwGOGM",
+      "ytMusicId": "6sE5F9Y8f1o",
       "streams": 11555620,
       "peak": 55,
       "weeks": 3
@@ -1066,7 +1066,7 @@
       "title": "I Just Might",
       "artist": "Bruno Mars",
       "spotifyId": "6f68Ac5tt5BQOpwr0BV9oN",
-      "ytMusicId": "8bvbiq9nM-4",
+      "ytMusicId": "8_C6lXoGB5Y",
       "streams": 10738445,
       "peak": 3,
       "weeks": 25
@@ -1077,7 +1077,7 @@
       "title": "REDRED",
       "artist": "CORTIS",
       "spotifyId": "2fCwv2ppU5nTRTckomIGsd",
-      "ytMusicId": "5sOgJQ3N03Q",
+      "ytMusicId": "DBOyG7y_FQg",
       "streams": 10734067,
       "peak": 61,
       "weeks": 10
@@ -1143,7 +1143,7 @@
       "title": "Rein Me In (w/ Olivia Dean)",
       "artist": "Sam Fender",
       "spotifyId": "0MUXBhPUDF8or0kfQ0EHwV",
-      "ytMusicId": "4vpTO9TBZKc",
+      "ytMusicId": "NO3JTAsB4NI",
       "streams": 10568883,
       "peak": 56,
       "weeks": 18
@@ -1505,7 +1505,7 @@
       "change": "-18",
       "title": "GIRLS",
       "artist": "The Kid LAROI",
-      "spotifyId": "7z3PblAN3dH1JMewiRydkZ",
+      "spotifyId": "6WhwHYd38f4ZB2CefpDgLo",
       "ytMusicId": "lHQ90ok8jm8",
       "streams": 9486774,
       "peak": 83,
@@ -2111,7 +2111,7 @@
       "title": "Die For You",
       "artist": "The Weeknd",
       "spotifyId": "2LBqCSwhJGcFQeTHMVGwy3",
-      "ytMusicId": "QLCpqdqeoII",
+      "ytMusicId": "mTLQhPFx2nM",
       "streams": 8431017,
       "peak": 12,
       "weeks": 220

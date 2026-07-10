@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-07-09",
-  "lastUpdated": "2026-07-09T09:44:49.986Z",
+  "weekDate": "2026-07-10",
+  "lastUpdated": "2026-07-10T09:31:24.451Z",
   "tracks": [
     {
       "rank": 1,
@@ -626,7 +626,7 @@
       "title": "Ordinary",
       "artist": "Alex Warren",
       "spotifyId": "2RkZ5LkEzeHGRsmDqKwmaJ",
-      "ytMusicId": "TR19QSL7WuQ",
+      "ytMusicId": "Q2NePVoGxYg",
       "streams": 3296940,
       "peak": 1,
       "weeks": 73
@@ -1066,7 +1066,7 @@
       "title": "Rein Me In (w/ Olivia Dean)",
       "artist": "Sam Fender",
       "spotifyId": "0MUXBhPUDF8or0kfQ0EHwV",
-      "ytMusicId": "4vpTO9TBZKc",
+      "ytMusicId": "NO3JTAsB4NI",
       "streams": 2783067,
       "peak": 83,
       "weeks": 15
@@ -1077,7 +1077,7 @@
       "title": "I Just Might",
       "artist": "Bruno Mars",
       "spotifyId": "6f68Ac5tt5BQOpwr0BV9oN",
-      "ytMusicId": "8bvbiq9nM-4",
+      "ytMusicId": "8_C6lXoGB5Y",
       "streams": 2773537,
       "peak": 1,
       "weeks": 25
@@ -1231,7 +1231,7 @@
       "title": "No Role Modelz",
       "artist": "J. Cole",
       "spotifyId": "68Dni7IE4VyPkTOH9mRWHr",
-      "ytMusicId": "0EnRK5YvBwU",
+      "ytMusicId": "8HBcV0MtAQg",
       "streams": 2670588,
       "peak": 10,
       "weeks": 530
@@ -1242,7 +1242,7 @@
       "title": "Flashing Lights (w/ Dwele)",
       "artist": "Kanye West",
       "spotifyId": "5TRPicyLGbAF2LGBFbHGvO",
-      "ytMusicId": "cxKs2b5lRsA",
+      "ytMusicId": "ZAz3rnLGthg",
       "streams": 2652162,
       "peak": 53,
       "weeks": 165
@@ -1440,7 +1440,7 @@
       "title": "Les",
       "artist": "Childish Gambino",
       "spotifyId": "7ghKr0pCYyPPyp7t1FH8k4",
-      "ytMusicId": "eQL-E_TtB0o",
+      "ytMusicId": "L8gGHqPBuZM",
       "streams": 2517170,
       "peak": 70,
       "weeks": 57
