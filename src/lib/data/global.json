@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-07-11",
-  "lastUpdated": "2026-07-11T07:48:35.207Z",
+  "weekDate": "2026-07-12",
+  "lastUpdated": "2026-07-12T08:09:31.016Z",
   "tracks": [
     {
       "rank": 1,
@@ -802,7 +802,7 @@
       "title": "Viva La Vida",
       "artist": "Coldplay",
       "spotifyId": "1mea3bSkSGXuIRvnydlB5b",
-      "ytMusicId": "HGorCGszxZU",
+      "ytMusicId": "ALsvdSA9tOU",
       "streams": 11356834,
       "peak": 31,
       "weeks": 206
@@ -2045,7 +2045,7 @@
       "title": "Die For You",
       "artist": "The Weeknd",
       "spotifyId": "2LBqCSwhJGcFQeTHMVGwy3",
-      "ytMusicId": "mTLQhPFx2nM",
+      "ytMusicId": "QLCpqdqeoII",
       "streams": 8441915,
       "peak": 12,
       "weeks": 221

@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-07-11",
-  "lastUpdated": "2026-07-11T07:53:12.147Z",
+  "weekDate": "2026-07-12",
+  "lastUpdated": "2026-07-12T08:14:10.786Z",
   "tracks": [
     {
       "rank": 1,
@@ -1297,7 +1297,7 @@
       "title": "Flashing Lights (w/ Dwele)",
       "artist": "Kanye West",
       "spotifyId": "5TRPicyLGbAF2LGBFbHGvO",
-      "ytMusicId": "cxKs2b5lRsA",
+      "ytMusicId": "ZAz3rnLGthg",
       "streams": 2548937,
       "peak": 53,
       "weeks": 166

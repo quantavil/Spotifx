@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-07-11",
-  "lastUpdated": "2026-07-11T07:54:13.829Z",
+  "weekDate": "2026-07-12",
+  "lastUpdated": "2026-07-12T08:15:09.983Z",
   "tracks": [
     {
       "rank": 1,
@@ -1385,7 +1385,7 @@
       "title": "Viva La Vida",
       "artist": "Coldplay",
       "spotifyId": "1mea3bSkSGXuIRvnydlB5b",
-      "ytMusicId": "HGorCGszxZU",
+      "ytMusicId": "ALsvdSA9tOU",
       "streams": 631457,
       "peak": 27,
       "weeks": 209
@@ -1726,7 +1726,7 @@
       "title": "Landslide",
       "artist": "Fleetwood Mac",
       "spotifyId": "5ihS6UUlyQAfmp48eSkxuQ",
-      "ytMusicId": "mXonGAEPQp8",
+      "ytMusicId": "k4M53xndqiU",
       "streams": 590786,
       "peak": 35,
       "weeks": 37
