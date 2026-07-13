@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-07-12",
-  "lastUpdated": "2026-07-12T08:09:31.016Z",
+  "weekDate": "2026-07-13",
+  "lastUpdated": "2026-07-13T08:59:25.423Z",
   "tracks": [
     {
       "rank": 1,
@@ -714,7 +714,7 @@
       "title": "I Just Might",
       "artist": "Bruno Mars",
       "spotifyId": "6f68Ac5tt5BQOpwr0BV9oN",
-      "ytMusicId": "8_C6lXoGB5Y",
+      "ytMusicId": "8bvbiq9nM-4",
       "streams": 11837994,
       "peak": 3,
       "weeks": 26
@@ -725,7 +725,7 @@
       "title": "Starboy (w/ Daft Punk)",
       "artist": "The Weeknd",
       "spotifyId": "7MXVkk9YMctZqd1Srtv4MB",
-      "ytMusicId": "3_g2un5M350",
+      "ytMusicId": "plnfIj7dkJE",
       "streams": 11730057,
       "peak": 1,
       "weeks": 315
@@ -802,7 +802,7 @@
       "title": "Viva La Vida",
       "artist": "Coldplay",
       "spotifyId": "1mea3bSkSGXuIRvnydlB5b",
-      "ytMusicId": "ALsvdSA9tOU",
+      "ytMusicId": "HGorCGszxZU",
       "streams": 11356834,
       "peak": 31,
       "weeks": 206

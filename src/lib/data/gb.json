@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-07-12",
-  "lastUpdated": "2026-07-12T08:15:09.983Z",
+  "weekDate": "2026-07-13",
+  "lastUpdated": "2026-07-13T09:05:11.245Z",
   "tracks": [
     {
       "rank": 1,
@@ -615,7 +615,7 @@
       "title": "I Just Might",
       "artist": "Bruno Mars",
       "spotifyId": "6f68Ac5tt5BQOpwr0BV9oN",
-      "ytMusicId": "8_C6lXoGB5Y",
+      "ytMusicId": "8bvbiq9nM-4",
       "streams": 913037,
       "peak": 5,
       "weeks": 26
@@ -791,7 +791,7 @@
       "title": "Clean Baby Sleep White Noise (Loopable)",
       "artist": "Dream Supplier",
       "spotifyId": "4yVBarJHjhhzP1q7fU4p0W",
-      "ytMusicId": "tTFR2WK9Gz0",
+      "ytMusicId": "oGvrcrY8Xbs",
       "streams": 801954,
       "peak": 46,
       "weeks": 12
@@ -1121,7 +1121,7 @@
       "title": "Bitter Sweet Symphony",
       "artist": "The Verve",
       "spotifyId": "57iDDD9N9tTWe75x6qhStw",
-      "ytMusicId": "1WTATreAg08",
+      "ytMusicId": "JnRw8bXVbPI",
       "streams": 678672,
       "peak": 85,
       "weeks": 75
@@ -1385,7 +1385,7 @@
       "title": "Viva La Vida",
       "artist": "Coldplay",
       "spotifyId": "1mea3bSkSGXuIRvnydlB5b",
-      "ytMusicId": "ALsvdSA9tOU",
+      "ytMusicId": "HGorCGszxZU",
       "streams": 631457,
       "peak": 27,
       "weeks": 209
@@ -1979,7 +1979,7 @@
       "title": "Carry You Home",
       "artist": "Alex Warren",
       "spotifyId": "1wOp7yTVyH176bW1z9WAiv",
-      "ytMusicId": "st-QA3AEm-8",
+      "ytMusicId": "bWOnKEmtb1c",
       "streams": 560985,
       "peak": 19,
       "weeks": 104

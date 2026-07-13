@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-07-12",
-  "lastUpdated": "2026-07-12T08:14:10.786Z",
+  "weekDate": "2026-07-13",
+  "lastUpdated": "2026-07-13T09:04:09.291Z",
   "tracks": [
     {
       "rank": 1,
@@ -1033,7 +1033,7 @@
       "title": "I Just Might",
       "artist": "Bruno Mars",
       "spotifyId": "6f68Ac5tt5BQOpwr0BV9oN",
-      "ytMusicId": "8_C6lXoGB5Y",
+      "ytMusicId": "8bvbiq9nM-4",
       "streams": 2792935,
       "peak": 1,
       "weeks": 26
@@ -1297,7 +1297,7 @@
       "title": "Flashing Lights (w/ Dwele)",
       "artist": "Kanye West",
       "spotifyId": "5TRPicyLGbAF2LGBFbHGvO",
-      "ytMusicId": "ZAz3rnLGthg",
+      "ytMusicId": "cxKs2b5lRsA",
       "streams": 2548937,
       "peak": 53,
       "weeks": 166
