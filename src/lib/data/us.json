@@ -1,8 +1,8 @@
 {
   "country": "us",
   "countryName": "United States",
-  "weekDate": "2026-07-13",
-  "lastUpdated": "2026-07-13T09:04:09.291Z",
+  "weekDate": "2026-07-14",
+  "lastUpdated": "2026-07-14T07:59:34.008Z",
   "tracks": [
     {
       "rank": 1,
@@ -802,7 +802,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "X7AN68W5qDI",
+      "ytMusicId": "7193204dpGU",
       "streams": 3056176,
       "peak": 1,
       "weeks": 179
@@ -1473,7 +1473,7 @@
       "title": "No Role Modelz",
       "artist": "J. Cole",
       "spotifyId": "68Dni7IE4VyPkTOH9mRWHr",
-      "ytMusicId": "0EnRK5YvBwU",
+      "ytMusicId": "8HBcV0MtAQg",
       "streams": 2479512,
       "peak": 10,
       "weeks": 531

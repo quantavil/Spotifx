@@ -1,8 +1,8 @@
 {
   "country": "gb",
   "countryName": "United Kingdom",
-  "weekDate": "2026-07-13",
-  "lastUpdated": "2026-07-13T09:05:11.245Z",
+  "weekDate": "2026-07-14",
+  "lastUpdated": "2026-07-14T08:00:34.117Z",
   "tracks": [
     {
       "rank": 1,
@@ -648,7 +648,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "X7AN68W5qDI",
+      "ytMusicId": "7193204dpGU",
       "streams": 871011,
       "peak": 1,
       "weeks": 395
@@ -2078,7 +2078,7 @@
       "title": "Go Your Own Way - 2001 Remaster",
       "artist": "Fleetwood Mac",
       "spotifyId": "34F6qT8udksbeKO7CVDBqF",
-      "ytMusicId": "IPBcoIlGp-8",
+      "ytMusicId": "MTIkFwMuiTw",
       "streams": 552261,
       "peak": 125,
       "weeks": 11

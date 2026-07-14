@@ -1,8 +1,8 @@
 {
   "country": "global",
   "countryName": "Global",
-  "weekDate": "2026-07-13",
-  "lastUpdated": "2026-07-13T08:59:25.423Z",
+  "weekDate": "2026-07-14",
+  "lastUpdated": "2026-07-14T07:55:04.635Z",
   "tracks": [
     {
       "rank": 1,
@@ -527,7 +527,7 @@
       "title": "One Dance (w/ Wizkid, Kyla)",
       "artist": "Drake",
       "spotifyId": "1zi7xx7UVEFkmKfv06H8x0",
-      "ytMusicId": "X7AN68W5qDI",
+      "ytMusicId": "7193204dpGU",
       "streams": 13348283,
       "peak": 1,
       "weeks": 323
@@ -681,7 +681,7 @@
       "title": "Jamaican (Bam Bam) (w/ SOLTO (FR))",
       "artist": "HUGEL",
       "spotifyId": "7e4zDInS6tA2jwzphvs2Ay",
-      "ytMusicId": "i34pFNr42mc",
+      "ytMusicId": "bI_85qC2UWk",
       "streams": 12086885,
       "peak": 62,
       "weeks": 14
@@ -725,7 +725,7 @@
       "title": "Starboy (w/ Daft Punk)",
       "artist": "The Weeknd",
       "spotifyId": "7MXVkk9YMctZqd1Srtv4MB",
-      "ytMusicId": "plnfIj7dkJE",
+      "ytMusicId": "3_g2un5M350",
       "streams": 11730057,
       "peak": 1,
       "weeks": 315
